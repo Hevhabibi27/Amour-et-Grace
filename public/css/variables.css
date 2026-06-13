@@ -1,0 +1,15 @@
+/* public/css/variables.css */
+:root {
+    --primary-color: #e60000;
+    --primary-dark: #b30000;
+    --dark-bg: #000000;
+    --light-bg: #f9f9f9;
+    --text-light: #ffffff;
+    --text-dark: #222222;
+    --text-muted: #666666;
+    
+    --font-heading: 'Playfair Display', serif;
+    --font-body: 'Poppins', sans-serif;
+    
+    --transition-smooth: all 0.3s ease-in-out;
+}
