@@ -9,13 +9,11 @@ window.initHomeCarousel = function () {
     const cards = carousel.querySelectorAll('.menu-card');
     if (cards.length === 0) return;
 
-    const positions = ['card-left', 'card-center', 'card-right'];
-    let currentCenter = 1; // Start with index 1 as center
+    let currentCenter = 1;
     let intervalId = null;
 
     function updatePositions() {
         const total = cards.length;
-        // Calculate left, center, right indices
         const leftIdx = (currentCenter - 1 + total) % total;
         const centerIdx = currentCenter;
         const rightIdx = (currentCenter + 1) % total;
@@ -34,8 +32,8 @@ window.initHomeCarousel = function () {
         updatePositions();
     }
 
-    // Auto-play every 5 seconds
     function startAutoPlay() {
+        if (intervalId) return; // already running
         intervalId = setInterval(nextSlide, 5000);
     }
 
@@ -46,31 +44,41 @@ window.initHomeCarousel = function () {
         }
     }
 
-    // Pause on hover
-    carousel.addEventListener('mouseenter', stopAutoPlay);
-    carousel.addEventListener('mouseleave', startAutoPlay);
+    function onMouseEnter() { stopAutoPlay(); }
+    function onMouseLeave() { startAutoPlay(); }
 
-    // Allow clicking side cards to rotate them to center
-    carousel.addEventListener('click', function (e) {
+    function onClick(e) {
         const clickedCard = e.target.closest('.menu-card');
         if (!clickedCard) return;
 
-        // If clicking a side card, rotate so it becomes center
         if (clickedCard.classList.contains('card-left')) {
             currentCenter = (currentCenter - 1 + cards.length) % cards.length;
             updatePositions();
             stopAutoPlay();
-            startAutoPlay(); // restart timer
+            startAutoPlay();
         } else if (clickedCard.classList.contains('card-right')) {
             nextSlide();
             stopAutoPlay();
             startAutoPlay();
         }
-    });
+    }
+
+    carousel.addEventListener('mouseenter', onMouseEnter);
+    carousel.addEventListener('mouseleave', onMouseLeave);
+    carousel.addEventListener('click', onClick);
 
     // Initialize
     updatePositions();
     startAutoPlay();
+
+    // Expose pause / resume so the router can toggle without destroying
+    window.pauseHomeCarousel = function () {
+        stopAutoPlay();
+    };
+
+    window.resumeHomeCarousel = function () {
+        startAutoPlay();
+    };
 };
 
 // Run on DOM load for initial page load

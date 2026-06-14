@@ -40,105 +40,91 @@
 /* ── About Us Section ── */
 .about-section {
     position: relative;
-    background-image: url('../assets/images/torn paper.webp');
-    background-size: 100% 100%;
-    background-position: center;
+    background: linear-gradient(to bottom, transparent 0%, var(--primary-dark) 180px, var(--primary-dark) 100%);
     color: var(--text-light);
-    padding: var(--section-padding) 0;
-    overflow: hidden;
+    padding: 180px 0 100px 0;
+    margin-top: -180px;
+    z-index: 2;
 }
 
 .about-container {
     display: grid;
-    grid-template-columns: 80px 1fr 1fr;
+    grid-template-columns: 80px 1fr 1.2fr;
     gap: 40px;
     max-width: var(--container-max);
     margin: 0 auto;
     position: relative;
-    z-index: 2;
+    z-index: 3;
     align-items: center;
 }
 
 .about-vertical-text {
     grid-column: 1;
-    writing-mode: vertical-rl;
-    text-orientation: upright;
-    font-size: 3rem;
+    font-size: 3.5rem;
     font-weight: 900;
     color: rgba(0, 0, 0, 0.7);
-    letter-spacing: 0.5rem;
-    padding-top: 20px;
+    line-height: 1.3;
 }
 
-.about-text-content {
+.about-main-content {
     grid-column: 2;
+    display: flex;
+    flex-direction: column;
 }
 
-.about-text-content .section-title {
-    font-family: var(--font-heading);
-    font-size: 2rem;
-    letter-spacing: 2px;
-    margin-bottom: 10px;
-}
-
-.about-subtitle {
-    font-size: 2.5rem;
-    font-weight: 400;
-    line-height: 1.2;
-    margin-bottom: 30px;
-}
-
-.about-subtitle .highlight {
+.about-title {
+    font-family: 'Cinzel Decorative', serif;
+    font-size: 4rem;
     font-weight: 700;
-    color: var(--text-near-black);
+    letter-spacing: 2px;
+    margin-bottom: 20px;
+    color: var(--text-light);
+    line-height: 1;
 }
 
 .about-description {
     font-size: 1.1rem;
     line-height: 1.6;
-    font-weight: 300;
+    font-weight: 400;
+    margin-bottom: 40px;
+    color: var(--text-light);
 }
 
-.about-right-content {
-    grid-column: 3;
+.about-stats-container {
     display: flex;
-    flex-direction: column;
-    align-items: stretch;
-    gap: 20px;
+    gap: 40px;
+}
+
+.stat-item {
+    text-align: left;
+}
+
+.stat-item h3 {
+    font-family: 'Cinzel Decorative', serif;
+    font-size: 2.5rem;
+    font-weight: 800;
+    margin-bottom: 5px;
+    color: var(--text-light);
+}
+
+.stat-item p {
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    line-height: 1.2;
+    color: var(--text-light);
 }
 
 .about-image-content {
+    grid-column: 3;
     width: 100%;
 }
 
 .about-house-img {
     width: 100%;
     border-radius: var(--radius-lg);
-    box-shadow: var(--shadow-md);
+    box-shadow: var(--shadow-xl);
     object-fit: cover;
-}
-
-.about-stats-container {
-    display: flex;
-    justify-content: space-between;
-    padding: 10px 0;
-}
-
-.stat-item {
-    text-align: center;
-}
-
-.stat-item h3 {
-    font-size: 2rem;
-    font-weight: 800;
-    margin-bottom: 5px;
-}
-
-.stat-item p {
-    font-size: 0.75rem;
-    font-weight: 600;
-    letter-spacing: 1px;
-    line-height: 1.2;
 }
 
 /* ── Featured Menu Section ── */
@@ -166,7 +152,7 @@
     font-size: 5rem;
     color: var(--accent-red-deep);
     font-weight: 800;
-    margin-bottom: 20px;
+    margin-bottom: 0px;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
     letter-spacing: 5px;
 }
@@ -198,10 +184,10 @@
     position: relative;
     max-width: var(--menu-grid-max);
     margin: 0 auto;
-    padding-top: 40px;
+    padding-top: 10px;
 }
 
-.menu-side-title {
+/* .menu-side-title {
     position: absolute;
     top: 0;
     font-family: 'Cinzel Decorative', serif;
@@ -222,7 +208,7 @@
 .right-title {
     right: 0;
     text-align: right;
-}
+} */
 
 /* ── Carousel ── */
 .menu-cards-row {
@@ -230,7 +216,7 @@
     width: 100%;
     max-width: var(--carousel-max);
     height: 440px;
-    margin: 30px auto;
+    margin: 10px auto 30px auto;
     overflow: visible;
 }
 
@@ -294,7 +280,7 @@
     font-size: 1.1rem;
     letter-spacing: 1px;
     margin-top: 10px;
-    font-family: var(--font-heading);
+    font-family: 'Cinzel Decorative', 'serif';
     margin-bottom: 10px;
 }
 

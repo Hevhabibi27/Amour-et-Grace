@@ -1,24 +1,17 @@
 // public/js/navbar.js
 document.addEventListener('DOMContentLoaded', () => {
-    // Smooth scrolling for navigation links
+    // Navigation links handler
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
-            e.preventDefault();
-            
             const targetId = this.getAttribute('href');
-            if (targetId === '#') return;
-            
-            if (typeof Utils !== 'undefined') {
-                Utils.scrollToElement(targetId);
-            } else {
-                // Fallback if Utils is not loaded
-                const targetElement = document.querySelector(targetId);
-                if (targetElement) {
-                    targetElement.scrollIntoView({ behavior: 'smooth' });
-                }
+            if (targetId === '#') {
+                e.preventDefault();
+                return;
             }
-            
-            // Update active class
+
+            // If the link is meant to be a route (like #home, #menu), 
+            // we should let the default behavior happen so the hash changes and router catches it.
+            // But we still want to update the active class manually.
             document.querySelectorAll('.nav-links li a').forEach(link => {
                 link.classList.remove('active');
             });
@@ -26,18 +19,20 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // Simple scroll effect for navbar
+    // Scroll effect for sticky navbar
     const navbar = document.querySelector('.navbar');
     if (navbar) {
+        // Initial check in case page is already scrolled down
+        if (window.scrollY > 80) {
+            navbar.classList.add('scrolled');
+        }
+
         window.addEventListener('scroll', () => {
-            if (window.scrollY > 50) {
-                navbar.style.background = 'rgba(0,0,0,0.9)';
-                navbar.style.padding = '15px 0';
-                navbar.style.boxShadow = '0 2px 10px rgba(0,0,0,0.3)';
+            // Toggle the scrolled class when the user scrolls past the navbar's initial height
+            if (window.scrollY > 80) {
+                navbar.classList.add('scrolled');
             } else {
-                navbar.style.background = 'linear-gradient(to bottom, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0) 100%)';
-                navbar.style.padding = '30px 0';
-                navbar.style.boxShadow = 'none';
+                navbar.classList.remove('scrolled');
             }
         });
     }

@@ -102,7 +102,7 @@ h6 {
 
 /* Header & Navbar */
 .navbar {
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
     width: 100%;
@@ -110,6 +110,12 @@ h6 {
     z-index: 100;
     background: linear-gradient(to bottom, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0) 100%);
     transition: var(--transition-smooth);
+}
+
+.navbar.scrolled {
+    background: rgba(0, 0, 0, 0.85);
+    padding: 30px 0;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
 }
 
 .nav-container {
