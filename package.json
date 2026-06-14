@@ -1,18 +1,22 @@
 {
   "name": "amour-et-grace",
   "version": "1.0.0",
+  "description": "Amour et Grace — Restaurant website with Vercel serverless backend, Supabase database, and Groq AI chatbot",
   "private": true,
-  "type": "module",
-  "dependencies": {
-    "@supabase/supabase-js": "^2.x",
-    "groq-sdk": "^0.x",
-    "resend": "^4.x"
-  },
-  "devDependencies": {
-    "netlify-cli": "^17.x"
+  "engines": {
+    "node": ">=18.x"
   },
   "scripts": {
-    "dev": "netlify dev",
-    "deploy": "netlify deploy --prod"
+    "dev": "vercel dev",
+    "deploy": "vercel --prod",
+    "deploy:preview": "vercel"
+  },
+  "dependencies": {
+    "@supabase/supabase-js": "^2.49.0",
+    "groq-sdk": "^0.18.0",
+    "resend": "^4.1.0"
+  },
+  "devDependencies": {
+    "vercel": "^41.0.0"
   }
 }

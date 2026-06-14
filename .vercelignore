@@ -1,0 +1,9 @@
+# Files not needed in deployment
+implementation_planv1.md
+db/
+netlify/
+.git/
+.gitignore
+.env.example
+README.md
+*.md
