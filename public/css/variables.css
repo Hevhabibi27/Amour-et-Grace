@@ -1,15 +1,48 @@
 /* public/css/variables.css */
 :root {
+    /* ── Brand Colors ── */
     --primary-color: #e60000;
     --primary-dark: #b30000;
+    --accent-red: #c90022;
+    --accent-red-hover: #a3001a;
+    --accent-red-deep: #b50020;
+
+    /* ── Background Colors ── */
     --dark-bg: #000000;
     --light-bg: #f9f9f9;
+    --card-bg: #1b1c21;
+    --white-bg: #ffffff;
+
+    /* ── Text Colors ── */
     --text-light: #ffffff;
     --text-dark: #222222;
     --text-muted: #666666;
-    
+    --text-color: #000000;
+    --text-near-black: #1a1a1a;
+
+    /* ── Typography ── */
     --font-heading: 'Playfair Display', serif;
     --font-body: 'Poppins', sans-serif;
-    
+
+    /* ── Spacing ── */
+    --section-padding: 80px;
+    --container-max: 1200px;
+    --carousel-max: 1100px;
+    --menu-grid-max: 1400px;
+
+    /* ── Borders & Radii ── */
+    --radius-sm: 6px;
+    --radius-md: 8px;
+    --radius-lg: 12px;
+    --radius-pill: 25px;
+
+    /* ── Shadows ── */
+    --shadow-sm: 0 5px 15px rgba(0, 0, 0, 0.3);
+    --shadow-md: 0 10px 30px rgba(0, 0, 0, 0.3);
+    --shadow-lg: 0 15px 35px rgba(0, 0, 0, 0.2);
+    --shadow-xl: 0 25px 60px rgba(0, 0, 0, 0.4);
+
+    /* ── Transitions ── */
     --transition-smooth: all 0.3s ease-in-out;
+    --transition-carousel: 1s cubic-bezier(0.25, 1, 0.5, 1);
 }

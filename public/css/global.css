@@ -7,6 +7,39 @@ body {
     overflow-x: hidden;
 }
 
+/* custom fonts */
+@font-face {
+    font-family: 'Amanojaku';
+    src: url('../assets/fonts/Amanojaku Demo.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Cinzel Decorative';
+    src: url('../assets/fonts/CinzelDecorative-Bold.otf') format('opentype');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Ninja Kage';
+    src: url('../assets/fonts/NinjaKageDemo-Regular.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'The Last Shuriken';
+    src: url('../assets/fonts/The Last Shuriken.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
 .container {
     max-width: 1200px;
     margin: 0 auto;
