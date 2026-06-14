@@ -4,6 +4,22 @@ document.addEventListener('DOMContentLoaded', () => {
     const navbar = document.querySelector('.navbar');
     const pageCache = {};   // Stores live DOM wrappers by page name
     let currentPage = null;
+    let isLoading = false;  // Race condition guard
+
+    // ── Loading Indicator (created once, reused) ──
+    const loader = document.createElement('div');
+    loader.className = 'page-loader';
+    loader.innerHTML = `
+        <div class="loader-spinner"></div>
+    `;
+
+    const showLoader = () => {
+        appContent.appendChild(loader);
+    };
+
+    const hideLoader = () => {
+        if (loader.parentNode) loader.remove();
+    };
 
     const refreshNavbar = () => {
         if (!navbar) return;
@@ -15,7 +31,7 @@ document.addEventListener('DOMContentLoaded', () => {
     };
 
     const loadPage = async (page) => {
-        if (page === currentPage) return;
+        if (page === currentPage || isLoading) return;
 
         // ── 1. Scroll to top BEFORE any DOM change (prevents visual jump)
         window.scrollTo(0, 0);
@@ -44,14 +60,22 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
         // ── 4. First visit — fetch, cache, and init
+        isLoading = true;
+        showLoader();
+
         try {
             const response = await fetch(`pages/${page}.html`);
             if (response.ok) {
                 const html = await response.text();
+
+                // Guard: if user navigated away during fetch, abort
+                if (!isLoading) return;
+
                 const wrapper = document.createElement('div');
                 wrapper.id = `page-${page}`;
                 wrapper.innerHTML = html;
 
+                hideLoader();
                 pageCache[page] = wrapper;
                 appContent.appendChild(wrapper);
                 currentPage = page;
@@ -62,11 +86,15 @@ document.addEventListener('DOMContentLoaded', () => {
                     initHomeCarousel();
                 }
             } else {
+                hideLoader();
                 appContent.innerHTML = '<h2>404 - Page not found</h2>';
             }
         } catch (error) {
             console.error('Error loading page:', error);
+            hideLoader();
             appContent.innerHTML = '<h2>Error loading content</h2>';
+        } finally {
+            isLoading = false;
         }
     };
 
