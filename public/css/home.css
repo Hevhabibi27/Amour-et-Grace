@@ -107,7 +107,7 @@
     font-weight: 700;
 }
 
-/* Featured Menu Section */
+/* Featured Menu Section
 .featured-menu-section {
     padding: 30px 0 100px 0;
     background-color: var(--light-bg);
@@ -220,7 +220,7 @@
     transition: transform 0.5s ease;
 }
 
-/* Offset the food image away from the center */
+/* Offset the food image away from the center 
 .align-right .dish-img {
     right: 16%;
 }
@@ -231,7 +231,7 @@
 
 .dish-image-wrapper:hover .dish-img {
     transform: scale(1.08);
-}
+} */
 
 /* Responsive adjustments */
 @media (max-width: 992px) {

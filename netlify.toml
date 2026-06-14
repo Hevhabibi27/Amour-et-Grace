@@ -1,0 +1,61 @@
+[build]
+  publish = "public"
+  functions = "netlify/functions"
+
+# ─── API Redirects ───────────────────────────────────────────
+# These make /.netlify/functions/xyz accessible at /api/xyz
+# so frontend JS can call /api/... just like the original plan
+
+[[redirects]]
+  from = "/api/reservations/admin"
+  to = "/.netlify/functions/reservations-admin"
+  status = 200
+
+[[redirects]]
+  from = "/api/reservations"
+  to = "/.netlify/functions/reservations"
+  status = 200
+
+[[redirects]]
+  from = "/api/events"
+  to = "/.netlify/functions/events"
+  status = 200
+
+[[redirects]]
+  from = "/api/reviews/upload"
+  to = "/.netlify/functions/reviews-upload"
+  status = 200
+
+[[redirects]]
+  from = "/api/reviews"
+  to = "/.netlify/functions/reviews"
+  status = 200
+
+[[redirects]]
+  from = "/api/inquiry"
+  to = "/.netlify/functions/inquiry"
+  status = 200
+
+[[redirects]]
+  from = "/api/chat"
+  to = "/.netlify/functions/chat"
+  status = 200
+
+[[redirects]]
+  from = "/api/auth/login"
+  to = "/.netlify/functions/auth-login"
+  status = 200
+
+[[redirects]]
+  from = "/api/auth/verify"
+  to = "/.netlify/functions/auth-verify"
+  status = 200
+
+# ─── CORS Headers for API ────────────────────────────────────
+
+[[headers]]
+  for = "/.netlify/functions/*"
+  [headers.values]
+    Access-Control-Allow-Origin = "*"
+    Access-Control-Allow-Methods = "GET, POST, PATCH, OPTIONS"
+    Access-Control-Allow-Headers = "Content-Type, Authorization"
