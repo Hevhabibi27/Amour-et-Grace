@@ -145,6 +145,7 @@ h6 {
 
 .nav-links li a {
     color: var(--text-light);
+    font-family: 'Cinzel Decorative', 'serif';
     font-size: 0.9rem;
     font-weight: 400;
     text-transform: capitalize;
