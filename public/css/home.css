@@ -1,7 +1,7 @@
 /* ── Hero Section ── */
 .hero-section {
     position: relative;
-    height: 100vh;
+    height: 100dvh;
     min-height: 700px;
     display: flex;
     align-items: center;
@@ -123,17 +123,12 @@
 }
 
 /* ── Featured Menu Section ── */
-/* .featured-menu-section {
+.featured-menu-section {
     padding: var(--section-padding) 0;
     background-color: var(--white-bg);
-    background-image: url('../assets/images/Menu\ Section.png');
-    background-size: cover;
-    background-position: center;
-    background-blend-mode: overlay;
-    background-color: rgba(255, 255, 255, 0.9);
     position: relative;
     overflow: hidden;
-} */
+}
 
 .featured-menu-section .section-title {
     font-family: 'Amanojaku', serif;
@@ -463,7 +458,7 @@
 
     /* Hero */
     .hero-section {
-        height: 60vh;
+        height: 60dvh;
         min-height: 500px;
     }
 
@@ -563,7 +558,7 @@
 
     /* Hero */
     .hero-section {
-        height: 50vh;
+        height: 50dvh;
         min-height: 400px;
     }
 
@@ -712,7 +707,7 @@
 
     /* Hero */
     .hero-section {
-        height: 50vh;
+        height: 50dvh;
         min-height: 300px;
     }
 
