@@ -3,6 +3,11 @@
    ============================================= */
 
 /* ── Menu Hero Section ── */
+#menu-hero {
+    height: 100vh;
+    min-height: 700px;
+}
+
 .menu-hero-border {
     position: absolute;
     z-index: 5;
@@ -309,6 +314,11 @@
 
 /* ── Responsive ── */
 @media (max-width: 1024px) {
+    #menu-hero {
+        height: 60vh;
+        min-height: 500px;
+    }
+
     .menu-hero-container {
         flex-direction: column;
         gap: 0;
@@ -322,13 +332,13 @@
     }
 
     .menu-hero-drink {
-        height: 130%;
-        transform: translate(70px, -50px);
+        height: 80%;
+        transform: translate(70px, 40px);
     }
 
     .menu-hero-food {
-        width: 100%;
-        transform: translate(-10px, 50px);
+        width: 60%;
+        transform: translate(-20px, 80px);
     }
 
     .menu-hero-jp-img {
@@ -367,19 +377,24 @@
 }
 
 @media (max-width: 768px) {
+    #menu-hero {
+        height: 50vh;
+        min-height: 400px;
+    }
+
     .menu-hero-images {
         height: 200px;
         width: 200px;
     }
 
     .menu-hero-drink {
-        height: 110%;
-        transform: translate(50px, -40px);
+        height: 90%;
+        transform: translate(50px, 15px);
     }
 
     .menu-hero-food {
-        width: 90%;
-        transform: translate(-5px, 40px);
+        width: 70%;
+        transform: translate(-25px, 60px);
     }
 
     .menu-hero-jp-img {
@@ -417,6 +432,11 @@
 }
 
 @media (max-width: 480px) {
+    #menu-hero {
+        height: 50vh;
+        min-height: 300px;
+    }
+
     .menu-hero-images {
         height: 140px;
         width: 140px;
@@ -425,12 +445,12 @@
 
     .menu-hero-drink {
         height: 100%;
-        transform: translate(35px, -25px);
+        transform: translate(35px, 15px);
     }
 
     .menu-hero-food {
         width: 80%;
-        transform: translate(-5px, 25px);
+        transform: translate(-20px, 50px);
     }
 
     .menu-hero-jp-img {
@@ -495,9 +515,45 @@
     }
 
     .sushi-display-row {
-        flex-direction: column !important;
+        flex-direction: row !important;
+        gap: 10px;
+        padding: 0 10px;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .sushi-display-row.row-reverse {
+        flex-direction: row-reverse !important;
+    }
+
+    .sushi-display-img {
+        width: 30%;
+        max-width: 100px;
+        flex-shrink: 1;
+    }
+
+    .sushi-text-group {
+        width: 25%;
+        flex-shrink: 1;
         text-align: center;
-        gap: 15px;
+    }
+
+    .sushi-text {
+        font-size: 1.8rem;
+        letter-spacing: 2px;
+    }
+
+    .sushi-sub {
+        font-size: 0.5rem;
+        letter-spacing: 1px;
+    }
+
+    .sushi-desc {
+        width: 40%;
+        flex-shrink: 1;
+        font-size: 0.55rem;
+        line-height: 1.4;
+        text-align: left;
     }
 
     .japanese-header {
