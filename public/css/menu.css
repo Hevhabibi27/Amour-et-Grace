@@ -2,6 +2,99 @@
    MENU PAGE STYLES
    ============================================= */
 
+/* ── Menu Hero Section ── */
+.menu-hero-border {
+    position: absolute;
+    z-index: 5;
+    width: 250px;
+    opacity: 0.9;
+}
+
+.top-left-border {
+    top: 40px;
+    left: 40px;
+}
+
+.bottom-right-border {
+    bottom: 40px;
+    right: 40px;
+    transform: rotate(180deg);
+}
+
+.menu-hero-container {
+    position: relative;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 80px;
+    width: 100%;
+    max-width: var(--container-max);
+}
+
+.menu-hero-images {
+    position: relative;
+    width: 300px;
+    height: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.menu-hero-images::before {
+    content: '';
+    position: absolute;
+    width: 120%;
+    height: 120%;
+    background: radial-gradient(circle, rgba(0, 0, 0, 0.85) 120%, rgba(0, 0, 0, 0) 120%);
+    z-index: 1;
+    border-radius: 50%;
+    filter: blur(15px);
+    transform: translate(60px, 70px);
+    /* Adjust to position the glow exactly between them */
+}
+
+.menu-hero-drink {
+    position: absolute;
+    height: 165%;
+    object-fit: contain;
+    z-index: 2;
+    transform: translate(100px, -70px);
+}
+
+.menu-hero-food {
+    position: absolute;
+    width: 115%;
+    object-fit: contain;
+    z-index: 3;
+    transform: translate(-15px, 80px);
+    filter: drop-shadow(0 20px 30px rgba(0, 0, 0, 0.6));
+}
+
+.menu-hero-text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    z-index: 10;
+}
+
+.menu-hero-jp-img {
+    width: 350px;
+    object-fit: contain;
+    margin-bottom: -30px;
+    filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.8));
+    z-index: 4;
+}
+
+.menu-hero-title {
+    font-family: 'Amanojaku', 'serif';
+    font-size: 5.5rem;
+    color: var(--text-light);
+    font-weight: 500;
+    text-shadow: 2px 4px 10px rgba(0, 0, 0, 0.8);
+    z-index: 5;
+}
+
 .menu-showcase-section {
     padding: var(--section-padding) 0;
     background-color: var(--dark-bg);
@@ -14,9 +107,8 @@
 }
 
 .japanese-header {
-    font-size: 3rem;
-    color: var(--accent-red);
     font-size: 6rem;
+    color: var(--accent-red);
     font-weight: 800;
     letter-spacing: 4px;
     margin-bottom: 5px;
@@ -217,12 +309,92 @@
 
 /* ── Responsive ── */
 @media (max-width: 1024px) {
+    .menu-hero-container {
+        flex-direction: column;
+        gap: 0;
+        text-align: center;
+        padding-top: 40px;
+    }
+
+    .menu-hero-images {
+        height: 250px;
+        width: 250px;
+    }
+
+    .menu-hero-drink {
+        height: 130%;
+        transform: translate(70px, -50px);
+    }
+
+    .menu-hero-food {
+        width: 100%;
+        transform: translate(-10px, 50px);
+    }
+
+    .menu-hero-jp-img {
+        width: 280px;
+    }
+
+    .menu-hero-title {
+        font-size: 4rem;
+    }
+
+    .menu-hero-border {
+        width: 180px;
+    }
+
+    .top-left-border {
+        top: 20px;
+        left: 20px;
+    }
+
+    .bottom-right-border {
+        bottom: 20px;
+        right: 20px;
+    }
+
     .menu-showcase-grid {
         grid-template-columns: repeat(2, 1fr);
+    }
+
+    .japanese-header {
+        font-size: 4rem;
+    }
+
+    .english-header {
+        font-size: 2rem;
     }
 }
 
 @media (max-width: 768px) {
+    .menu-hero-images {
+        height: 200px;
+        width: 200px;
+    }
+
+    .menu-hero-drink {
+        height: 110%;
+        transform: translate(50px, -40px);
+    }
+
+    .menu-hero-food {
+        width: 90%;
+        transform: translate(-5px, 40px);
+    }
+
+    .menu-hero-jp-img {
+        width: 180px;
+        margin-bottom: -15px;
+    }
+
+    .menu-hero-title {
+        font-size: 2.5rem;
+    }
+
+    .menu-hero-border {
+        width: 100px;
+    }
+
     .menu-filter-bar {
         flex-wrap: wrap;
     }
@@ -234,16 +406,105 @@
     .sushi-text {
         font-size: 2.5rem;
     }
+
+    .japanese-header {
+        font-size: 3rem;
+    }
+
+    .english-header {
+        font-size: 1.5rem;
+    }
 }
 
 @media (max-width: 480px) {
+    .menu-hero-images {
+        height: 140px;
+        width: 140px;
+        margin-bottom: 10px;
+    }
+
+    .menu-hero-drink {
+        height: 100%;
+        transform: translate(35px, -25px);
+    }
+
+    .menu-hero-food {
+        width: 80%;
+        transform: translate(-5px, 25px);
+    }
+
+    .menu-hero-jp-img {
+        width: 130px;
+        margin-bottom: -10px;
+    }
+
+    .menu-hero-title {
+        font-size: 1.8rem;
+    }
+
+    .menu-hero-border {
+        width: 60px;
+        opacity: 0.7;
+    }
+
+    .top-left-border {
+        top: 10px;
+        left: 10px;
+    }
+
+    .bottom-right-border {
+        bottom: 10px;
+        right: 10px;
+    }
+
     .menu-showcase-grid {
-        grid-template-columns: 1fr;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+    }
+
+    .showcase-card {
+        padding: 12px;
+    }
+
+    .showcase-dish-img {
+        max-width: 80px;
+        max-height: 80px;
+    }
+
+    .showcase-dish-title {
+        font-size: 0.7rem;
+    }
+
+    .showcase-dish-desc {
+        font-size: 0.65rem;
+        display: none;
+    }
+
+    .showcase-price-btn {
+        font-size: 0.75rem;
+        padding: 6px 16px;
+    }
+
+    .card-top-tag {
+        font-size: 0.55rem;
+    }
+
+    .star-icon {
+        width: 12px;
+        height: 12px;
     }
 
     .sushi-display-row {
         flex-direction: column !important;
         text-align: center;
         gap: 15px;
+    }
+
+    .japanese-header {
+        font-size: 2.2rem;
+    }
+
+    .english-header {
+        font-size: 1.2rem;
     }
 }

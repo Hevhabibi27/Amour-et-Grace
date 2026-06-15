@@ -107,7 +107,7 @@ h6 {
     left: 0;
     width: 100%;
     padding: 30px 0;
-    z-index: 100;
+    z-index: 1000;
     background: linear-gradient(to bottom, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0) 100%);
     transition: var(--transition-smooth);
 }
@@ -141,6 +141,7 @@ h6 {
 .nav-links {
     display: flex;
     gap: 30px;
+    list-style: none;
 }
 
 .nav-links li a {
@@ -148,10 +149,10 @@ h6 {
     font-family: 'Cinzel Decorative', 'serif';
     font-size: 0.9rem;
     font-weight: 400;
-    left: 90px;
     text-transform: capitalize;
     transition: var(--transition-smooth);
     position: relative;
+    white-space: nowrap;
 }
 
 .nav-links li a:hover,
@@ -188,4 +189,87 @@ h6 {
 
 @keyframes spin {
     to { transform: rotate(360deg); }
+}
+
+/* ── Hamburger Menu & Mobile Navbar ── */
+.hamburger {
+    display: none;
+    cursor: pointer;
+    padding: 5px;
+}
+
+.hamburger .bar {
+    display: block;
+    width: 25px;
+    height: 3px;
+    margin: 5px auto;
+    transition: all 0.3s ease-in-out;
+    background-color: var(--text-light);
+}
+
+/* X animation when active */
+.hamburger.active .bar:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger.active .bar:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+}
+
+.hamburger.active .bar:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+}
+
+@media (max-width: 1024px) {
+    /* Solid navbar background on mobile so it's always visible */
+    .navbar {
+        background: rgba(0, 0, 0, 0.95) !important;
+        padding: 15px 0;
+    }
+
+    .navbar.scrolled {
+        padding: 15px 0;
+    }
+
+    .hamburger {
+        display: block;
+    }
+
+    /* Nav menu drops down from the navbar instead of a fixed overlay */
+    .nav-menu {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background-color: rgba(0, 0, 0, 0.95);
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.4s ease;
+    }
+
+    .nav-menu.active {
+        max-height: 100vh;
+    }
+
+    .nav-links {
+        flex-direction: column;
+        gap: 0;
+        width: 100%;
+        padding: 20px 0;
+    }
+
+    .nav-links li {
+        width: 100%;
+    }
+
+    .nav-links li a {
+        font-size: 1.2rem;
+        display: block;
+        padding: 15px 20px;
+        text-align: center;
+    }
+
+    .nav-links li a.active::after {
+        display: none;
+    }
 }
