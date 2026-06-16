@@ -1,12 +1,27 @@
 const { Resend } = require('resend');
 
-const resend = new Resend(process.env.RESEND_API_KEY);
 const FROM_EMAIL = process.env.RESEND_FROM_EMAIL || 'noreply@amouretgrace.com';
+
+/**
+ * Get the Resend client lazily.
+ * Returns null if RESEND_API_KEY is not set — callers must check for null.
+ * This prevents the module from crashing on startup when the env var is missing.
+ */
+function getResend() {
+  if (!process.env.RESEND_API_KEY) {
+    console.warn('RESEND_API_KEY is not set — email sending is disabled.');
+    return null;
+  }
+  return new Resend(process.env.RESEND_API_KEY);
+}
 
 /**
  * Send reservation confirmation email (reservation received).
  */
 async function sendReservationReceivedEmail(to, reservation) {
+  const resend = getResend();
+  if (!resend) return { success: false, error: 'Email not configured' };
+
   try {
     const { data, error } = await resend.emails.send({
       from: `Amour et Grace <${FROM_EMAIL}>`,
@@ -47,6 +62,9 @@ async function sendReservationReceivedEmail(to, reservation) {
  * Send reservation status email (accepted or rejected).
  */
 async function sendReservationStatusEmail(to, reservation, status) {
+  const resend = getResend();
+  if (!resend) return { success: false, error: 'Email not configured' };
+
   const isAccepted = status === 'accepted';
 
   const subject = isAccepted
@@ -92,6 +110,9 @@ async function sendReservationStatusEmail(to, reservation, status) {
  * Notify admin when a new reservation is submitted.
  */
 async function sendAdminReservationNotification(reservation) {
+  const resend = getResend();
+  if (!resend) return { success: false, error: 'Email not configured' };
+
   const adminEmail = process.env.ADMIN_EMAIL;
   if (!adminEmail) return { success: false, error: 'No admin email configured' };
 
@@ -136,6 +157,9 @@ async function sendAdminReservationNotification(reservation) {
  * Notify admin when a new inquiry is submitted.
  */
 async function sendAdminInquiryNotification(inquiry) {
+  const resend = getResend();
+  if (!resend) return { success: false, error: 'Email not configured' };
+
   const adminEmail = process.env.ADMIN_EMAIL;
   if (!adminEmail) return { success: false, error: 'No admin email configured' };
 
