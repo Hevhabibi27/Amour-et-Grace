@@ -155,7 +155,7 @@ async function sendAdminInquiryNotification(inquiry) {
             <tr><td style="padding: 8px; font-weight: bold;">Phone</td><td style="padding: 8px;">${inquiry.phone || 'N/A'}</td></tr>
           </table>
           <p style="background: #f5f5f5; padding: 16px; border-radius: 4px;">${inquiry.message}</p>
-          <p><a href="${process.env.SITE_URL || 'https://amour-et-grace.vercel.app'}/admin/inquiries.html" style="background: #8B6914; color: white; padding: 12px 24px; text-decoration: none; border-radius: 4px;">View in Dashboard</a></p>
+          <p><a href="${process.env.SITE_URL || 'https://amouretgrace.vercel.app'}/admin/inquiries.html" style="background: #8B6914; color: white; padding: 12px 24px; text-decoration: none; border-radius: 4px;">View in Dashboard</a></p>
           <hr style="border: 1px solid #E8D5A3;">
           <p style="color: #999; font-size: 12px;">Amour et Grace — Admin Notification</p>
         </div>
