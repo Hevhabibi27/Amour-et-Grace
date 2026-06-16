@@ -22,9 +22,9 @@ async function verifyAdmin(req) {
     return { authenticated: false, error: 'Invalid or expired token' };
   }
 
-  // Verify this user is the designated admin
+  // Verify this user is the designated admin (fail-closed)
   const adminEmail = process.env.ADMIN_EMAIL;
-  if (adminEmail && user.email !== adminEmail) {
+  if (!adminEmail || user.email !== adminEmail) {
     return { authenticated: false, error: 'Not authorized' };
   }
 

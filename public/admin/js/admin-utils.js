@@ -8,15 +8,15 @@ const API_BASE = '/api';
 // ── Token Management ──
 
 function getToken() {
-  return localStorage.getItem('admin_token');
+  return sessionStorage.getItem('admin_token');
 }
 
 function setToken(token) {
-  localStorage.setItem('admin_token', token);
+  sessionStorage.setItem('admin_token', token);
 }
 
 function clearToken() {
-  localStorage.removeItem('admin_token');
+  sessionStorage.removeItem('admin_token');
 }
 
 // ── Auth Guard ──

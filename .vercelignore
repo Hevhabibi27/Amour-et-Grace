@@ -7,3 +7,7 @@ netlify/
 .env.example
 README.md
 *.md
+
+# Environment variables
+.env
+.env.*
