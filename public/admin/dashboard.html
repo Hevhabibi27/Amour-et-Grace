@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dashboard — Amour et Grace Admin</title>
+  <meta name="robots" content="noindex, nofollow" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/admin-variables.css" />
+  <link rel="stylesheet" href="css/admin-global.css" />
+</head>
+
+<body>
+
+  <!-- Mobile hamburger -->
+  <button class="admin-hamburger" id="admin-hamburger">☰</button>
+
+  <!-- Sidebar -->
+  <aside class="admin-sidebar" id="admin-sidebar">
+    <div class="admin-sidebar__brand">
+      <h2>Amour et Grace</h2>
+      <span>Admin Dashboard</span>
+    </div>
+
+    <nav class="admin-sidebar__nav">
+      <a href="dashboard.html" class="admin-sidebar__link">
+        <span class="icon">🏠</span> Dashboard
+      </a>
+      <a href="reservations.html" class="admin-sidebar__link">
+        <span class="icon">📅</span> Reservations
+        <span class="badge" id="badge-reservations" style="display:none;">0</span>
+      </a>
+      <a href="reviews.html" class="admin-sidebar__link">
+        <span class="icon">⭐</span> Reviews
+      </a>
+      <a href="inquiries.html" class="admin-sidebar__link">
+        <span class="icon">📩</span> Inquiries
+        <span class="badge" id="badge-inquiries" style="display:none;">0</span>
+      </a>
+    </nav>
+
+    <div class="admin-sidebar__footer">
+      <button class="admin-sidebar__logout" id="logout-btn">
+        🚪 Sign Out
+      </button>
+    </div>
+  </aside>
+
+  <!-- Main Content -->
+  <main class="admin-main">
+    <header class="admin-topbar">
+      <h1 class="admin-topbar__title">Dashboard</h1>
+      <span class="admin-topbar__user" id="admin-user"></span>
+    </header>
+
+    <div class="admin-content">
+
+      <!-- Stat Cards -->
+      <div class="admin-stats">
+        <a href="reservations.html?filter=pending" style="text-decoration:none; color:inherit;">
+          <div class="admin-stat">
+            <div class="admin-stat__icon warning">📅</div>
+            <div>
+              <div class="admin-stat__value" id="stat-reservations">—</div>
+              <div class="admin-stat__label">Pending Reservations</div>
+            </div>
+          </div>
+        </a>
+
+        <a href="inquiries.html?filter=unread" style="text-decoration:none; color:inherit;">
+          <div class="admin-stat">
+            <div class="admin-stat__icon info">📩</div>
+            <div>
+              <div class="admin-stat__value" id="stat-inquiries">—</div>
+              <div class="admin-stat__label">Unread Inquiries</div>
+            </div>
+          </div>
+        </a>
+
+        <a href="reviews.html" style="text-decoration:none; color:inherit;">
+          <div class="admin-stat">
+            <div class="admin-stat__icon success">⭐</div>
+            <div>
+              <div class="admin-stat__value" id="stat-reviews">—</div>
+              <div class="admin-stat__label">Total Reviews</div>
+            </div>
+          </div>
+        </a>
+      </div>
+
+      <!-- Recent Reservations -->
+      <div class="admin-card">
+        <div class="admin-card__header">
+          <h2 class="admin-card__title">Recent Reservations</h2>
+          <a href="reservations.html" class="btn btn--secondary btn--sm">View All</a>
+        </div>
+        <div id="recent-reservations">
+          <div class="admin-loading">
+            <div class="admin-spinner"></div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <script src="js/admin-utils.js"></script>
+  <script src="js/admin-dashboard.js"></script>
+</body>
+
+</html>

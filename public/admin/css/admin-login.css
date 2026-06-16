@@ -1,0 +1,103 @@
+/* ============================
+   Admin Login Page Styles
+   ============================ */
+
+.login-page {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+  padding: 24px;
+}
+
+.login-card {
+  background: white;
+  border-radius: var(--admin-radius-lg);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+  padding: 48px 40px;
+  width: 100%;
+  max-width: 420px;
+}
+
+.login-card__brand {
+  text-align: center;
+  margin-bottom: 32px;
+}
+
+.login-card__brand h1 {
+  font-size: 24px;
+  color: var(--admin-accent);
+  font-weight: 700;
+  margin-bottom: 4px;
+}
+
+.login-card__brand p {
+  color: var(--admin-text-muted);
+  font-size: 14px;
+}
+
+.login-form__group {
+  margin-bottom: 20px;
+}
+
+.login-form__label {
+  display: block;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--admin-text);
+  margin-bottom: 6px;
+}
+
+.login-form__input {
+  width: 100%;
+  padding: 12px 16px;
+  border: 1px solid #d1d5db;
+  border-radius: var(--admin-radius);
+  font-size: 14px;
+  font-family: var(--admin-font);
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.login-form__input:focus {
+  outline: none;
+  border-color: var(--admin-accent);
+  box-shadow: 0 0 0 3px rgba(139, 105, 20, 0.1);
+}
+
+.login-form__submit {
+  width: 100%;
+  padding: 14px;
+  background: var(--admin-accent);
+  color: white;
+  border: none;
+  border-radius: var(--admin-radius);
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s ease;
+  font-family: var(--admin-font);
+}
+
+.login-form__submit:hover {
+  background: var(--admin-accent-hover);
+}
+
+.login-form__submit:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.login-form__error {
+  background: var(--admin-danger-bg);
+  color: var(--admin-danger);
+  padding: 10px 16px;
+  border-radius: var(--admin-radius);
+  font-size: 13px;
+  margin-bottom: 16px;
+  display: none;
+}
+
+.login-form__error.show {
+  display: block;
+}

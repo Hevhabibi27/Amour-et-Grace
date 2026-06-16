@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Admin Login — Amour et Grace</title>
+  <meta name="robots" content="noindex, nofollow" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/admin-variables.css" />
+  <link rel="stylesheet" href="css/admin-login.css" />
+</head>
+
+<body class="login-page">
+
+  <div class="login-card">
+    <div class="login-card__brand">
+      <h1>Amour et Grace</h1>
+      <p>Admin Dashboard</p>
+    </div>
+
+    <div id="login-error" class="login-form__error"></div>
+
+    <form id="login-form" novalidate>
+      <div class="login-form__group">
+        <label class="login-form__label" for="login-email">Email Address</label>
+        <input id="login-email" class="login-form__input" type="email" placeholder="admin@amouretgrace.com"
+          autocomplete="email" required />
+      </div>
+
+      <div class="login-form__group">
+        <label class="login-form__label" for="login-password">Password</label>
+        <input id="login-password" class="login-form__input" type="password" placeholder="••••••••"
+          autocomplete="current-password" required />
+      </div>
+
+      <button id="login-submit" class="login-form__submit" type="submit">
+        Sign In
+      </button>
+    </form>
+  </div>
+
+  <script src="js/admin-utils.js"></script>
+  <script src="js/admin-login.js"></script>
+</body>
+
+</html>

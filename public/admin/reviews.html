@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Reviews — Amour et Grace Admin</title>
+  <meta name="robots" content="noindex, nofollow" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/admin-variables.css" />
+  <link rel="stylesheet" href="css/admin-global.css" />
+</head>
+
+<body>
+
+  <!-- Mobile hamburger -->
+  <button class="admin-hamburger" id="admin-hamburger">☰</button>
+
+  <!-- Sidebar -->
+  <aside class="admin-sidebar" id="admin-sidebar">
+    <div class="admin-sidebar__brand">
+      <h2>Amour et Grace</h2>
+      <span>Admin Dashboard</span>
+    </div>
+
+    <nav class="admin-sidebar__nav">
+      <a href="dashboard.html" class="admin-sidebar__link">
+        <span class="icon">🏠</span> Dashboard
+      </a>
+      <a href="reservations.html" class="admin-sidebar__link">
+        <span class="icon">📅</span> Reservations
+      </a>
+      <a href="reviews.html" class="admin-sidebar__link">
+        <span class="icon">⭐</span> Reviews
+      </a>
+      <a href="inquiries.html" class="admin-sidebar__link">
+        <span class="icon">📩</span> Inquiries
+      </a>
+    </nav>
+
+    <div class="admin-sidebar__footer">
+      <button class="admin-sidebar__logout" id="logout-btn">
+        🚪 Sign Out
+      </button>
+    </div>
+  </aside>
+
+  <!-- Main Content -->
+  <main class="admin-main">
+    <header class="admin-topbar">
+      <h1 class="admin-topbar__title">Reviews</h1>
+      <span class="admin-topbar__user" id="admin-user"></span>
+    </header>
+
+    <div class="admin-content">
+
+      <!-- Filters -->
+      <div class="admin-filters">
+        <button class="admin-filter-btn active" data-filter="all">All</button>
+        <button class="admin-filter-btn" data-filter="approved">✅ Approved</button>
+        <button class="admin-filter-btn" data-filter="unapproved">🚫 Hidden</button>
+      </div>
+
+      <!-- Table -->
+      <div class="admin-card">
+        <div id="reviews-container">
+          <div class="admin-loading">
+            <div class="admin-spinner"></div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <script src="js/admin-utils.js"></script>
+  <script src="js/admin-reviews.js"></script>
+</body>
+
+</html>

@@ -88,4 +88,89 @@ async function sendReservationStatusEmail(to, reservation, status) {
   }
 }
 
-module.exports = { sendReservationReceivedEmail, sendReservationStatusEmail };
+/**
+ * Notify admin when a new reservation is submitted.
+ */
+async function sendAdminReservationNotification(reservation) {
+  const adminEmail = process.env.ADMIN_EMAIL;
+  if (!adminEmail) return { success: false, error: 'No admin email configured' };
+
+  try {
+    const { data, error } = await resend.emails.send({
+      from: `Amour et Grace <${FROM_EMAIL}>`,
+      to: [adminEmail],
+      subject: `New Reservation — ${reservation.name} (${reservation.type})`,
+      html: `
+        <div style="font-family: 'Helvetica Neue', Arial, sans-serif; max-width: 600px; margin: 0 auto; color: #333;">
+          <h1 style="color: #8B6914; font-family: 'Playfair Display', Georgia, serif;">New Reservation</h1>
+          <hr style="border: 1px solid #E8D5A3;">
+          <table style="width: 100%; border-collapse: collapse; margin: 20px 0;">
+            <tr><td style="padding: 8px; font-weight: bold;">Name</td><td style="padding: 8px;">${reservation.name}</td></tr>
+            <tr><td style="padding: 8px; font-weight: bold;">Email</td><td style="padding: 8px;">${reservation.email}</td></tr>
+            <tr><td style="padding: 8px; font-weight: bold;">Phone</td><td style="padding: 8px;">${reservation.phone || 'N/A'}</td></tr>
+            <tr><td style="padding: 8px; font-weight: bold;">Type</td><td style="padding: 8px;">${reservation.type}</td></tr>
+            <tr><td style="padding: 8px; font-weight: bold;">Date</td><td style="padding: 8px;">${reservation.date}</td></tr>
+            <tr><td style="padding: 8px; font-weight: bold;">Time</td><td style="padding: 8px;">${reservation.time}</td></tr>
+            <tr><td style="padding: 8px; font-weight: bold;">Guests</td><td style="padding: 8px;">${reservation.guest_count}</td></tr>
+            ${reservation.message ? `<tr><td style="padding: 8px; font-weight: bold;">Message</td><td style="padding: 8px;">${reservation.message}</td></tr>` : ''}
+          </table>
+          <p><a href="${process.env.SITE_URL || 'https://amour-et-grace.vercel.app'}/admin/reservations.html" style="background: #8B6914; color: white; padding: 12px 24px; text-decoration: none; border-radius: 4px;">View in Dashboard</a></p>
+          <hr style="border: 1px solid #E8D5A3;">
+          <p style="color: #999; font-size: 12px;">Amour et Grace — Admin Notification</p>
+        </div>
+      `,
+    });
+
+    if (error) {
+      console.error('Admin reservation notification error:', error);
+      return { success: false, error };
+    }
+    return { success: true, data };
+  } catch (err) {
+    console.error('Admin reservation notification exception:', err);
+    return { success: false, error: err.message };
+  }
+}
+
+/**
+ * Notify admin when a new inquiry is submitted.
+ */
+async function sendAdminInquiryNotification(inquiry) {
+  const adminEmail = process.env.ADMIN_EMAIL;
+  if (!adminEmail) return { success: false, error: 'No admin email configured' };
+
+  try {
+    const { data, error } = await resend.emails.send({
+      from: `Amour et Grace <${FROM_EMAIL}>`,
+      to: [adminEmail],
+      subject: `New Inquiry — ${inquiry.name} (${inquiry.type})`,
+      html: `
+        <div style="font-family: 'Helvetica Neue', Arial, sans-serif; max-width: 600px; margin: 0 auto; color: #333;">
+          <h1 style="color: #8B6914; font-family: 'Playfair Display', Georgia, serif;">New Inquiry</h1>
+          <hr style="border: 1px solid #E8D5A3;">
+          <table style="width: 100%; border-collapse: collapse; margin: 20px 0;">
+            <tr><td style="padding: 8px; font-weight: bold;">Name</td><td style="padding: 8px;">${inquiry.name}</td></tr>
+            <tr><td style="padding: 8px; font-weight: bold;">Email</td><td style="padding: 8px;">${inquiry.email}</td></tr>
+            <tr><td style="padding: 8px; font-weight: bold;">Type</td><td style="padding: 8px;">${inquiry.type}</td></tr>
+            <tr><td style="padding: 8px; font-weight: bold;">Phone</td><td style="padding: 8px;">${inquiry.phone || 'N/A'}</td></tr>
+          </table>
+          <p style="background: #f5f5f5; padding: 16px; border-radius: 4px;">${inquiry.message}</p>
+          <p><a href="${process.env.SITE_URL || 'https://amour-et-grace.vercel.app'}/admin/inquiries.html" style="background: #8B6914; color: white; padding: 12px 24px; text-decoration: none; border-radius: 4px;">View in Dashboard</a></p>
+          <hr style="border: 1px solid #E8D5A3;">
+          <p style="color: #999; font-size: 12px;">Amour et Grace — Admin Notification</p>
+        </div>
+      `,
+    });
+
+    if (error) {
+      console.error('Admin inquiry notification error:', error);
+      return { success: false, error };
+    }
+    return { success: true, data };
+  } catch (err) {
+    console.error('Admin inquiry notification exception:', err);
+    return { success: false, error: err.message };
+  }
+}
+
+module.exports = { sendReservationReceivedEmail, sendReservationStatusEmail, sendAdminReservationNotification, sendAdminInquiryNotification };
