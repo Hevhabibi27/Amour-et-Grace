@@ -124,7 +124,7 @@
 
 /* ── Featured Menu Section ── */
 .featured-menu-section {
-    padding: var(--section-padding) 0;
+    padding: var(--section-padding) 0 20px 0;
     background-color: var(--white-bg);
     position: relative;
     overflow: hidden;
@@ -215,6 +215,141 @@
     transform: translate(calc(-50% + 320px), -50%) scale(0.88);
     z-index: 1;
     opacity: 1;
+}
+
+/* ── Featured Drinks Section ── */
+.featured-drinks-section {
+    padding: 30px 0 100px 0;
+    background-image: url('../assets/images/background of featured drinks.webp');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: var(--white-bg);
+    position: relative;
+}
+
+.drinks-header {
+    margin-bottom: 60px;
+}
+
+.drinks-title-jp {
+    font-size: 2.8rem;
+    color: var(--accent-red);
+    font-weight: 800;
+    margin-bottom: 5px;
+}
+
+.drinks-title-en {
+    font-family: 'Amanojaku', serif;
+    font-size: 2.5rem;
+    color: var(--text-dark);
+    letter-spacing: 2px;
+}
+
+.drinks-grid {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.drink-card {
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    width: 280px;
+    height: 370px;
+    display: flex;
+    flex-direction: column;
+    box-shadow: var(--shadow-lg);
+    transition: var(--transition-smooth);
+}
+
+.drink-card:hover {
+    transform: translateY(-10px);
+}
+
+.drink-img {
+    width: 100%;
+    height: 230px;
+    object-fit: contain;
+}
+
+.drink-info {
+    padding: 10px 15px;
+    text-align: center;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.drink-name {
+    font-size: 1.5rem;
+    font-weight: 900;
+    margin-bottom: 8px;
+    letter-spacing: 2px;
+}
+
+.drink-desc {
+    font-size: 0.6rem;
+    line-height: 1.4;
+    font-weight: 600;
+}
+
+/* Gin Card */
+.gin-card {
+    background-color: #fbe4d9;
+}
+
+.gin-card .drink-info {
+    background-color: #f15d7f;
+    color: var(--text-color);
+}
+
+.gin-card .drink-name,
+.gin-card .drink-desc {
+    color: var(--text-color);
+}
+
+/* Whisky Card */
+.whisky-card {
+    background-color: #e4cc6d;
+    transform: scale(1.08);
+}
+
+.whisky-card:hover {
+    transform: scale(1.08) translateY(-10px);
+}
+
+.whisky-card .drink-info {
+    background-color: #e4cc6d;
+    color: var(--text-color);
+}
+
+.whisky-card .drink-name {
+    color: #a40b18;
+    /* Dark red title */
+}
+
+.whisky-card .drink-desc {
+    color: var(--text-color);
+}
+
+/* Wine Card */
+.wine-card {
+    background-color: #c51f2d;
+}
+
+.wine-card .drink-info {
+    background-color: #c51f2d;
+    color: var(--text-color);
+}
+
+.wine-card .drink-name,
+.wine-card .drink-desc {
+    color: var(--text-color);
 }
 
 /* ── Events Preview Section ── */
@@ -505,8 +640,38 @@
         height: 400px;
     }
 
-    .events-title-en {
+    .discover-english-header {
         font-size: 2rem;
+    }
+
+    /* Drinks Section */
+    .drinks-grid {
+        flex-direction: row;
+        flex-wrap: nowrap;
+        gap: 20px;
+    }
+
+    .drink-card,
+    .whisky-card {
+        width: 220px;
+        height: 300px;
+        max-width: none;
+    }
+
+    .drink-img {
+        height: 160px;
+    }
+
+    .drink-info {
+        padding: 10px;
+    }
+
+    .drink-name {
+        font-size: 1.2rem;
+    }
+
+    .drink-desc {
+        font-size: 0.5rem;
     }
 
     .events-title-jp {
@@ -614,6 +779,48 @@
 
     .events-header {
         margin-bottom: 40px;
+    }
+
+    /* Drinks Section */
+    .drinks-title-jp {
+        font-size: 2.2rem;
+    }
+
+    .drinks-title-en {
+        font-size: 2rem;
+    }
+
+    .drinks-grid {
+        flex-direction: row;
+        flex-wrap: nowrap;
+        gap: 15px;
+        padding: 0 10px;
+    }
+
+    .drink-card,
+    .whisky-card {
+        width: 160px;
+        height: 240px;
+        max-width: none;
+    }
+
+    .drink-img {
+        height: 120px;
+    }
+
+    .drink-info {
+        padding: 5px 8px;
+    }
+
+    .drink-name {
+        font-size: 0.9rem;
+        margin-bottom: 4px;
+        letter-spacing: 1px;
+    }
+
+    .drink-desc {
+        font-size: 0.45rem;
+        line-height: 1.2;
     }
 
     .events-grid {
@@ -836,8 +1043,12 @@
     }
 
     .japanese-title {
-        font-size: 2.5rem;
-        margin-bottom: 15px;
+        font-size: 1.8rem;
+        margin-bottom: 5px;
+    }
+
+    .featured-menu-section .section-title {
+        font-size: 1.5rem;
     }
 
     .carousel-see-more {
@@ -846,5 +1057,55 @@
 
     .see-more-text {
         font-size: 1.3rem;
+    }
+
+    /* Drinks Section */
+    .featured-drinks-section {
+        padding: 60px 0;
+    }
+
+    .drinks-title-jp {
+        font-size: 1.8rem;
+    }
+
+    .drinks-title-en {
+        font-size: 1.5rem;
+    }
+
+    .drinks-grid {
+        flex-direction: row;
+        flex-wrap: nowrap;
+        gap: 10px;
+        padding: 0 5px;
+    }
+
+    .drink-card,
+    .whisky-card {
+        width: 110px;
+        height: 180px;
+        border-radius: var(--radius-sm);
+        margin-top: 0;
+        margin-bottom: 0;
+        max-width: none;
+    }
+
+    .drink-img {
+        height: 100px;
+        padding: 5px;
+    }
+
+    .drink-info {
+        padding: 4px;
+    }
+
+    .drink-name {
+        font-size: 0.6rem;
+        margin-bottom: 2px;
+        letter-spacing: 0px;
+    }
+
+    .drink-desc {
+        font-size: 0.35rem;
+        line-height: 1.1;
     }
 }

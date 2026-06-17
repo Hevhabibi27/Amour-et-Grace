@@ -1,512 +1,307 @@
-/* =============================================
-   MENU PAGE STYLES
-   ============================================= */
+    /* =============================================
+    MENU PAGE STYLES
+    ============================================= */
 
-/* ── Menu Hero Section ── */
-#menu-hero {
-    height: 100vh;
-    min-height: 700px;
-}
-
-.menu-hero-border {
-    position: absolute;
-    z-index: 5;
-    width: 250px;
-    opacity: 0.9;
-}
-
-.top-left-border {
-    top: 40px;
-    left: 40px;
-}
-
-.bottom-right-border {
-    bottom: 40px;
-    right: 40px;
-    transform: rotate(180deg);
-}
-
-.menu-hero-container {
-    position: relative;
-    z-index: 10;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 80px;
-    width: 100%;
-    max-width: var(--container-max);
-}
-
-.menu-hero-images {
-    position: relative;
-    width: 300px;
-    height: 300px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.menu-hero-images::before {
-    content: '';
-    position: absolute;
-    width: 120%;
-    height: 120%;
-    background: radial-gradient(circle, rgba(0, 0, 0, 0.85) 120%, rgba(0, 0, 0, 0) 120%);
-    z-index: 1;
-    border-radius: 50%;
-    filter: blur(15px);
-    transform: translate(60px, 70px);
-    /* Adjust to position the glow exactly between them */
-}
-
-.menu-hero-drink {
-    position: absolute;
-    height: 165%;
-    object-fit: contain;
-    z-index: 2;
-    transform: translate(100px, -70px);
-}
-
-.menu-hero-food {
-    position: absolute;
-    width: 115%;
-    object-fit: contain;
-    z-index: 3;
-    transform: translate(-15px, 80px);
-    filter: drop-shadow(0 20px 30px rgba(0, 0, 0, 0.6));
-}
-
-.menu-hero-text {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    z-index: 10;
-}
-
-.menu-hero-jp-img {
-    width: 350px;
-    object-fit: contain;
-    margin-bottom: -30px;
-    filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.8));
-    z-index: 4;
-}
-
-.menu-hero-title {
-    font-family: 'Amanojaku', 'serif';
-    font-size: 5.5rem;
-    color: var(--text-light);
-    font-weight: 500;
-    text-shadow: 2px 4px 10px rgba(0, 0, 0, 0.8);
-    z-index: 5;
-}
-
-.menu-showcase-section {
-    padding: var(--section-padding) 0;
-    background-color: var(--dark-bg);
-    color: var(--text-light);
-}
-
-/* ── Headers ── */
-.menu-showcase-header {
-    margin-bottom: 40px;
-}
-
-.japanese-header {
-    font-size: 6rem;
-    color: var(--accent-red);
-    font-weight: 800;
-    letter-spacing: 4px;
-    margin-bottom: 5px;
-}
-
-.english-header {
-    font-family: 'Amanojaku', serif;
-    font-size: 2.5rem;
-    color: var(--text-light);
-    letter-spacing: 2px;
-}
-
-/* ── Filter Bar ── */
-.menu-filter-bar {
-    display: flex;
-    justify-content: center;
-    gap: 10px;
-    margin: 0 auto 50px;
-    padding: 10px;
-    border: 3px solid var(--accent-red);
-    border-radius: var(--radius-pill);
-    max-width: fit-content;
-}
-
-.filter-btn {
-    background: transparent;
-    color: var(--text-light);
-    border: none;
-    padding: 8px 24px;
-    border-radius: var(--radius-md);
-    font-family: 'The Last Shuriken', 'serif';
-    font-size: 0.95rem;
-    font-weight: 500;
-    cursor: pointer;
-    transition: var(--transition-smooth);
-}
-
-.filter-btn:hover {
-    color: var(--accent-red);
-}
-
-.filter-btn.active {
-    background-color: var(--accent-red);
-    color: var(--text-light);
-}
-
-/* ── Grid ── */
-.menu-showcase-grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 30px;
-    margin-bottom: 80px;
-}
-
-.showcase-card {
-    background-color: var(--card-bg);
-    border-radius: var(--radius-lg);
-    padding: 25px 15px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    transition: var(--transition-smooth);
-    width: 100%;
-    max-width: 240px;
-    justify-self: center;
-}
-
-.showcase-card:hover {
-    transform: translateY(-5px);
-    box-shadow: var(--shadow-lg);
-}
-
-.card-top-tag {
-    font-size: 0.7rem;
-    color: var(--accent-gold);
-    display: flex;
-    align-items: center;
-    gap: 5px;
-    align-self: flex-start;
-    margin-bottom: 10px;
-    font-weight: 600;
-    text-transform: uppercase;
-}
-
-.card-top-tag.invisible {
-    visibility: hidden;
-}
-
-.star-icon {
-    width: 12px;
-    height: 12px;
-}
-
-.showcase-dish-img {
-    width: 140px;
-    height: 140px;
-    object-fit: contain;
-    margin-bottom: 15px;
-    filter: drop-shadow(0 10px 10px rgba(0, 0, 0, 0.5));
-}
-
-.showcase-dish-title {
-    color: var(--accent-gold);
-    font-family: 'Cinzel Decorative', serif;
-    font-size: 0.8rem;
-    margin-bottom: 10px;
-    letter-spacing: 1px;
-}
-
-.showcase-dish-desc {
-    font-size: 0.69rem;
-    color: #ccc;
-    margin-bottom: 20px;
-    line-height: 1.4;
-    flex-grow: 1;
-}
-
-.showcase-price-btn {
-    background-color: var(--accent-red);
-    color: var(--text-light);
-    border: none;
-    padding: 8px 30px;
-    border-radius: var(--radius-pill);
-    font-family: 'Cinzel Decorative', 'serif';
-    ;
-    font-weight: 700;
-    font-size: 1.1rem;
-    cursor: pointer;
-    width: 80%;
-    transition: var(--transition-smooth);
-}
-
-.showcase-price-btn:hover {
-    background-color: var(--accent-red-hover);
-}
-
-/* ── Sushi Footer ── */
-.sushi-display-footer {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 40px;
-    margin-top: 40px;
-}
-
-.sushi-display-row {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 20px;
-    width: 100%;
-    max-width: 800px;
-    margin: 0 auto;
-}
-
-.sushi-display-row.row-reverse {
-    flex-direction: row-reverse;
-}
-
-.sushi-display-img {
-    width: 240px;
-    object-fit: contain;
-    filter: drop-shadow(0 10px 15px rgba(0, 0, 0, 0.6));
-    flex-shrink: 0;
-}
-
-.sushi-text-group {
-    text-align: center;
-    width: 180px;
-    flex-shrink: 0;
-}
-
-.sushi-text {
-    font-size: 4rem;
-    font-weight: 900;
-    letter-spacing: 5px;
-    line-height: 1;
-    color: var(--text-light);
-}
-
-.sushi-sub {
-    font-family: 'Cinzel Decorative', serif;
-    font-size: 0.85rem;
-    letter-spacing: 2px;
-    color: #ccc;
-    margin-top: 10px;
-}
-
-.sushi-desc {
-    width: 220px;
-    font-size: 0.75rem;
-    line-height: 1.5;
-    color: #ccc;
-    text-align: left;
-    flex-shrink: 0;
-}
-
-/* ── Responsive ── */
-@media (max-width: 1024px) {
+    /* ── Menu Hero Section ── */
     #menu-hero {
-        height: 60vh;
-        min-height: 500px;
+        height: 100vh;
+        min-height: 700px;
+    }
+
+    .menu-hero-border {
+        position: absolute;
+        z-index: 5;
+        width: 250px;
+        opacity: 0.9;
+    }
+
+    .top-left-border {
+        top: 40px;
+        left: 40px;
+    }
+
+    .bottom-right-border {
+        bottom: 40px;
+        right: 40px;
+        transform: rotate(180deg);
     }
 
     .menu-hero-container {
+        position: relative;
+        z-index: 10;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 80px;
+        width: 100%;
+        max-width: var(--container-max);
+    }
+
+    .menu-hero-images {
+        position: relative;
+        width: 300px;
+        height: 300px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .menu-hero-images::before {
+        content: '';
+        position: absolute;
+        width: 120%;
+        height: 120%;
+        background: radial-gradient(circle, rgba(0, 0, 0, 0.85) 120%, rgba(0, 0, 0, 0) 120%);
+        z-index: 1;
+        border-radius: 50%;
+        filter: blur(15px);
+        transform: translate(60px, 70px);
+        /* Adjust to position the glow exactly between them */
+    }
+
+    .menu-hero-drink {
+        position: absolute;
+        height: 165%;
+        object-fit: contain;
+        z-index: 2;
+        transform: translate(100px, -70px);
+    }
+
+    .menu-hero-food {
+        position: absolute;
+        width: 115%;
+        object-fit: contain;
+        z-index: 3;
+        transform: translate(-15px, 80px);
+        filter: drop-shadow(0 20px 30px rgba(0, 0, 0, 0.6));
+    }
+
+    .menu-hero-text {
+        display: flex;
         flex-direction: column;
-        gap: 0;
-        text-align: center;
+        align-items: center;
+        z-index: 10;
+    }
+
+    .menu-hero-jp-img {
+        width: 350px;
+        object-fit: contain;
+        margin-bottom: -30px;
+        filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.8));
+        z-index: 4;
+    }
+
+    .menu-hero-title {
+        font-family: 'Amanojaku', 'serif';
+        font-size: 5.5rem;
+        color: var(--text-light);
+        font-weight: 500;
+        text-shadow: 2px 4px 10px rgba(0, 0, 0, 0.8);
+        z-index: 5;
+    }
+
+    .menu-showcase-section {
+        padding: var(--section-padding) 0;
+        background-color: var(--dark-bg);
+        color: var(--text-light);
+    }
+
+    /* ── Menu Discover Section ── */
+    .menu-discover-section {
+        padding: var(--section-padding) 0 0 0;
+        background-color: var(--dark-bg);
+        color: var(--text-light);
+    }
+
+    .menu-discover-header {
+        margin-bottom: 50px;
+    }
+
+    .discover-english-header {
+        font-family: 'Amanojaku', serif;
+        font-size: 2.5rem;
+        color: var(--text-light);
+        letter-spacing: 2px;
+        margin-top: -10px;
+        margin-bottom: 25px;
+    }
+
+    .discover-desc {
+        max-width: 900px;
+        margin: 0 auto;
+        font-family: var(--font-body);
+        font-size: 0.95rem;
+        color: #e0e0e0;
+        line-height: 1.8;
+    }
+
+    /* ── Discover Grid ── */
+    .menu-discover-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 30px;
+        max-width: 1000px;
+        /* Adjusting to fit 3 cards nicely */
+        margin: 0 auto;
+    }
+
+    .discover-card {
+        background-color: var(--card-bg);
+        border-radius: var(--radius-lg);
+        overflow: hidden;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        height: 400px;
+        transition: var(--transition-smooth);
+    }
+
+    .discover-card:hover {
+        transform: translateY(-5px);
+        box-shadow: var(--shadow-lg);
+    }
+
+    .discover-text-wrapper {
         padding-top: 40px;
-    }
-
-    .menu-hero-images {
-        height: 250px;
-        width: 250px;
-    }
-
-    .menu-hero-drink {
-        height: 80%;
-        transform: translate(70px, 40px);
-    }
-
-    .menu-hero-food {
-        width: 60%;
-        transform: translate(-20px, 80px);
-    }
-
-    .menu-hero-jp-img {
-        width: 280px;
-    }
-
-    .menu-hero-title {
-        font-size: 4rem;
-    }
-
-    .menu-hero-border {
-        width: 180px;
-    }
-
-    .top-left-border {
-        top: 20px;
-        left: 20px;
-    }
-
-    .bottom-right-border {
-        bottom: 20px;
-        right: 20px;
-    }
-
-    .menu-showcase-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-
-    .japanese-header {
-        font-size: 4rem;
-    }
-
-    .english-header {
-        font-size: 2rem;
-    }
-}
-
-@media (max-width: 768px) {
-    #menu-hero {
-        height: 50vh;
-        min-height: 400px;
-    }
-
-    .menu-hero-images {
-        height: 200px;
-        width: 200px;
-    }
-
-    .menu-hero-drink {
-        height: 90%;
-        transform: translate(50px, 15px);
-    }
-
-    .menu-hero-food {
-        width: 70%;
-        transform: translate(-25px, 60px);
-    }
-
-    .menu-hero-jp-img {
-        width: 180px;
-        margin-bottom: -15px;
-    }
-
-    .menu-hero-title {
-        font-size: 2.5rem;
-    }
-
-    .menu-hero-border {
-        width: 100px;
-    }
-
-    .menu-filter-bar {
-        flex-wrap: wrap;
-    }
-
-    .sushi-display-img {
-        max-width: 180px;
-    }
-
-    .sushi-text {
-        font-size: 2.5rem;
-    }
-
-    .japanese-header {
-        font-size: 3rem;
-    }
-
-    .english-header {
-        font-size: 1.5rem;
-    }
-}
-
-@media (max-width: 480px) {
-    #menu-hero {
-        height: 50vh;
-        min-height: 300px;
-    }
-
-    .menu-hero-images {
-        height: 140px;
-        width: 140px;
-        margin-bottom: 10px;
-    }
-
-    .menu-hero-drink {
+        display: block;
+        /* removed flex to allow natural right-to-left block progression */
+        writing-mode: vertical-rl;
+        text-orientation: upright;
         height: 100%;
-        transform: translate(35px, 15px);
+        z-index: 2;
+        position: relative;
     }
 
-    .menu-hero-food {
-        width: 80%;
-        transform: translate(-20px, 50px);
+    .vertical-text-white {
+        color: var(--text-light);
+        font-size: 1.6rem;
+        font-weight: 700;
+        letter-spacing: 8px;
+        white-space: nowrap;
+        margin-left: 20px;
+        /* spacing between this column and the red text column */
     }
 
-    .menu-hero-jp-img {
-        width: 130px;
-        margin-bottom: -10px;
+    .vertical-text-red {
+        color: var(--accent-red);
+        font-size: 1.1rem;
+        font-weight: 600;
+        letter-spacing: 5px;
+        margin-top: 2px;
+        /* Start lower */
+        white-space: nowrap;
     }
 
-    .menu-hero-title {
-        font-size: 1.8rem;
+    .discover-img {
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 120%;
+        height: 60%;
+        object-fit: cover;
+        z-index: 1;
+        mask-image: linear-gradient(to bottom, transparent 0%, black 20%);
+        -webkit-mask-image: linear-gradient(to bottom, transparent 0%, black 20%);
     }
 
-    .menu-hero-border {
-        width: 60px;
-        opacity: 0.7;
+
+    /* ── Headers ── */
+    .menu-showcase-header {
+        margin-bottom: 40px;
     }
 
-    .top-left-border {
-        top: 10px;
-        left: 10px;
+    .japanese-header {
+        font-size: 6rem;
+        color: var(--accent-red);
+        font-weight: 800;
+        letter-spacing: 4px;
+        margin-bottom: 5px;
     }
 
-    .bottom-right-border {
-        bottom: 10px;
-        right: 10px;
+    .english-header {
+        font-family: 'Amanojaku', serif;
+        font-size: 2.5rem;
+        color: var(--text-light);
+        letter-spacing: 2px;
     }
 
+    /* ── Filter Bar ── */
+    .menu-filter-bar {
+        display: flex;
+        justify-content: center;
+        gap: 10px;
+        margin: 0 auto 50px;
+        padding: 10px;
+        border: 3px solid var(--accent-red);
+        border-radius: var(--radius-pill);
+        max-width: fit-content;
+    }
+
+    .filter-btn {
+        background: transparent;
+        color: var(--text-light);
+        border: none;
+        padding: 8px 24px;
+        border-radius: var(--radius-md);
+        font-family: 'The Last Shuriken', 'serif';
+        font-size: 0.95rem;
+        font-weight: 500;
+        cursor: pointer;
+        transition: var(--transition-smooth);
+    }
+
+    .filter-btn:hover {
+        color: var(--accent-red);
+    }
+
+    .filter-btn.active {
+        background-color: var(--accent-red);
+        color: var(--text-light);
+    }
+
+    /* ── Grid ── */
     .menu-showcase-grid {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 15px;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 30px;
+        margin-bottom: 80px;
     }
 
     .showcase-card {
-        padding: 12px;
+        background-color: var(--card-bg);
+        border-radius: var(--radius-lg);
+        padding: 25px 15px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        transition: var(--transition-smooth);
+        width: 100%;
+        max-width: 240px;
+        justify-self: center;
     }
 
-    .showcase-dish-img {
-        max-width: 80px;
-        max-height: 80px;
-    }
-
-    .showcase-dish-title {
-        font-size: 0.7rem;
-    }
-
-    .showcase-dish-desc {
-        font-size: 0.65rem;
-        display: none;
-    }
-
-    .showcase-price-btn {
-        font-size: 0.75rem;
-        padding: 6px 16px;
+    .showcase-card:hover {
+        transform: translateY(-5px);
+        box-shadow: var(--shadow-lg);
     }
 
     .card-top-tag {
-        font-size: 0.55rem;
+        font-size: 0.7rem;
+        color: var(--accent-gold);
+        display: flex;
+        align-items: center;
+        gap: 5px;
+        align-self: flex-start;
+        margin-bottom: 10px;
+        font-weight: 600;
+        text-transform: uppercase;
+    }
+
+    .card-top-tag.invisible {
+        visibility: hidden;
     }
 
     .star-icon {
@@ -514,53 +309,436 @@
         height: 12px;
     }
 
-    .sushi-display-row {
-        flex-direction: row !important;
-        gap: 10px;
-        padding: 0 10px;
-        align-items: center;
-        justify-content: space-between;
+    .showcase-dish-img {
+        width: 140px;
+        height: 140px;
+        object-fit: contain;
+        margin-bottom: 15px;
+        filter: drop-shadow(0 10px 10px rgba(0, 0, 0, 0.5));
     }
 
-    .sushi-display-row.row-reverse {
-        flex-direction: row-reverse !important;
-    }
-
-    .sushi-display-img {
-        width: 30%;
-        max-width: 100px;
-        flex-shrink: 1;
-    }
-
-    .sushi-text-group {
-        width: 25%;
-        flex-shrink: 1;
-        text-align: center;
-    }
-
-    .sushi-text {
-        font-size: 1.8rem;
-        letter-spacing: 2px;
-    }
-
-    .sushi-sub {
-        font-size: 0.5rem;
+    .showcase-dish-title {
+        color: var(--accent-gold);
+        font-family: 'Cinzel Decorative', serif;
+        font-size: 0.8rem;
+        margin-bottom: 10px;
         letter-spacing: 1px;
     }
 
-    .sushi-desc {
-        width: 40%;
-        flex-shrink: 1;
-        font-size: 0.55rem;
+    .showcase-dish-desc {
+        font-size: 0.69rem;
+        color: #ccc;
+        margin-bottom: 20px;
         line-height: 1.4;
+        flex-grow: 1;
+    }
+
+    .showcase-price-btn {
+        background-color: var(--accent-red);
+        color: var(--text-light);
+        border: none;
+        padding: 8px 30px;
+        border-radius: var(--radius-pill);
+        font-family: 'Cinzel Decorative', 'serif';
+        ;
+        font-weight: 700;
+        font-size: 1.1rem;
+        cursor: pointer;
+        width: 80%;
+        transition: var(--transition-smooth);
+    }
+
+    .showcase-price-btn:hover {
+        background-color: var(--accent-red-hover);
+    }
+
+    /* ── Sushi Footer ── */
+    .sushi-display-footer {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 40px;
+        margin-top: 40px;
+    }
+
+    .sushi-display-row {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 20px;
+        width: 100%;
+        max-width: 800px;
+        margin: 0 auto;
+    }
+
+    .sushi-display-row.row-reverse {
+        flex-direction: row-reverse;
+    }
+
+    .sushi-display-img {
+        width: 240px;
+        object-fit: contain;
+        filter: drop-shadow(0 10px 15px rgba(0, 0, 0, 0.6));
+        flex-shrink: 0;
+    }
+
+    .sushi-text-group {
+        text-align: center;
+        width: 180px;
+        flex-shrink: 0;
+    }
+
+    .sushi-text {
+        font-size: 4rem;
+        font-weight: 900;
+        letter-spacing: 5px;
+        line-height: 1;
+        color: var(--text-light);
+    }
+
+    .sushi-sub {
+        font-family: 'Cinzel Decorative', serif;
+        font-size: 0.85rem;
+        letter-spacing: 2px;
+        color: #ccc;
+        margin-top: 10px;
+    }
+
+    .sushi-desc {
+        width: 220px;
+        font-size: 0.75rem;
+        line-height: 1.5;
+        color: #ccc;
         text-align: left;
+        flex-shrink: 0;
     }
 
-    .japanese-header {
-        font-size: 2.2rem;
+    /* ── Responsive ── */
+    @media (max-width: 1024px) {
+        #menu-hero {
+            height: 60vh;
+            min-height: 500px;
+        }
+
+        .menu-hero-container {
+            flex-direction: column;
+            gap: 0;
+            text-align: center;
+            padding-top: 40px;
+        }
+
+        .menu-hero-images {
+            height: 250px;
+            width: 250px;
+        }
+
+        .menu-hero-drink {
+            height: 80%;
+            transform: translate(70px, 40px);
+        }
+
+        .menu-hero-food {
+            width: 60%;
+            transform: translate(-20px, 80px);
+        }
+
+        .menu-hero-jp-img {
+            width: 280px;
+        }
+
+        .menu-hero-title {
+            font-size: 4rem;
+        }
+
+        .menu-hero-border {
+            width: 180px;
+        }
+
+        .top-left-border {
+            top: 20px;
+            left: 20px;
+        }
+
+        .bottom-right-border {
+            bottom: 20px;
+            right: 20px;
+        }
+
+        .menu-showcase-grid {
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        .menu-discover-grid {
+            grid-template-columns: repeat(3, 1fr);
+            max-width: 900px;
+            gap: 20px;
+        }
+
+        .japanese-header {
+            font-size: 4rem;
+        }
+
+        .english-header {
+            font-size: 2rem;
+        }
+
+        .discover-english-header {
+            font-size: 2rem;
+        }
     }
 
-    .english-header {
-        font-size: 1.2rem;
+    @media (max-width: 768px) {
+        #menu-hero {
+            height: 50vh;
+            min-height: 400px;
+        }
+
+        .menu-hero-images {
+            height: 200px;
+            width: 200px;
+        }
+
+        .menu-hero-drink {
+            height: 90%;
+            transform: translate(50px, 15px);
+        }
+
+        .menu-hero-food {
+            width: 70%;
+            transform: translate(-25px, 60px);
+        }
+
+        .menu-hero-jp-img {
+            width: 180px;
+            margin-bottom: -15px;
+        }
+
+        .menu-hero-title {
+            font-size: 2.5rem;
+        }
+
+        .menu-hero-border {
+            width: 100px;
+        }
+
+        .menu-filter-bar {
+            flex-wrap: wrap;
+        }
+
+        .sushi-display-img {
+            max-width: 180px;
+        }
+
+        .sushi-text {
+            font-size: 2.5rem;
+        }
+
+        .japanese-header {
+            font-size: 3rem;
+        }
+
+        .english-header {
+            font-size: 1.5rem;
+        }
+
+        .discover-english-header {
+            font-size: 1.5rem;
+        }
+
+        .menu-discover-grid {
+            grid-template-columns: repeat(3, 1fr);
+            max-width: 700px;
+            gap: 15px;
+        }
+
+        .discover-card {
+            height: 280px;
+        }
+
+        .discover-text-wrapper {
+            padding-top: 25px;
+        }
+
+        .vertical-text-white {
+            font-size: 1.1rem;
+            letter-spacing: 4px;
+            margin-left: 10px;
+        }
+
+        .vertical-text-red {
+            font-size: 0.75rem;
+            letter-spacing: 2px;
+            margin-top: 15px;
+        }
     }
-}
+
+    @media (max-width: 480px) {
+        #menu-hero {
+            height: 50vh;
+            min-height: 300px;
+        }
+
+        .menu-hero-images {
+            height: 140px;
+            width: 140px;
+            margin-bottom: 10px;
+        }
+
+        .menu-hero-drink {
+            height: 100%;
+            transform: translate(35px, 15px);
+        }
+
+        .menu-hero-food {
+            width: 80%;
+            transform: translate(-20px, 50px);
+        }
+
+        .menu-hero-jp-img {
+            width: 130px;
+            margin-bottom: -10px;
+        }
+
+        .menu-hero-title {
+            font-size: 1.8rem;
+        }
+
+        .menu-hero-border {
+            width: 60px;
+            opacity: 0.7;
+        }
+
+        .top-left-border {
+            top: 10px;
+            left: 10px;
+        }
+
+        .bottom-right-border {
+            bottom: 10px;
+            right: 10px;
+        }
+
+        .menu-showcase-grid {
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+        }
+
+        .showcase-card {
+            padding: 12px;
+        }
+
+        .showcase-dish-img {
+            max-width: 80px;
+            max-height: 80px;
+        }
+
+        .showcase-dish-title {
+            font-size: 0.7rem;
+        }
+
+        .showcase-dish-desc {
+            font-size: 0.65rem;
+            display: none;
+        }
+
+        .showcase-price-btn {
+            font-size: 0.75rem;
+            padding: 6px 16px;
+        }
+
+        .card-top-tag {
+            font-size: 0.55rem;
+        }
+
+        .star-icon {
+            width: 12px;
+            height: 12px;
+        }
+
+        .sushi-display-row {
+            flex-direction: row !important;
+            gap: 10px;
+            padding: 0 10px;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .sushi-display-row.row-reverse {
+            flex-direction: row-reverse !important;
+        }
+
+        .sushi-display-img {
+            width: 30%;
+            max-width: 100px;
+            flex-shrink: 1;
+        }
+
+        .sushi-text-group {
+            width: 25%;
+            flex-shrink: 1;
+            text-align: center;
+        }
+
+        .sushi-text {
+            font-size: 1.8rem;
+            letter-spacing: 2px;
+        }
+
+        .sushi-sub {
+            font-size: 0.5rem;
+            letter-spacing: 1px;
+        }
+
+        .sushi-desc {
+            width: 40%;
+            flex-shrink: 1;
+            font-size: 0.55rem;
+            line-height: 1.4;
+            text-align: left;
+        }
+
+        .japanese-header {
+            font-size: 2.2rem;
+        }
+
+        .english-header {
+            font-size: 1.2rem;
+        }
+
+        .discover-english-header {
+            font-size: 1.2rem;
+        }
+
+        .discover-desc {
+            font-size: 0.85rem;
+            padding: 0 15px;
+        }
+
+        .menu-discover-grid {
+            grid-template-columns: repeat(3, 1fr);
+            gap: 10px;
+            padding: 0 10px;
+        }
+
+        .discover-card {
+            height: 200px;
+            border-radius: var(--radius-md);
+        }
+
+        .discover-text-wrapper {
+            padding-top: 15px;
+            gap: 5px;
+        }
+
+        .vertical-text-white {
+            font-size: 0.85rem;
+            letter-spacing: 2px;
+            margin-left: 5px;
+        }
+
+        .vertical-text-red {
+            font-size: 0.55rem;
+            letter-spacing: 1px;
+            margin-top: 10px;
+        }
+    }
