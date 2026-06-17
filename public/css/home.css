@@ -823,22 +823,55 @@
         line-height: 1.2;
     }
 
+    /* Events Section — 2 column layout on tablet */
     .events-grid {
-        grid-template-columns: 1fr;
-        gap: 30px;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: auto auto;
+        gap: 20px;
     }
 
-    .events-col-right {
+    /* Left column: spans left side */
+    .events-col-left {
         grid-column: 1;
+        grid-row: 1;
+    }
+
+    /* Center column: spans both columns on the second row */
+    .events-col-center {
+        grid-column: 1 / -1;
+        grid-row: 2;
+        flex-direction: row;
+        align-items: center;
+        gap: 20px;
+    }
+
+    .events-col-center .center-wrapper {
+        flex: 1;
+        margin-bottom: 0;
+    }
+
+    .events-col-center .events-center-title {
+        flex: 0 0 auto;
+        writing-mode: vertical-rl;
+        text-orientation: mixed;
+        font-size: 1.2rem;
+        letter-spacing: 5px;
+        margin-top: 0;
+    }
+
+    /* Right column: spans right side */
+    .events-col-right {
+        grid-column: 2;
+        grid-row: 1;
     }
 
     .img-left,
     .img-right {
-        height: 250px;
+        height: 220px;
     }
 
     .img-center {
-        height: 350px;
+        height: 280px;
     }
 
     .events-title-en {
@@ -851,12 +884,23 @@
     }
 
     .events-desc {
-        font-size: 0.85rem;
+        font-size: 0.75rem;
         text-align: center;
     }
 
     .events-center-title {
         font-size: 1.5rem;
+    }
+
+    .events-vertical-tag {
+        font-size: 0.85rem;
+        padding: 12px 6px;
+        right: -12px;
+    }
+
+    .events-tag-bottom {
+        font-size: 0.85rem;
+        padding: 3px 12px;
     }
 
     /* Menu carousel */
@@ -949,7 +993,6 @@
         border-radius: var(--radius-sm);
     }
 
-    /* Events */
     .events-preview-section {
         padding: 40px 0;
     }
@@ -968,13 +1011,49 @@
         letter-spacing: 3px;
     }
 
+    /* Events grid — stay 2-col on small mobile, stack center image below */
+    .events-grid {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: auto auto;
+        gap: 12px;
+    }
+
+    .events-col-left {
+        grid-column: 1;
+        grid-row: 1;
+    }
+
+    .events-col-right {
+        grid-column: 2;
+        grid-row: 1;
+    }
+
+    .events-col-center {
+        grid-column: 1 / -1;
+        grid-row: 2;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .events-col-center .events-center-title {
+        writing-mode: horizontal-tb;
+        text-orientation: mixed;
+        font-size: 1rem;
+        letter-spacing: 2px;
+        margin-top: 10px;
+    }
+
     .img-left,
     .img-right {
-        height: 200px;
+        height: 150px;
     }
 
     .img-center {
-        height: 280px;
+        height: 220px;
+    }
+
+    .events-desc {
+        font-size: 0.65rem;
     }
 
     .events-vertical-tag {
