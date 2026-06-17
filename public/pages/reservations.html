@@ -1,168 +1,112 @@
-<!-- Menu Hero Section -->
-<section id="menu-hero" class="hero-section">
-    <div class="hero-bg" style="background-image: url('assets/images/menu cover.webp');">
-        <h1 class="sr-only">Our Menu</h1>
+<!-- Hero Section -->
+<section id="reservations-hero" class="hero-section">
+    <!-- Using the specific hero section image -->
+    <div class="hero-bg" style="background-image: url('assets/images/reservations hero section.webp');"></div>
+
+    <div class="menu-hero-container container" style="gap: 0;">
+        <div class="menu-hero-text">
+            <img src="assets/images/reservations japanese.webp" alt="Japanese Reservations" class="menu-hero-jp-img">
+            <h1 class="menu-hero-title">Reservations</h1>
+        </div>
     </div>
 </section>
 
-<!-- Menu Showcase Section -->
-<section class="menu-showcase-section">
-    <div class="container">
+<!-- Reservations Intro Section -->
+<section class="reservations-intro-section">
+    <!-- Top-Right Branch -->
+    <img src="assets/images/puno.webp" alt="Cherry Blossoms" class="res-bg-branch">
 
-        <!-- Headers -->
-        <div class="menu-showcase-header text-center">
-            <h2 class="japanese-header">メニューセクション</h2>
-            <h3 class="english-header">Menu Selection</h3>
+    <!-- Bottom-Left Kanji -->
+    <img src="assets/images/japanese word.webp" alt="Reservation Kanji" class="res-bg-kanji">
+
+    <div class="res-intro-container">
+        <div class="res-collage">
+            <!-- Top-Left Image -->
+            <img src="assets/images/reservationspic1.webp" alt="Sushi Platter" class="res-img res-img-top-left">
+
+            <!-- Bottom-Right Image -->
+            <img src="assets/images/reservationspic2.webp" alt="Cocktail Menu" class="res-img res-img-bottom-right">
+
+            <!-- Decorative Wireframe Box -->
+            <div class="res-wireframe-box"></div>
+
+            <!-- Center Red Text Box -->
+            <div class="res-red-box">
+                <p>予約するには、以<br>下のフォームにご<br>記入ください。</p>
+            </div>
+        </div>
+    </div>
+
+</section>
+
+<!-- Reservations Form Section -->
+<section class="reservations-form-section">
+    <div class="res-form-container container">
+        <div class="res-form-header">
+            <h2>テーブルを予約する</h2>
+            <h3>DINE WITH US - <span class="text-red">今すぐ予約する</span></h3>
         </div>
 
-        <!-- Filter Bar -->
-        <div class="menu-filter-bar">
-            <button class="filter-btn active">All</button>
-            <button class="filter-btn">New</button>
-            <button class="filter-btn">Filipino Food</button>
-            <button class="filter-btn">Sushi</button>
-            <button class="filter-btn">Ramen</button>
-        </div>
+        <div class="res-form-content">
+            <div class="res-form-left">
+                <form class="res-booking-form">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="fullName">Full name</label>
+                            <input type="text" id="fullName" placeholder="Marie Fraz">
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" placeholder="example@gmail.com">
+                        </div>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="phone">Telephone Number</label>
+                            <input type="text" id="phone" placeholder="Marie Fraz">
+                        </div>
+                        <div class="form-group">
+                            <label for="guests">Number of Guest</label>
+                            <select id="guests">
+                                <option value="20">Maximum of 20 people</option>
+                            </select>
+                        </div>
+                    </div>
 
-        <!-- Grid -->
-        <div class="menu-showcase-grid">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="resDate">Date of Reservation</label>
+                            <input type="text" id="resDate" placeholder="mm/dd/yy">
+                        </div>
+                        <div class="form-group">
+                            <label for="resTime">Time of Reservation</label>
+                            <input type="text" id="resTime" placeholder="7:00 AM">
+                        </div>
+                    </div>
 
-            <!-- Card 1 -->
-            <div class="showcase-card">
-                <div class="card-top-tag">
-                    <img src="assets/images/star.png" alt="star" class="star-icon">
-                    Chef's Recommend Menu
-                </div>
-                <img src="assets/images/menudishv1.png" alt="Tonkotsu Ramen" class="showcase-dish-img">
-                <h4 class="showcase-dish-title">TONKOTSU RAMEN</h4>
-                <p class="showcase-dish-desc">Rich pork broth with chashu, egg, and spring onion.</p>
-                <button class="showcase-price-btn">9.99</button>
+                    <div class="form-row half-width">
+                        <div class="form-group">
+                            <label for="resType">Type of Reservation</label>
+                            <select id="resType">
+                                <option value="select">Select</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-group full-width">
+                        <label for="specialRequest">Special Request</label>
+                        <textarea id="specialRequest" rows="4" placeholder="Request your favorite drinks or dish. You can request whatever decoration / design........."></textarea>
+                    </div>
+
+                    <button type="submit" class="res-submit-btn">今すぐ予約する</button>
+                </form>
             </div>
 
-            <!-- Card 2 -->
-            <div class="showcase-card">
-                <div class="card-top-tag invisible">
-                    <img src="assets/images/star.png" alt="star" class="star-icon">
-                    Placeholder
-                </div>
-                <img src="assets/images/menudishv2.png" alt="Tonkotsu Ramen" class="showcase-dish-img">
-                <h4 class="showcase-dish-title">TONKOTSU RAMEN</h4>
-                <p class="showcase-dish-desc">Rich pork broth with chashu, egg, and spring onion.</p>
-                <button class="showcase-price-btn">9.99</button>
-            </div>
-
-            <!-- Card 3 -->
-            <div class="showcase-card">
-                <div class="card-top-tag invisible">
-                    <img src="assets/images/star.png" alt="star" class="star-icon">
-                    Placeholder
-                </div>
-                <img src="assets/images/menudishv3.png" alt="Tonkotsu Ramen" class="showcase-dish-img">
-                <h4 class="showcase-dish-title">TONKOTSU RAMEN</h4>
-                <p class="showcase-dish-desc">Rich pork broth with chashu, egg, and spring onion.</p>
-                <button class="showcase-price-btn">9.99</button>
-            </div>
-
-            <!-- Card 4 -->
-            <div class="showcase-card">
-                <div class="card-top-tag invisible">
-                    <img src="assets/images/star.png" alt="star" class="star-icon">
-                    Placeholder
-                </div>
-                <img src="assets/images/menudishv1.png" alt="Tonkotsu Ramen" class="showcase-dish-img">
-                <h4 class="showcase-dish-title">TONKOTSU RAMEN</h4>
-                <p class="showcase-dish-desc">Rich pork broth with chashu, egg, and spring onion.</p>
-                <button class="showcase-price-btn">9.99</button>
-            </div>
-
-            <!-- Card 5 -->
-            <div class="showcase-card">
-                <div class="card-top-tag">
-                    <img src="assets/images/star.png" alt="star" class="star-icon">
-                    Chef's Recommend Menu
-                </div>
-                <img src="assets/images/menudishv2.png" alt="Tonkotsu Ramen" class="showcase-dish-img">
-                <h4 class="showcase-dish-title">TONKOTSU RAMEN</h4>
-                <p class="showcase-dish-desc">Rich pork broth with chashu, egg, and spring onion.</p>
-                <button class="showcase-price-btn">9.99</button>
-            </div>
-
-            <!-- Card 6 -->
-            <div class="showcase-card">
-                <div class="card-top-tag invisible">
-                    <img src="assets/images/star.png" alt="star" class="star-icon">
-                    Placeholder
-                </div>
-                <img src="assets/images/menudishv3.png" alt="Tonkotsu Ramen" class="showcase-dish-img">
-                <h4 class="showcase-dish-title">TONKOTSU RAMEN</h4>
-                <p class="showcase-dish-desc">Rich pork broth with chashu, egg, and spring onion.</p>
-                <button class="showcase-price-btn">9.99</button>
-            </div>
-
-            <!-- Card 7 -->
-            <div class="showcase-card">
-                <div class="card-top-tag invisible">
-                    <img src="assets/images/star.png" alt="star" class="star-icon">
-                    Placeholder
-                </div>
-                <img src="assets/images/menudishv1.png" alt="Tonkotsu Ramen" class="showcase-dish-img">
-                <h4 class="showcase-dish-title">TONKOTSU RAMEN</h4>
-                <p class="showcase-dish-desc">Rich pork broth with chashu, egg, and spring onion.</p>
-                <button class="showcase-price-btn">9.99</button>
-            </div>
-
-            <!-- Card 8 -->
-            <div class="showcase-card">
-                <div class="card-top-tag invisible">
-                    <img src="assets/images/star.png" alt="star" class="star-icon">
-                    Placeholder
-                </div>
-                <img src="assets/images/menudishv2.png" alt="Tonkotsu Ramen" class="showcase-dish-img">
-                <h4 class="showcase-dish-title">TONKOTSU RAMEN</h4>
-                <p class="showcase-dish-desc">Rich pork broth with chashu, egg, and spring onion.</p>
-                <button class="showcase-price-btn">9.99</button>
-            </div>
-
-        </div>
-
-        <!-- Sushi Footer Display -->
-        <div class="sushi-display-footer">
-            <!-- Row 1 -->
-            <div class="sushi-display-row">
-                <img src="assets/images/menudishv1.png" alt="Sashimi" class="sushi-display-img">
-                <div class="sushi-text-group">
-                    <div class="sushi-text">刺身</div>
-                    <div class="sushi-sub">SALMON NIGIRI SUSHI</div>
-                </div>
-                <div class="sushi-desc">
-                    Premium fresh salmon layered atop perfectly seasoned sushi rice and secured with a delicate nori
-                    wrap
-                </div>
-            </div>
-
-            <!-- Row 2 -->
-            <div class="sushi-display-row row-reverse">
-                <img src="assets/images/menudishv2.png" alt="Sushi" class="sushi-display-img">
-                <div class="sushi-text-group">
-                    <div class="sushi-text">寿司</div>
-                    <div class="sushi-sub">SALMON NIGIRI SUSHI</div>
-                </div>
-                <div class="sushi-desc">
-                    Premium fresh salmon layered atop perfectly seasoned sushi rice and secured with a delicate nori
-                    wrap
-                </div>
-            </div>
-
-            <!-- Row 3 -->
-            <div class="sushi-display-row">
-                <img src="assets/images/menudishv3.png" alt="Sushi Roll" class="sushi-display-img">
-                <div class="sushi-text-group">
-                    <div class="sushi-text">すし</div>
-                    <div class="sushi-sub">SALMON NIGIRI SUSHI</div>
-                </div>
-                <div class="sushi-desc">
-                    Fresh cucumber, savory crab stick, and a rich creamy filling are rolled in premium sushi rice and
-                    nori, then finished with delicate fish roe for a burst of flavor and texture.
+            <div class="res-form-right">
+                <div class="res-form-image-wrapper">
+                    <div class="res-form-image-bg"></div>
+                    <img src="assets/images/reservationspic3.webp" alt="Dine with us" class="res-form-image">
                 </div>
             </div>
         </div>

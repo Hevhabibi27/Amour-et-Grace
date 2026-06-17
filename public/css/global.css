@@ -293,3 +293,59 @@ h6 {
         display: none;
     }
 }
+
+/* ── Hero Section ── */
+.hero-section {
+    position: relative;
+    height: 100dvh;
+    min-height: 700px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    background-color: var(--dark-bg);
+    z-index: 1;
+}
+
+.hero-bg {
+    position: absolute;
+    inset: 0;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    z-index: 1;
+}
+
+/* Screen-reader only (accessible hidden text) */
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    border: 0;
+}
+
+/* ── Responsive Hero Section ── */
+@media (max-width: 1024px) {
+    .hero-section {
+        height: 60dvh;
+        min-height: 500px;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero-section {
+        height: 50dvh;
+        min-height: 400px;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-section {
+        height: 50dvh;
+        min-height: 300px;
+    }
+}
