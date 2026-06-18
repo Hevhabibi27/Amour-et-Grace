@@ -1,4 +1,4 @@
-/* ── About Us Section ── */
+﻿/* ── About Us Section ── */
 .about-section {
     position: relative;
     background: linear-gradient(to bottom, transparent 0%, var(--primary-dark) 180px, var(--primary-dark) 100%);
@@ -101,16 +101,17 @@
     font-size: 2.5rem;
     letter-spacing: 3px;
     margin-bottom: 5px;
-    font-weight: bold;
+    line-height: 1;
 }
 
 .japanese-title {
-    font-size: 5rem;
+    font-size: 4rem;
     color: var(--accent-red-deep);
-    font-weight: 800;
+    font-weight: 900;
     margin-bottom: 0px;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
-    letter-spacing: 5px;
+    /* text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1); */
+    letter-spacing: 10px;
+
 }
 
 /* ── Decorative House Images ── */
@@ -199,10 +200,12 @@
 }
 
 .drinks-title-jp {
-    font-size: 2.8rem;
+    font-size: 3rem;
     color: var(--accent-red);
-    font-weight: 800;
+    font-weight: 900;
     margin-bottom: 5px;
+    letter-spacing: 10px;
+    line-height: 1.2;
 }
 
 .drinks-title-en {
@@ -322,32 +325,7 @@
 .events-preview-section {
     position: relative;
     padding: 120px 0;
-    background-color: #222;
-    color: var(--text-light);
     overflow: hidden;
-}
-
-/* Background Layers */
-.events-bg-gradient {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: linear-gradient(to bottom, #111111 10%, #222222 30%, #8c8c8c 100%);
-    z-index: 1;
-}
-
-.events-bg-spotlight {
-    position: absolute;
-    top: 30%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 60vw;
-    height: 60vw;
-    background: radial-gradient(circle, rgba(255, 255, 255, 0.05) 0%, transparent 60%);
-    z-index: 2;
-    pointer-events: none;
 }
 
 .events-container {
@@ -363,19 +341,21 @@
 }
 
 .events-title-en {
-    font-family: 'Cinzel Decorative', serif;
+    font-family: 'Amanojaku', serif;
     font-size: 2.5rem;
-    font-weight: 700;
+    color: var(--text-dark);
     letter-spacing: 2px;
-    margin-bottom: 10px;
+    line-height: 1;
 }
 
 .events-title-jp {
-    font-size: 4rem;
+    font-size: 3rem;
     font-weight: 900;
     letter-spacing: 10px;
     color: var(--accent-red-deep);
     line-height: 1.2;
+    margin-top: -60px;
+    margin-bottom: 20px;
 }
 
 /* Grid */
@@ -383,6 +363,7 @@
     display: grid;
     grid-template-columns: 1fr 1.6fr 1fr;
     gap: 50px;
+    margin-top: -40px;
     align-items: center;
 }
 
@@ -454,7 +435,7 @@
 .events-desc {
     font-size: 0.95rem;
     line-height: 1.6;
-    color: #e0e0e0;
+    color: #444;
     font-weight: 400;
 }
 
@@ -783,6 +764,7 @@
     .events-grid {
         grid-template-columns: 1fr 1fr;
         grid-template-rows: auto auto;
+        margin-top: 20px;
         gap: 20px;
     }
 
@@ -837,6 +819,7 @@
     .events-title-jp {
         font-size: 2.5rem;
         letter-spacing: 5px;
+        margin-top: 2px;
     }
 
     .events-desc {
@@ -960,12 +943,14 @@
     .events-title-jp {
         font-size: 1.8rem;
         letter-spacing: 3px;
+        margin-top: -10px;
     }
 
     /* Events grid — stay 2-col on small mobile, stack center image below */
     .events-grid {
         grid-template-columns: 1fr 1fr;
         grid-template-rows: auto auto;
+        margin-top: 10px;
         gap: 12px;
     }
 
@@ -1137,5 +1122,260 @@
     .drink-desc {
         font-size: 0.35rem;
         line-height: 1.1;
+    }
+}
+
+/* ═══════════════════════════════════════════
+   ── Gallery Section ──
+═══════════════════════════════════════════ */
+
+.gallery-section {
+    position: relative;
+    background-color: var(--dark-bg);
+    overflow: hidden;
+    padding: 70px 0 240px 0;
+    /* bottom pad makes room for cherry blossoms */
+}
+
+.gallery-inner {
+    position: relative;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 30px;
+}
+
+/* ── Header ── */
+.gallery-header {
+    margin-bottom: 36px;
+}
+
+.gallery-title {
+    font-family: 'Amanojaku', serif;
+    font-size: 2.5rem;
+    letter-spacing: 2px;
+    color: var(--accent-red-deep);
+    margin-bottom: 16px;
+    line-height: 1;
+}
+
+.gallery-subtitle {
+    font-family: var(--font-body);
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--accent-red-deep);
+    line-height: 1.7;
+}
+
+/* ── Mosaic Wrapper ── */
+.gallery-mosaic-wrapper {
+    position: relative;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+/* 天井桟敷 kanji — floats over the top-left of the grid */
+.gallery-kanji {
+    position: absolute;
+    top: -30px;
+    left: -20px;
+    font-size: 5rem;
+    font-weight: 900;
+    color: var(--accent-red-deep);
+    line-height: 1.1;
+    z-index: 5;
+    pointer-events: none;
+    white-space: nowrap;
+}
+
+/* ══════════════════════════════════════════════
+   ── Gallery Flex Masonry Layout ──
+══════════════════════════════════════════════ */
+
+.gallery-flex-container {
+    display: flex;
+    align-items: center;
+    /* Vertically centers all columns */
+    justify-content: center;
+    gap: 12px;
+    width: 100%;
+}
+
+.g-col {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    flex: 1;
+    /* Equal width columns */
+}
+
+/* Aspect ratio utilities */
+.ar-3-4 {
+    aspect-ratio: 3 / 4;
+}
+
+.ar-2-3 {
+    aspect-ratio: 2 / 3;
+}
+
+.ar-4-5 {
+    aspect-ratio: 4 / 5;
+}
+
+.ar-16-9 {
+    aspect-ratio: 16 / 9;
+}
+
+.gallery-item {
+    overflow: hidden;
+    border-radius: var(--radius-md);
+    background-color: #777;
+    cursor: pointer;
+    width: 100%;
+}
+
+.gallery-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.4s ease;
+}
+
+.gallery-item:hover .gallery-img {
+    transform: scale(1.07);
+}
+
+/* ── Cherry Blossom Decorations ──
+   Anchored to the section (position:relative) not to gallery-inner */
+.gallery-blossom-left,
+.gallery-blossom-right {
+    position: absolute;
+    bottom: 200px;
+    width: 52%;
+    height: 230px;
+    overflow: hidden;
+    pointer-events: none;
+}
+
+.gallery-blossom-left {
+    left: 0;
+}
+
+.gallery-blossom-right {
+    right: 0;
+}
+
+.blossom-img {
+    position: absolute;
+    bottom: 0;
+    height: 230px;
+    width: auto;
+    max-width: none;
+}
+
+.blossom-left {
+    left: 0;
+}
+
+.blossom-right {
+    right: 0;
+    transform: scaleX(-1);
+}
+
+/* mirror for right side */
+
+/* ── Gallery Responsive ── */
+@media (max-width: 1024px) {
+    .gallery-kanji {
+        font-size: 3.5rem;
+        left: 0;
+    }
+
+    .gallery-title {
+        font-size: 2.1rem;
+    }
+
+    .gallery-title-g {
+        font-size: 2.7rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .gallery-section {
+        padding-bottom: 180px;
+    }
+
+    .gallery-flex-container {
+        gap: 8px;
+        /* Tighter gap on tablet to fit 5 columns better */
+    }
+
+    .g-col {
+        gap: 8px;
+    }
+
+    /* Kanji goes static above grid on mobile */
+    .gallery-kanji {
+        position: static;
+        display: block;
+        text-align: center;
+        font-size: 2.8rem;
+        margin-bottom: 20px;
+    }
+
+    .blossom-img {
+        height: 180px;
+    }
+
+    .gallery-blossom-left,
+    .gallery-blossom-right {
+        height: 180px;
+    }
+}
+
+@media (max-width: 480px) {
+    .gallery-section {
+        padding: 50px 0 140px;
+    }
+
+    .gallery-inner {
+        padding: 0 15px;
+        /* Less padding on mobile to give pictures more room */
+    }
+
+    .gallery-title {
+        font-size: 1.5rem;
+        letter-spacing: 3px;
+    }
+
+    .gallery-title-g {
+        font-size: 1.9rem;
+    }
+
+    .gallery-subtitle {
+        font-size: 0.78rem;
+    }
+
+    .gallery-kanji {
+        font-size: 2rem;
+    }
+
+    .gallery-flex-container {
+        gap: 5px;
+        /* Very tight gap for tiny mosaic */
+    }
+
+    .g-col {
+        gap: 5px;
+    }
+
+    .blossom-img {
+        margin-top: -200px;
+        height: 70px;
+    }
+
+    .gallery-blossom-left,
+    .gallery-blossom-right {
+        height: 130px;
     }
 }
