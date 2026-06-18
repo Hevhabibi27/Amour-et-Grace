@@ -81,11 +81,58 @@ window.initHomeCarousel = function () {
     };
 };
 
+window.initTestimonialsCarousel = function () {
+    const testimonialsScroll = document.querySelector('.testimonials-scroll');
+    if (testimonialsScroll) {
+        const cards = Array.from(testimonialsScroll.children);
+
+        const gap = 20; 
+        let originalSetWidth = 0;
+        cards.forEach(card => {
+            originalSetWidth += card.offsetWidth + gap;
+        });
+
+        // Clone the cards multiple times
+        for (let i = 0; i < 4; i++) {
+            cards.forEach(card => {
+                const clone = card.cloneNode(true);
+                testimonialsScroll.appendChild(clone);
+            });
+        }
+
+        let scrollSpeed = 1;
+        let isHovered = false;
+        let animationId;
+
+        const scroll = () => {
+            if (!isHovered) {
+                testimonialsScroll.scrollLeft += scrollSpeed;
+
+                // Reset seamlessly when we've scrolled exactly one original set's width
+                if (testimonialsScroll.scrollLeft >= originalSetWidth) {
+                    testimonialsScroll.scrollLeft -= originalSetWidth;
+                }
+            }
+            animationId = requestAnimationFrame(scroll);
+        };
+
+        testimonialsScroll.addEventListener('mouseenter', () => { isHovered = true; });
+        testimonialsScroll.addEventListener('mouseleave', () => { isHovered = false; });
+        testimonialsScroll.addEventListener('touchstart', () => { isHovered = true; });
+        testimonialsScroll.addEventListener('touchend', () => {
+            setTimeout(() => { isHovered = false; }, 1000);
+        });
+
+        scroll();
+    }
+};
+
 // Run on DOM load for initial page load
 document.addEventListener('DOMContentLoaded', () => {
     if (window.location.hash === '' || window.location.hash === '#home') {
         setTimeout(() => {
             if (typeof initHomeCarousel === 'function') initHomeCarousel();
+            if (typeof initTestimonialsCarousel === 'function') initTestimonialsCarousel();
         }, 100);
     }
 });
