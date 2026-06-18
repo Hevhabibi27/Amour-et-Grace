@@ -211,6 +211,7 @@
 .drinks-title-en {
     font-family: 'Amanojaku', serif;
     font-size: 2.5rem;
+    margin-bottom: -20px;
     color: var(--text-dark);
     letter-spacing: 2px;
 }
@@ -1013,7 +1014,8 @@
     }
 
     .menu-cards-row {
-        margin-top: 15px;
+        /* margin-top: 15px; */
+        margin-top: -10px;
         height: 230px;
     }
 
@@ -1076,11 +1078,12 @@
 
     /* Drinks Section */
     .featured-drinks-section {
-        padding: 60px 0;
+        padding: 5px 0;
     }
 
     .drinks-title-jp {
         font-size: 1.8rem;
+        margin-top: -30px;
     }
 
     .drinks-title-en {
@@ -1088,6 +1091,7 @@
     }
 
     .drinks-grid {
+        margin-top: -50px;
         flex-direction: row;
         flex-wrap: nowrap;
         gap: 10px;
