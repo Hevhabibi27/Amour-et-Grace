@@ -2229,3 +2229,9 @@
         display: none;
     }
 }
+
+@media (max-width: 480px) {
+    .contact-map-img {
+        max-width: 70%;
+    }
+}
