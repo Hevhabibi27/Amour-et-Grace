@@ -2143,10 +2143,10 @@
 .map-wrapper {
     width: 100%;
     max-width: 600px;
-    background-color: var(--dark-bg);
-    padding: 10px;
+    background-color: var(--white-bg);
+    padding: 8px;
     border: 1px solid var(--accent-red);
-    box-shadow: 0 10px 30px rgba(197, 31, 45, 0.15);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08);
     position: relative;
 }
 
@@ -2157,7 +2157,7 @@
     left: -5px;
     right: -5px;
     bottom: -5px;
-    border: 1px solid rgba(197, 31, 45, 0.3);
+    border: 1px solid rgba(197, 31, 45, 0.2);
     z-index: 0;
     pointer-events: none;
 }
@@ -2168,7 +2168,8 @@
     display: block;
     position: relative;
     z-index: 1;
-    filter: grayscale(30%) invert(40%) contrast(40%) opacity(100%);
+    /* Pure grayscale to look clean, bright, and elegant on the white background */
+    filter: grayscale(100%) contrast(1.05) opacity(0.85);
 }
 
 /* Responsive */
