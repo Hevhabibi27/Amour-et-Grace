@@ -82,55 +82,79 @@ window.initHomeCarousel = function () {
 };
 
 window.initTestimonialsCarousel = function () {
-    const testimonialsScroll = document.querySelector('.testimonials-scroll');
-    if (!testimonialsScroll) return;
+    const wrapper = document.querySelector('.testimonials-wrapper');
+    const scroll = document.querySelector('.testimonials-scroll');
+    if (!scroll) return;
 
-    // Prevent double-init if called more than once
-    if (testimonialsScroll.dataset.initialized) return;
-    testimonialsScroll.dataset.initialized = 'true';
+    // Cancel any previous animation before re-initialising (SPA navigation)
+    if (window._testimonialsRafId) {
+        cancelAnimationFrame(window._testimonialsRafId);
+        window._testimonialsRafId = null;
+    }
 
-    const originalCards = Array.from(testimonialsScroll.children);
+    // Reset state so re-init always works cleanly
+    scroll.dataset.initialized = '';
+    // Remove any previously injected clones
+    scroll.querySelectorAll('.testimonial-clone').forEach(el => el.remove());
+    scroll.style.transform = '';
 
-    // Clone cards for seamless infinite loop (clone once is enough)
-    originalCards.forEach(card => {
-        testimonialsScroll.appendChild(card.cloneNode(true));
+    const originals = Array.from(scroll.children);
+    if (originals.length === 0) return;
+
+    // Clone the full set TWICE so the loop-back point is always off-screen
+    [...originals, ...originals].forEach(card => {
+        const clone = card.cloneNode(true);
+        clone.classList.add('testimonial-clone');
+        scroll.appendChild(clone);
     });
 
-    // Use requestAnimationFrame with a translate transform so it works
-    // even with overflow:hidden, and offsetWidth is read after a paint.
+    // Read measurements after a paint so offsetWidth / gap are accurate
     requestAnimationFrame(() => {
-        const cardWidth = originalCards[0] ? originalCards[0].offsetWidth : 300;
-        const gap = 20;
-        const totalWidth = originalCards.length * (cardWidth + gap);
+        requestAnimationFrame(() => {
+            const cardWidth = originals[0].offsetWidth;
 
-        let offset = 0;
-        let paused = false;
-        let rafId;
+            // Read the actual gap from computed style
+            const computedGap = parseFloat(
+                getComputedStyle(scroll).columnGap ||
+                getComputedStyle(scroll).gap ||
+                '20'
+            ) || 20;
 
-        const speed = 0.5; // px per frame
+            // The loop point: one full set of original cards
+            const loopWidth = originals.length * (cardWidth + computedGap);
 
-        const animate = () => {
-            if (!paused) {
-                offset += speed;
-                if (offset >= totalWidth) {
-                    offset -= totalWidth;
+            let offset = 0;
+            let paused = false;
+            const speed = 0.5; // px per frame (~30px/sec at 60fps)
+
+            const tick = () => {
+                if (!paused) {
+                    offset += speed;
+                    // Seamless reset: modulo keeps offset in [0, loopWidth)
+                    // with zero fractional drift — no visible jump
+                    if (offset >= loopWidth) {
+                        offset -= loopWidth; // identical to modulo, avoids float drift
+                    }
+                    scroll.style.transform = `translateX(-${offset}px)`;
                 }
-                testimonialsScroll.style.transform = `translateX(-${offset}px)`;
-            }
-            rafId = requestAnimationFrame(animate);
-        };
+                window._testimonialsRafId = requestAnimationFrame(tick);
+            };
 
-        testimonialsScroll.addEventListener('mouseenter', () => { paused = true; });
-        testimonialsScroll.addEventListener('mouseleave', () => { paused = false; });
-        testimonialsScroll.addEventListener('touchstart', () => { paused = true; }, { passive: true });
-        testimonialsScroll.addEventListener('touchend', () => {
-            setTimeout(() => { paused = false; }, 1000);
+            // Pause on hover / touch so users can read cards
+            scroll.addEventListener('mouseenter', () => { paused = true; });
+            scroll.addEventListener('mouseleave', () => { paused = false; });
+            scroll.addEventListener('touchstart', () => { paused = true; }, { passive: true });
+            scroll.addEventListener('touchend', () => {
+                setTimeout(() => { paused = false; }, 800);
+            }, { passive: true });
+
+            window._testimonialsRafId = requestAnimationFrame(tick);
+
+            window.stopTestimonialsCarousel = () => {
+                cancelAnimationFrame(window._testimonialsRafId);
+                window._testimonialsRafId = null;
+            };
         });
-
-        rafId = requestAnimationFrame(animate);
-
-        // Expose stop function for cleanup if needed
-        window.stopTestimonialsCarousel = () => cancelAnimationFrame(rafId);
     });
 };
 
