@@ -52,6 +52,13 @@ document.addEventListener('DOMContentLoaded', () => {
             currentPage = page;
             refreshNavbar();
 
+            // Re-initialize scroll animations for cached page
+            if (typeof Utils !== 'undefined') {
+                if (Utils.initScrollReveals) Utils.initScrollReveals();
+                if (Utils.initCinematicScroll) Utils.initCinematicScroll();
+                if (Utils.initHorizontalTimeline) Utils.initHorizontalTimeline();
+            }
+
             // Resume home carousel when returning
             if (page === 'home' && typeof window.resumeHomeCarousel === 'function') {
                 window.resumeHomeCarousel();
@@ -81,6 +88,13 @@ document.addEventListener('DOMContentLoaded', () => {
                 appContent.appendChild(wrapper);
                 currentPage = page;
                 refreshNavbar();
+
+                // Initialize scroll animations
+                if (typeof Utils !== 'undefined') {
+                    if (Utils.initScrollReveals) Utils.initScrollReveals();
+                    if (Utils.initCinematicScroll) Utils.initCinematicScroll();
+                    if (Utils.initHorizontalTimeline) Utils.initHorizontalTimeline();
+                }
 
                 // One-time init for page-specific scripts
                 if (page === 'home') {

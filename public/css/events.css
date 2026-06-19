@@ -1,0 +1,696 @@
+/* public/css/events.css */
+
+/* ═══════════════════════════════════════════
+   ── Scrolling Marquee Banner ──
+═══════════════════════════════════════════ */
+.marquee-banner {
+    background-color: var(--accent-red);
+    color: var(--dark-bg);
+    padding: 15px 0;
+    overflow: hidden;
+    display: flex;
+    white-space: nowrap;
+    position: relative;
+    z-index: 10;
+}
+
+.marquee-content {
+    display: flex;
+    animation: scroll-marquee 25s linear infinite;
+    /* Hardware acceleration for buttery smooth scrolling performance */
+    will-change: transform;
+}
+
+.marquee-content span {
+    font-family: 'Cinzel Decorative', serif;
+    font-size: 1.6rem;
+    font-weight: 700;
+    padding: 0 40px;
+    letter-spacing: 2px;
+}
+
+@keyframes scroll-marquee {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(-100%);
+    }
+}
+
+.events-occasion-section {
+    position: relative;
+    padding: 120px 0 60px 0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    overflow: hidden;
+    color: var(--text-light);
+    background-color: var(--dark-bg);
+}
+
+.occasion-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    z-index: 0;
+}
+
+.occasion-bg-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* Gradient to ensure text readability on the left and bottom */
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.95) 0%, rgba(0, 0, 0, 0.4) 50%, rgba(0, 0, 0, 0.1) 100%),
+        linear-gradient(to top, rgba(0, 0, 0, 0.9) 0%, rgba(0, 0, 0, 0) 40%);
+    z-index: 1;
+}
+
+.occasion-container {
+    position: relative;
+    z-index: 2;
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    margin-bottom: 40px;
+    padding: 0 5%;
+}
+
+.occasion-content {
+    max-width: 700px;
+    width: 100%;
+    text-align: left;
+}
+
+.occasion-title {
+    font-family: var(--font-body);
+    font-size: 4.8rem;
+    font-weight: 900;
+    line-height: 1.1;
+    margin-bottom: 25px;
+    color: var(--text-light);
+    letter-spacing: -1px;
+}
+
+.text-red {
+    color: var(--accent-red);
+}
+
+.occasion-subtitle {
+    font-size: 1.4rem;
+    font-weight: 600;
+    margin-bottom: 10px;
+    color: var(--text-light);
+}
+
+.occasion-desc {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-bottom: 40px;
+    opacity: 0.9;
+    color: var(--text-light);
+}
+
+.occasion-actions {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+.occasion-btn {
+    background-color: var(--accent-red);
+    color: var(--text-light);
+    font-weight: 600;
+    padding: 12px 30px;
+    border: none;
+    border-radius: 25px;
+    display: inline-block;
+    font-size: 0.95rem;
+}
+
+.occasion-btn:hover {
+    background-color: var(--accent-red-hover);
+    color: var(--text-light);
+    border-color: transparent;
+}
+
+.occasion-contact {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.contact-icon-circle {
+    width: 45px;
+    height: 45px;
+    background-color: var(--accent-red);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+}
+
+.contact-icon-circle svg {
+    width: 20px;
+    height: 20px;
+}
+
+.contact-details {
+    display: flex;
+    flex-direction: column;
+}
+
+.contact-label {
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: var(--text-light);
+}
+
+.contact-number {
+    font-size: 0.8rem;
+    opacity: 0.7;
+    color: var(--text-light);
+}
+
+.mobile-break {
+    display: none;
+}
+
+/* Cards Section */
+.occasion-cards-container {
+    position: relative;
+    z-index: 2;
+
+    padding-bottom: 20px;
+    padding: 0 5%;
+}
+
+.occasion-cards-grid {
+    display: grid;
+    margin-top: 100px;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 100px;
+}
+
+.occasion-card {
+    position: relative;
+    height: 220px;
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    box-shadow: var(--shadow-md);
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.occasion-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-lg);
+}
+
+.occasion-card .card-bg {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.occasion-card:hover .card-bg {
+    transform: scale(1.05);
+}
+
+.card-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 40px 20px 15px 20px;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.9) 0%, rgba(0, 0, 0, 0) 100%);
+    display: flex;
+    align-items: flex-end;
+}
+
+.card-title {
+    font-size: 1.05rem;
+    font-weight: 800;
+    color: white;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+    .occasion-title {
+        font-size: 3.5rem;
+    }
+
+    .occasion-cards-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .events-occasion-section {
+        padding: 100px 0 40px 0;
+        min-height: auto;
+    }
+
+    .occasion-bg {
+        background-position: center center;
+    }
+
+    .occasion-bg-overlay {
+        /* Vertical gradient for mobile to keep the center of the image visible */
+        background: linear-gradient(to bottom, rgba(0, 0, 0, 0.95) 0%, rgba(0, 0, 0, 0.6) 60%, rgba(0, 0, 0, 0.1) 100%);
+    }
+
+    .occasion-title {
+        font-size: 2.8rem;
+    }
+
+    .occasion-subtitle {
+        font-size: 1.2rem;
+    }
+
+    .occasion-desc {
+        font-size: 1rem;
+    }
+
+    .occasion-actions {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 25px;
+    }
+}
+
+@media (max-width: 480px) {
+    .mobile-break {
+        display: block;
+    }
+
+    .occasion-title {
+        font-size: 2.2rem;
+    }
+
+    .occasion-cards-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+        margin-top: 10px;
+    }
+
+    /* Hide 3rd and 4th cards on small screens so only 2 are visible */
+    .occasion-card:nth-child(3),
+    .occasion-card:nth-child(4) {
+        display: none;
+    }
+
+    .occasion-card {
+        height: 120px;
+    }
+
+    .card-overlay {
+        padding: 20px 10px 10px 10px;
+    }
+
+    .card-title {
+        font-size: 0.85rem;
+    }
+}
+
+/* ═══════════════════════════════════════════
+   ── Storytelling Reveal Section ──
+═══════════════════════════════════════════ */
+.story-reveal-section {
+    position: relative;
+    /* Height controls how long the user scrolls while the section is pinned */
+    height: 350vh;
+    background: linear-gradient(135deg, #4a0000 0%, #8b0000 50%, #300000 100%);
+}
+
+.story-sticky-wrapper {
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.story-container {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    max-width: 1000px;
+    padding: 0 5%;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    /* Texts closer to each other */
+}
+
+.story-line {
+    width: 100%;
+    font-family: var(--font-heading);
+    font-size: 2.8rem;
+    font-weight: 700;
+    color: var(--text-light);
+    letter-spacing: 0px;
+}
+
+.text-gold {
+    color: var(--primary-color);
+}
+
+.story-left {
+    text-align: left;
+    padding-left: 10%;
+}
+
+.story-center {
+    text-align: center;
+}
+
+.story-right {
+    text-align: right;
+    padding-right: 10%;
+}
+
+/* Cinematic Reveal States */
+.cinematic-item {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.5s ease-out;
+}
+
+.cinematic-item.scrolled-in {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Floating Images */
+.story-img {
+    position: absolute;
+    z-index: 1;
+    border-radius: 15px;
+    object-fit: cover;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
+    opacity: 0.7;
+    /* Ensures text is readable above it */
+}
+
+/* Options to change image width/height as requested */
+.story-img-1 {
+    top: 15%;
+    right: 10%;
+    width: 280px;
+    height: 180px;
+}
+
+.story-img-2 {
+    top: 45%;
+    left: 5%;
+    width: 250px;
+    height: 160px;
+}
+
+.story-img-3 {
+    bottom: 15%;
+    right: 15%;
+    width: 320px;
+    height: 200px;
+}
+
+/* Responsive adjustments for mobile */
+@media (max-width: 768px) {
+    .story-line {
+        font-size: 1.8rem;
+        /* Even smaller for mobile */
+        padding: 0;
+        text-align: center;
+        /* Override left/right for better mobile readability */
+    }
+
+    .story-container {
+        gap: 10px;
+        /* Tighter on mobile */
+    }
+
+    .story-img {
+        opacity: 0.25;
+        /* fade pictures more on mobile so text stands out */
+    }
+
+    .story-img-1 {
+        width: 150px;
+        height: 100px;
+        top: 10%;
+        right: 5%;
+    }
+
+    .story-img-2 {
+        width: 140px;
+        height: 90px;
+        top: 50%;
+        left: -10px;
+    }
+
+    .story-img-3 {
+        width: 160px;
+        height: 110px;
+        bottom: 10%;
+        right: 5%;
+    }
+}
+
+/* ═══════════════════════════════════════════
+   ── Upcoming Events Horizontal Timeline ──
+═══════════════════════════════════════════ */
+.timeline-section {
+    position: relative;
+    height: 400vh;
+    /* Long scroll duration for horizontal effect */
+    background-color: var(--dark-bg);
+}
+
+.timeline-sticky-wrapper {
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    width: 100%;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+.timeline-header {
+    text-align: center;
+    padding: 60px 5% 0 5%;
+    max-width: 800px;
+    margin: 0 auto;
+    z-index: 10;
+    color: var(--text-light);
+}
+
+.timeline-header h2 {
+    font-family: var(--font-heading);
+    font-size: 3rem;
+    margin-bottom: 20px;
+}
+
+.timeline-viewport {
+    position: relative;
+    flex: 1;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    padding-top: 50px;
+}
+
+/* The actual track that moves horizontally */
+.timeline-track {
+    display: flex;
+    gap: 100px;
+    /* Space between cards */
+    padding: 0 50vw;
+    /* Start card 1 in the middle of screen */
+    align-items: center;
+    width: fit-content;
+    will-change: transform;
+}
+
+/* Background timeline line */
+.timeline-line-bg {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: rgba(255, 255, 255, 0.1);
+    z-index: 0;
+    transform: translateY(-50%);
+}
+
+.timeline-line-progress {
+    height: 100%;
+    width: 0%;
+    /* Will be updated via JS */
+    background-color: var(--primary-color);
+    box-shadow: 0 0 10px var(--primary-color);
+}
+
+/* ── Ticket Cards ── */
+.timeline-card {
+    position: relative;
+    width: 350px;
+    background-color: #b51224;
+    /* Deep red matching image */
+    color: var(--dark-bg);
+    border-radius: 4px;
+    flex-shrink: 0;
+    z-index: 2;
+    transition: all 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+
+    /* Cinematic dimmed/scaled down state by default */
+    opacity: 0.4;
+    transform: scale(0.85);
+    filter: grayscale(0.5);
+}
+
+.timeline-card.active-card {
+    opacity: 1;
+    transform: scale(1.05);
+    filter: grayscale(0);
+    box-shadow: 0 20px 50px rgba(212, 175, 55, 0.15);
+    /* Gold glow */
+}
+
+/* Circular cutouts */
+.ticket-cutout {
+    position: absolute;
+    background-color: var(--dark-bg);
+    border-radius: 50%;
+}
+
+.ticket-cutout.top-right {
+    width: 30px;
+    height: 30px;
+    top: 15px;
+    right: 15px;
+}
+
+.ticket-cutout.mid-left {
+    width: 20px;
+    height: 20px;
+    left: -10px;
+    top: 60%;
+    transform: translateY(-50%);
+}
+
+.ticket-cutout.mid-right {
+    width: 20px;
+    height: 20px;
+    right: -10px;
+    top: 60%;
+    transform: translateY(-50%);
+}
+
+.ticket-top {
+    padding: 30px;
+    padding-bottom: 20px;
+    text-align: center;
+}
+
+.ticket-top img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    margin-bottom: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.ticket-top h3 {
+    font-family: var(--font-heading);
+    font-size: 1.5rem;
+    letter-spacing: 2px;
+    margin: 0;
+}
+
+/* The dotted line separating top and bottom */
+.ticket-divider {
+    width: calc(100% - 40px);
+    margin: 0 auto;
+    border-top: 2px dashed rgba(0, 0, 0, 0.3);
+    position: absolute;
+    top: 60%;
+    left: 20px;
+}
+
+.ticket-bottom {
+    padding: 40px 30px 30px 30px;
+}
+
+.ticket-bottom p {
+    font-size: 0.95rem;
+    margin-bottom: 15px;
+    font-weight: 500;
+}
+
+.ticket-bottom .date {
+    font-family: var(--font-heading);
+    font-size: 1.1rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+    letter-spacing: 1px;
+}
+
+.ticket-bottom .date span {
+    color: var(--primary-color);
+    /* Gold text */
+}
+
+.ticket-bottom .reserve-btn {
+    width: 100%;
+    border-color: var(--dark-bg);
+    color: var(--dark-bg);
+    transition: all 0.3s ease;
+}
+
+.ticket-bottom .reserve-btn:hover,
+.timeline-card.active-card .reserve-btn:hover {
+    background-color: var(--dark-bg);
+    color: #fff;
+    border-color: var(--dark-bg);
+}
+
+.timeline-card.active-card .reserve-btn {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+    color: #fff;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .timeline-header h2 {
+        font-size: 2rem;
+    }
+
+    .timeline-card {
+        width: 300px;
+    }
+
+    .timeline-track {
+        padding: 0 calc(50vw - 150px);
+        /* Center smaller cards */
+        gap: 50px;
+    }
+}

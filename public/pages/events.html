@@ -10,3 +10,221 @@
         </div>
     </div>
 </section>
+
+<!-- Scrolling Marquee Banner -->
+<div class="marquee-banner">
+    <div class="marquee-content">
+        <span>RESERVATION</span>
+        <span>RESERVATION</span>
+        <span>RESERVATION</span>
+        <span>RESERVATION</span>
+        <span>RESERVATION</span>
+        <span>RESERVATION</span>
+        <span>RESERVATION</span>
+        <span>RESERVATION</span>
+    </div>
+    <!-- Duplicate content for seamless infinite scrolling -->
+    <div class="marquee-content" aria-hidden="true">
+        <span>RESERVATION</span>
+        <span>RESERVATION</span>
+        <span>RESERVATION</span>
+        <span>RESERVATION</span>
+        <span>RESERVATION</span>
+        <span>RESERVATION</span>
+        <span>RESERVATION</span>
+        <span>RESERVATION</span>
+    </div>
+</div>
+
+<!-- Occasion Section -->
+<section class="events-occasion-section">
+    <div class="occasion-bg" style="background-image: url('assets/images/events featured.png');"></div>
+    <div class="occasion-bg-overlay"></div>
+
+    <div class="occasion-container">
+        <div class="occasion-content">
+            <h2 class="occasion-title">Making Every Occasion <br class="mobile-break"><span
+                    class="text-red">Special</span></h2>
+
+            <h3 class="occasion-subtitle">Seasonal Events & Cocktail Nights</h3>
+            <p class="occasion-desc">
+                Celebrate the seasons with exclusive cocktails, live entertainment, and unforgettable nights at Amour et
+                Grace.
+            </p>
+
+            <div class="occasion-actions">
+                <a href="#events" class="btn-primary occasion-btn">See Upcoming</a>
+
+                <div class="occasion-contact">
+                    <div class="contact-icon-circle">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <path
+                                d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z">
+                            </path>
+                        </svg>
+                    </div>
+                    <div class="contact-details">
+                        <span class="contact-label">Phone Number</span>
+                        <span class="contact-number">0568-48-0259</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Cards Row -->
+    <div class="occasion-cards-container">
+        <div class="occasion-cards-grid">
+            <div class="occasion-card">
+                <img src="assets/images/landscape.png" alt="Spring" class="card-bg">
+                <div class="card-overlay">
+                    <span class="card-title">Spring</span>
+                </div>
+            </div>
+            <div class="occasion-card">
+                <img src="assets/images/landscape.png" alt="Winter" class="card-bg">
+                <div class="card-overlay">
+                    <span class="card-title">Winter</span>
+                </div>
+            </div>
+            <div class="occasion-card">
+                <img src="assets/images/landscape.png" alt="Summer" class="card-bg">
+                <div class="card-overlay">
+                    <span class="card-title">Summer</span>
+                </div>
+            </div>
+            <div class="occasion-card">
+                <img src="assets/images/landscape.png" alt="Live Music" class="card-bg">
+                <div class="card-overlay">
+                    <span class="card-title">Live Music</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Storytelling Reveal Section -->
+<section id="cinematic-story" class="story-reveal-section">
+    <div class="story-sticky-wrapper">
+        <!-- Floating placeholder images (sizes configurable in CSS) -->
+        <img src="assets/images/landscape.png" alt="Event Vibe" class="story-img story-img-1 cinematic-item">
+        <img src="assets/images/landscape.png" alt="Party Vibe" class="story-img story-img-2 cinematic-item">
+        <img src="assets/images/landscape.png" alt="DJ Vibe" class="story-img story-img-3 cinematic-item">
+
+        <div class="story-container">
+            <div class="story-line story-left cinematic-item">
+                <span class="text-gold">We Host</span>
+            </div>
+            <div class="story-line story-center cinematic-item">
+                <span>Seasonal Events,</span>
+            </div>
+            <div class="story-line story-center cinematic-item">
+                <span class="text-gold">Including</span>
+            </div>
+            <div class="story-line story-right cinematic-item">
+                <span>Cocktail Parties,</span>
+            </div>
+            <div class="story-line story-left cinematic-item">
+                <span>Live Music,</span>
+            </div>
+            <div class="story-line story-center cinematic-item">
+                <span>Karaoke</span>
+            </div>
+            <div class="story-line story-center cinematic-item">
+                <span class="text-gold">And</span> <span>Dj Nights.</span>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Upcoming Events Timeline -->
+<section id="upcoming-timeline" class="timeline-section">
+    <div class="timeline-sticky-wrapper">
+        <div class="timeline-header">
+            <h2 class="text-light">Upcoming Events Timeline</h2>
+            <p class="text-light">Something exciting is always happening at our lounge. Check back regularly and be the first to know about our upcoming events, special nights, and exclusive celebrations.</p>
+        </div>
+        
+        <div class="timeline-viewport">
+            <div class="timeline-track" id="timeline-track">
+                <!-- The connecting line behind cards -->
+                <div class="timeline-line-bg">
+                    <div class="timeline-line-progress" id="timeline-progress"></div>
+                </div>
+                
+                <!-- Event Card 1 -->
+                <div class="timeline-card cinematic-timeline-item">
+                    <div class="ticket-cutout top-right"></div>
+                    <div class="ticket-cutout mid-left"></div>
+                    <div class="ticket-cutout mid-right"></div>
+                    
+                    <div class="ticket-top">
+                        <img src="assets/images/landscape.png" alt="Event 1">
+                        <h3>SAKURA NIGHTS</h3>
+                    </div>
+                    <div class="ticket-divider"></div>
+                    <div class="ticket-bottom">
+                        <p>Experience the beauty of spring with our cherry blossom themed cocktails and live DJ sets.</p>
+                        <p class="date">DATE: <span class="text-gold">APRIL 15, 2027</span></p>
+                        <button class="btn btn-outline reserve-btn">Reserve Now</button>
+                    </div>
+                </div>
+
+                <!-- Event Card 2 -->
+                <div class="timeline-card cinematic-timeline-item">
+                    <div class="ticket-cutout top-right"></div>
+                    <div class="ticket-cutout mid-left"></div>
+                    <div class="ticket-cutout mid-right"></div>
+                    
+                    <div class="ticket-top">
+                        <img src="assets/images/landscape.png" alt="Event 2">
+                        <h3>TOKYO DRIFT</h3>
+                    </div>
+                    <div class="ticket-divider"></div>
+                    <div class="ticket-bottom">
+                        <p>High energy, neon lights, and the best electronic beats in the city.</p>
+                        <p class="date">DATE: <span class="text-gold">MAY 02, 2027</span></p>
+                        <button class="btn btn-outline reserve-btn">Reserve Now</button>
+                    </div>
+                </div>
+
+                <!-- Event Card 3 -->
+                <div class="timeline-card cinematic-timeline-item">
+                    <div class="ticket-cutout top-right"></div>
+                    <div class="ticket-cutout mid-left"></div>
+                    <div class="ticket-cutout mid-right"></div>
+                    
+                    <div class="ticket-top">
+                        <img src="assets/images/landscape.png" alt="Event 3">
+                        <h3>JAZZ & CIGARS</h3>
+                    </div>
+                    <div class="ticket-divider"></div>
+                    <div class="ticket-bottom">
+                        <p>A sophisticated evening of smooth jazz, premium cigars, and classic cocktails.</p>
+                        <p class="date">DATE: <span class="text-gold">JUNE 18, 2027</span></p>
+                        <button class="btn btn-outline reserve-btn">Reserve Now</button>
+                    </div>
+                </div>
+                
+                <!-- Event Card 4 -->
+                <div class="timeline-card cinematic-timeline-item">
+                    <div class="ticket-cutout top-right"></div>
+                    <div class="ticket-cutout mid-left"></div>
+                    <div class="ticket-cutout mid-right"></div>
+                    
+                    <div class="ticket-top">
+                        <img src="assets/images/landscape.png" alt="Event 4">
+                        <h3>MIDNIGHT MATSURI</h3>
+                    </div>
+                    <div class="ticket-divider"></div>
+                    <div class="ticket-bottom">
+                        <p>A vibrant festival night featuring traditional performers and modern mixes.</p>
+                        <p class="date">DATE: <span class="text-gold">JULY 07, 2027</span></p>
+                        <button class="btn btn-outline reserve-btn">Reserve Now</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
