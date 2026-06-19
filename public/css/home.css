@@ -1521,10 +1521,24 @@
 
 /* ── Home Reservation Responsive ── */
 @media (max-width: 992px) {
+
+    /* Remove the negative overlap on tablet/mobile so content isn't clipped */
+    .reservation-red-bg {
+        margin-top: 0;
+        padding: 60px 0 60px;
+    }
+
     .reservation-container {
         flex-direction: column;
         text-align: center;
-        gap: 60px;
+        gap: 20px;
+    }
+
+    /* Tall enough to fully contain the 260x320 rotated photos */
+    .reservation-images {
+        height: 420px;
+        width: 100%;
+        overflow: hidden;
     }
 
     .res-circle-cutout {
@@ -1532,7 +1546,7 @@
     }
 
     .res-title-jp {
-        margin-left: 10px;
+        margin-left: 0;
     }
 }
 
@@ -1542,37 +1556,39 @@
     }
 
     .reservation-red-bg {
-        padding: 100px 0;
+        padding: 50px 0 40px;
     }
 
     .reservation-container {
-        gap: 20px;
+        gap: 16px;
     }
 
+    /* Photos are 100x130px — need ~200px height to contain rotated+translated */
     .reservation-images {
-        height: 160px;
+        height: 200px;
         width: 100%;
+        overflow: hidden;
     }
 
     .res-pic {
-        width: 100px;
-        height: 130px;
+        width: 90px;
+        height: 115px;
         border-width: 5px;
-        border-bottom-width: 18px;
+        border-bottom-width: 16px;
     }
 
     .res-pic.pic1 {
-        transform: rotate(-8deg) translateX(-25px);
+        transform: rotate(-8deg) translateX(-22px);
     }
 
     .res-pic.pic2 {
-        transform: rotate(6deg) translateX(25px);
+        transform: rotate(6deg) translateX(22px);
     }
 
     .res-circle-cutout {
         width: 40px;
         height: 40px;
-        bottom: -5px;
+        bottom: 0;
     }
 
     .res-title-en {
@@ -1598,36 +1614,39 @@
 
 @media (max-width: 480px) {
     .reservation-red-bg {
-        padding: 80px 0;
+        padding: 40px 0 30px;
     }
 
     .reservation-container {
         padding: 0 15px;
-        gap: 15px;
+        gap: 12px;
     }
 
+    /* Photos are 80x100px — 180px container contains them with rotation */
     .reservation-images {
-        height: 140px;
+        height: 180px;
+        overflow: hidden;
     }
 
     .res-pic {
-        width: 85px;
-        height: 110px;
+        width: 80px;
+        height: 100px;
         border-width: 4px;
-        border-bottom-width: 14px;
+        border-bottom-width: 12px;
     }
 
     .res-pic.pic1 {
-        transform: rotate(-8deg) translateX(-20px);
+        transform: rotate(-8deg) translateX(-18px);
     }
 
     .res-pic.pic2 {
-        transform: rotate(6deg) translateX(20px);
+        transform: rotate(6deg) translateX(18px);
     }
 
     .res-circle-cutout {
-        width: 35px;
-        height: 35px;
+        width: 32px;
+        height: 32px;
+        bottom: 0;
     }
 
     .res-title-en {
@@ -1700,15 +1719,14 @@
     flex-direction: column;
     position: relative;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
-    transition: transform 0.3s ease, box-shadow 0.3s ease, width 0.3s ease;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
     z-index: 1;
     overflow: hidden;
 }
 
 .testimonial-card:hover {
-    transform: translateY(-5px);
+    transform: translateY(-5px) scale(1.03);
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.8);
-    width: 380px;
 }
 
 .testimonial-label {
@@ -1739,15 +1757,15 @@
     display: flex;
     align-items: center;
     gap: 8px;
-    opacity: 0;
-    max-height: 0;
+    height: 20px;
+    /* Always reserves space — card height never changes */
     overflow: hidden;
-    transition: opacity 0.3s ease, max-height 0.3s ease, margin 0.3s ease;
+    opacity: 0;
+    transition: opacity 0.3s ease;
 }
 
 .testimonial-card:hover .testimonial-rating {
     opacity: 1;
-    max-height: 30px;
 }
 
 .testimonial-rating .stars {
@@ -1834,9 +1852,149 @@
     .testimonial-card {
         width: 350px;
     }
+}
 
-    .testimonial-card:hover {
-        width: 420px;
+/* ── Testimonials Responsive ── */
+@media (max-width: 600px) {
+    .testimonials-section {
+        padding: 80px 0 60px 0;
+    }
+
+    .testimonials-section .events-title-en {
+        font-size: 1.8rem;
+        letter-spacing: 1px;
+    }
+
+    .testimonials-scroll {
+        gap: 14px;
+    }
+
+    .testimonial-card {
+        width: 220px;
+        min-height: 210px;
+        padding: 20px;
+        border-radius: 14px;
+    }
+
+    .testimonial-label {
+        font-size: 0.58rem;
+        margin-bottom: 14px;
+    }
+
+    .testimonial-quote {
+        font-size: 0.88rem;
+        line-height: 1.45;
+    }
+
+    .testimonial-rating {
+        font-size: 0.72rem;
+        height: 16px;
+    }
+
+    .testimonial-footer {
+        margin-top: 18px;
+    }
+
+    .author-avatar {
+        width: 30px;
+        height: 30px;
+    }
+
+    .author-name {
+        font-size: 0.75rem;
+    }
+
+    .author-title {
+        font-size: 0.62rem;
+    }
+
+    .quote-icon {
+        font-size: 2rem;
+        margin-bottom: -6px;
+    }
+}
+
+@media (max-width: 480px) {
+    .testimonials-section {
+        padding: 60px 0 50px 0;
+        margin-top: -60px;
+    }
+
+    .testimonials-section .events-title-en {
+        font-size: 1.5rem;
+        letter-spacing: 0.5px;
+    }
+
+    .testimonials-scroll {
+        gap: 12px;
+    }
+
+    .testimonial-card {
+        width: 190px;
+        min-height: 185px;
+        padding: 16px;
+        border-radius: 12px;
+    }
+
+    .testimonial-label {
+        font-size: 0.55rem;
+        margin-bottom: 10px;
+        letter-spacing: 0.03em;
+    }
+
+    .testimonial-quote {
+        font-size: 0.8rem;
+        line-height: 1.4;
+    }
+
+    .testimonial-rating {
+        height: 14px;
+        font-size: 0.68rem;
+        margin-top: 10px;
+        gap: 5px;
+    }
+
+    .testimonial-footer {
+        margin-top: 14px;
+    }
+
+    .testimonial-author {
+        gap: 8px;
+    }
+
+    .author-avatar {
+        width: 26px;
+        height: 26px;
+    }
+
+    .author-name {
+        font-size: 0.7rem;
+    }
+
+    .author-title {
+        font-size: 0.58rem;
+    }
+
+    .quote-icon {
+        font-size: 1.6rem;
+        margin-bottom: -4px;
+    }
+}
+
+@media (max-width: 360px) {
+    .testimonial-card {
+        width: 165px;
+        min-height: 165px;
+        padding: 14px;
+    }
+
+    .testimonial-quote {
+        font-size: 0.75rem;
+    }
+
+    .author-avatar {
+        width: 22px;
+        height: 22px;
     }
 }
 
