@@ -102,6 +102,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 if (page === 'home') {
                     if (typeof initHomeCarousel === 'function') initHomeCarousel();
                     if (typeof initTestimonialsCarousel === 'function') initTestimonialsCarousel();
+                    if (typeof initGalleryLightbox === 'function') initGalleryLightbox();
                 }
             } else {
                 hideLoader();
