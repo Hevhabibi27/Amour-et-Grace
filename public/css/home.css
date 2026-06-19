@@ -1041,9 +1041,10 @@
         height: 30px;
         font-size: 0.65rem;
         bottom: -15px;
-        left: 5px;
-        right: 5px;
+        left: -5px;
+        right: -5px;
         border-radius: 15px;
+        white-space: nowrap;
     }
 
     .card-left {
@@ -1117,13 +1118,13 @@
     }
 
     .drink-name {
-        font-size: 0.6rem;
+        font-size: 1rem;
         margin-bottom: 2px;
         letter-spacing: 0px;
     }
 
     .drink-desc {
-        font-size: 0.35rem;
+        font-size: 0.5rem;
         line-height: 1.1;
     }
 }
@@ -1401,9 +1402,10 @@
     font-size: 0.95rem;
     line-height: 1.8;
     margin-bottom: 35px;
+    margin-top: 20px;
+    font-weight: 500;
     color: #fff;
     text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6);
-    font-weight: 400;
 }
 
 .res-btn {
@@ -1525,7 +1527,7 @@
     /* Remove the negative overlap on tablet/mobile so content isn't clipped */
     .reservation-red-bg {
         margin-top: 0;
-        padding: 60px 0 60px;
+        padding: 140px 0 120px;
     }
 
     .reservation-container {
@@ -1556,7 +1558,7 @@
     }
 
     .reservation-red-bg {
-        padding: 50px 0 40px;
+        padding: 120px 0 140px;
     }
 
     .reservation-container {
@@ -1592,16 +1594,16 @@
     }
 
     .res-title-en {
-        font-size: 1.3rem;
+        font-size: 1.8rem;
     }
 
     .res-title-jp {
-        font-size: 1.8rem;
+        font-size: 2rem;
         margin-bottom: 5px;
     }
 
     .res-desc {
-        font-size: 0.75rem;
+        font-size: 1rem;
         line-height: 1.4;
         margin-bottom: 15px;
     }
@@ -1614,7 +1616,7 @@
 
 @media (max-width: 480px) {
     .reservation-red-bg {
-        padding: 40px 0 30px;
+        padding: 120px 0 120px;
     }
 
     .reservation-container {
@@ -1650,7 +1652,7 @@
     }
 
     .res-title-en {
-        font-size: 1.1rem;
+        font-size: 1.5rem;
     }
 
     .res-title-jp {
@@ -1658,7 +1660,7 @@
     }
 
     .res-desc {
-        font-size: 0.7rem;
+        font-size: 0.85rem;
         line-height: 1.3;
         margin-bottom: 15px;
     }
@@ -1681,7 +1683,7 @@
 
 }
 
-.events-title-en {
+.testimonials-section .events-title-en {
     color: #fff;
 }
 
@@ -1857,7 +1859,7 @@
 /* ── Testimonials Responsive ── */
 @media (max-width: 600px) {
     .testimonials-section {
-        padding: 80px 0 60px 0;
+        padding: 120px 0 60px 0;
     }
 
     .testimonials-section .events-title-en {
@@ -1916,7 +1918,7 @@
 
 @media (max-width: 480px) {
     .testimonials-section {
-        padding: 60px 0 50px 0;
+        padding: 80px 0 50px 0;
         margin-top: -60px;
     }
 
