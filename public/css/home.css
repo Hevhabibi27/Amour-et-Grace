@@ -2232,6 +2232,7 @@
 
 @media (max-width: 480px) {
     .contact-map-img {
-        max-width: 70%;
+        width: 70%;
+
     }
 }
