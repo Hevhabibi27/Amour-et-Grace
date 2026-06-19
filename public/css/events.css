@@ -389,7 +389,8 @@
 .cinematic-item {
     opacity: 0;
     transform: translateY(30px);
-    transition: all 0.5s ease-out;
+    transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+    will-change: opacity, transform;
 }
 
 .cinematic-item.scrolled-in {
@@ -406,6 +407,7 @@
     box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
     opacity: 0.7;
     /* Ensures text is readable above it */
+    will-change: opacity, transform;
 }
 
 /* Options to change image width/height as requested */
@@ -558,20 +560,19 @@
     border-radius: 4px;
     flex-shrink: 0;
     z-index: 2;
-    transition: all 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+    /* Only transition GPU-friendly properties (opacity + transform) */
+    transition: opacity 0.5s cubic-bezier(0.25, 1, 0.5, 1),
+               transform 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+    will-change: opacity, transform;
 
     /* Cinematic dimmed/scaled down state by default */
     opacity: 0.4;
     transform: scale(0.85);
-    filter: grayscale(0.5);
 }
 
 .timeline-card.active-card {
     opacity: 1;
     transform: scale(1.05);
-    filter: grayscale(0);
-    box-shadow: 0 20px 50px rgba(212, 175, 55, 0.15);
-    /* Gold glow */
 }
 
 /* Circular cutouts */
@@ -678,10 +679,25 @@
     color: #fff;
 }
 
-/* Responsive */
-@media (max-width: 768px) {
+/* Responsive & Short Screens Fix */
+@media (max-width: 768px),
+(max-height: 800px) {
+    .timeline-header {
+        padding-top: 30px;
+    }
+
     .timeline-header h2 {
         font-size: 2rem;
+        margin-bottom: 10px;
+    }
+
+    .timeline-header p {
+        font-size: 0.9rem;
+        margin-bottom: 0;
+    }
+
+    .timeline-viewport {
+        padding-top: 20px;
     }
 
     .timeline-card {
@@ -692,5 +708,32 @@
         padding: 0 calc(50vw - 150px);
         /* Center smaller cards */
         gap: 50px;
+    }
+
+    .ticket-top {
+        padding: 20px;
+    }
+
+    .ticket-top img {
+        height: 120px;
+        margin-bottom: 15px;
+    }
+
+    .ticket-top h3 {
+        font-size: 1.2rem;
+    }
+
+    .ticket-bottom {
+        padding: 20px;
+    }
+
+    .ticket-bottom p {
+        font-size: 0.85rem;
+        margin-bottom: 10px;
+    }
+
+    .ticket-bottom .date {
+        font-size: 1rem;
+        margin-bottom: 15px;
     }
 }

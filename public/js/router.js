@@ -57,6 +57,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 if (Utils.initScrollReveals) Utils.initScrollReveals();
                 if (Utils.initCinematicScroll) Utils.initCinematicScroll();
                 if (Utils.initHorizontalTimeline) Utils.initHorizontalTimeline();
+                if (Utils.initScrollEngine) Utils.initScrollEngine();
             }
 
             // Resume home carousel when returning
@@ -94,6 +95,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     if (Utils.initScrollReveals) Utils.initScrollReveals();
                     if (Utils.initCinematicScroll) Utils.initCinematicScroll();
                     if (Utils.initHorizontalTimeline) Utils.initHorizontalTimeline();
+                    if (Utils.initScrollEngine) Utils.initScrollEngine();
                 }
 
                 // One-time init for page-specific scripts
