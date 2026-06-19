@@ -2169,7 +2169,7 @@
     position: relative;
     z-index: 1;
     /* Pure grayscale to look clean, bright, and elegant on the white background */
-    filter: grayscale(100%) contrast(1.05) opacity(0.85);
+    filter: grayscale(20%) contrast(1.05) opacity(0.85);
 }
 
 /* Responsive */
