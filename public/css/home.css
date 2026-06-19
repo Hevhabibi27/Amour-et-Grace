@@ -2168,8 +2168,7 @@
     display: block;
     position: relative;
     z-index: 1;
-    /* Dark mode filter for Google Maps to blend with the aesthetic */
-    filter: grayscale(100%) invert(100%) contrast(85%) opacity(90%);
+    filter: grayscale(30%) invert(100%) contrast(85%) opacity(90%);
 }
 
 /* Responsive */
