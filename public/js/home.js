@@ -83,48 +83,55 @@ window.initHomeCarousel = function () {
 
 window.initTestimonialsCarousel = function () {
     const testimonialsScroll = document.querySelector('.testimonials-scroll');
-    if (testimonialsScroll) {
-        const cards = Array.from(testimonialsScroll.children);
+    if (!testimonialsScroll) return;
 
-        const gap = 20; 
-        let originalSetWidth = 0;
-        cards.forEach(card => {
-            originalSetWidth += card.offsetWidth + gap;
-        });
+    // Prevent double-init if called more than once
+    if (testimonialsScroll.dataset.initialized) return;
+    testimonialsScroll.dataset.initialized = 'true';
 
-        // Clone the cards multiple times
-        for (let i = 0; i < 4; i++) {
-            cards.forEach(card => {
-                const clone = card.cloneNode(true);
-                testimonialsScroll.appendChild(clone);
-            });
-        }
+    const originalCards = Array.from(testimonialsScroll.children);
 
-        let scrollSpeed = 1;
-        let isHovered = false;
-        let animationId;
+    // Clone cards for seamless infinite loop (clone once is enough)
+    originalCards.forEach(card => {
+        testimonialsScroll.appendChild(card.cloneNode(true));
+    });
 
-        const scroll = () => {
-            if (!isHovered) {
-                testimonialsScroll.scrollLeft += scrollSpeed;
+    // Use requestAnimationFrame with a translate transform so it works
+    // even with overflow:hidden, and offsetWidth is read after a paint.
+    requestAnimationFrame(() => {
+        const cardWidth = originalCards[0] ? originalCards[0].offsetWidth : 300;
+        const gap = 20;
+        const totalWidth = originalCards.length * (cardWidth + gap);
 
-                // Reset seamlessly when we've scrolled exactly one original set's width
-                if (testimonialsScroll.scrollLeft >= originalSetWidth) {
-                    testimonialsScroll.scrollLeft -= originalSetWidth;
+        let offset = 0;
+        let paused = false;
+        let rafId;
+
+        const speed = 0.5; // px per frame
+
+        const animate = () => {
+            if (!paused) {
+                offset += speed;
+                if (offset >= totalWidth) {
+                    offset -= totalWidth;
                 }
+                testimonialsScroll.style.transform = `translateX(-${offset}px)`;
             }
-            animationId = requestAnimationFrame(scroll);
+            rafId = requestAnimationFrame(animate);
         };
 
-        testimonialsScroll.addEventListener('mouseenter', () => { isHovered = true; });
-        testimonialsScroll.addEventListener('mouseleave', () => { isHovered = false; });
-        testimonialsScroll.addEventListener('touchstart', () => { isHovered = true; });
+        testimonialsScroll.addEventListener('mouseenter', () => { paused = true; });
+        testimonialsScroll.addEventListener('mouseleave', () => { paused = false; });
+        testimonialsScroll.addEventListener('touchstart', () => { paused = true; }, { passive: true });
         testimonialsScroll.addEventListener('touchend', () => {
-            setTimeout(() => { isHovered = false; }, 1000);
+            setTimeout(() => { paused = false; }, 1000);
         });
 
-        scroll();
-    }
+        rafId = requestAnimationFrame(animate);
+
+        // Expose stop function for cleanup if needed
+        window.stopTestimonialsCarousel = () => cancelAnimationFrame(rafId);
+    });
 };
 
 // Run on DOM load for initial page load

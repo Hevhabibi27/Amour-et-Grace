@@ -64,7 +64,8 @@ document.addEventListener('DOMContentLoaded', () => {
         showLoader();
 
         try {
-            const response = await fetch(`pages/${page}.html`);
+            // Prevent browser caching during local development for fetch requests
+            const response = await fetch(`pages/${page}.html`, { cache: 'no-store' });
             if (response.ok) {
                 const html = await response.text();
 
@@ -82,8 +83,9 @@ document.addEventListener('DOMContentLoaded', () => {
                 refreshNavbar();
 
                 // One-time init for page-specific scripts
-                if (page === 'home' && typeof initHomeCarousel === 'function') {
-                    initHomeCarousel();
+                if (page === 'home') {
+                    if (typeof initHomeCarousel === 'function') initHomeCarousel();
+                    if (typeof initTestimonialsCarousel === 'function') initTestimonialsCarousel();
                 }
             } else {
                 hideLoader();

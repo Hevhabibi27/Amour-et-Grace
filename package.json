@@ -17,6 +17,6 @@
     "resend": "^4.1.0"
   },
   "devDependencies": {
-    "vercel": "^41.0.0"
+    "vercel": "^54.14.2"
   }
 }
