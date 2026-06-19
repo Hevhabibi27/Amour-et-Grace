@@ -2139,11 +2139,12 @@
     justify-content: flex-end;
 }
 
-.contact-map-img {
-    max-width: 100%;
+.contact-map-iframe {
+    width: 100%;
+    height: 400px;
     border-radius: 20px;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
-    object-fit: cover;
+    display: block;
 }
 
 /* Responsive */
@@ -2231,8 +2232,7 @@
 }
 
 @media (max-width: 480px) {
-    .contact-map-img {
-        width: 70%;
-
+    .contact-map-iframe {
+        height: 280px;
     }
 }
