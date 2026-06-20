@@ -11,6 +11,65 @@
     </div>
 </section>
 
+
+
+<!-- Reservations Info Section -->
+<section class="reservations-info-section">
+    <div class="res-info-bg" style="background-image: url('assets/images/background for reservations.png');"></div>
+    <div class="res-info-overlay"></div>
+
+    <div class="res-info-container container">
+        <div class="res-info-cards-wrapper">
+            <!-- Card 1 -->
+            <div class="res-info-card card-1">
+                <img src="assets/images/maximum capacity.png" alt="Maximum Capacity" class="res-info-card-img"
+                    loading="lazy">
+                <div class="res-info-card-overlay"></div>
+                <div class="res-info-card-content">
+                    <h4>Maximum capacity of<br>20 Guest</h4>
+                </div>
+            </div>
+
+            <!-- Card 2 -->
+            <div class="res-info-card card-2">
+                <img src="assets/images/open.png" alt="Open Hours" class="res-info-card-img" loading="lazy">
+                <div class="res-info-card-overlay"></div>
+                <div class="res-info-card-content">
+                    <h4>Open<br>Monday - Sunday</h4>
+                </div>
+            </div>
+
+            <!-- Card 3 -->
+            <div class="res-info-card card-3">
+                <img src="assets/images/lounge reservation.png" alt="Lounge Reservation" class="res-info-card-img"
+                    loading="lazy">
+                <div class="res-info-card-overlay"></div>
+                <div class="res-info-card-content">
+                    <h4>Lounge Reservation<br>10:00 am - 5:00pm</h4>
+                </div>
+            </div>
+
+            <!-- Card 4 -->
+            <div class="res-info-card card-4">
+                <img src="assets/images/entertainment.png" alt="Entertainment" class="res-info-card-img" loading="lazy">
+                <div class="res-info-card-overlay"></div>
+                <div class="res-info-card-content">
+                    <h4>Entertainment<br>Karaoke & Music<br>Free of Charge</h4>
+                </div>
+            </div>
+
+            <!-- Card 5 -->
+            <div class="res-info-card card-5">
+                <img src="assets/images/decorations.png" alt="Decorations" class="res-info-card-img" loading="lazy">
+                <div class="res-info-card-overlay"></div>
+                <div class="res-info-card-content">
+                    <h4>Simple decorations<br>available upon request.</h4>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
 <!-- Reservations Intro Section -->
 <section class="reservations-intro-section">
     <!-- Top-Right Branch -->
@@ -39,74 +98,307 @@
 
 </section>
 
-<!-- Reservations Form Section -->
-<section class="reservations-form-section">
-    <div class="res-form-container container">
-        <div class="res-form-header">
+<!-- Premium Reservation Section -->
+<section class="premium-reservation-section" id="premium-reservation">
+    <div class="prem-res-container container">
+
+        <div class="prem-res-header">
             <h2>テーブルを予約する</h2>
-            <h3>DINE WITH US - <span class="text-red">今すぐ予約する</span></h3>
+            <h3>DINE WITH US - 今すぐ予約する</h3>
         </div>
 
-        <div class="res-form-content">
-            <div class="res-form-left">
-                <form class="res-booking-form">
-                    <div class="form-row">
-                        <div class="form-group">
-                            <label for="fullName">Full name</label>
-                            <input type="text" id="fullName" placeholder="Marie Fraz">
+        <!-- Progress Indicator -->
+        <div class="prem-res-progress">
+            <div class="progress-step">
+                <div class="step-circle active">1</div>
+                <p>Fill out the reservation<br>form</p>
+            </div>
+            <div class="progress-line"></div>
+            <div class="progress-step">
+                <div class="step-circle">2</div>
+                <p>We review your request</p>
+            </div>
+            <div class="progress-line"></div>
+            <div class="progress-step">
+                <div class="step-circle">3</div>
+                <p>Reservation confirmation<br>is sent via email or phone</p>
+            </div>
+            <div class="progress-line"></div>
+            <div class="progress-step">
+                <div class="step-circle">4</div>
+                <p>Enjoy your event</p>
+            </div>
+        </div>
+
+        <!-- 2-Column Grid -->
+        <div class="prem-res-grid">
+
+            <!-- Left Column: Form -->
+            <div class="prem-res-form-wrapper">
+                <form id="premiumReservationForm" class="prem-booking-form">
+                    <div class="prem-form-row">
+                        <div class="prem-form-group">
+                            <label for="premFullName">Full name <span>*</span></label>
+                            <input type="text" id="premFullName" required placeholder="Marie Fraz">
                         </div>
-                        <div class="form-group">
-                            <label for="email">Email</label>
-                            <input type="email" id="email" placeholder="example@gmail.com">
+                        <div class="prem-form-group">
+                            <label for="premEmail">Email <span>*</span></label>
+                            <input type="email" id="premEmail" required placeholder="example@gmail.com">
                         </div>
                     </div>
-                    
-                    <div class="form-row">
-                        <div class="form-group">
-                            <label for="phone">Telephone Number</label>
-                            <input type="text" id="phone" placeholder="Marie Fraz">
+
+                    <div class="prem-form-row">
+                        <div class="prem-form-group">
+                            <label for="premPhone">Telephone Number <span>*</span></label>
+                            <input type="tel" id="premPhone" required placeholder="Marie Fraz">
                         </div>
-                        <div class="form-group">
-                            <label for="guests">Number of Guest</label>
-                            <select id="guests">
-                                <option value="20">Maximum of 20 people</option>
+                        <div class="prem-form-group">
+                            <label for="premGuests">Number of Guest <span>*</span></label>
+                            <select id="premGuests" required>
+                                <option value="" disabled selected>Maximum of 20 people</option>
+                                <option value="1">1 Person</option>
+                                <option value="2">2 People</option>
+                                <option value="5">5 People</option>
+                                <option value="10">10 People</option>
+                                <option value="20">20 People</option>
                             </select>
                         </div>
                     </div>
 
-                    <div class="form-row">
-                        <div class="form-group">
-                            <label for="resDate">Date of Reservation</label>
-                            <input type="text" id="resDate" placeholder="mm/dd/yy">
+                    <div class="prem-form-row">
+                        <div class="prem-form-group">
+                            <label for="premDate">Date of Reservation <span>*</span></label>
+                            <input type="date" id="premDate" required>
                         </div>
-                        <div class="form-group">
-                            <label for="resTime">Time of Reservation</label>
-                            <input type="text" id="resTime" placeholder="7:00 AM">
+                        <div class="prem-form-group">
+                            <label for="premTime">Time of Reservation <span>*</span></label>
+                            <input type="time" id="premTime" required>
                         </div>
                     </div>
 
-                    <div class="form-row half-width">
-                        <div class="form-group">
-                            <label for="resType">Type of Reservation</label>
-                            <select id="resType">
-                                <option value="select">Select</option>
+                    <div class="prem-form-row half-width">
+                        <div class="prem-form-group">
+                            <label for="premType">Type of Reservation <span>*</span></label>
+                            <select id="premType" required>
+                                <option value="" disabled selected>Select</option>
+                                <option value="lounge">Lounge</option>
+                                <option value="event">Private Event</option>
                             </select>
                         </div>
                     </div>
 
-                    <div class="form-group full-width">
-                        <label for="specialRequest">Special Request</label>
-                        <textarea id="specialRequest" rows="4" placeholder="Request your favorite drinks or dish. You can request whatever decoration / design........."></textarea>
+                    <div class="prem-form-group full-width">
+                        <label for="premSpecialRequest">Special Request</label>
+                        <textarea id="premSpecialRequest" rows="3"
+                            placeholder="Request your favorite drinks or dish. You can request whatever decoration / design........."></textarea>
                     </div>
 
-                    <button type="submit" class="res-submit-btn">今すぐ予約する</button>
+                    <div class="prem-form-contact-text">
+                        <p>For decorations and custom arrangements, please contact:</p>
+                        <p class="phone-link">📞 090 3856 2854</p>
+                    </div>
+
+                    <button type="submit" class="prem-submit-btn">今すぐ予約する</button>
+
+                    <div id="form-message" class="form-message hidden"></div>
                 </form>
             </div>
 
-            <div class="res-form-right">
-                <div class="res-form-image-wrapper">
-                    <div class="res-form-image-bg"></div>
-                    <img src="assets/images/reservationspic3.webp" alt="Dine with us" class="res-form-image">
+            <!-- Right Column: Info Card -->
+            <div class="prem-res-info-card">
+                <div class="info-card-content">
+                    <h4>Address</h4>
+                    <p>2464 Royal Ln. Mesa, New Jersey 45463</p>
+
+                    <h4>Contact</h4>
+                    <p>Phone : +(000) 000-0000</p>
+                    <p>Email : example@gmail.com</p>
+
+                    <h4>Open Time</h4>
+                    <div class="open-time-grid">
+                        <span>Monday - Friday</span><span>: 11:00 AM - 10:00 PM</span>
+                        <span>Saturday - Sunday</span><span>: 09:00 AM - 11:00 PM</span>
+                    </div>
+
+                    <h4>Stay Connected</h4>
+                    <div class="social-icons">
+                        <!-- User will add their own SVGs or icons here -->
+                        <a href="#" class="social-circle"></a>
+                        <a href="#" class="social-circle"></a>
+                        <a href="#" class="social-circle"></a>
+                        <a href="#" class="social-circle"></a>
+                        <a href="#" class="social-circle"></a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- FAQ Section -->
+<section class="faq-section" id="faq">
+    <div class="faq-container container">
+        <div class="faq-grid">
+            <!-- Left Side: Header & Intro -->
+            <div class="faq-header-content">
+                <h2>Frequently asked<br><span>questions</span></h2>
+                <p>Find quick answers regarding reservations, private events, food packages, and our lounge policies.
+                    For specific inquiries, feel free to reach out to our team directly.</p>
+            </div>
+
+            <!-- Right Side: Accordion -->
+            <div class="faq-accordion">
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>How do I reserve a table?</span>
+                        <div class="faq-icon">
+                            <svg width="14" height="8" viewBox="0 0 14 8" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path d="M1 1L7 7L13 1" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round" />
+                            </svg>
+                        </div>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-inner">
+                            <p>You can reserve a table by filling out our online reservation form above. Once submitted,
+                                our team will review your request and send a confirmation via email or phone.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>Can I book the lounge for private events?</span>
+                        <div class="faq-icon">
+                            <svg width="14" height="8" viewBox="0 0 14 8" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path d="M1 1L7 7L13 1" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round" />
+                            </svg>
+                        </div>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-inner">
+                            <p>Yes, our lounge is available for private events. Please select "Private Event" on the
+                                reservation form or contact us directly to discuss capacity and packages.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>What is the maximum guest capacity?</span>
+                        <div class="faq-icon">
+                            <svg width="14" height="8" viewBox="0 0 14 8" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path d="M1 1L7 7L13 1" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round" />
+                            </svg>
+                        </div>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-inner">
+                            <p>Our standard tables can accommodate up to 20 guests. For larger parties or full venue
+                                buyouts, please contact our management team.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>Do you offer food and drink packages?</span>
+                        <div class="faq-icon">
+                            <svg width="14" height="8" viewBox="0 0 14 8" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path d="M1 1L7 7L13 1" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round" />
+                            </svg>
+                        </div>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-inner">
+                            <p>Absolutely. We offer premium Japanese-Filipino fusion catering and customizable drink
+                                packages. You can specify your preferences in the Special Requests section.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>Can I request custom decorations?</span>
+                        <div class="faq-icon">
+                            <svg width="14" height="8" viewBox="0 0 14 8" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path d="M1 1L7 7L13 1" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round" />
+                            </svg>
+                        </div>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-inner">
+                            <p>Yes, we welcome custom decorations for birthdays and celebrations. Let us know in advance
+                                so we can assist with the setup.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>How far in advance should I make a reservation?</span>
+                        <div class="faq-icon">
+                            <svg width="14" height="8" viewBox="0 0 14 8" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path d="M1 1L7 7L13 1" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round" />
+                            </svg>
+                        </div>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-inner">
+                            <p>We recommend booking at least a week in advance for regular tables, and at least 3-4
+                                weeks in advance for large private events.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>Will I receive a confirmation after booking?</span>
+                        <div class="faq-icon">
+                            <svg width="14" height="8" viewBox="0 0 14 8" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path d="M1 1L7 7L13 1" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round" />
+                            </svg>
+                        </div>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-inner">
+                            <p>Yes, our reservation team will review your submission and contact you within 24 hours to
+                                confirm your booking.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>Do you host seasonal events and cocktail parties?</span>
+                        <div class="faq-icon">
+                            <svg width="14" height="8" viewBox="0 0 14 8" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path d="M1 1L7 7L13 1" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round" />
+                            </svg>
+                        </div>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-inner">
+                            <p>Yes! We frequently host seasonal events, live music, and themed cocktail parties. Keep an
+                                eye on our social media for updates.</p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

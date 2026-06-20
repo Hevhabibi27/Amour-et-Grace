@@ -10,6 +10,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    overflow: hidden;
 }
 
 .res-intro-container {
@@ -36,7 +37,7 @@
 
 .res-bg-kanji {
     position: absolute;
-    bottom: -40px;
+    bottom: -10px;
     left: 20px;
     width: 200px;
     z-index: 1;
@@ -245,276 +246,763 @@
     }
 }
 
+
+
+
+
 /* =============================================
-   RESERVATIONS FORM SECTION
+   RESERVATIONS INFO SECTION
    ============================================= */
 
-.reservations-form-section {
+.reservations-info-section {
     position: relative;
-    background-image: url('../assets/images/form background.webp');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    padding: 80px 0;
+    padding: 100px 0;
+    min-height: 80vh;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
 }
 
-.res-form-container {
+.res-info-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    filter: blur(8px);
+    transform: scale(1.05);
+    /* Prevent blur edges */
+    z-index: 1;
+}
+
+.res-info-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    /* Dark overlay */
+    z-index: 2;
+}
+
+.res-info-container {
+    position: relative;
+    z-index: 5;
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.res-info-cards-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    flex-wrap: nowrap;
+}
+
+.res-info-card {
+    position: relative;
+    flex: 1;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.4s ease;
+    opacity: 0;
+    /* For fade-up animation */
+    transform: translateY(40px);
+    animation: fadeUpCard 0.8s forwards;
+    cursor: pointer;
+}
+
+.res-info-card:hover {
+    transform: translateY(-15px) scale(1.03) !important;
+    box-shadow: 0 30px 50px rgba(0, 0, 0, 0.6), 0 0 20px rgba(255, 255, 255, 0.1);
+    z-index: 10;
+}
+
+@keyframes fadeUpCard {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Staggered Heights and Animation Delays */
+.card-1 {
+    height: 380px;
+    animation-delay: 0.1s;
+}
+
+.card-2 {
+    height: 520px;
+    animation-delay: 0.2s;
+}
+
+.card-3 {
+    height: 420px;
+    animation-delay: 0.3s;
+}
+
+.card-4 {
+    height: 520px;
+    animation-delay: 0.4s;
+}
+
+.card-5 {
+    height: 380px;
+    animation-delay: 0.5s;
+}
+
+.res-info-card-img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 1;
+    transition: transform 0.6s ease;
+}
+
+.res-info-card:hover .res-info-card-img {
+    transform: scale(1.1);
+}
+
+.res-info-card-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0.9) 100%);
+    z-index: 2;
+}
+
+.res-info-card-content {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 30px 20px;
+    z-index: 3;
+    text-align: center;
+}
+
+.res-info-card-content h4 {
+    color: #ffffff;
+    font-size: 1.1rem;
+    font-weight: 500;
+    line-height: 1.5;
+    margin: 0;
+    font-family: var(--font-primary, 'Poppins', sans-serif);
+}
+
+/* Mobile & Responsive */
+@media (max-width: 1200px) {
+    .res-info-cards-wrapper {
+        gap: 15px;
+    }
+
+    .res-info-card-content h4 {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 992px) {
+    .res-info-cards-wrapper {
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        justify-content: flex-start;
+        padding: 40px 20px;
+        scroll-snap-type: x mandatory;
+        -webkit-overflow-scrolling: touch;
+        margin: 0 -20px;
+        /* Bleed to edges */
+    }
+
+    .res-info-cards-wrapper::-webkit-scrollbar {
+        display: none;
+    }
+
+    .res-info-card {
+        flex: 0 0 280px;
+        margin-top: 0 !important;
+        height: 360px;
+        scroll-snap-align: center;
+        opacity: 1;
+        transform: translateY(0);
+        animation: none;
+    }
+
+    .res-info-card:first-child {
+        margin-left: 20px;
+    }
+
+    .res-info-card:last-child {
+        margin-right: 20px;
+    }
+}
+
+@media (max-width: 768px) {
+    .reservations-info-section {
+        padding: 40px 0;
+        min-height: auto;
+    }
+
+    .res-info-card {
+        flex: 0 0 240px;
+        height: 320px;
+    }
+}
+
+@media (max-width: 480px) {
+    .res-info-card {
+        flex: 0 0 200px;
+        height: 280px;
+    }
+
+    .res-info-card-content {
+        padding: 15px;
+    }
+
+    .res-info-card-content h4 {
+        font-size: 0.85rem;
+    }
+}
+
+
+
+
+
+
+/* =============================================
+   PREMIUM RESERVATION SECTION
+   ============================================= */
+
+.premium-reservation-section {
+    position: relative;
+    padding: 100px 0;
+    background: linear-gradient(135deg, #111111 0%, var(--accent-red-deep, #7a0016) 50%, #000000 100%);
+    color: #ffffff;
+}
+
+.prem-res-container {
     max-width: var(--container-max, 1200px);
     margin: 0 auto;
     padding: 0 20px;
 }
 
-.res-form-header {
+.prem-res-header {
     text-align: center;
-    margin-bottom: 50px;
+    margin-bottom: 40px;
 }
 
-.res-form-header h2 {
+.prem-res-header h2 {
     font-size: 2.5rem;
-    color: #000;
+    color: #ffffff;
     margin-bottom: 10px;
     font-weight: 700;
 }
 
-.res-form-header h3 {
+.prem-res-header h3 {
     font-size: 1.8rem;
-    color: #000;
+    color: #ffffff;
     font-weight: 600;
 }
 
-.res-form-header .text-red {
-    color: var(--accent-red, #c8102e);
-}
-
-.res-form-content {
+/* Progress Indicator */
+.prem-res-progress {
     display: flex;
-    align-items: stretch;
     justify-content: space-between;
-    gap: 40px;
+    align-items: flex-start;
+    max-width: 800px;
+    margin: 0 auto 60px auto;
+    position: relative;
 }
 
-.res-form-left {
-    flex: 1;
-    max-width: 60%;
+.progress-step {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    width: 150px;
+    z-index: 2;
 }
 
-.res-form-right {
-    flex: 1;
-    max-width: 40%;
+.step-circle {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: #000000;
+    color: #ffffff;
     display: flex;
     justify-content: center;
     align-items: center;
+    font-weight: bold;
+    font-size: 1.1rem;
+    margin-bottom: 15px;
+    border: 2px solid #000000;
+    transition: var(--transition-smooth, all 0.3s ease);
 }
 
-.res-booking-form {
+.step-circle.active {
+    background-color: transparent;
+    border-color: #000000;
+    color: #000000;
+}
+
+.progress-step p {
+    font-size: 0.85rem;
+    line-height: 1.4;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.progress-line {
+    flex-grow: 1;
+    height: 2px;
+    background-color: #000000;
+    margin-top: 20px;
+    z-index: 1;
+}
+
+/* Grid Layout */
+.prem-res-grid {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+    gap: 60px;
+}
+
+/* Left Column: Form */
+.prem-booking-form {
     display: flex;
     flex-direction: column;
     gap: 20px;
 }
 
-.form-row {
-    display: flex;
+.prem-form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
     gap: 20px;
 }
 
-.form-row.half-width {
+.prem-form-row.half-width {
+    grid-template-columns: 1fr;
     width: 50%;
-    padding-right: 10px;
 }
 
-.form-group {
-    flex: 1;
+.prem-form-group {
     display: flex;
     flex-direction: column;
     gap: 8px;
 }
 
-.form-group label {
-    font-weight: 600;
-    color: #000;
+.prem-form-group label {
     font-size: 1rem;
+    font-weight: 500;
+    color: #ffffff;
 }
 
-.form-group input,
-.form-group select,
-.form-group textarea {
+.prem-form-group label span {
+    color: #ffffff;
+}
+
+.prem-form-group input,
+.prem-form-group select,
+.prem-form-group textarea {
     width: 100%;
     padding: 15px;
-    border: none;
+    border: 2px solid transparent;
     border-radius: 8px;
-    background-color: rgba(255, 255, 255, 0.95);
+    background-color: #ffffff;
+    color: #333333;
     font-size: 1rem;
     font-family: inherit;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    transition: border-color 0.3s ease;
 }
 
-.form-group input:focus,
-.form-group select:focus,
-.form-group textarea:focus {
-    outline: 2px solid var(--accent-red, #c8102e);
+.prem-form-group input:focus,
+.prem-form-group select:focus,
+.prem-form-group textarea:focus {
+    outline: none;
+    border-color: #000000;
 }
 
-.form-group textarea {
+/* Validation styling */
+.prem-form-group input.error,
+.prem-form-group select.error,
+.prem-form-group textarea.error {
+    border-color: #ffcccc;
+    background-color: #fff5f5;
+}
+
+.prem-form-group textarea {
     resize: vertical;
+    min-height: 100px;
 }
 
-.res-submit-btn {
+.prem-form-contact-text {
+    margin-top: 10px;
+    font-size: 0.9rem;
+    color: #ffffff;
+}
+
+.prem-form-contact-text .phone-link {
+    font-weight: bold;
+    font-size: 1rem;
+    margin-top: 5px;
+}
+
+.prem-submit-btn {
     background-color: var(--accent-red, #c8102e);
     color: #ffffff;
-    border: none;
+    border: 2px solid #ffffff;
+    /* White border to pop */
     border-radius: 50px;
     padding: 15px 40px;
     font-size: 1.1rem;
     font-weight: bold;
     cursor: pointer;
     align-self: flex-start;
-    margin-top: 10px;
-    transition: background-color 0.3s ease, transform 0.2s ease;
+    margin-top: 20px;
+    transition: all 0.3s ease;
+    min-width: 200px;
 }
 
-.res-submit-btn:hover {
-    background-color: #a00d24;
-    transform: translateY(-2px);
+.prem-submit-btn:hover {
+    background-color: #ffffff;
+    color: var(--accent-red, #c8102e);
 }
 
-.res-form-image-wrapper {
-    position: relative;
-    width: 100%;
-    max-width: 400px;
+.form-message {
+    padding: 15px;
+    border-radius: 8px;
+    margin-top: 20px;
+    font-weight: 500;
 }
 
-.res-form-image-bg {
-    position: absolute;
-    top: 50px;
-    bottom: -30px;
-    left: -30px;
-    width: 100%;
-    background-color: var(--accent-red, #c8102e);
-    border-radius: 30px 0 20px 20px;
-    z-index: 1;
+.form-message.success {
+    background-color: rgba(255, 255, 255, 0.2);
+    color: #ffffff;
+    border: 1px solid #ffffff;
 }
 
-.res-form-image {
-    position: relative;
-    width: 100%;
-    height: auto;
-    border-radius: 12px;
-    z-index: 2;
-    object-fit: cover;
-    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+.form-message.hidden {
+    display: none;
 }
 
-/* Responsive Styles */
+/* Right Column: Info Card */
+.prem-res-info-card {
+    background-color: #1a1a1a;
+    border-radius: 20px;
+    padding: 40px;
+    color: #ffffff;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+    align-self: start;
+    /* Don't stretch vertically */
+}
+
+.info-card-content h4 {
+    font-family: var(--font-heading, 'Playfair Display', serif);
+    font-size: 1.3rem;
+    color: #cccccc;
+    margin-bottom: 10px;
+    margin-top: 30px;
+    font-weight: 600;
+}
+
+.info-card-content h4:first-child {
+    margin-top: 0;
+}
+
+.info-card-content p {
+    font-size: 0.95rem;
+    color: #aaaaaa;
+    margin-bottom: 5px;
+    line-height: 1.6;
+}
+
+.open-time-grid {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 5px 15px;
+    font-size: 0.95rem;
+    color: #aaaaaa;
+}
+
+.social-icons {
+    display: flex;
+    gap: 15px;
+    margin-top: 15px;
+}
+
+.social-circle {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: #ff5e3a;
+    /* Orange matching the screenshot */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #ffffff;
+    text-decoration: none;
+    transition: transform 0.3s ease;
+}
+
+.social-circle:hover {
+    transform: scale(1.1);
+}
+
+/* Responsive */
 @media (max-width: 992px) {
-    .res-form-content {
-        flex-direction: column;
+    .prem-res-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
     }
 
-    .res-form-left,
-    .res-form-right {
-        max-width: 100%;
-    }
-
-    .res-form-right {
-        margin-top: 50px;
-    }
-
-    .res-form-image-wrapper {
-        max-width: 80%;
+    .prem-res-info-card {
+        order: 2;
+        /* Ensure info card is below form */
     }
 }
 
 @media (max-width: 768px) {
-    .reservations-form-section {
-        padding: 50px 0;
+    .premium-reservation-section {
+        padding: 60px 0;
     }
 
-    .form-row {
-        flex-direction: column;
-        gap: 15px;
+    .prem-form-row {
+        grid-template-columns: 1fr;
+        gap: 20px;
     }
 
-    .res-booking-form {
-        gap: 15px;
-    }
-
-    .form-row.half-width {
+    .prem-form-row.half-width {
         width: 100%;
-        padding-right: 0;
     }
 
-    .res-form-header h2 {
-        font-size: 1.8rem;
+    .prem-res-header h2 {
+        font-size: 2rem;
     }
 
-    .res-form-header h3 {
-        font-size: 1.2rem;
+    .prem-res-progress {
+        overflow-x: visible;
+        justify-content: space-between;
+        padding-bottom: 0;
+        gap: 5px;
+        max-width: 100%;
     }
 
-    .form-group input,
-    .form-group select,
-    .form-group textarea {
-        padding: 12px;
+    .progress-step {
+        flex: 1;
+        width: auto;
+    }
+
+    .step-circle {
+        width: 32px;
+        height: 32px;
         font-size: 0.95rem;
+        margin-bottom: 10px;
     }
 
-    .res-submit-btn {
-        width: 100%;
-        text-align: center;
-        padding: 15px 20px;
-        font-size: 1rem;
+    .progress-step p {
+        font-size: 0.75rem;
     }
 
-    .res-form-image-wrapper {
-        max-width: 280px;
-        margin: 0 auto;
-        margin-left: auto;
-        margin-right: auto;
-    }
-
-    .res-form-image-bg {
-        left: -15px;
-        top: 15px;
-        bottom: -15px;
-        border-radius: 20px 0 15px 15px;
+    .progress-line {
+        min-width: 15px;
+        margin-top: 16px;
     }
 }
 
 @media (max-width: 480px) {
-    .reservations-form-section {
-        padding: 40px 0;
+    .prem-res-info-card {
+        padding: 30px 20px;
     }
 
-    .res-form-header {
-        margin-bottom: 30px;
+    .prem-submit-btn {
+        width: 100%;
+        text-align: center;
     }
 
-    .res-form-header h2 {
-        font-size: 1.5rem;
+    .step-circle {
+        width: 26px;
+        height: 26px;
+        font-size: 0.85rem;
+        border-width: 1.5px;
     }
 
-    .res-form-header h3 {
+    .progress-step p {
+        font-size: 0.65rem;
+    }
+
+    .progress-line {
+        min-width: 10px;
+        margin-top: 13px;
+    }
+}
+
+
+
+/* =============================================
+   FAQ SECTION
+   ============================================= */
+
+.faq-section {
+    padding: 100px 0;
+    background-color: #ffffff;
+    /* White background as requested */
+    color: #1a1a1a;
+}
+
+.faq-container {
+    max-width: var(--container-max, 1200px);
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.faq-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    gap: 60px;
+    align-items: start;
+}
+
+/* Header & Intro */
+.faq-header-content {
+    position: sticky;
+    top: 100px;
+}
+
+.faq-header-content h2 {
+    font-size: 3rem;
+    font-weight: 600;
+    line-height: 1.1;
+    margin-bottom: 20px;
+    color: #1a1a1a;
+    font-family: var(--font-heading, 'Playfair Display', serif);
+}
+
+.faq-header-content h2 span {
+    color: var(--accent-red, #c8102e);
+    font-style: italic;
+}
+
+.faq-header-content p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: #555555;
+}
+
+/* Accordion */
+.faq-accordion {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.faq-item {
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+    overflow: hidden;
+    transition: box-shadow 0.3s ease;
+    border: 1px solid rgba(0, 0, 0, 0.03);
+}
+
+.faq-item:hover {
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+}
+
+.faq-item.active {
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+    border-color: rgba(0, 0, 0, 0.06);
+}
+
+.faq-question {
+    width: 100%;
+    text-align: left;
+    padding: 24px 30px;
+    background: transparent;
+    border: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: #1a1a1a;
+    font-family: var(--font-body, 'Poppins', sans-serif);
+}
+
+.faq-icon {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background-color: var(--accent-red, #c8102e);
+    /* Matching reference circle style but using brand red */
+    color: #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
+    margin-left: 15px;
+    transition: transform 0.4s ease, background-color 0.3s ease;
+}
+
+.faq-icon svg {
+    transition: transform 0.4s ease;
+}
+
+.faq-item.active .faq-icon {
+    transform: rotate(180deg);
+}
+
+.faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.faq-answer-inner {
+    padding: 0 30px 24px 30px;
+    color: #555555;
+    line-height: 1.6;
+    font-size: 0.95rem;
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+    .faq-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .faq-header-content {
+        position: static;
+        text-align: center;
+    }
+
+    .faq-header-content h2 {
+        font-size: 2.5rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .faq-section {
+        padding: 60px 0;
+    }
+
+    .faq-question {
+        padding: 20px;
         font-size: 1rem;
     }
 
-    .res-form-image-wrapper {
-        max-width: 220px;
-        margin: 0 auto;
-        margin-left: auto;
-        margin-right: auto;
-    }
-
-    .res-form-image-bg {
-        left: -10px;
-        top: 10px;
-        bottom: -10px;
-        border-radius: 15px 0 10px 10px;
-    }
-
-    .form-group input,
-    .form-group select,
-    .form-group textarea {
-        padding: 10px;
-        font-size: 0.9rem;
+    .faq-answer-inner {
+        padding: 0 20px 20px 20px;
     }
 }

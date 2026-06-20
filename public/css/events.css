@@ -332,7 +332,36 @@
     position: relative;
     /* Height controls how long the user scrolls while the section is pinned */
     height: 350vh;
-    background: linear-gradient(135deg, #4a0000 0%, #8b0000 50%, #300000 100%);
+    /* Rich, aesthetic red gradient that scrolls with the page and slowly animates */
+    background: linear-gradient(135deg, #0a0000 0%, #5c0000 40%, #8b0000 50%, #2a0000 70%, #050505 100%);
+    background-size: 200% 200%;
+    animation: storyGradientShift 20s ease infinite;
+}
+
+@keyframes storyGradientShift {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+/* Base low-consuming glow for the section */
+.story-glow-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at center, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.7) 100%);
+    pointer-events: none;
+    z-index: 0;
 }
 
 .story-sticky-wrapper {
@@ -350,30 +379,39 @@
     position: relative;
     z-index: 2;
     width: 100%;
-    max-width: 1000px;
+    max-width: 1200px;
+    /* Wider to accommodate bigger text */
     padding: 0 5%;
     display: flex;
     flex-direction: column;
-    gap: 15px;
+    gap: 0px;
     /* Texts closer to each other */
 }
 
 .story-line {
     width: 100%;
     font-family: var(--font-heading);
-    font-size: 2.8rem;
-    font-weight: 700;
+    font-size: 5rem;
+    /* Bigger in desktop */
+    font-weight: 800;
     color: var(--text-light);
-    letter-spacing: 0px;
+    letter-spacing: 2px;
+    line-height: 1.05;
+    /* Tighter line height to bring text closer */
+    text-transform: uppercase;
+    text-shadow: 0 10px 30px rgba(0, 0, 0, 0.9);
+    /* Ensures readability */
 }
 
-.text-gold {
-    color: var(--primary-color);
+.story-reveal-section .text-accent {
+    color: var(--accent-red);
+    text-shadow: 0 0 25px rgba(220, 0, 0, 0.5);
+    /* Red glowing text for accents */
 }
 
 .story-left {
     text-align: left;
-    padding-left: 10%;
+    padding-left: 5%;
 }
 
 .story-center {
@@ -382,95 +420,128 @@
 
 .story-right {
     text-align: right;
-    padding-right: 10%;
+    padding-right: 5%;
 }
 
 /* Cinematic Reveal States */
 .cinematic-item {
     opacity: 0;
-    transform: translateY(30px);
-    transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+    transform: translateY(40px) scale(0.95);
+    transition: opacity 0.8s cubic-bezier(0.25, 1, 0.5, 1), transform 0.8s cubic-bezier(0.25, 1, 0.5, 1);
     will-change: opacity, transform;
 }
 
 .cinematic-item.scrolled-in {
     opacity: 1;
-    transform: translateY(0);
+    transform: translateY(0) scale(1);
 }
 
 /* Floating Images */
 .story-img {
     position: absolute;
     z-index: 1;
-    border-radius: 15px;
-    object-fit: cover;
-    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
-    opacity: 0.7;
-    /* Ensures text is readable above it */
+    border-radius: 6px;
+    /* Sharper edge for minimal look */
+    /* Remove object-fit to allow natural proportions */
+    box-shadow: 0 25px 60px rgba(0, 0, 0, 0.8);
+    opacity: 0.35;
+    /* Dimmed to keep focus on glowing typography */
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    /* Sleek border */
+    filter: grayscale(20%) contrast(110%);
     will-change: opacity, transform;
 }
 
-/* Options to change image width/height as requested */
+/* Image positions */
 .story-img-1 {
     top: 15%;
-    right: 10%;
-    width: 280px;
-    height: 180px;
+    right: 15%;
+    width: 18vw;
+    max-width: 220px;
+    height: auto;
 }
 
 .story-img-2 {
-    top: 45%;
-    left: 5%;
-    width: 250px;
-    height: 160px;
+    top: 40%;
+    left: 10%;
+    width: 16vw;
+    max-width: 200px;
+    height: auto;
 }
 
 .story-img-3 {
-    bottom: 15%;
-    right: 15%;
-    width: 320px;
-    height: 200px;
+    bottom: 12%;
+    right: 25%;
+    width: 20vw;
+    max-width: 250px;
+    height: auto;
+}
+
+/* Vertical Japanese text decoration for aesthetic */
+.story-jp-decor {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-family: 'Noto Sans JP', sans-serif;
+    color: rgba(255, 255, 255, 0.02);
+    /* Extremely subtle */
+    font-size: 18rem;
+    font-weight: 900;
+    line-height: 0.8;
+    writing-mode: vertical-rl;
+    white-space: nowrap;
+    z-index: 0;
+    pointer-events: none;
+    user-select: none;
+    letter-spacing: 30px;
 }
 
 /* Responsive adjustments for mobile */
 @media (max-width: 768px) {
     .story-line {
-        font-size: 1.8rem;
-        /* Even smaller for mobile */
+        font-size: 2rem;
+        /* Keep text reasonable on mobile */
         padding: 0;
         text-align: center;
         /* Override left/right for better mobile readability */
+        letter-spacing: 1px;
     }
 
     .story-container {
-        gap: 10px;
+        gap: 5px;
         /* Tighter on mobile */
     }
 
     .story-img {
-        opacity: 0.25;
+        opacity: 0.15;
         /* fade pictures more on mobile so text stands out */
     }
 
     .story-img-1 {
         width: 150px;
-        height: 100px;
+        height: 200px;
         top: 10%;
         right: 5%;
     }
 
     .story-img-2 {
         width: 140px;
-        height: 90px;
+        height: 220px;
         top: 50%;
         left: -10px;
     }
 
     .story-img-3 {
-        width: 160px;
-        height: 110px;
+        width: 180px;
+        height: 130px;
         bottom: 10%;
         right: 5%;
+    }
+
+    .story-jp-decor {
+        font-size: 8rem;
+        letter-spacing: 15px;
     }
 }
 
@@ -550,132 +621,189 @@
     box-shadow: 0 0 10px var(--primary-color);
 }
 
-/* ── Ticket Cards ── */
+/* ── Aesthetic Cards ── */
 .timeline-card {
     position: relative;
-    width: 350px;
-    background-color: #b51224;
-    /* Deep red matching image */
-    color: var(--dark-bg);
-    border-radius: 4px;
+    width: 380px;
+    background-color: rgba(15, 15, 15, 0.6);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 12px;
+    color: var(--text-light);
     flex-shrink: 0;
     z-index: 2;
-    /* Only transition GPU-friendly properties (opacity + transform) */
+    overflow: hidden;
+    /* Smooth cinematic transitions */
     transition: opacity 0.5s cubic-bezier(0.25, 1, 0.5, 1),
-               transform 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+        transform 0.5s cubic-bezier(0.25, 1, 0.5, 1),
+        border-color 0.4s ease, box-shadow 0.4s ease;
     will-change: opacity, transform;
 
-    /* Cinematic dimmed/scaled down state by default */
+    /* Cinematic dimmed state */
     opacity: 0.4;
-    transform: scale(0.85);
+    transform: scale(0.9);
+}
+
+/* Base low-consuming glow for the section */
+.timeline-glow-bg {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100vw;
+    height: 100vh;
+    background: radial-gradient(circle at center, rgba(200, 0, 0, 0.05) 0%, rgba(100, 0, 0, 0.02) 40%, transparent 70%);
+    pointer-events: none;
+    z-index: 0;
+}
+
+/* Individual card glow element (behind content) */
+.card-glow {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at 50% 0%, rgba(200, 0, 0, 0.15) 0%, transparent 60%);
+    opacity: 0;
+    transition: opacity 0.5s ease;
+    z-index: 0;
+    pointer-events: none;
 }
 
 .timeline-card.active-card {
     opacity: 1;
     transform: scale(1.05);
+    border-color: rgba(200, 0, 0, 0.4);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.6), inset 0 0 20px rgba(200, 0, 0, 0.08);
 }
 
-/* Circular cutouts */
-.ticket-cutout {
+.timeline-card.active-card .card-glow {
+    opacity: 1;
+}
+
+.card-content {
+    position: relative;
+    z-index: 1;
+}
+
+.card-image-wrapper {
+    position: relative;
+    width: 100%;
+    height: 220px;
+    overflow: hidden;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.card-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.timeline-card.active-card .card-image {
+    transform: scale(1.08);
+}
+
+.card-image-wrapper::after {
+    content: '';
     position: absolute;
-    background-color: var(--dark-bg);
-    border-radius: 50%;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 50%;
+    background: linear-gradient(to top, rgba(15, 15, 15, 1) 0%, transparent 100%);
 }
 
-.ticket-cutout.top-right {
-    width: 30px;
-    height: 30px;
+.card-date-badge {
+    position: absolute;
     top: 15px;
     right: 15px;
+    background: rgba(10, 10, 10, 0.8);
+    backdrop-filter: blur(4px);
+    border: 1px solid rgba(200, 0, 0, 0.4);
+    color: var(--text-light);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 55px;
+    height: 65px;
+    border-radius: 8px;
+    z-index: 2;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
 }
 
-.ticket-cutout.mid-left {
-    width: 20px;
-    height: 20px;
-    left: -10px;
-    top: 60%;
-    transform: translateY(-50%);
+.card-date-badge .month {
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    color: var(--accent-red);
+    text-transform: uppercase;
 }
 
-.ticket-cutout.mid-right {
-    width: 20px;
-    height: 20px;
-    right: -10px;
-    top: 60%;
-    transform: translateY(-50%);
-}
-
-.ticket-top {
-    padding: 30px;
-    padding-bottom: 20px;
-    text-align: center;
-}
-
-.ticket-top img {
-    width: 100%;
-    height: 200px;
-    object-fit: cover;
-    margin-bottom: 20px;
-    border: 1px solid rgba(255, 255, 255, 0.2);
-}
-
-.ticket-top h3 {
+.card-date-badge .day {
     font-family: var(--font-heading);
-    font-size: 1.5rem;
+    font-size: 1.4rem;
+    font-weight: 700;
+    line-height: 1.1;
+}
+
+.card-text-wrapper {
+    padding: 25px 30px 35px 30px;
+}
+
+.card-title {
+    font-family: var(--font-heading);
+    font-size: 1.4rem;
     letter-spacing: 2px;
-    margin: 0;
+    margin: 0 0 15px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
 }
 
-/* The dotted line separating top and bottom */
-.ticket-divider {
-    width: calc(100% - 40px);
-    margin: 0 auto;
-    border-top: 2px dashed rgba(0, 0, 0, 0.3);
-    position: absolute;
-    top: 60%;
-    left: 20px;
+.jp-subtitle {
+    font-family: 'Noto Sans JP', sans-serif;
+    font-size: 0.8rem;
+    letter-spacing: 4px;
+    color: var(--accent-red);
+    font-weight: 400;
 }
 
-.ticket-bottom {
-    padding: 40px 30px 30px 30px;
-}
-
-.ticket-bottom p {
+.card-desc {
     font-size: 0.95rem;
-    margin-bottom: 15px;
+    margin-bottom: 25px;
+    font-weight: 400;
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.card-text-wrapper .reserve-btn {
+    width: 100%;
+    border-color: rgba(255, 255, 255, 0.2);
+    color: var(--text-light);
+    transition: all 0.3s ease;
+    letter-spacing: 1px;
     font-weight: 500;
 }
 
-.ticket-bottom .date {
-    font-family: var(--font-heading);
-    font-size: 1.1rem;
-    font-weight: bold;
-    margin-bottom: 20px;
-    letter-spacing: 1px;
-}
-
-.ticket-bottom .date span {
-    color: var(--primary-color);
-    /* Gold text */
-}
-
-.ticket-bottom .reserve-btn {
-    width: 100%;
-    border-color: var(--dark-bg);
-    color: var(--dark-bg);
-    transition: all 0.3s ease;
-}
-
-.ticket-bottom .reserve-btn:hover,
-.timeline-card.active-card .reserve-btn:hover {
-    background-color: var(--dark-bg);
+.card-text-wrapper .reserve-btn:hover {
+    background-color: var(--accent-red);
+    border-color: var(--accent-red);
     color: #fff;
-    border-color: var(--dark-bg);
+    box-shadow: 0 0 15px rgba(200, 0, 0, 0.4);
 }
 
 .timeline-card.active-card .reserve-btn {
-    background-color: var(--primary-color);
-    border-color: var(--primary-color);
+    border-color: var(--accent-red);
+    color: var(--text-light);
+}
+
+.timeline-card.active-card .reserve-btn:hover {
+    background-color: var(--accent-red);
     color: #fff;
 }
 
@@ -701,39 +829,28 @@
     }
 
     .timeline-card {
-        width: 300px;
+        width: 320px;
     }
 
     .timeline-track {
-        padding: 0 calc(50vw - 150px);
-        /* Center smaller cards */
+        padding: 0 calc(50vw - 160px);
         gap: 50px;
     }
 
-    .ticket-top {
-        padding: 20px;
+    .card-image-wrapper {
+        height: 180px;
     }
 
-    .ticket-top img {
-        height: 120px;
-        margin-bottom: 15px;
-    }
-
-    .ticket-top h3 {
+    .card-title {
         font-size: 1.2rem;
     }
 
-    .ticket-bottom {
+    .card-text-wrapper {
         padding: 20px;
     }
 
-    .ticket-bottom p {
+    .card-desc {
         font-size: 0.85rem;
-        margin-bottom: 10px;
-    }
-
-    .ticket-bottom .date {
-        font-size: 1rem;
         margin-bottom: 15px;
     }
 }
