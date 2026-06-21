@@ -782,12 +782,16 @@
 }
 
 .card-text-wrapper .reserve-btn {
-    width: 100%;
-    border-color: rgba(255, 255, 255, 0.2);
+    width: 50%;
+    padding: 15px 0;
+    background-color: var(--dark-bg);
+    border: 1px solid rgba(255, 255, 255, 0.2);
     color: var(--text-light);
     transition: all 0.3s ease;
     letter-spacing: 1px;
     font-weight: 500;
+    display: block;
+    margin: 0 auto;
 }
 
 .card-text-wrapper .reserve-btn:hover {
