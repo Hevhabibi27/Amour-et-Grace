@@ -77,12 +77,19 @@ document.addEventListener('DOMContentLoaded', () => {
             if (response.ok) {
                 const html = await response.text();
 
+                // Strip any Live Server injected script (local dev only) so it
+                // doesn't corrupt SVG elements or break bottom-of-page content.
+                const cleanHtml = html.replace(
+                    /<!--\s*Code injected by live-server\s*-->[\s\S]*?<\/script>/gi,
+                    ''
+                );
+
                 // Guard: if user navigated away during fetch, abort
                 if (!isLoading) return;
 
                 const wrapper = document.createElement('div');
                 wrapper.id = `page-${page}`;
-                wrapper.innerHTML = html;
+                wrapper.innerHTML = cleanHtml;
 
                 hideLoader();
                 pageCache[page] = wrapper;

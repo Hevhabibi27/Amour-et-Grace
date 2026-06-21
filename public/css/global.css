@@ -385,13 +385,6 @@ h6 {
     z-index: -2;
 }
 
-.footer-overlay {
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(180deg, rgba(0,0,0,0.4) 0%, rgba(0,0,0,0.8) 100%);
-    z-index: -1;
-}
-
 .footer-container {
     display: grid;
     grid-template-columns: 2fr 1fr 1.5fr;
@@ -564,11 +557,13 @@ h6 {
         grid-template-columns: 1fr 1fr;
         gap: 40px;
     }
+
     .footer-brand {
         grid-column: 1 / -1;
         padding-right: 0;
         text-align: center;
     }
+
     .footer-socials {
         justify-content: center;
     }
@@ -580,13 +575,13 @@ h6 {
         text-align: center;
         gap: 40px;
     }
-    
+
     .footer-bottom-container {
         flex-direction: column;
         justify-content: center;
         text-align: center;
     }
-    
+
     .footer-links a::after {
         left: 50%;
         transform: translateX(-50%);
