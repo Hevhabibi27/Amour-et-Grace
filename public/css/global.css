@@ -56,6 +56,22 @@ body {
     font-display: swap;
 }
 
+@font-face {
+    font-family: 'Poppins';
+    src: url('../assets/fonts/Poppins-Bold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Poppins Medium';
+    src: url('../assets/fonts/Poppins-Medium.ttf') format('truetype');
+    font-weight: medium;
+    font-style: normal;
+    font-display: swap;
+}
+
 .container {
     max-width: 1200px;
     margin: 0 auto;

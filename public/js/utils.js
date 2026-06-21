@@ -25,7 +25,7 @@ const Utils = {
             });
         }, observerOptions);
 
-        document.querySelectorAll('.reveal').forEach(element => {
+        document.querySelectorAll('.reveal, .fade-up-element').forEach(element => {
             revealObserver.observe(element);
         });
     },

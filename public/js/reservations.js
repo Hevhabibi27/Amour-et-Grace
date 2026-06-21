@@ -1,13 +1,13 @@
 // public/js/reservations.js
 
 // === Reservation Form Logic ===
-document.addEventListener('submit', function(e) {
+document.addEventListener('submit', function (e) {
     if (e.target && e.target.id === 'premiumReservationForm') {
         e.preventDefault(); // Prevent actual form submission
 
         const form = e.target;
         let isValid = true;
-        
+
         // Reset previous errors
         const inputs = form.querySelectorAll('input, select');
         inputs.forEach(input => {
@@ -40,7 +40,7 @@ document.addEventListener('submit', function(e) {
             // Simulate successful submission
             submitBtn.textContent = originalBtnText;
             submitBtn.disabled = false;
-            
+
             // Show success message
             messageDiv.textContent = 'Thank you! Your reservation request has been sent. We will contact you shortly to confirm.';
             messageDiv.classList.remove('hidden');
@@ -48,16 +48,16 @@ document.addEventListener('submit', function(e) {
 
             // Optionally reset form
             form.reset();
-            
+
             // Advance progress indicator to step 2 visually
             const steps = document.querySelectorAll('.step-circle');
-            if(steps.length >= 2) {
+            if (steps.length >= 2) {
                 steps[0].classList.remove('active');
                 steps[1].classList.add('active');
                 steps[1].style.backgroundColor = 'transparent';
                 steps[1].style.color = '#000';
             }
-            
+
             // Hide message after a few seconds
             setTimeout(() => {
                 messageDiv.classList.add('hidden');
@@ -68,7 +68,7 @@ document.addEventListener('submit', function(e) {
 });
 
 // Remove error class on input
-document.addEventListener('input', function(e) {
+document.addEventListener('input', function (e) {
     if (e.target && e.target.closest('#premiumReservationForm')) {
         if (e.target.value.trim()) {
             e.target.classList.remove('error');
@@ -78,7 +78,7 @@ document.addEventListener('input', function(e) {
 
 
 // === FAQ Accordion Logic ===
-document.addEventListener('click', function(e) {
+document.addEventListener('click', function (e) {
     const questionBtn = e.target.closest('.faq-question');
     if (!questionBtn) return;
 
@@ -89,7 +89,7 @@ document.addEventListener('click', function(e) {
     // Close all open items within the same accordion container
     const accordionContainer = currentItem.closest('.faq-accordion');
     const allItems = accordionContainer.querySelectorAll('.faq-item');
-    
+
     allItems.forEach(item => {
         item.classList.remove('active');
         const answer = item.querySelector('.faq-answer');

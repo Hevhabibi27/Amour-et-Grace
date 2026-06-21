@@ -396,10 +396,10 @@
 .res-info-card-content h4 {
     color: #ffffff;
     font-size: 1.1rem;
-    font-weight: 500;
+    font-weight: bold;
     line-height: 1.5;
     margin: 0;
-    font-family: var(--font-primary, 'Poppins', sans-serif);
+    font-family: 'Poppins', sans-serif;
 }
 
 /* Mobile & Responsive */
