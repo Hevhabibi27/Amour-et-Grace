@@ -14,25 +14,25 @@
 <!-- Scrolling Marquee Banner -->
 <div class="marquee-banner">
     <div class="marquee-content">
-        <span>RESERVATION</span>
-        <span>RESERVATION</span>
-        <span>RESERVATION</span>
-        <span>RESERVATION</span>
-        <span>RESERVATION</span>
-        <span>RESERVATION</span>
-        <span>RESERVATION</span>
-        <span>RESERVATION</span>
+        <span>Seasonal Events</span>
+        <span>Summer</span>
+        <span>Winter</span>
+        <span>Fall</span>
+        <span>Spring</span>
+        <span>Karaoke & DJ Nights</span>
+        <span>Cocktail Parties</span>
+        <span>Live Music</span>
     </div>
     <!-- Duplicate content for seamless infinite scrolling -->
     <div class="marquee-content" aria-hidden="true">
-        <span>RESERVATION</span>
-        <span>RESERVATION</span>
-        <span>RESERVATION</span>
-        <span>RESERVATION</span>
-        <span>RESERVATION</span>
-        <span>RESERVATION</span>
-        <span>RESERVATION</span>
-        <span>RESERVATION</span>
+        <span>Seasonal Events</span>
+        <span>Summer</span>
+        <span>Winter</span>
+        <span>Fall</span>
+        <span>Spring</span>
+        <span>Karaoke & DJ Nights</span>
+        <span>Cocktail Parties</span>
+        <span>Live Music</span>
     </div>
 </div>
 
@@ -51,9 +51,9 @@
                 Celebrate the seasons with exclusive cocktails, live entertainment, and unforgettable nights at Amour et
                 Grace.
             </p>
-
             <div class="occasion-actions">
-                <a href="#events" class="btn-primary occasion-btn">See Upcoming</a>
+                <a href="#upcoming-timeline" onclick="Utils.scrollToElement('#upcoming-timeline'); return false;"
+                    class="btn-primary occasion-btn">See Upcoming</a>
 
                 <div class="occasion-contact">
                     <div class="contact-icon-circle">
@@ -66,7 +66,7 @@
                     </div>
                     <div class="contact-details">
                         <span class="contact-label">Phone Number</span>
-                        <span class="contact-number">0568-48-0259</span>
+                        <span class="contact-number">+81 903 856 2854</span>
                     </div>
                 </div>
             </div>
@@ -105,14 +105,14 @@
 </section>
 
 <!-- Storytelling Reveal Section -->
-<section id="cinematic-story" class="story-reveal-section">
+<section id="cinematic-story" class="story-reveal-section section-line">
     <div class="story-sticky-wrapper">
         <!-- Ambient optimized glow moved inside sticky wrapper to prevent scroll lines -->
         <div class="story-glow-bg"></div>
-        
+
         <!-- Minimal Japanese resto-bar decor -->
         <div class="story-jp-decor">イベント</div>
-        
+
         <!-- Floating placeholder images (sizes configurable in CSS) -->
         <img src="assets/images/landscape.png" alt="Event Vibe" class="story-img story-img-1 cinematic-item">
         <img src="assets/images/landscape.png" alt="Party Vibe" class="story-img story-img-2 cinematic-item">
@@ -145,23 +145,24 @@
 </section>
 
 <!-- Upcoming Events Timeline -->
-<section id="upcoming-timeline" class="timeline-section">
+<section id="upcoming-timeline" class="timeline-section section-line">
     <!-- Optimized low-consuming glow for the entire section -->
     <div class="timeline-glow-bg"></div>
-    
+
     <div class="timeline-sticky-wrapper">
         <div class="timeline-header">
             <h2 class="text-light">Upcoming Events</h2>
-            <p class="text-light">Something exciting is always happening at our lounge. Check back regularly and be the first to know about our upcoming events, special nights, and exclusive celebrations.</p>
+            <p class="text-light">Something exciting is always happening at our lounge. Check back regularly and be the
+                first to know about our upcoming events, special nights, and exclusive celebrations.</p>
         </div>
-        
+
         <div class="timeline-viewport">
             <div class="timeline-track" id="timeline-track">
                 <!-- The connecting line behind cards -->
                 <div class="timeline-line-bg">
                     <div class="timeline-line-progress" id="timeline-progress"></div>
                 </div>
-                
+
                 <!-- Event Card 1 -->
                 <div class="timeline-card cinematic-timeline-item">
                     <div class="card-glow"></div>
@@ -175,7 +176,8 @@
                         </div>
                         <div class="card-text-wrapper">
                             <h3 class="card-title">SAKURA NIGHTS <span class="jp-subtitle">桜の夜</span></h3>
-                            <p class="card-desc">Experience the beauty of spring with our cherry blossom themed cocktails and live DJ sets.</p>
+                            <p class="card-desc">Experience the beauty of spring with our cherry blossom themed
+                                cocktails and live DJ sets.</p>
                             <button class="btn btn-outline reserve-btn">Reserve Now</button>
                         </div>
                     </div>
@@ -194,7 +196,8 @@
                         </div>
                         <div class="card-text-wrapper">
                             <h3 class="card-title">TOKYO DRIFT <span class="jp-subtitle">東京ドリフト</span></h3>
-                            <p class="card-desc">High energy, neon lights, and the best electronic beats in the city.</p>
+                            <p class="card-desc">High energy, neon lights, and the best electronic beats in the city.
+                            </p>
                             <button class="btn btn-outline reserve-btn">Reserve Now</button>
                         </div>
                     </div>
@@ -213,12 +216,13 @@
                         </div>
                         <div class="card-text-wrapper">
                             <h3 class="card-title">JAZZ & CIGARS <span class="jp-subtitle">ジャズと葉巻</span></h3>
-                            <p class="card-desc">A sophisticated evening of smooth jazz, premium cigars, and classic cocktails.</p>
+                            <p class="card-desc">A sophisticated evening of smooth jazz, premium cigars, and classic
+                                cocktails.</p>
                             <button class="btn btn-outline reserve-btn">Reserve Now</button>
                         </div>
                     </div>
                 </div>
-                
+
                 <!-- Event Card 4 -->
                 <div class="timeline-card cinematic-timeline-item">
                     <div class="card-glow"></div>
@@ -232,7 +236,8 @@
                         </div>
                         <div class="card-text-wrapper">
                             <h3 class="card-title">MIDNIGHT MATSURI <span class="jp-subtitle">深夜の祭り</span></h3>
-                            <p class="card-desc">A vibrant festival night featuring traditional performers and modern mixes.</p>
+                            <p class="card-desc">A vibrant festival night featuring traditional performers and modern
+                                mixes.</p>
                             <button class="btn btn-outline reserve-btn">Reserve Now</button>
                         </div>
                     </div>
@@ -243,7 +248,7 @@
 </section>
 
 <!-- Past Events Section -->
-<section id="past-events" class="past-events-section">
+<section id="past-events" class="past-events-section section-line">
     <div class="container past-events-container">
         <div class="past-events-header fade-up-element">
             <h2 class="past-events-title">PAST EVENTS</h2>
@@ -253,13 +258,18 @@
         <!-- Featured Past Event -->
         <div class="featured-past-event fade-up-element">
             <div class="featured-image-wrapper">
-                <img src="assets/images/landscape.png" alt="Featured Past Event" class="featured-image lazy" loading="lazy">
+                <img src="assets/images/landscape.png" alt="Featured Past Event" class="featured-image lazy"
+                    loading="lazy">
             </div>
             <div class="featured-content">
                 <div class="featured-desc">
-                    We host intimate evenings, live performances, and celebrations that linger in memory long after the night has ended. We host intimate evenings, live performances, and celebrations that linger in memory long after the night has ended.<br><br>
-                    We host intimate evenings, live performances, and celebrations that linger in memory long after the night has ended.<br><br>
-                    We host intimate evenings, live performances, and celebrations that linger in memory long after the night has ended.
+                    We host intimate evenings, live performances, and celebrations that linger in memory long after the
+                    night has ended. We host intimate evenings, live performances, and celebrations that linger in
+                    memory long after the night has ended.<br><br>
+                    We host intimate evenings, live performances, and celebrations that linger in memory long after the
+                    night has ended.<br><br>
+                    We host intimate evenings, live performances, and celebrations that linger in memory long after the
+                    night has ended.
                 </div>
                 <div class="featured-footer">
                     <h3 class="featured-title">LIVE MUSIC</h3>
@@ -285,14 +295,15 @@
                 <div class="past-event-text">
                     <h4 class="past-event-title">KARAOKE</h4>
                     <p class="past-event-desc">
-                        WE HOST INTIMATE EVENINGS, LIVE PERFORMANCES, AND CELEBRATIONS THAT LINGER IN MEMORY LONG AFTER THE NIGHT HAS ENDED.
+                        WE HOST INTIMATE EVENINGS, LIVE PERFORMANCES, AND CELEBRATIONS THAT LINGER IN MEMORY LONG AFTER
+                        THE NIGHT HAS ENDED.
                     </p>
                 </div>
                 <div class="past-event-thumbnail">
                     <img src="assets/images/landscape.png" alt="Karaoke Event" class="lazy" loading="lazy">
                 </div>
             </div>
-            
+
             <!-- Event Item 2 -->
             <div class="past-event-item fade-up-element">
                 <div class="past-event-date">
@@ -304,7 +315,8 @@
                 <div class="past-event-text">
                     <h4 class="past-event-title">KARAOKE</h4>
                     <p class="past-event-desc">
-                        WE HOST INTIMATE EVENINGS, LIVE PERFORMANCES, AND CELEBRATIONS THAT LINGER IN MEMORY LONG AFTER THE NIGHT HAS ENDED.
+                        WE HOST INTIMATE EVENINGS, LIVE PERFORMANCES, AND CELEBRATIONS THAT LINGER IN MEMORY LONG AFTER
+                        THE NIGHT HAS ENDED.
                     </p>
                 </div>
                 <div class="past-event-thumbnail">
@@ -323,7 +335,8 @@
                 <div class="past-event-text">
                     <h4 class="past-event-title">KARAOKE</h4>
                     <p class="past-event-desc">
-                        WE HOST INTIMATE EVENINGS, LIVE PERFORMANCES, AND CELEBRATIONS THAT LINGER IN MEMORY LONG AFTER THE NIGHT HAS ENDED.
+                        WE HOST INTIMATE EVENINGS, LIVE PERFORMANCES, AND CELEBRATIONS THAT LINGER IN MEMORY LONG AFTER
+                        THE NIGHT HAS ENDED.
                     </p>
                 </div>
                 <div class="past-event-thumbnail">
