@@ -2,11 +2,37 @@
  * Input validation helpers for API endpoints.
  *
  * Business rules (Amour et Grace — Japan):
- *   - Business hours: 10:00–17:00 JST (10 AM – 5 PM)
- *   - Operating days:  Monday–Sunday (every day, no closed days)
- *   - Guest count:     1–500 (backend max; physical lounge is 20, admin manages)
- *   - Timezone:        JST = UTC+9 (no daylight saving in Japan)
+ *
+ *   Reservation types: 'table', 'event', 'lounge'
+ *
+ *   Hours (type-dependent):
+ *     - Resto•bar (table, event): 09:00–17:00 JST (9 AM – 5 PM), Mon–Sun
+ *     - Lounge:                   19:00–02:00 JST (7 PM – 2 AM), Mon–Sun EXCEPT Tuesday
+ *
+ *   Guest count:  1–500 (backend max; physical lounge is 20, admin manages)
+ *   Timezone:     JST = UTC+9 (no daylight saving in Japan)
  */
+
+// ── Constants ────────────────────────────────────────────────────
+
+const VALID_TYPES = ['table', 'event', 'lounge'];
+
+/**
+ * Business hours by service category.
+ *
+ * Resto•bar covers: 'table', 'event'
+ * Lounge covers:    'lounge'
+ *
+ * Lounge spans midnight (19:00 → 02:00 next day), so we check
+ * that the time is >= 19:00 OR <= 02:00.
+ */
+const BUSINESS_HOURS = {
+  restobar: { open: 9 * 60, close: 17 * 60 },    // 09:00–17:00 (540–1020 min)
+  lounge: { open: 19 * 60, close: 2 * 60 },     // 19:00–02:00 (spans midnight)
+};
+
+/** Lounge is closed on Tuesdays (day 2 in JS Date.getDay()) */
+const LOUNGE_CLOSED_DAY = 2; // Tuesday
 
 // ── JST Helpers ──────────────────────────────────────────────────
 
@@ -19,6 +45,17 @@ function getTodayJST() {
   // Shift UTC time by +9 hours to get JST
   const jst = new Date(now.getTime() + 9 * 60 * 60 * 1000);
   return jst.toISOString().split('T')[0]; // "YYYY-MM-DD"
+}
+
+/**
+ * Get the day of the week for a given date string in JST.
+ * Returns 0=Sunday, 1=Monday, ..., 6=Saturday.
+ */
+function getDayOfWeekJST(dateStr) {
+  // Parse as JST by appending +09:00
+  const date = new Date(dateStr + 'T12:00:00+09:00');
+  // getUTCDay after offsetting to JST noon is reliable
+  return date.getUTCDay();
 }
 
 // ── Existing (preserved) ─────────────────────────────────────────
@@ -84,38 +121,83 @@ function isDateWithinMaxAdvance(dateStr, maxDays = 180) {
   return date <= maxDate;
 }
 
-// ── New: Time validation ─────────────────────────────────────────
+// ── Type validation ──────────────────────────────────────────────
 
 /**
- * Validate a time string is HH:MM format and within business hours.
- * Business hours: 10:00–17:00 JST (10 AM – 5 PM).
- *
- * 17:00 is the last valid reservation start time.
- * Times like 17:01 or later are rejected.
+ * Validate that a reservation type is one of the allowed values.
+ * Allowed: 'table', 'event', 'lounge'
  */
-function isValidTime(timeStr) {
-  if (typeof timeStr !== 'string') return false;
+function isValidType(type) {
+  return typeof type === 'string' && VALID_TYPES.includes(type);
+}
 
-  // Must be HH:MM format
+// ── Time validation (type-dependent) ─────────────────────────────
+
+/**
+ * Parse a time string into total minutes.
+ * Returns null if the format is invalid.
+ *
+ * @param {string} timeStr - "HH:MM"
+ * @returns {number|null} - total minutes (0–1439), or null
+ */
+function parseTimeToMinutes(timeStr) {
+  if (typeof timeStr !== 'string') return null;
   const match = timeStr.match(/^(\d{2}):(\d{2})$/);
-  if (!match) return false;
+  if (!match) return null;
 
   const hour = parseInt(match[1], 10);
   const minute = parseInt(match[2], 10);
 
-  // Basic range check
-  if (hour < 0 || hour > 23 || minute < 0 || minute > 59) return false;
-
-  // Business hours: 10:00–17:00 (inclusive)
-  // Convert to total minutes for easy comparison
-  const totalMinutes = hour * 60 + minute;
-  const openAt = 10 * 60;   // 10:00 = 600 minutes
-  const closeAt = 17 * 60;  // 17:00 = 1020 minutes
-
-  return totalMinutes >= openAt && totalMinutes <= closeAt;
+  if (hour < 0 || hour > 23 || minute < 0 || minute > 59) return null;
+  return hour * 60 + minute;
 }
 
-// ── New: Phone validation ────────────────────────────────────────
+/**
+ * Validate a time string is HH:MM format and within business hours
+ * for the given reservation type.
+ *
+ * Hours depend on reservation type:
+ *   - 'table' or 'event' (resto•bar): 09:00–17:00 JST
+ *   - 'lounge':                        19:00–02:00 JST (spans midnight)
+ *
+ * @param {string} timeStr - "HH:MM"
+ * @param {string} type - reservation type ('table', 'event', 'lounge')
+ * @returns {boolean}
+ */
+function isValidTime(timeStr, type) {
+  const totalMinutes = parseTimeToMinutes(timeStr);
+  if (totalMinutes === null) return false;
+
+  if (type === 'lounge') {
+    // Lounge: 19:00–02:00 (spans midnight)
+    // Valid if time >= 19:00 OR time <= 02:00
+    const { open, close } = BUSINESS_HOURS.lounge;
+    return totalMinutes >= open || totalMinutes <= close;
+  } else {
+    // Resto•bar (table, event): 09:00–17:00
+    const { open, close } = BUSINESS_HOURS.restobar;
+    return totalMinutes >= open && totalMinutes <= close;
+  }
+}
+
+// ── Date + type combined validation ──────────────────────────────
+
+/**
+ * Check if the lounge is open on the given date.
+ * Lounge is closed on Tuesdays.
+ *
+ * @param {string} dateStr - "YYYY-MM-DD"
+ * @returns {{ open: boolean, reason?: string }}
+ */
+function isLoungeOpenOnDate(dateStr) {
+  const dayOfWeek = getDayOfWeekJST(dateStr);
+  if (dayOfWeek === LOUNGE_CLOSED_DAY) {
+    return { open: false, reason: 'The lounge is closed on Tuesdays.' };
+  }
+  return { open: true };
+}
+
+// ── Phone validation ─────────────────────────────────────────────
 
 /**
  * Validate a phone number format (optional field).
@@ -134,7 +216,7 @@ function isValidPhone(phone) {
   return /^[\d\s+\-().]+$/.test(trimmed);
 }
 
-// ── New: UUID validation ─────────────────────────────────────────
+// ── UUID validation ──────────────────────────────────────────────
 
 /**
  * Validate a UUID v4 format string.
@@ -145,7 +227,7 @@ function isValidUUID(str) {
   return /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i.test(str);
 }
 
-// ── New: Max-length enforcement ──────────────────────────────────
+// ── Max-length enforcement ───────────────────────────────────────
 
 /**
  * Check multiple fields against max-length limits.
@@ -168,7 +250,7 @@ function checkMaxLengths(body, limits) {
   return null;
 }
 
-// ── Fixed: Stronger sanitization ─────────────────────────────────
+// ── Stronger sanitization ────────────────────────────────────────
 
 /**
  * Sanitize a string — trim and strip ALL HTML/script content.
@@ -200,12 +282,19 @@ module.exports = {
   isValidEmail,
   isFutureDate,
   sanitize,
-  // New additions
+  // Type & time (type-dependent)
+  isValidType,
   isValidTime,
+  isLoungeOpenOnDate,
+  // Field validators
   isValidPhone,
   isValidUUID,
   isDateWithinMaxAdvance,
   checkMaxLengths,
   // Helpers
   getTodayJST,
+  getDayOfWeekJST,
+  // Constants (for use in index.js / admin.js)
+  VALID_TYPES,
+  BUSINESS_HOURS,
 };

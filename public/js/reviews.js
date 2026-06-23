@@ -116,7 +116,7 @@ document.addEventListener('click', function (e) {
         setTimeout(() => {
             moreReviews.forEach(review => {
                 const card = document.createElement('div');
-                card.className = 'review-item-card';
+                card.className = 'review-item-card extra-review';
 
                 // Generate stars HTML
                 let starsHtml = '';
@@ -153,8 +153,35 @@ document.addEventListener('click', function (e) {
 
             // Hide button after loading once for demo purposes
             btn.style.display = 'none';
+            const btnLess = document.getElementById('btnShowLessReviews');
+            if (btnLess) btnLess.style.display = 'inline-block';
 
         }, 800);
+    }
+});
+
+document.addEventListener('click', function (e) {
+    if (e.target && e.target.id === 'btnShowLessReviews') {
+        const btn = e.target;
+        const container = document.getElementById('reviews-grid-container');
+        const countSpan = document.getElementById('displayed-reviews-count');
+
+        // Find and remove all elements with class 'extra-review'
+        const extraReviews = container.querySelectorAll('.extra-review');
+        extraReviews.forEach(card => card.remove());
+
+        // Update count back
+        let currentCount = parseInt(countSpan.textContent);
+        countSpan.textContent = currentCount - moreReviews.length;
+
+        // Hide 'Show Less' and Show 'Load More'
+        btn.style.display = 'none';
+        const loadMoreBtn = document.getElementById('btnLoadMoreReviews');
+        if (loadMoreBtn) {
+            loadMoreBtn.style.display = 'inline-block';
+            loadMoreBtn.textContent = 'もっと見る';
+            loadMoreBtn.disabled = false;
+        }
     }
 });
 

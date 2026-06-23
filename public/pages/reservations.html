@@ -139,27 +139,37 @@
                     <div class="prem-form-row">
                         <div class="prem-form-group">
                             <label for="premFullName">Full name <span>*</span></label>
-                            <input type="text" id="premFullName" required placeholder="Marie Fraz">
+                            <input type="text" id="premFullName" name="name" required placeholder="Marie Fraz"
+                                maxlength="100" minlength="2">
                         </div>
                         <div class="prem-form-group">
                             <label for="premEmail">Email <span>*</span></label>
-                            <input type="email" id="premEmail" required placeholder="example@gmail.com">
+                            <input type="email" id="premEmail" name="email" required placeholder="example@gmail.com"
+                                maxlength="254">
                         </div>
                     </div>
 
                     <div class="prem-form-row">
                         <div class="prem-form-group">
                             <label for="premPhone">Telephone Number <span>*</span></label>
-                            <input type="tel" id="premPhone" required placeholder="Marie Fraz">
+                            <input type="tel" id="premPhone" name="phone" required placeholder="090-1234-5678"
+                                maxlength="20">
                         </div>
                         <div class="prem-form-group">
                             <label for="premGuests">Number of Guest <span>*</span></label>
-                            <select id="premGuests" required>
-                                <option value="" disabled selected>Maximum of 20 people</option>
+                            <select id="premGuests" name="guest_count" required>
+                                <option value="" disabled selected>Select number of guests</option>
                                 <option value="1">1 Person</option>
                                 <option value="2">2 People</option>
+                                <option value="3">3 People</option>
+                                <option value="4">4 People</option>
                                 <option value="5">5 People</option>
+                                <option value="6">6 People</option>
+                                <option value="7">7 People</option>
+                                <option value="8">8 People</option>
+                                <option value="9">9 People</option>
                                 <option value="10">10 People</option>
+                                <option value="15">15 People</option>
                                 <option value="20">20 People</option>
                             </select>
                         </div>
@@ -168,19 +178,20 @@
                     <div class="prem-form-row">
                         <div class="prem-form-group">
                             <label for="premDate">Date of Reservation <span>*</span></label>
-                            <input type="date" id="premDate" required>
+                            <input type="date" id="premDate" name="date" required>
                         </div>
                         <div class="prem-form-group">
                             <label for="premTime">Time of Reservation <span>*</span></label>
-                            <input type="time" id="premTime" required>
+                            <input type="time" id="premTime" name="time" required>
                         </div>
                     </div>
 
                     <div class="prem-form-row half-width">
                         <div class="prem-form-group">
                             <label for="premType">Type of Reservation <span>*</span></label>
-                            <select id="premType" required>
+                            <select id="premType" name="type" required>
                                 <option value="" disabled selected>Select</option>
+                                <option value="table">Table Reservation</option>
                                 <option value="lounge">Lounge</option>
                                 <option value="event">Private Event</option>
                             </select>
@@ -189,7 +200,7 @@
 
                     <div class="prem-form-group full-width">
                         <label for="premSpecialRequest">Special Request</label>
-                        <textarea id="premSpecialRequest" rows="3"
+                        <textarea id="premSpecialRequest" name="message" rows="3" maxlength="500"
                             placeholder="Request your favorite drinks or dish. You can request whatever decoration / design........."></textarea>
                     </div>
 
@@ -197,6 +208,9 @@
                         <p>For decorations and custom arrangements, please contact:</p>
                         <p class="phone-link">📞 090 3856 2854</p>
                     </div>
+
+                    <!-- Cloudflare Turnstile CAPTCHA -->
+                    <div class="cf-turnstile" data-sitekey="0x4AAAAAADpbe91a9hwitDJ1" data-theme="dark"></div>
 
                     <button type="submit" class="prem-submit-btn">今すぐ予約する</button>
 

@@ -85,10 +85,10 @@
         </div>
 
         <!-- Grid -->
-        <div class="menu-showcase-grid">
+        <div class="menu-showcase-grid" id="menu-showcase-grid-container">
 
             <!-- Card 1 -->
-            <div class="showcase-card">
+            <div class="showcase-card" data-category="ramen">
                 <div class="card-top-tag">
                     <img src="assets/images/star.png" alt="star" class="star-icon">
                     Chef's Recommend Menu
@@ -100,7 +100,7 @@
             </div>
 
             <!-- Card 2 -->
-            <div class="showcase-card">
+            <div class="showcase-card" data-category="sushi">
                 <div class="card-top-tag invisible">
                     <img src="assets/images/star.png" alt="star" class="star-icon">
                     Placeholder
@@ -112,7 +112,7 @@
             </div>
 
             <!-- Card 3 -->
-            <div class="showcase-card">
+            <div class="showcase-card" data-category="filipino-food">
                 <div class="card-top-tag invisible">
                     <img src="assets/images/star.png" alt="star" class="star-icon">
                     Placeholder
@@ -124,7 +124,7 @@
             </div>
 
             <!-- Card 4 -->
-            <div class="showcase-card">
+            <div class="showcase-card" data-category="ramen">
                 <div class="card-top-tag invisible">
                     <img src="assets/images/star.png" alt="star" class="star-icon">
                     Placeholder
@@ -136,7 +136,7 @@
             </div>
 
             <!-- Card 5 -->
-            <div class="showcase-card">
+            <div class="showcase-card" data-category="new">
                 <div class="card-top-tag">
                     <img src="assets/images/star.png" alt="star" class="star-icon">
                     Chef's Recommend Menu
@@ -148,7 +148,7 @@
             </div>
 
             <!-- Card 6 -->
-            <div class="showcase-card">
+            <div class="showcase-card" data-category="sushi">
                 <div class="card-top-tag invisible">
                     <img src="assets/images/star.png" alt="star" class="star-icon">
                     Placeholder
@@ -160,7 +160,7 @@
             </div>
 
             <!-- Card 7 -->
-            <div class="showcase-card">
+            <div class="showcase-card" data-category="filipino-food">
                 <div class="card-top-tag invisible">
                     <img src="assets/images/star.png" alt="star" class="star-icon">
                     Placeholder
@@ -172,7 +172,7 @@
             </div>
 
             <!-- Card 8 -->
-            <div class="showcase-card">
+            <div class="showcase-card" data-category="new">
                 <div class="card-top-tag invisible">
                     <img src="assets/images/star.png" alt="star" class="star-icon">
                     Placeholder
@@ -183,6 +183,61 @@
                 <button class="showcase-price-btn">9.99</button>
             </div>
 
+            <!-- Extra Card 1 -->
+            <div class="showcase-card extra-menu-item" data-category="ramen" style="display: none;">
+                <div class="card-top-tag invisible">
+                    <img src="assets/images/star.png" alt="star" class="star-icon">
+                    Spicy
+                </div>
+                <img src="assets/images/menudishv1.png" alt="Spicy Miso Ramen" class="showcase-dish-img">
+                <h4 class="showcase-dish-title">SPICY MISO RAMEN</h4>
+                <p class="showcase-dish-desc">Spicy miso broth with minced pork, bean sprouts, and scallions.</p>
+                <button class="showcase-price-btn">10.99</button>
+            </div>
+
+            <!-- Extra Card 2 -->
+            <div class="showcase-card extra-menu-item" data-category="sushi" style="display: none;">
+                <div class="card-top-tag">
+                    <img src="assets/images/star.png" alt="star" class="star-icon">
+                    Chef's Recommend Menu
+                </div>
+                <img src="assets/images/menudishv2.png" alt="Dragon Roll" class="showcase-dish-img">
+                <h4 class="showcase-dish-title">DRAGON ROLL</h4>
+                <p class="showcase-dish-desc">Eel and cucumber topped with avocado and sweet eel sauce.</p>
+                <button class="showcase-price-btn">12.99</button>
+            </div>
+
+            <!-- Extra Card 3 -->
+            <div class="showcase-card extra-menu-item" data-category="filipino-food" style="display: none;">
+                <div class="card-top-tag invisible">
+                    <img src="assets/images/star.png" alt="star" class="star-icon">
+                    Placeholder
+                </div>
+                <img src="assets/images/menudishv3.png" alt="Chicken Teriyaki" class="showcase-dish-img">
+                <h4 class="showcase-dish-title">CHICKEN TERIYAKI</h4>
+                <p class="showcase-dish-desc">Grilled chicken glazed with sweet teriyaki sauce, served with rice.</p>
+                <button class="showcase-price-btn">11.99</button>
+            </div>
+
+            <!-- Extra Card 4 -->
+            <div class="showcase-card extra-menu-item" data-category="new" style="display: none;">
+                <div class="card-top-tag invisible">
+                    <img src="assets/images/star.png" alt="star" class="star-icon">
+                    Placeholder
+                </div>
+                <img src="assets/images/menudishv1.png" alt="Beef Gyudon" class="showcase-dish-img">
+                <h4 class="showcase-dish-title">BEEF GYUDON</h4>
+                <p class="showcase-dish-desc">Thinly sliced beef and onions simmered in a mildly sweet sauce over rice.
+                </p>
+                <button class="showcase-price-btn">9.99</button>
+            </div>
+
+        </div>
+
+        <!-- Load More Container -->
+        <div class="load-more-container">
+            <button id="btnLoadMoreMenu" class="btn-load-more">Load More</button>
+            <button id="btnShowLessMenu" class="btn-load-more" style="display: none;">Show Less</button>
         </div>
 
         <!-- Sushi Footer Display -->
@@ -225,6 +280,349 @@
                     nori, then finished with delicate fish roe for a burst of flavor and texture.
                 </div>
             </div>
+        </div>
+    </div>
+</section>
+
+<!-- Japanese Food Section -->
+<section class="menu-showcase-section japanese-food-section">
+    <div class="container">
+        <!-- Headers -->
+        <div class="menu-showcase-header text-center">
+            <h2 class="japanese-header">メニューセクション</h2>
+            <h3 class="english-header">Japanese Food Section</h3>
+            <p class="discover-desc section-desc-narrow">
+                Rooted in tradition. Bursting with flavor. Our Filipino dishes bring the heart of Filipino cuisine
+                straight to your table.
+            </p>
+        </div>
+
+        <!-- Filter Bar -->
+        <div class="menu-filter-bar">
+            <button class="filter-btn active">All</button>
+            <button class="filter-btn">New</button>
+            <button class="filter-btn">Filipino Food</button>
+            <button class="filter-btn">Sushi</button>
+            <button class="filter-btn">Ramen</button>
+        </div>
+
+        <!-- Grid -->
+        <div class="menu-showcase-grid" id="menu-japanese-grid-container">
+
+            <!-- Card 1 -->
+            <div class="showcase-card" data-category="ramen">
+                <div class="card-top-tag">
+                    <img src="assets/images/star.png" alt="star" class="star-icon">
+                    Chef's Recommendation
+                </div>
+                <img src="assets/images/menudishv1.png" alt="Tonkotsu Ramen" class="showcase-dish-img">
+                <h4 class="showcase-dish-title">TONKOTSU RAMEN</h4>
+                <p class="showcase-dish-desc">Rich pork broth with chashu, egg, and spring onions.</p>
+                <button class="showcase-price-btn">9.99</button>
+            </div>
+            <!-- Card 2 -->
+            <div class="showcase-card" data-category="sushi">
+                <div class="card-top-tag invisible">
+                    <img src="assets/images/star.png" alt="star" class="star-icon">
+                    Placeholder
+                </div>
+                <img src="assets/images/menudishv2.png" alt="Tonkotsu Ramen" class="showcase-dish-img">
+                <h4 class="showcase-dish-title">TONKOTSU RAMEN</h4>
+                <p class="showcase-dish-desc">Rich pork broth with chashu, egg, and spring onions.</p>
+                <button class="showcase-price-btn">9.99</button>
+            </div>
+            <!-- Card 3 -->
+            <div class="showcase-card" data-category="filipino-food">
+                <div class="card-top-tag invisible">
+                    <img src="assets/images/star.png" alt="star" class="star-icon">
+                    Placeholder
+                </div>
+                <img src="assets/images/menudishv3.png" alt="Tonkotsu Ramen" class="showcase-dish-img">
+                <h4 class="showcase-dish-title">TONKOTSU RAMEN</h4>
+                <p class="showcase-dish-desc">Rich pork broth with chashu, egg, and spring onions.</p>
+                <button class="showcase-price-btn">9.99</button>
+            </div>
+            <!-- Card 4 -->
+            <div class="showcase-card" data-category="ramen">
+                <div class="card-top-tag invisible">
+                    <img src="assets/images/star.png" alt="star" class="star-icon">
+                    Placeholder
+                </div>
+                <img src="assets/images/menudishv1.png" alt="Tonkotsu Ramen" class="showcase-dish-img">
+                <h4 class="showcase-dish-title">TONKOTSU RAMEN</h4>
+                <p class="showcase-dish-desc">Rich pork broth with chashu, egg, and spring onions.</p>
+                <button class="showcase-price-btn">9.99</button>
+            </div>
+            <!-- Card 5 -->
+            <div class="showcase-card" data-category="new">
+                <div class="card-top-tag">
+                    <img src="assets/images/star.png" alt="star" class="star-icon">
+                    Chef's Recommendation
+                </div>
+                <img src="assets/images/menudishv2.png" alt="Tonkotsu Ramen" class="showcase-dish-img">
+                <h4 class="showcase-dish-title">TONKOTSU RAMEN</h4>
+                <p class="showcase-dish-desc">Rich pork broth with chashu, egg, and spring onions.</p>
+                <button class="showcase-price-btn">9.99</button>
+            </div>
+            <!-- Card 6 -->
+            <div class="showcase-card" data-category="sushi">
+                <div class="card-top-tag invisible">
+                    <img src="assets/images/star.png" alt="star" class="star-icon">
+                    Placeholder
+                </div>
+                <img src="assets/images/menudishv3.png" alt="Tonkotsu Ramen" class="showcase-dish-img">
+                <h4 class="showcase-dish-title">TONKOTSU RAMEN</h4>
+                <p class="showcase-dish-desc">Rich pork broth with chashu, egg, and spring onions.</p>
+                <button class="showcase-price-btn">9.99</button>
+            </div>
+            <!-- Card 7 -->
+            <div class="showcase-card" data-category="filipino-food">
+                <div class="card-top-tag invisible">
+                    <img src="assets/images/star.png" alt="star" class="star-icon">
+                    Placeholder
+                </div>
+                <img src="assets/images/menudishv1.png" alt="Tonkotsu Ramen" class="showcase-dish-img">
+                <h4 class="showcase-dish-title">TONKOTSU RAMEN</h4>
+                <p class="showcase-dish-desc">Rich pork broth with chashu, egg, and spring onions.</p>
+                <button class="showcase-price-btn">9.99</button>
+            </div>
+            <!-- Card 8 -->
+            <div class="showcase-card" data-category="new">
+                <div class="card-top-tag invisible">
+                    <img src="assets/images/star.png" alt="star" class="star-icon">
+                    Placeholder
+                </div>
+                <img src="assets/images/menudishv2.png" alt="Tonkotsu Ramen" class="showcase-dish-img">
+                <h4 class="showcase-dish-title">TONKOTSU RAMEN</h4>
+                <p class="showcase-dish-desc">Rich pork broth with chashu, egg, and spring onions.</p>
+                <button class="showcase-price-btn">9.99</button>
+            </div>
+
+            <!-- Extra Items for Load More -->
+            <div class="showcase-card extra-japanese-item" data-category="ramen" style="display: none;">
+                <div class="card-top-tag invisible">
+                    <img src="assets/images/star.png" alt="star" class="star-icon">
+                    Placeholder
+                </div>
+                <img src="assets/images/menudishv3.png" alt="Tonkotsu Ramen" class="showcase-dish-img">
+                <h4 class="showcase-dish-title">TONKOTSU RAMEN</h4>
+                <p class="showcase-dish-desc">Rich pork broth with chashu, egg, and spring onions.</p>
+                <button class="showcase-price-btn">9.99</button>
+            </div>
+            <div class="showcase-card extra-japanese-item" data-category="sushi" style="display: none;">
+                <div class="card-top-tag invisible">
+                    <img src="assets/images/star.png" alt="star" class="star-icon">
+                    Placeholder
+                </div>
+                <img src="assets/images/menudishv1.png" alt="Tonkotsu Ramen" class="showcase-dish-img">
+                <h4 class="showcase-dish-title">TONKOTSU RAMEN</h4>
+                <p class="showcase-dish-desc">Rich pork broth with chashu, egg, and spring onions.</p>
+                <button class="showcase-price-btn">9.99</button>
+            </div>
+            <div class="showcase-card extra-japanese-item" data-category="filipino-food" style="display: none;">
+                <div class="card-top-tag invisible">
+                    <img src="assets/images/star.png" alt="star" class="star-icon">
+                    Placeholder
+                </div>
+                <img src="assets/images/menudishv2.png" alt="Tonkotsu Ramen" class="showcase-dish-img">
+                <h4 class="showcase-dish-title">TONKOTSU RAMEN</h4>
+                <p class="showcase-dish-desc">Rich pork broth with chashu, egg, and spring onions.</p>
+                <button class="showcase-price-btn">9.99</button>
+            </div>
+            <div class="showcase-card extra-japanese-item" data-category="new" style="display: none;">
+                <div class="card-top-tag invisible">
+                    <img src="assets/images/star.png" alt="star" class="star-icon">
+                    Placeholder
+                </div>
+                <img src="assets/images/menudishv3.png" alt="Tonkotsu Ramen" class="showcase-dish-img">
+                <h4 class="showcase-dish-title">TONKOTSU RAMEN</h4>
+                <p class="showcase-dish-desc">Rich pork broth with chashu, egg, and spring onions.</p>
+                <button class="showcase-price-btn">9.99</button>
+            </div>
+        </div>
+
+        <!-- Load More Container -->
+        <div class="load-more-container">
+            <button id="btnLoadMoreJapanese" class="btn-load-more">Load More</button>
+            <button id="btnShowLessJapanese" class="btn-load-more" style="display: none;">Show Less</button>
+        </div>
+    </div>
+</section>
+
+<!-- Drinks Section -->
+<section class="menu-showcase-section drinks-section">
+    <div class="container">
+        <!-- Headers -->
+        <div class="menu-showcase-header text-center">
+            <h2 class="japanese-header">メニューセクション</h2>
+            <h3 class="english-header drinks-header">
+                Drinks Section</h3>
+            <p class="discover-desc section-desc-narrow">
+                Rooted in tradition. Bursting with flavor. Our Filipino dishes bring the heart of Filipino cuisine
+                straight to your table.
+            </p>
+        </div>
+
+        <!-- Filter Bar -->
+        <div class="menu-filter-bar">
+            <button class="filter-btn active">All</button>
+            <button class="filter-btn">New</button>
+            <button class="filter-btn">Filipino Food</button>
+            <button class="filter-btn">Sushi</button>
+            <button class="filter-btn">Ramen</button>
+        </div>
+
+        <!-- Grid -->
+        <div class="menu-showcase-grid" id="menu-drinks-grid-container">
+
+            <!-- Card 1 -->
+            <div class="drinks-card" data-category="new">
+                <div class="drinks-card-content">
+                    <div class="drinks-vertical-text">ブランデー</div>
+                    <img src="assets/images/drinkfeatured1.png" alt="Brandy" class="drinks-img">
+                    <div class="drinks-desc-right">Rich pork broth with chashu, egg, and spring onions.</div>
+                </div>
+                <div class="drinks-card-footer">
+                    <h4 class="drinks-title">BRANDY</h4>
+                    <button class="showcase-price-btn" style="width: 100%; border-radius: 20px;">9.99</button>
+                </div>
+            </div>
+            <!-- Card 2 -->
+            <div class="drinks-card" data-category="sushi">
+                <div class="drinks-card-content">
+                    <div class="drinks-vertical-text">ブランデー</div>
+                    <img src="assets/images/drinkfeatured2.png" alt="Brandy" class="drinks-img">
+                    <div class="drinks-desc-right">Rich pork broth with chashu, egg, and spring onions.</div>
+                </div>
+                <div class="drinks-card-footer">
+                    <h4 class="drinks-title">BRANDY</h4>
+                    <button class="showcase-price-btn" style="width: 100%; border-radius: 20px;">9.99</button>
+                </div>
+            </div>
+            <!-- Card 3 -->
+            <div class="drinks-card" data-category="filipino-food">
+                <div class="drinks-card-content">
+                    <div class="drinks-vertical-text">ブランデー</div>
+                    <img src="assets/images/drinkfeatured3.png" alt="Brandy" class="drinks-img">
+                    <div class="drinks-desc-right">Rich pork broth with chashu, egg, and spring onions.</div>
+                </div>
+                <div class="drinks-card-footer">
+                    <h4 class="drinks-title">BRANDY</h4>
+                    <button class="showcase-price-btn" style="width: 100%; border-radius: 20px;">9.99</button>
+                </div>
+            </div>
+            <!-- Card 4 -->
+            <div class="drinks-card" data-category="ramen">
+                <div class="drinks-card-content">
+                    <div class="drinks-vertical-text">ブランデー</div>
+                    <img src="assets/images/drink.png" alt="Brandy" class="drinks-img">
+                    <div class="drinks-desc-right">Rich pork broth with chashu, egg, and spring onions.</div>
+                </div>
+                <div class="drinks-card-footer">
+                    <h4 class="drinks-title">BRANDY</h4>
+                    <button class="showcase-price-btn" style="width: 100%; border-radius: 20px;">9.99</button>
+                </div>
+            </div>
+            <!-- Card 5 -->
+            <div class="drinks-card" data-category="new">
+                <div class="drinks-card-content">
+                    <div class="drinks-vertical-text">ブランデー</div>
+                    <img src="assets/images/drinkfeatured1.png" alt="Brandy" class="drinks-img">
+                    <div class="drinks-desc-right">Rich pork broth with chashu, egg, and spring onions.</div>
+                </div>
+                <div class="drinks-card-footer">
+                    <h4 class="drinks-title">BRANDY</h4>
+                    <button class="showcase-price-btn" style="width: 100%; border-radius: 20px;">9.99</button>
+                </div>
+            </div>
+            <!-- Card 6 -->
+            <div class="drinks-card" data-category="sushi">
+                <div class="drinks-card-content">
+                    <div class="drinks-vertical-text">ブランデー</div>
+                    <img src="assets/images/drinkfeatured2.png" alt="Brandy" class="drinks-img">
+                    <div class="drinks-desc-right">Rich pork broth with chashu, egg, and spring onions.</div>
+                </div>
+                <div class="drinks-card-footer">
+                    <h4 class="drinks-title">BRANDY</h4>
+                    <button class="showcase-price-btn" style="width: 100%; border-radius: 20px;">9.99</button>
+                </div>
+            </div>
+            <!-- Card 7 -->
+            <div class="drinks-card" data-category="filipino-food">
+                <div class="drinks-card-content">
+                    <div class="drinks-vertical-text">ブランデー</div>
+                    <img src="assets/images/drinkfeatured3.png" alt="Brandy" class="drinks-img">
+                    <div class="drinks-desc-right">Rich pork broth with chashu, egg, and spring onions.</div>
+                </div>
+                <div class="drinks-card-footer">
+                    <h4 class="drinks-title">BRANDY</h4>
+                    <button class="showcase-price-btn" style="width: 100%; border-radius: 20px;">9.99</button>
+                </div>
+            </div>
+            <!-- Card 8 -->
+            <div class="drinks-card" data-category="ramen">
+                <div class="drinks-card-content">
+                    <div class="drinks-vertical-text">ブランデー</div>
+                    <img src="assets/images/drink.png" alt="Brandy" class="drinks-img">
+                    <div class="drinks-desc-right">Rich pork broth with chashu, egg, and spring onions.</div>
+                </div>
+                <div class="drinks-card-footer">
+                    <h4 class="drinks-title">BRANDY</h4>
+                    <button class="showcase-price-btn" style="width: 100%; border-radius: 20px;">9.99</button>
+                </div>
+            </div>
+
+            <!-- Extra Items for Load More -->
+            <div class="drinks-card extra-drinks-item" data-category="new" style="display: none;">
+                <div class="drinks-card-content">
+                    <div class="drinks-vertical-text">ブランデー</div>
+                    <img src="assets/images/drinkfeatured1.png" alt="Brandy" class="drinks-img">
+                    <div class="drinks-desc-right">Rich pork broth with chashu, egg, and spring onions.</div>
+                </div>
+                <div class="drinks-card-footer">
+                    <h4 class="drinks-title">BRANDY</h4>
+                    <button class="showcase-price-btn" style="width: 100%; border-radius: 20px;">9.99</button>
+                </div>
+            </div>
+            <div class="drinks-card extra-drinks-item" data-category="sushi" style="display: none;">
+                <div class="drinks-card-content">
+                    <div class="drinks-vertical-text">ブランデー</div>
+                    <img src="assets/images/drinkfeatured2.png" alt="Brandy" class="drinks-img">
+                    <div class="drinks-desc-right">Rich pork broth with chashu, egg, and spring onions.</div>
+                </div>
+                <div class="drinks-card-footer">
+                    <h4 class="drinks-title">BRANDY</h4>
+                    <button class="showcase-price-btn" style="width: 100%; border-radius: 20px;">9.99</button>
+                </div>
+            </div>
+            <div class="drinks-card extra-drinks-item" data-category="filipino-food" style="display: none;">
+                <div class="drinks-card-content">
+                    <div class="drinks-vertical-text">ブランデー</div>
+                    <img src="assets/images/drinkfeatured3.png" alt="Brandy" class="drinks-img">
+                    <div class="drinks-desc-right">Rich pork broth with chashu, egg, and spring onions.</div>
+                </div>
+                <div class="drinks-card-footer">
+                    <h4 class="drinks-title">BRANDY</h4>
+                    <button class="showcase-price-btn" style="width: 100%; border-radius: 20px;">9.99</button>
+                </div>
+            </div>
+            <div class="drinks-card extra-drinks-item" data-category="ramen" style="display: none;">
+                <div class="drinks-card-content">
+                    <div class="drinks-vertical-text">ブランデー</div>
+                    <img src="assets/images/drink.png" alt="Brandy" class="drinks-img">
+                    <div class="drinks-desc-right">Rich pork broth with chashu, egg, and spring onions.</div>
+                </div>
+                <div class="drinks-card-footer">
+                    <h4 class="drinks-title">BRANDY</h4>
+                    <button class="showcase-price-btn" style="width: 100%; border-radius: 20px;">9.99</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Load More Container -->
+        <div class="load-more-container">
+            <button id="btnLoadMoreDrinks" class="btn-load-more">Load More</button>
+            <button id="btnShowLessDrinks" class="btn-load-more" style="display: none;">Show Less</button>
         </div>
     </div>
 </section>

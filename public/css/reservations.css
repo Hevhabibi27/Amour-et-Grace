@@ -504,14 +504,15 @@
 
 .prem-res-header h2 {
     font-size: 2.5rem;
-    color: #ffffff;
+    color: var(--text-light);
     margin-bottom: 10px;
     font-weight: 700;
 }
 
 .prem-res-header h3 {
+    font-family: 'Cinzel Decorative', serif;
     font-size: 1.8rem;
-    color: #ffffff;
+    color: var(--text-light);
     font-weight: 600;
 }
 
@@ -539,7 +540,7 @@
     height: 40px;
     border-radius: 50%;
     background-color: #000000;
-    color: #ffffff;
+    color: var(--text-light);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -604,11 +605,11 @@
 .prem-form-group label {
     font-size: 1rem;
     font-weight: 500;
-    color: #ffffff;
+    color: var(--text-light);
 }
 
 .prem-form-group label span {
-    color: #ffffff;
+    color: var(--text-light);
 }
 
 .prem-form-group input,

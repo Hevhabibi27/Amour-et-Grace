@@ -1,55 +1,75 @@
 // public/js/reservations.js
 
 // === Reservation Form Logic ===
-document.addEventListener('submit', function (e) {
-    if (e.target && e.target.id === 'premiumReservationForm') {
-        e.preventDefault(); // Prevent actual form submission
+// Replaces the old setTimeout fake with a real fetch() to POST /api/reservations.
+// Aligned with:
+//   - api/reservations/index.js (expects: name, email, phone, guest_count, date, time, type, message, captcha_token)
+//   - api/_lib/validate.js (type-dependent hours, lounge closed Tuesdays)
+//   - api/_lib/captcha.js (Cloudflare Turnstile token)
 
-        const form = e.target;
-        let isValid = true;
+document.addEventListener('submit', async function (e) {
+    if (!e.target || e.target.id !== 'premiumReservationForm') return;
+    e.preventDefault();
 
-        // Reset previous errors
-        const inputs = form.querySelectorAll('input, select');
-        inputs.forEach(input => {
-            input.classList.remove('error');
-        });
+    const form = e.target;
+    const submitBtn = form.querySelector('.prem-submit-btn');
+    const messageDiv = form.querySelector('#form-message');
+    const originalBtnText = submitBtn.textContent;
 
-        // Validate required fields
-        inputs.forEach(input => {
-            if (input.hasAttribute('required') && !input.value.trim()) {
-                input.classList.add('error');
-                isValid = false;
-            }
-        });
+    // ── 1. Client-side validation (UX only — backend re-validates everything) ──
+    let isValid = true;
 
-        if (!isValid) {
-            return;
+    // Reset previous error states
+    form.querySelectorAll('input, select, textarea').forEach(input => {
+        input.classList.remove('error');
+    });
+
+    // Check required fields
+    form.querySelectorAll('input[required], select[required]').forEach(input => {
+        if (!input.value.trim()) {
+            input.classList.add('error');
+            isValid = false;
         }
+    });
 
-        const submitBtn = form.querySelector('.prem-submit-btn');
-        const originalBtnText = submitBtn.textContent;
-        const messageDiv = form.querySelector('#form-message');
+    if (!isValid) return;
 
-        // Simulate loading state
-        submitBtn.textContent = 'Sending...';
-        submitBtn.disabled = true;
-        messageDiv.classList.add('hidden');
-        messageDiv.className = 'form-message hidden'; // reset classes
+    // ── 2. Double-submit guard ──
+    submitBtn.disabled = true;
+    submitBtn.textContent = '送信中...'; // "Sending..."
+    messageDiv.className = 'form-message hidden';
 
-        setTimeout(() => {
-            // Simulate successful submission
-            submitBtn.textContent = originalBtnText;
-            submitBtn.disabled = false;
+    // ── 3. Collect form data (field names match backend exactly) ──
+    const formData = {
+        name:        form.querySelector('#premFullName').value.trim(),
+        email:       form.querySelector('#premEmail').value.trim(),
+        phone:       form.querySelector('#premPhone').value.trim(),
+        guest_count: form.querySelector('#premGuests').value,
+        date:        form.querySelector('#premDate').value,
+        time:        form.querySelector('#premTime').value,
+        type:        form.querySelector('#premType').value,
+        message:     form.querySelector('#premSpecialRequest')?.value?.trim() || '',
+        captcha_token: document.querySelector('[name="cf-turnstile-response"]')?.value || '',
+    };
 
-            // Show success message
-            messageDiv.textContent = 'Thank you! Your reservation request has been sent. We will contact you shortly to confirm.';
-            messageDiv.classList.remove('hidden');
-            messageDiv.classList.add('success');
+    // ── 4. Call the API ──
+    try {
+        const res = await fetch('/api/reservations', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(formData),
+        });
 
-            // Optionally reset form
+        const data = await res.json();
+
+        if (res.ok) {
+            // ── Success ──
+            messageDiv.textContent = 'ありがとうございます！ご予約を承りました。確認メールをお送りします。';
+            // "Thank you! We received your reservation. A confirmation email will be sent."
+            messageDiv.className = 'form-message success';
             form.reset();
 
-            // Advance progress indicator to step 2 visually
+            // Advance progress indicator to step 2
             const steps = document.querySelectorAll('.step-circle');
             if (steps.length >= 2) {
                 steps[0].classList.remove('active');
@@ -58,16 +78,47 @@ document.addEventListener('submit', function (e) {
                 steps[1].style.color = '#000';
             }
 
-            // Hide message after a few seconds
+            // Keep button in "sent" state, re-enable after 8s
+            submitBtn.textContent = '送信済み ✓'; // "Sent ✓"
             setTimeout(() => {
-                messageDiv.classList.add('hidden');
-            }, 6000);
+                submitBtn.textContent = originalBtnText;
+                submitBtn.disabled = false;
+                messageDiv.className = 'form-message hidden';
+                // Reset progress indicator back to step 1
+                if (steps.length >= 2) {
+                    steps[1].classList.remove('active');
+                    steps[0].classList.add('active');
+                }
+            }, 8000);
 
-        }, 1500);
+            // Reset Turnstile widget for potential next submission
+            if (window.turnstile) turnstile.reset();
+
+        } else {
+            // ── Backend returned an error (400, 409, 429, 500) ──
+            const errorMsg = data.error || 'エラーが発生しました。もう一度お試しください。';
+            // "An error occurred. Please try again."
+            messageDiv.textContent = errorMsg;
+            messageDiv.className = 'form-message error';
+            submitBtn.textContent = originalBtnText;
+            submitBtn.disabled = false;
+
+            // Reset Turnstile so user can re-submit
+            if (window.turnstile) turnstile.reset();
+        }
+
+    } catch (err) {
+        // ── Network error (no internet, server unreachable) ──
+        messageDiv.textContent = 'ネットワークエラーが発生しました。接続を確認してください。';
+        // "A network error occurred. Please check your connection."
+        messageDiv.className = 'form-message error';
+        submitBtn.textContent = originalBtnText;
+        submitBtn.disabled = false;
+        if (window.turnstile) turnstile.reset();
     }
 });
 
-// Remove error class on input
+// Remove error class on input (preserved from original)
 document.addEventListener('input', function (e) {
     if (e.target && e.target.closest('#premiumReservationForm')) {
         if (e.target.value.trim()) {
@@ -77,7 +128,7 @@ document.addEventListener('input', function (e) {
 });
 
 
-// === FAQ Accordion Logic ===
+// === FAQ Accordion Logic === (preserved from original — no changes)
 document.addEventListener('click', function (e) {
     const questionBtn = e.target.closest('.faq-question');
     if (!questionBtn) return;

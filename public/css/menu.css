@@ -638,7 +638,6 @@
 
         .showcase-dish-desc {
             font-size: 0.65rem;
-            display: none;
         }
 
         .showcase-price-btn {
@@ -741,4 +740,131 @@
             letter-spacing: 1px;
             margin-top: 10px;
         }
+    }
+
+    .load-more-container {
+        text-align: center;
+        margin-top: 40px;
+        margin-bottom: 20px;
+    }
+
+    .btn-load-more {
+        background-color: #d11232;
+        color: #fff;
+        border: none;
+        border-radius: 30px;
+        padding: 12px 40px;
+        font-size: 1.1rem;
+        font-weight: 700;
+        cursor: pointer;
+        transition: background-color 0.3s, transform 0.2s;
+        font-family: inherit;
+    }
+
+    .btn-load-more:hover {
+        background-color: #a80e28;
+        transform: translateY(-2px);
+    }
+
+    .drinks-card {
+        background-color: var(--card-bg);
+        border-radius: var(--radius-lg);
+        padding: 25px 20px 20px 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        transition: var(--transition-smooth);
+        width: 100%;
+        max-width: 280px;
+        justify-self: center;
+    }
+
+    .drinks-card:hover {
+        transform: translateY(-5px);
+        box-shadow: var(--shadow-lg);
+    }
+
+    .drinks-card-content {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+        margin-bottom: 20px;
+        gap: 15px;
+    }
+
+    .drinks-vertical-text {
+        writing-mode: vertical-rl;
+        text-orientation: upright;
+        color: white;
+        font-size: 0.9rem;
+        letter-spacing: 3px;
+        font-weight: 600;
+    }
+
+    .drinks-img {
+        height: 140px;
+        object-fit: contain;
+    }
+
+    .drinks-desc-right {
+        font-size: 0.65rem;
+        color: #ccc;
+        text-align: left;
+        width: 70px;
+        line-height: 1.4;
+    }
+
+    .drinks-card-footer {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+    }
+
+    .drinks-title {
+        color: var(--accent-gold);
+        font-size: 0.8rem;
+        margin-bottom: 8px;
+        font-family: 'Cinzel Decorative', serif;
+        letter-spacing: 1px;
+    }
+
+    @media (max-width: 768px) {
+        .drinks-card-content {
+            flex-direction: column;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        .drinks-vertical-text {
+            display: none;
+        }
+
+        .drinks-desc-right {
+            width: 100%;
+            text-align: center;
+            font-size: 0.75rem;
+        }
+    }
+
+    /* ── Section Specific Styles ── */
+    .japanese-food-section {
+        padding-top: 50px;
+    }
+
+    .drinks-section {
+        padding-top: 50px;
+        padding-bottom: 50px;
+    }
+
+    .section-desc-narrow {
+        max-width: 800px;
+        margin: 20px auto 40px auto;
+    }
+
+    .drinks-header {
+        font-family: 'Amanojaku', serif;
+        margin-bottom: 10px;
+        letter-spacing: 2px;
     }

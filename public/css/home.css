@@ -2557,3 +2557,361 @@
         height: 280px;
     }
 }
+
+/* ==========================================================================
+   PROMOTIONS SECTION
+   ========================================================================== */
+.promotions-section {
+    padding: 60px 0;
+    background-color: #000;
+}
+
+.promotions-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 40px;
+}
+
+.promotions-header .japanese-header {
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: var(--text-light);
+    letter-spacing: 2px;
+}
+
+.promotions-header .english-header {
+    font-size: 1.8rem;
+    font-family: 'Amanojaku', serif;
+    letter-spacing: 3px;
+    color: var(--text-light);
+}
+
+.promotions-stack {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.promo-banner {
+    position: relative;
+    width: 100%;
+    height: 250px;
+    overflow: hidden;
+    background-color: #fff;
+    display: flex;
+    align-items: center;
+    border-radius: 24px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
+    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.4s ease;
+}
+
+.promo-banner:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.8);
+}
+
+.promo-banner .promo-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.2rem;
+    color: #111;
+    line-height: 1.2;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+}
+
+.promo-banner .promo-price {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #111;
+}
+
+/* Banner 1: Drink All You Can */
+.banner-drink {
+    background: linear-gradient(to right, rgba(245, 245, 245, 0.95), rgba(220, 220, 220, 0.85)), url('../assets/images/form background.webp') center/cover;
+    justify-content: space-between;
+    padding-right: 50px;
+}
+
+.promo-drink-left {
+    position: relative;
+    width: 50%;
+    height: 100%;
+    display: flex;
+    align-items: flex-end;
+    padding-left: 20px;
+}
+
+.promo-bottle {
+    height: 90%;
+    object-fit: contain;
+    position: absolute;
+    bottom: 5%;
+    filter: drop-shadow(0 15px 20px rgba(0, 0, 0, 0.4));
+    transition: transform 0.4s ease;
+}
+
+.promo-banner:hover .promo-bottle {
+    transform: scale(1.05) translateY(-5px);
+}
+
+.promo-bottle-1 {
+    left: 10%;
+    z-index: 1;
+    height: 75%;
+}
+
+.promo-bottle-2 {
+    left: 30%;
+    z-index: 3;
+    height: 85%;
+}
+
+.promo-bottle-3 {
+    left: 50%;
+    z-index: 2;
+    height: 70%;
+}
+
+.promo-bottle-4 {
+    left: 65%;
+    z-index: 1;
+    height: 60%;
+}
+
+.promo-drink-right {
+    width: 50%;
+    text-align: right;
+    z-index: 5;
+}
+
+/* Banner 2: Karaoke */
+.banner-karaoke {
+    background: linear-gradient(135deg, #d11232 0%, #a00b25 100%);
+    color: var(--text-light);
+    justify-content: center;
+    clip-path: polygon(0 10%, 100% 0, 100% 90%, 0 100%);
+    margin: 15px 0;
+    height: 270px;
+    border-radius: 24px;
+    box-shadow: 0 15px 35px rgba(209, 18, 50, 0.3);
+}
+
+.banner-karaoke .promo-title,
+.banner-karaoke .promo-price {
+    color: var(--text-light);
+    text-align: center;
+    text-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.promo-karaoke-left {
+    position: absolute;
+    left: -50px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 250px;
+}
+
+.promo-record {
+    width: 100%;
+    height: auto;
+    filter: drop-shadow(10px 10px 15px rgba(0, 0, 0, 0.6));
+    animation: spin-record 20s linear infinite;
+}
+
+@keyframes spin-record {
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.promo-karaoke-center {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+}
+
+.promo-sub-price {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--text-light);
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+}
+
+.music-note-icon {
+    display: inline-block;
+    font-size: 1.2rem;
+    margin: 0 5px;
+}
+
+.promo-karaoke-right {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    height: 110%;
+}
+
+.promo-singer {
+    height: 100%;
+    object-fit: contain;
+    object-position: right bottom;
+    filter: drop-shadow(-10px 10px 20px rgba(0, 0, 0, 0.6));
+    opacity: 0.95;
+}
+
+/* Banner 3: Car Service */
+.banner-car {
+    background: linear-gradient(110deg, #d11232 45%, transparent 45%),
+        linear-gradient(110deg, transparent 75%, #111 75%),
+        #f5f5f5;
+    justify-content: space-between;
+}
+
+.promo-car-left {
+    width: 45%;
+    padding-left: 30px;
+    z-index: 2;
+}
+
+.promo-car-left .promo-title {
+    font-family: 'Poppins', serif;
+    color: var(--text-light);
+    font-size: 1.2rem;
+    text-shadow: 0 2px 5px rgba(0, 0, 0, 0.4);
+}
+
+.promo-car-right {
+    position: absolute;
+    right: 20px;
+    bottom: 10px;
+    width: 50%;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.promo-car-img {
+    width: 100%;
+    max-width: 350px;
+    object-fit: contain;
+    filter: drop-shadow(-15px 20px 25px rgba(0, 0, 0, 0.6));
+    transition: transform 0.5s ease;
+}
+
+.promo-banner:hover .promo-car-img {
+    transform: translateX(-15px) scale(1.05);
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .promo-banner {
+        height: 200px;
+        border-radius: 16px;
+    }
+
+    .banner-karaoke {
+        height: 220px;
+    }
+
+    .promo-banner .promo-title {
+        font-size: 1.5rem;
+    }
+
+    .promo-banner .promo-price {
+        font-size: 1.8rem;
+    }
+
+    .banner-drink {
+        padding-right: 20px;
+    }
+
+    .promo-drink-left {
+        width: 45%;
+    }
+
+    .promo-bottle-1 {
+        left: -10%;
+        height: 65%;
+    }
+
+    .promo-bottle-2 {
+        left: 10%;
+        height: 75%;
+    }
+
+    .promo-bottle-3 {
+        left: 30%;
+        height: 60%;
+    }
+
+    .promo-bottle-4 {
+        left: 45%;
+        height: 50%;
+    }
+
+    .promo-karaoke-left {
+        left: -80px;
+        width: 180px;
+    }
+
+    .promo-sub-price {
+        font-size: 1.2rem;
+    }
+
+    .banner-car {
+        background: linear-gradient(110deg, #d11232 55%, transparent 55%),
+            linear-gradient(110deg, transparent 80%, #111 80%),
+            #f5f5f5;
+    }
+
+    .promo-car-left {
+        width: 55%;
+        padding-left: 15px;
+    }
+
+    .promo-car-left .promo-title {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .promotions-header .japanese-header {
+        font-size: 1.8rem;
+    }
+
+    .promotions-header .english-header {
+        font-size: 1.4rem;
+    }
+
+    .promo-banner {
+        height: 160px;
+    }
+
+    .banner-karaoke {
+        height: 180px;
+    }
+
+    .promo-banner .promo-title {
+        font-size: 1.1rem;
+    }
+
+    .promo-banner .promo-price {
+        font-size: 1.3rem;
+    }
+
+    .banner-drink {
+        padding-right: 15px;
+    }
+
+    .promo-karaoke-left {
+        left: -60px;
+        width: 140px;
+    }
+
+    .promo-car-left .promo-title {
+        font-size: 0.8rem;
+    }
+}
