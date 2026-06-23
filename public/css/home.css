@@ -357,7 +357,7 @@
 .drinks-title-en {
     font-family: 'Amanojaku', serif;
     font-size: 2.5rem;
-    margin-bottom: -20px;
+    margin-bottom: 40px;
     color: var(--text-dark);
     letter-spacing: 2px;
 }
@@ -409,7 +409,7 @@
 }
 
 .drink-desc {
-    font-size: 0.6rem;
+    font-size: 0.8rem;
     line-height: 1.4;
     font-weight: 600;
     color: var(--text-light);
@@ -621,7 +621,8 @@
     padding: 30px 20px 50px;
     text-align: center;
     box-shadow: var(--shadow-lg);
-    height: 370px;
+    min-height: 370px;
+    height: auto;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -636,13 +637,21 @@
     margin-top: 10px;
 }
 
-.card-title {
+.menu-card .card-title {
     color: var(--text-light);
     font-size: 1.1rem;
     letter-spacing: 1px;
     margin-top: 10px;
     font-family: 'Cinzel Decorative', 'serif';
-    margin-bottom: 10px;
+    margin-bottom: 5px;
+}
+
+.menu-card .card-desc {
+    color: rgba(255, 255, 255, 0.75);
+    font-size: 0.85rem;
+    line-height: 1.4;
+    margin: 5px 0 15px;
+    padding: 0 10px;
 }
 
 .card-btn {
@@ -1029,8 +1038,9 @@
     }
 
     .menu-card-inner {
-        height: 240px;
-        padding: 15px 10px 40px;
+        min-height: 200px;
+        height: auto;
+        padding: 15px 10px 35px;
     }
 
     .card-img {
@@ -1038,8 +1048,14 @@
         max-height: 100px;
     }
 
-    .card-title {
+    .menu-card .card-title {
         font-size: 0.8rem;
+    }
+
+    .menu-card .card-desc {
+        font-size: 0.45rem;
+        line-height: 1.2;
+        margin-bottom: 5px;
     }
 
     .card-btn {
@@ -1256,8 +1272,9 @@
     }
 
     .menu-card-inner {
-        height: 180px;
-        padding: 10px 8px 35px;
+        min-height: 150px;
+        height: auto;
+        padding: 10px 8px 30px;
         border-radius: var(--radius-sm);
     }
 
@@ -1266,8 +1283,14 @@
         max-height: 75px;
     }
 
-    .card-title {
+    .menu-card .card-title {
         font-size: 0.65rem;
+    }
+
+    .menu-card .card-desc {
+        font-size: 0.45rem;
+        line-height: 1.2;
+        margin-bottom: 5px;
     }
 
     .card-btn {
@@ -1325,6 +1348,7 @@
 
     .drinks-title-en {
         font-size: 1.5rem;
+        margin-bottom: 70px;
     }
 
     .drinks-grid {
@@ -1695,9 +1719,9 @@
 }
 
 .res-desc {
-    font-size: 0.95rem;
+    font-size: 1.2em;
     line-height: 1.8;
-    margin-bottom: 35px;
+    margin-bottom: 10px;
     margin-top: 20px;
     font-weight: 500;
     color: #fff;
@@ -2614,7 +2638,8 @@
 }
 
 .promo-banner .promo-title {
-    font-family: 'Playfair Display', serif;
+    font-family: 'The Last Shuriken', serif;
+    letter-spacing: 2px;
     font-size: 2.2rem;
     color: #111;
     line-height: 1.2;
@@ -2735,7 +2760,8 @@
 }
 
 .promo-sub-price {
-    font-family: 'Playfair Display', serif;
+    font-family: 'The Last Shuriken', serif;
+    letter-spacing: 2px;
     font-size: 1.5rem;
     font-weight: bold;
     color: var(--text-light);
@@ -2778,9 +2804,10 @@
 }
 
 .promo-car-left .promo-title {
-    font-family: 'Poppins', serif;
+    font-family: 'The Last Shuriken', serif;
     color: var(--text-light);
-    font-size: 1.2rem;
+    font-size: 1.8rem;
+    letter-spacing: 2px;
     text-shadow: 0 2px 5px rgba(0, 0, 0, 0.4);
 }
 
