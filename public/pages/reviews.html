@@ -33,10 +33,10 @@
                 </div>
 
                 <div class="overall-score-container">
-                    <div class="overall-score">4.4</div>
+                    <div class="overall-score" id="overall-score">—</div>
                     <div class="overall-stars-info">
-                        <div class="stars-display">★★★★<span style="color:#dcdcdc;">★</span></div>
-                        <div class="reviews-count">5 VERIFIED REVIEWS</div>
+                        <div class="stars-display" id="overall-stars">★★★★★</div>
+                        <div class="reviews-count" id="reviews-total-count">LOADING...</div>
                     </div>
                 </div>
 
@@ -44,37 +44,37 @@
                     <div class="rating-bar-row">
                         <div class="star-label">5 <span>★</span></div>
                         <div class="bar-container">
-                            <div class="bar-fill" style="width: 60%;"></div>
+                            <div class="bar-fill" id="bar-5" style="width: 0%;"></div>
                         </div>
-                        <div class="bar-percent">60%</div>
+                        <div class="bar-percent" id="pct-5">0%</div>
                     </div>
                     <div class="rating-bar-row">
                         <div class="star-label">4 <span>★</span></div>
                         <div class="bar-container">
-                            <div class="bar-fill" style="width: 50%;"></div>
+                            <div class="bar-fill" id="bar-4" style="width: 0%;"></div>
                         </div>
-                        <div class="bar-percent">50%</div>
+                        <div class="bar-percent" id="pct-4">0%</div>
                     </div>
                     <div class="rating-bar-row">
                         <div class="star-label">3 <span>★</span></div>
                         <div class="bar-container">
-                            <div class="bar-fill" style="width: 50%;"></div>
+                            <div class="bar-fill" id="bar-3" style="width: 0%;"></div>
                         </div>
-                        <div class="bar-percent">50%</div>
+                        <div class="bar-percent" id="pct-3">0%</div>
                     </div>
                     <div class="rating-bar-row">
                         <div class="star-label">2 <span>★</span></div>
                         <div class="bar-container">
-                            <div class="bar-fill" style="width: 0%;"></div>
+                            <div class="bar-fill" id="bar-2" style="width: 0%;"></div>
                         </div>
-                        <div class="bar-percent">0%</div>
+                        <div class="bar-percent" id="pct-2">0%</div>
                     </div>
                     <div class="rating-bar-row">
                         <div class="star-label">1 <span>★</span></div>
                         <div class="bar-container">
-                            <div class="bar-fill" style="width: 0%;"></div>
+                            <div class="bar-fill" id="bar-1" style="width: 0%;"></div>
                         </div>
-                        <div class="bar-percent">0%</div>
+                        <div class="bar-percent" id="pct-1">0%</div>
                     </div>
                 </div>
             </div>
@@ -112,14 +112,14 @@
                     <div class="rev-form-group">
                         <label for="reviewerName">Display Name</label>
                         <input type="text" id="reviewerName" name="reviewerName" placeholder="e.g. Yamada Tarō"
-                            required>
+                            maxlength="100" required>
                     </div>
 
                     <div class="rev-form-group">
                         <label for="reviewText">Your Review</label>
                         <textarea id="reviewText" name="reviewText"
                             placeholder="What do you think of the kare-kare? how was the service of our resto?"
-                            required></textarea>
+                            maxlength="1000" required></textarea>
                     </div>
 
                     <div id="review-form-msg" class="rev-form-message"></div>
@@ -152,91 +152,18 @@
                 </div>
             </div>
 
-            <div class="reviews-count-text">Showing <span id="displayed-reviews-count">4</span> results</div>
+            <div class="reviews-count-text">Showing <span id="displayed-reviews-count">0</span> results</div>
 
             <div class="reviews-grid" id="reviews-grid-container">
-                <!-- Review Card 1 -->
-                <div class="review-item-card">
-                    <div class="review-item-stars">
-                        <span class="star filled">★</span><span class="star filled">★</span><span
-                            class="star filled">★</span><span class="star filled">★</span><span
-                            class="star filled">★</span>
-                    </div>
-                    <p class="review-item-text">
-                        "The best siomai in town! The chili garlic sauce is absolutely perfect. I always buy the family
-                        pack to take home."
-                    </p>
-                    <div class="review-item-author">
-                        <div class="author-avatar-placeholder"></div>
-                        <div class="author-details">
-                            <span class="author-name">Yamada Tarō</span>
-                            <span class="author-date">6/21/2026</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Review Card 2 -->
-                <div class="review-item-card">
-                    <div class="review-item-stars">
-                        <span class="star filled">★</span><span class="star filled">★</span><span
-                            class="star filled">★</span><span class="star filled">★</span><span class="star">★</span>
-                    </div>
-                    <p class="review-item-text">
-                        "The best siomai in town! The chili garlic sauce is absolutely perfect. I always buy the family
-                        pack to take home."
-                    </p>
-                    <div class="review-item-author">
-                        <div class="author-avatar-placeholder"></div>
-                        <div class="author-details">
-                            <span class="author-name">Yamada Tarō</span>
-                            <span class="author-date">6/21/2026</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Review Card 3 -->
-                <div class="review-item-card">
-                    <div class="review-item-stars">
-                        <span class="star filled">★</span><span class="star filled">★</span><span
-                            class="star filled">★</span><span class="star filled">★</span><span
-                            class="star filled">★</span>
-                    </div>
-                    <p class="review-item-text">
-                        "The best siomai in town! The chili garlic sauce is absolutely perfect. I always buy the family
-                        pack to take home."
-                    </p>
-                    <div class="review-item-author">
-                        <div class="author-avatar-placeholder"></div>
-                        <div class="author-details">
-                            <span class="author-name">Yamada Tarō</span>
-                            <span class="author-date">6/21/2026</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Review Card 4 -->
-                <div class="review-item-card">
-                    <div class="review-item-stars">
-                        <span class="star filled">★</span><span class="star filled">★</span><span
-                            class="star filled">★</span><span class="star">★</span><span class="star">★</span>
-                    </div>
-                    <p class="review-item-text">
-                        "The best siomai in town! The chili garlic sauce is absolutely perfect. I always buy the family
-                        pack to take home."
-                    </p>
-                    <div class="review-item-author">
-                        <div class="author-avatar-placeholder"></div>
-                        <div class="author-details">
-                            <span class="author-name">Yamada Tarō</span>
-                            <span class="author-date">6/21/2026</span>
-                        </div>
-                    </div>
+                <!-- Reviews will be loaded dynamically by reviews.js -->
+                <div class="reviews-loading" id="reviews-loading">
+                    <div class="loader-spinner"></div>
                 </div>
             </div>
 
             <!-- Load More Button -->
             <div class="load-more-container">
-                <button id="btnLoadMoreReviews" class="btn-load-more">もっと見る</button>
+                <button id="btnLoadMoreReviews" class="btn-load-more" style="display: none;">もっと見る</button>
                 <button id="btnShowLessReviews" class="btn-load-more" style="display: none;">Show Less</button>
             </div>
 

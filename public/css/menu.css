@@ -868,3 +868,165 @@
         margin-bottom: 10px;
         letter-spacing: 2px;
     }
+
+    /* --- Party Platters Section --- */
+    .party-platters-section {
+        padding-top: 50px;
+        padding-bottom: 50px;
+    }
+
+    .platters-description {
+        color: #fff;
+        text-align: center;
+        max-width: 800px;
+        margin: 20px auto 40px;
+        line-height: 1.6;
+        font-size: 1rem;
+    }
+
+    .platters-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 30px;
+        margin-top: 30px;
+    }
+
+    .platter-card {
+        background-color: #ba0c2f;
+        border-radius: 15px;
+        padding: 25px 15px;
+        position: relative;
+        overflow: hidden;
+        color: #fff;
+        min-height: 320px;
+        display: flex;
+        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.6);
+        transition: transform 0.3s ease;
+        max-width: 280px;
+        margin: 0 auto;
+        width: 100%;
+    }
+
+    .platter-card:hover {
+        transform: translateY(-5px);
+    }
+
+    .platter-card-inner {
+        display: flex;
+        width: 100%;
+    }
+
+    .platter-vertical-text {
+        writing-mode: vertical-rl;
+        text-orientation: mixed;
+        font-size: 1.1rem;
+        font-weight: 800;
+        letter-spacing: 5px;
+        margin-right: 15px;
+        color: #000;
+    }
+
+    .platter-content {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        padding-bottom: 50px;
+        padding-right: 5px;
+        padding-left: 10px;
+    }
+
+    .platter-title {
+        font-family: 'Cinzel Decorative', serif;
+        font-size: 1.1rem;
+        font-weight: 700;
+        margin-bottom: 15px;
+        color: #000;
+        line-height: 1.3;
+    }
+
+    .platter-desc {
+        font-size: 0.75rem;
+        line-height: 1.6;
+        font-weight: 600;
+        color: #fff;
+        width: 100%;
+        text-align: justify;
+        text-align-last: center;
+    }
+
+    .platter-img {
+        position: absolute;
+        bottom: -15px;
+        right: -20px;
+        width: 170px;
+        height: 170px;
+        object-fit: contain;
+        filter: drop-shadow(-8px 8px 10px rgba(0, 0, 0, 0.6));
+    }
+
+    .platter-price {
+        position: absolute;
+        bottom: 25px;
+        left: 35px;
+        font-size: 1.6rem;
+        font-weight: bold;
+        color: #fff;
+        font-family: 'Cinzel Decorative', serif;
+    }
+
+    /* Mobile Responsiveness for Party Platters */
+    @media (max-width: 1024px) {
+        .platters-grid {
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+
+    @media (max-width: 768px) {
+        .platters-grid {
+            grid-template-columns: 1fr;
+            max-width: 400px;
+            margin: 30px auto 0;
+            gap: 20px;
+        }
+
+        .platter-card {
+            min-height: 220px;
+            padding: 15px;
+        }
+
+        .platter-vertical-text {
+            font-size: 0.95rem;
+            letter-spacing: 3px;
+            margin-right: 10px;
+        }
+
+        .platter-title {
+            font-size: 0.95rem;
+            margin-bottom: 10px;
+        }
+
+        .platter-desc {
+            font-size: 0.65rem;
+        }
+
+        .platter-img {
+            width: 110px;
+            height: 110px;
+            bottom: -5px;
+            right: -5px;
+        }
+
+        .platter-price {
+            font-size: 1.3rem;
+            left: 35px;
+            bottom: 15px;
+        }
+        
+        .platters-description {
+            font-size: 0.85rem;
+            margin: 15px auto 30px;
+            padding: 0 15px;
+        }
+    }

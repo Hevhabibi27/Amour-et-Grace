@@ -1,12 +1,12 @@
 const { supabaseAdmin } = require('../_lib/supabase');
 const { supabase } = require('../_lib/supabase');
-const { validateRequired, sanitize } = require('../_lib/validate');
+const { validateRequired, sanitize, checkMaxLengths } = require('../_lib/validate');
 const { checkRateLimit, getClientIp } = require('../_lib/rate-limiter');
 
 /**
  * /api/reviews
  * GET  — List approved reviews (public)
- * POST — Submit a new review (rate-limited)
+ * POST — Submit a new text-only review (rate-limited, requires admin approval)
  */
 module.exports = async (req, res) => {
   // Handle CORS preflight
@@ -19,7 +19,7 @@ module.exports = async (req, res) => {
     try {
       const { data, error } = await supabase
         .from('reviews')
-        .select('id, name, rating, comment, media_urls, created_at')
+        .select('id, name, rating, comment, created_at')
         .eq('is_approved', true)
         .order('created_at', { ascending: false });
 
@@ -35,7 +35,7 @@ module.exports = async (req, res) => {
     }
   }
 
-  // ── POST: Submit a review ──
+  // ── POST: Submit a review (text-only) ──
   if (req.method === 'POST') {
     // Rate limiting
     const ip = getClientIp(req);
@@ -48,12 +48,12 @@ module.exports = async (req, res) => {
     }
 
     // Validate required fields
-    const { valid, missing } = validateRequired(req.body, ['name', 'rating']);
+    const { valid, missing } = validateRequired(req.body, ['name', 'rating', 'comment']);
     if (!valid) {
       return res.status(400).json({ error: `Missing required fields: ${missing.join(', ')}` });
     }
 
-    const { name, rating, comment, media_urls } = req.body;
+    const { name, rating, comment } = req.body;
 
     // Validate rating
     const ratingNum = parseInt(rating, 10);
@@ -61,13 +61,18 @@ module.exports = async (req, res) => {
       return res.status(400).json({ error: 'Rating must be between 1 and 5' });
     }
 
+    // Max-length enforcement
+    const tooLong = checkMaxLengths(req.body, { name: 100, comment: 1000 });
+    if (tooLong) {
+      return res.status(400).json({ error: `${tooLong.field} exceeds ${tooLong.max} characters` });
+    }
+
     try {
       const review = {
         name: sanitize(name),
         rating: ratingNum,
-        comment: comment ? sanitize(comment) : null,
-        media_urls: Array.isArray(media_urls) ? media_urls : null,
-        is_approved: true, // Reviews go live immediately
+        comment: sanitize(comment),
+        is_approved: false, // Requires admin approval before going public
         ip_address: ip,
       };
 
@@ -83,7 +88,7 @@ module.exports = async (req, res) => {
       }
 
       return res.status(201).json({
-        message: 'Review submitted successfully. Thank you!',
+        message: 'Thank you! Your review has been submitted and is pending approval.',
         review: {
           id: data.id,
           name: data.name,
