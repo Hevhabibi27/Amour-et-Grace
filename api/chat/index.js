@@ -24,7 +24,7 @@ function getGroq() {
 // ── Input sanitization ──
 const MAX_MESSAGE_LENGTH = 500;
 const HTML_TAG_REGEX = /<[^>]*>/g;
-const SCRIPT_PATTERN = /(\b(javascript|on\w+)\s*[:=]|<\s*script|<\s*iframe|<\s*object|<\s*embed)/gi;
+const SCRIPT_PATTERN = /(\b(javascript|on\w+)\s*[:=]|<\s*script|<\s*iframe|<\s*object|<\s*embed)/i;
 
 /**
  * Sanitize and validate user input.

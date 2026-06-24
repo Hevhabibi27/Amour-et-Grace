@@ -50,6 +50,11 @@
           <div class="chatbot-header-title">Amour et Grâce</div>
           <div class="chatbot-header-subtitle">AI Assistant · Ask about our menu & more</div>
         </div>
+        <button class="chatbot-close-btn" id="chatbot-close-btn" aria-label="Close chat">
+          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/>
+          </svg>
+        </button>
       </div>
       <div class="chatbot-messages" id="chatbot-messages">
         <div class="chatbot-msg ai">
@@ -85,11 +90,16 @@
   }
 
   // ── Sanitize input (client-side) ──
-  function sanitizeText(raw) {
+  // Light sanitize: strips HTML tags only (preserves trailing spaces for typing)
+  function sanitizeForInput(raw) {
     if (typeof raw !== 'string') return '';
-    // Strip all HTML tags
+    return raw.replace(/<[^>]*>/g, '');
+  }
+
+  // Full sanitize: strips HTML + trims (used at send time)
+  function sanitizeForSend(raw) {
+    if (typeof raw !== 'string') return '';
     let text = raw.replace(/<[^>]*>/g, '');
-    // Collapse whitespace
     text = text.replace(/\s+/g, ' ').trim();
     return text;
   }
@@ -220,6 +230,14 @@
       lockUI(inputEl, sendBtn, rateLimitBanner);
     }
 
+    // ── Close helper ──
+    function closeChat() {
+      isOpen = false;
+      fab.classList.remove('open');
+      panel.classList.remove('visible');
+      fab.setAttribute('aria-label', 'Open chat');
+    }
+
     // ── FAB toggle ──
     fab.addEventListener('click', function () {
       isOpen = !isOpen;
@@ -231,13 +249,21 @@
       }
     });
 
+    // ── Header close button (visible on mobile) ──
+    const closeBtn = document.getElementById('chatbot-close-btn');
+    if (closeBtn) {
+      closeBtn.addEventListener('click', closeChat);
+    }
+
     // ── Character count ──
     inputEl.addEventListener('input', function () {
-      // Re-sanitize on every input (strips pasted HTML)
+      // Light sanitize only — strip HTML but preserve spaces
       const raw = inputEl.value;
-      const clean = sanitizeText(raw);
+      const clean = sanitizeForInput(raw);
       if (clean !== raw) {
+        const cursorPos = inputEl.selectionStart;
         inputEl.value = clean;
+        inputEl.selectionStart = inputEl.selectionEnd = cursorPos;
       }
 
       const len = clean.length;
@@ -260,7 +286,7 @@
     inputEl.addEventListener('paste', function (e) {
       e.preventDefault();
       const text = (e.clipboardData || window.clipboardData).getData('text/plain') || '';
-      const clean = sanitizeText(text);
+      const clean = sanitizeForInput(text);
       // Truncate to remaining chars
       const currentLen = inputEl.value.length;
       const allowed = MAX_CHARS - currentLen;
@@ -291,7 +317,7 @@
     async function sendMessage() {
       if (isWaiting || isRateLimited) return;
 
-      const text = sanitizeText(inputEl.value);
+      const text = sanitizeForSend(inputEl.value);
       if (!text) return;
 
       // Clear input
@@ -383,10 +409,7 @@
     // ── Close on Escape ──
     document.addEventListener('keydown', function (e) {
       if (e.key === 'Escape' && isOpen) {
-        isOpen = false;
-        fab.classList.remove('open');
-        panel.classList.remove('visible');
-        fab.setAttribute('aria-label', 'Open chat');
+        closeChat();
       }
     });
   }
