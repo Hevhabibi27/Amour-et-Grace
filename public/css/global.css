@@ -602,3 +602,55 @@ h6 {
         transform: translateX(-50%);
     }
 }
+
+/* ═══════════════════════════════════════════════════
+   LANGUAGE TOGGLE BUTTON
+   ═══════════════════════════════════════════════════ */
+.lang-toggle-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 20px;
+    padding: 6px 14px;
+    cursor: pointer;
+    font-family: var(--font-body);
+    font-size: 0.8rem;
+    font-weight: 500;
+    color: #fff;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+    white-space: nowrap;
+    line-height: 1;
+}
+
+.lang-toggle-btn:hover {
+    background: rgba(255, 255, 255, 0.15);
+    border-color: rgba(255, 255, 255, 0.4);
+    transform: translateY(-1px);
+}
+
+.lang-toggle-btn:active {
+    transform: translateY(0);
+}
+
+.lang-toggle-btn .lang-icon {
+    font-size: 1rem;
+    line-height: 1;
+}
+
+.lang-toggle-btn .lang-label {
+    font-weight: 600;
+    font-size: 0.75rem;
+    letter-spacing: 1.5px;
+}
+
+/* Mobile: ensure toggle is visible in hamburger menu */
+@media (max-width: 768px) {
+    .lang-toggle-btn {
+        margin: 10px auto 0;
+        background: rgba(255, 255, 255, 0.1);
+        border-color: rgba(255, 255, 255, 0.25);
+    }
+}

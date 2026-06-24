@@ -60,6 +60,11 @@ document.addEventListener('DOMContentLoaded', () => {
                 if (Utils.initScrollEngine) Utils.initScrollEngine();
             }
 
+            // Apply translations to cached page
+            if (typeof i18n !== 'undefined' && i18n.applyTranslations) {
+                i18n.applyTranslations();
+            }
+
             // Resume home carousel when returning
             if (page === 'home' && typeof window.resumeHomeCarousel === 'function') {
                 window.resumeHomeCarousel();
@@ -110,6 +115,11 @@ document.addEventListener('DOMContentLoaded', () => {
                     if (typeof initHomeCarousel === 'function') initHomeCarousel();
                     if (typeof initTestimonialsCarousel === 'function') initTestimonialsCarousel();
                     if (typeof initGalleryLightbox === 'function') initGalleryLightbox();
+                }
+
+                // Apply translations to freshly loaded page
+                if (typeof i18n !== 'undefined' && i18n.applyTranslations) {
+                    i18n.applyTranslations();
                 }
             } else {
                 hideLoader();

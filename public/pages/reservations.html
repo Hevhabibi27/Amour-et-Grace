@@ -6,7 +6,7 @@
     <div class="menu-hero-container container" style="gap: 0;">
         <div class="menu-hero-text">
             <img src="assets/images/reservations japanese.webp" alt="Japanese Reservations" class="menu-hero-jp-img">
-            <h1 class="menu-hero-title">Reservations</h1>
+            <h1 class="menu-hero-title" data-i18n="res.hero.title">Reservations</h1>
         </div>
     </div>
 </section>
@@ -111,22 +111,24 @@
         <div class="prem-res-progress">
             <div class="progress-step">
                 <div class="step-circle active">1</div>
-                <p>Fill out the reservation<br>form</p>
+                <p data-i18n="res.form.step1">Fill out the reservation
+form</p>
             </div>
             <div class="progress-line"></div>
             <div class="progress-step">
                 <div class="step-circle">2</div>
-                <p>We review your request</p>
+                <p data-i18n="res.form.step2">We review your request</p>
             </div>
             <div class="progress-line"></div>
             <div class="progress-step">
                 <div class="step-circle">3</div>
-                <p>Reservation confirmation<br>is sent via email or phone</p>
+                <p data-i18n="res.form.step3">Reservation confirmation
+is sent via email or phone</p>
             </div>
             <div class="progress-line"></div>
             <div class="progress-step">
                 <div class="step-circle">4</div>
-                <p>Enjoy your event</p>
+                <p data-i18n="res.form.step4">Enjoy your event</p>
             </div>
         </div>
 
@@ -138,12 +140,12 @@
                 <form id="premiumReservationForm" class="prem-booking-form">
                     <div class="prem-form-row">
                         <div class="prem-form-group">
-                            <label for="premFullName">Full name <span>*</span></label>
+                            <label for="premFullName" data-i18n="res.form.fullname">Full name <span>*</span></label>
                             <input type="text" id="premFullName" name="name" required placeholder="Marie Fraz"
                                 maxlength="100" minlength="2">
                         </div>
                         <div class="prem-form-group">
-                            <label for="premEmail">Email <span>*</span></label>
+                            <label for="premEmail" data-i18n="res.form.email">Email <span>*</span></label>
                             <input type="email" id="premEmail" name="email" required placeholder="example@gmail.com"
                                 maxlength="254">
                         </div>
@@ -151,12 +153,12 @@
 
                     <div class="prem-form-row">
                         <div class="prem-form-group">
-                            <label for="premPhone">Telephone Number <span>*</span></label>
+                            <label for="premPhone" data-i18n="res.form.phone">Telephone Number <span>*</span></label>
                             <input type="tel" id="premPhone" name="phone" required placeholder="090-1234-5678"
                                 maxlength="20">
                         </div>
                         <div class="prem-form-group">
-                            <label for="premGuests">Number of Guest <span>*</span></label>
+                            <label for="premGuests" data-i18n="res.form.guests">Number of Guest <span>*</span></label>
                             <select id="premGuests" name="guest_count" required>
                                 <option value="" disabled selected>Select number of guests</option>
                                 <option value="1">1 Person</option>
@@ -177,18 +179,18 @@
 
                     <div class="prem-form-row">
                         <div class="prem-form-group">
-                            <label for="premDate">Date of Reservation <span>*</span></label>
+                            <label for="premDate" data-i18n="res.form.date">Date of Reservation <span>*</span></label>
                             <input type="date" id="premDate" name="date" required>
                         </div>
                         <div class="prem-form-group">
-                            <label for="premTime">Time of Reservation <span>*</span></label>
+                            <label for="premTime" data-i18n="res.form.time">Time of Reservation <span>*</span></label>
                             <input type="time" id="premTime" name="time" required>
                         </div>
                     </div>
 
                     <div class="prem-form-row half-width">
                         <div class="prem-form-group">
-                            <label for="premType">Type of Reservation <span>*</span></label>
+                            <label for="premType" data-i18n="res.form.type">Type of Reservation <span>*</span></label>
                             <select id="premType" name="type" required>
                                 <option value="" disabled selected>Select</option>
                                 <option value="table">Table Reservation</option>
@@ -199,13 +201,13 @@
                     </div>
 
                     <div class="prem-form-group full-width">
-                        <label for="premSpecialRequest">Special Request</label>
+                        <label for="premSpecialRequest" data-i18n="res.form.special">Special Request</label>
                         <textarea id="premSpecialRequest" name="message" rows="3" maxlength="500"
                             placeholder="Request your favorite drinks or dish. You can request whatever decoration / design........."></textarea>
                     </div>
 
                     <div class="prem-form-contact-text">
-                        <p>For decorations and custom arrangements, please contact:</p>
+                        <p data-i18n="res.form.contact.text">For decorations and custom arrangements, please contact:</p>
                         <p class="phone-link">📞 090 3856 2854</p>
                     </div>
 
@@ -221,16 +223,16 @@
             <!-- Right Column: Info Card -->
             <div class="prem-res-info-card">
                 <div class="info-card-content">
-                    <h4>Address</h4>
+                    <h4 data-i18n="res.info.address">Address</h4>
                     <p>3F, K-BOX Building, 1-198 Chuo,
                         Komaki City, Aichi Prefecture
                         485-009</p>
 
-                    <h4>Contact</h4>
+                    <h4 data-i18n="res.info.contact">Contact</h4>
                     <p>Phone : +81 903 856 2854</p>
                     <p>Email : amouretgrace2026@gmail.com</p>
 
-                    <h4>Open Time</h4>
+                    <h4 data-i18n="res.info.opentime">Open Time</h4>
                     <div class="open-time-grid">
                         <span>Resto bar: 9:00 AM - 5:00 PM</span>
                         <br>
@@ -242,7 +244,7 @@
                         <span>Except Tuesday</span>
                     </div>
 
-                    <h4>Stay Connected</h4>
+                    <h4 data-i18n="res.info.social">Stay Connected</h4>
                     <div class="social-icons">
                         <!-- User will add their own SVGs or icons here -->
                         <a href="#" class="social-circle"></a>
@@ -264,8 +266,8 @@
         <div class="faq-grid">
             <!-- Left Side: Header & Intro -->
             <div class="faq-header-content">
-                <h2>Frequently asked<br><span>questions</span></h2>
-                <p>Find quick answers regarding reservations, private events, food packages, and our lounge policies.
+                <h2 data-i18n-html="res.faq.title">Frequently asked<br><span>questions</span></h2>
+                <p data-i18n="res.faq.desc">Find quick answers regarding reservations, private events, food packages, and our lounge policies.
                     For specific inquiries, feel free to reach out to our team directly.</p>
             </div>
 
@@ -273,7 +275,7 @@
             <div class="faq-accordion">
                 <div class="faq-item">
                     <button class="faq-question">
-                        <span>How do I reserve a table?</span>
+                        <span data-i18n="res.faq.q1">How do I reserve a table?</span>
                         <div class="faq-icon">
                             <svg width="14" height="8" viewBox="0 0 14 8" fill="none"
                                 xmlns="http://www.w3.org/2000/svg">
@@ -284,7 +286,7 @@
                     </button>
                     <div class="faq-answer">
                         <div class="faq-answer-inner">
-                            <p>You can reserve a table by filling out our online reservation form above. Once submitted,
+                            <p data-i18n="res.faq.a1">You can reserve a table by filling out our online reservation form above. Once submitted,
                                 our team will review your request and send a confirmation via email or phone.</p>
                         </div>
                     </div>
@@ -292,7 +294,7 @@
 
                 <div class="faq-item">
                     <button class="faq-question">
-                        <span>Can I book the lounge for private events?</span>
+                        <span data-i18n="res.faq.q2">Can I book the lounge for private events?</span>
                         <div class="faq-icon">
                             <svg width="14" height="8" viewBox="0 0 14 8" fill="none"
                                 xmlns="http://www.w3.org/2000/svg">
@@ -303,7 +305,7 @@
                     </button>
                     <div class="faq-answer">
                         <div class="faq-answer-inner">
-                            <p>Yes, our lounge is available for private events. Please select "Private Event" on the
+                            <p data-i18n="res.faq.a2">Yes, our lounge is available for private events. Please select "Private Event" on the
                                 reservation form or contact us directly to discuss capacity and packages.</p>
                         </div>
                     </div>
@@ -311,7 +313,7 @@
 
                 <div class="faq-item">
                     <button class="faq-question">
-                        <span>What is the maximum guest capacity?</span>
+                        <span data-i18n="res.faq.q3">What is the maximum guest capacity?</span>
                         <div class="faq-icon">
                             <svg width="14" height="8" viewBox="0 0 14 8" fill="none"
                                 xmlns="http://www.w3.org/2000/svg">
@@ -322,7 +324,7 @@
                     </button>
                     <div class="faq-answer">
                         <div class="faq-answer-inner">
-                            <p>Our standard tables can accommodate up to 20 guests. For larger parties or full venue
+                            <p data-i18n="res.faq.a3">Our standard tables can accommodate up to 20 guests. For larger parties or full venue
                                 buyouts, please contact our management team.</p>
                         </div>
                     </div>

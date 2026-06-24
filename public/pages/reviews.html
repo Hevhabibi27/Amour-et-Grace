@@ -6,7 +6,7 @@
     <div class="menu-hero-container container" style="gap: 0;">
         <div class="menu-hero-text">
             <img src="assets/images/japanese reviews.webp" alt="Japanese Reviews" class="menu-hero-jp-img">
-            <h1 class="menu-hero-title">Reviews</h1>
+            <h1 class="menu-hero-title" data-i18n="reviews.hero.title">Reviews</h1>
         </div>
     </div>
 </section>
@@ -90,7 +90,7 @@
 
                 <form id="reviewSubmitForm" class="review-form-container">
                     <div class="rating-selector">
-                        <div class="rating-selector-title">Your Rating</div>
+                        <div class="rating-selector-title" data-i18n="reviews.yourrating">Your Rating</div>
                         <div class="star-rating-input">
                             <input type="radio" id="star5" name="rating" value="5">
                             <label for="star5" title="5 stars">★</label>
@@ -110,16 +110,16 @@
                     </div>
 
                     <div class="rev-form-group">
-                        <label for="reviewerName">Display Name</label>
+                        <label for="reviewerName" data-i18n="reviews.displayname">Display Name</label>
                         <input type="text" id="reviewerName" name="reviewerName" placeholder="e.g. Yamada Tarō"
-                            maxlength="100" required>
+                            data-i18n-placeholder="reviews.displayname.placeholder" maxlength="100" required>
                     </div>
 
                     <div class="rev-form-group">
-                        <label for="reviewText">Your Review</label>
+                        <label for="reviewText" data-i18n="reviews.yourreview">Your Review</label>
                         <textarea id="reviewText" name="reviewText"
                             placeholder="What do you think of the kare-kare? how was the service of our resto?"
-                            maxlength="1000" required></textarea>
+                            data-i18n-placeholder="reviews.yourreview.placeholder" maxlength="1000" required></textarea>
                     </div>
 
                     <div id="review-form-msg" class="rev-form-message"></div>
@@ -141,13 +141,13 @@
         <div class="reviews-list-section">
 
             <div class="reviews-list-header">
-                <h2 class="reviews-list-title">Customer Reviews</h2>
+                <h2 class="reviews-list-title" data-i18n="reviews.customer">Customer Reviews</h2>
 
                 <div class="reviews-sort-container">
                     <select id="reviewSort" class="reviews-sort-select">
-                        <option value="newest">Newest First</option>
-                        <option value="highest">Highest Rating</option>
-                        <option value="lowest">Lowest Rating</option>
+                        <option value="newest" data-i18n="reviews.sort.newest">Newest First</option>
+                        <option value="highest" data-i18n="reviews.sort.highest">Highest Rating</option>
+                        <option value="lowest" data-i18n="reviews.sort.lowest">Lowest Rating</option>
                     </select>
                 </div>
             </div>
@@ -163,8 +163,10 @@
 
             <!-- Load More Button -->
             <div class="load-more-container">
-                <button id="btnLoadMoreReviews" class="btn-load-more" style="display: none;">もっと見る</button>
-                <button id="btnShowLessReviews" class="btn-load-more" style="display: none;">Show Less</button>
+                <button id="btnLoadMoreReviews" class="btn-load-more" style="display: none;"
+                    data-i18n="reviews.loadmore">もっと見る</button>
+                <button id="btnShowLessReviews" class="btn-load-more" style="display: none;"
+                    data-i18n="reviews.showless">Show Less</button>
             </div>
 
         </div>

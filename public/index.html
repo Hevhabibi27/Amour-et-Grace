@@ -41,11 +41,17 @@
             </div>
             <nav class="nav-menu">
                 <ul class="nav-links">
-                    <li><a href="#home" class="active">Home</a></li>
-                    <li><a href="#menu">Menu</a></li>
-                    <li><a href="#events">Events</a></li>
-                    <li><a href="#reservations">Reservation</a></li>
-                    <li><a href="#reviews">Reviews</a></li>
+                    <li><a href="#home" class="active" data-i18n="nav.home">Home</a></li>
+                    <li><a href="#menu" data-i18n="nav.menu">Menu</a></li>
+                    <li><a href="#events" data-i18n="nav.events">Events</a></li>
+                    <li><a href="#reservations" data-i18n="nav.reservation">Reservation</a></li>
+                    <li><a href="#reviews" data-i18n="nav.reviews">Reviews</a></li>
+                    <li>
+                        <button id="lang-toggle" class="lang-toggle-btn" aria-label="Switch language">
+                            <span class="lang-icon">🌐</span>
+                            <span class="lang-label" data-i18n="lang.label">EN</span>
+                        </button>
+                    </li>
                 </ul>
             </nav>
         </div>
@@ -61,7 +67,7 @@
             <!-- Column 1: Brand Info -->
             <div class="footer-col footer-brand">
                 <h2 class="footer-logo">AMOUR ET GRÀCE <span class="text-red">LOUNGE.</span></h2>
-                <p class="footer-desc">
+                <p class="footer-desc" data-i18n="footer.desc">
                     When the neon lights flicker to life across Japan, the real magic begins inside the bar.
                 </p>
                 <div class="footer-socials">
@@ -96,19 +102,19 @@
 
             <!-- Column 2: Quick Navigation -->
             <div class="footer-col footer-links">
-                <h3 class="footer-title">LINKS</h3>
+                <h3 class="footer-title" data-i18n="footer.links.title">LINKS</h3>
                 <ul>
-                    <li><a href="#home">Home</a></li>
-                    <li><a href="#menu">Menu</a></li>
-                    <li><a href="#reservations">Reservation</a></li>
-                    <li><a href="#events">Events</a></li>
-                    <li><a href="#reviews">Reviews</a></li>
+                    <li><a href="#home" data-i18n="footer.links.home">Home</a></li>
+                    <li><a href="#menu" data-i18n="footer.links.menu">Menu</a></li>
+                    <li><a href="#reservations" data-i18n="footer.links.reservation">Reservation</a></li>
+                    <li><a href="#events" data-i18n="footer.links.events">Events</a></li>
+                    <li><a href="#reviews" data-i18n="footer.links.reviews">Reviews</a></li>
                 </ul>
             </div>
 
             <!-- Column 3: Contact Information -->
             <div class="footer-col footer-contact">
-                <h3 class="footer-title">CONTACT INFO</h3>
+                <h3 class="footer-title" data-i18n="footer.contact.title">CONTACT INFO</h3>
                 <ul class="contact-info-list">
                     <li>0568-48-0259</li>
                     <li class="footer-email">amouretgrace2026@GMAIL.COM</li>
@@ -120,17 +126,18 @@
         <!-- Bottom Footer Bar -->
         <div class="footer-bottom">
             <div class="container footer-bottom-container">
-                <p class="copyright">Copyright &copy; 2026 Lounge. Website. All Rights Reserved</p>
+                <p class="copyright" data-i18n="footer.copyright">Copyright &copy; 2026 Lounge. Website. All Rights Reserved</p>
                 <div class="footer-legal">
-                    <a href="#">User terms and Conditions</a>
+                    <a href="#" data-i18n="footer.terms">User terms and Conditions</a>
                     <span class="divider">|</span>
-                    <a href="#">Privacy Policy</a>
+                    <a href="#" data-i18n="footer.privacy">Privacy Policy</a>
                 </div>
             </div>
         </div>
     </footer>
 
     <!-- Scripts -->
+    <script src="js/i18n.js?v=1"></script>
     <script src="js/utils.js?v=3"></script>
     <script src="js/navbar.js?v=3"></script>
     <script src="js/router.js?v=3"></script>
