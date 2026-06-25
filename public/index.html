@@ -6,21 +6,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Amour et GRÀCE | LOUNGE•RESTO•BAR</title>
     <meta name="description"
-        content="Amour et Grace - A place where love meets grace. Enjoy the finest Filipino and Japanese cuisine.">
-    
+        content="A premium Filipino-Japanese lounge in Komaki City, Aichi. Experience fine dining, handcrafted cocktails, live DJ nights, and unforgettable events at Amour et Grace.">
+
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://amour-et-grace.vercel.app/">
     <meta property="og:title" content="Amour et GRÀCE | LOUNGE•RESTO•BAR">
-    <meta property="og:description" content="A premium Filipino-Japanese lounge in Komaki City, Aichi. Experience fine dining, handcrafted cocktails, live DJ nights, and unforgettable events.">
+    <meta property="og:description"
+        content="A premium Filipino-Japanese lounge in Komaki City, Aichi. Experience fine dining, handcrafted cocktails, live DJ nights, and unforgettable events at Amour et Grace.">
     <meta property="og:image" content="https://amour-et-grace.vercel.app/assets/images/review%20hero%20section.webp">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://amour-et-grace.vercel.app/">
     <meta property="twitter:title" content="Amour et GRÀCE | LOUNGE•RESTO•BAR">
-    <meta property="twitter:description" content="A premium Filipino-Japanese lounge in Komaki City, Aichi. Experience fine dining, handcrafted cocktails, live DJ nights, and unforgettable events.">
-    <meta property="twitter:image" content="https://amour-et-grace.vercel.app/assets/images/review%20hero%20section.webp">
+    <meta property="twitter:description"
+        content="A premium Filipino-Japanese lounge in Komaki City, Aichi. Experience fine dining, handcrafted cocktails, live DJ nights, and unforgettable events at Amour et Grace.">
+    <meta property="twitter:image"
+        content="https://amour-et-grace.vercel.app/assets/images/review%20hero%20section.webp">
 
     <!-- JSON-LD Structured Data for Local Business -->
     <script type="application/ld+json">
@@ -80,7 +83,7 @@
     <link rel="stylesheet" href="css/events.css?v=2">
     <link rel="stylesheet" href="css/reviews.css?v=2">
     <link rel="stylesheet" href="css/chatbot.css?v=1">
-    <!-- Cloudflare Turnstile CAPTCHA (loads once for SPA) -->
+    <!-- Cloudflare Turnstile CAPTCHA -->
     <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
 </head>
 
@@ -98,11 +101,11 @@
             </div>
             <nav class="nav-menu">
                 <ul class="nav-links">
-                    <li><a href="#home" class="active" data-i18n="nav.home">Home</a></li>
-                    <li><a href="#menu" data-i18n="nav.menu">Menu</a></li>
-                    <li><a href="#events" data-i18n="nav.events">Events</a></li>
-                    <li><a href="#reservations" data-i18n="nav.reservation">Reservation</a></li>
-                    <li><a href="#reviews" data-i18n="nav.reviews">Reviews</a></li>
+                    <li><a href="index.html" data-i18n="nav.home">Home</a></li>
+                    <li><a href="menu.html" data-i18n="nav.menu">Menu</a></li>
+                    <li><a href="events.html" data-i18n="nav.events">Events</a></li>
+                    <li><a href="reservations.html" data-i18n="nav.reservation">Reservation</a></li>
+                    <li><a href="reviews.html" data-i18n="nav.reviews">Reviews</a></li>
                     <li>
                         <button id="lang-toggle" class="lang-toggle-btn" aria-label="Switch language">
                             <span class="lang-icon">🌐</span>
@@ -114,8 +117,628 @@
         </div>
     </header>
 
-    <!-- Main Content Container for Modular Pages -->
-    <main id="app-content"></main>
+    <main id="app-content">
+        <!-- Hero Section -->
+        <section id="home-hero" class="hero-section">
+            <!-- Using the specific hero section image -->
+            <div class="hero-bg" style="background-image: url('assets/images/landscape.png');">
+                <!-- We can add the Amour et GRÂCE text here if not embedded in the image -->
+                <h1 class="sr-only">Amour et GRÂCE</h1>
+            </div>
+        </section>
+
+        <!-- About Us Section -->
+        <section id="home-about" class="about-section">
+            <div class="container about-container">
+
+                <!-- Column 1: Vertical Text -->
+                <div class="about-vertical-text reveal delay-1">
+                    会社案内
+                </div>
+
+                <!-- Column 2: Left Content Area -->
+                <div class="about-left-col">
+                    <h2 class="about-title reveal delay-1" data-i18n="home.about.title">About Us</h2>
+                    <p class="about-description reveal delay-2" data-i18n="home.about.desc1">
+                        Amour et Grace is a simple yet sophisticated special space for everyone who wants to refresh
+                        their mind and body and regain their vitality.
+                    </p>
+                    <p class="about-description reveal delay-2" data-i18n="home.about.desc2">
+                        Here, you can enjoy drinks, food, and even sing and dance. Our staff will assist you in
+                        providing warm hospitality with a friendly atmosphere.
+                    </p>
+                    <p class="about-description reveal delay-2" data-i18n="home.about.desc3">
+                        You can also enjoy our homemade dishes, a fusion of Filipino cuisine and simple Japanese food.
+                    </p>
+                    <h3 class="about-brand-name reveal delay-3">Amour Et Gràce</h3>
+
+                    <!-- Bottom part: Cultural Cards moved here -->
+                    <div class="about-culture-cards">
+                        <!-- USA -->
+                        <div class="culture-card">
+                            <img src="assets/images/usa.png" alt="USA Influence" class="culture-bg" loading="lazy">
+                            <div class="culture-content">
+                                <img src="assets/images/american-flag.webp" alt="USA Flag" class="culture-flag"
+                                    loading="lazy">
+                                <span class="culture-label" data-i18n="home.culture.usa">Love and Blessing</span>
+                            </div>
+                        </div>
+                        <!-- Philippines -->
+                        <div class="culture-card">
+                            <img src="assets/images/philippines.png" alt="Philippines Influence" class="culture-bg"
+                                loading="lazy">
+                            <div class="culture-content">
+                                <img src="assets/images/philippines-flag.webp" alt="Philippines Flag"
+                                    class="culture-flag" loading="lazy">
+                                <span class="culture-label" data-i18n="home.culture.ph">Pag-ibig at Grasya</span>
+                            </div>
+                        </div>
+                        <!-- Japan -->
+                        <div class="culture-card">
+                            <img src="assets/images/japan.png" alt="Japan Influence" class="culture-bg" loading="lazy">
+                            <div class="culture-content">
+                                <img src="assets/images/japanese-flag.webp" alt="Japan Flag" class="culture-flag"
+                                    loading="lazy">
+                                <span class="culture-label">「愛」と「恵」</span>
+                            </div>
+                        </div>
+                        <!-- France -->
+                        <div class="culture-card">
+                            <img src="assets/images/france.png" alt="France Influence" class="culture-bg"
+                                loading="lazy">
+                            <div class="culture-content">
+                                <img src="assets/images/france-flag.webp" alt="France Flag" class="culture-flag"
+                                    loading="lazy">
+                                <span class="culture-label">AMOUR ET GRÀCE</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Column 3: Right Side -->
+                <div class="about-right-col">
+                    <div class="about-image-content reveal delay-2">
+                        <img src="assets/images/about picture.png" alt="Amour et Grace Lounge" class="about-house-img"
+                            loading="lazy">
+                    </div>
+
+                    <div class="about-stats-container reveal delay-3">
+                        <div class="stat-item">
+                            <h3>1.01+</h3>
+                            <p>Years of<br>Grace</p>
+                        </div>
+                        <div class="stat-item">
+                            <h3>1.01+</h3>
+                            <p>"Sell the Sizzle,<br>Not the Steak"</p>
+                        </div>
+                        <div class="stat-item">
+                            <h3>1.01+</h3>
+                            <p>Dynamic<br>Menu</p>
+                        </div>
+                    </div>
+
+                    <div class="about-tagline-jp reveal delay-4">愛が恵みに出会う場所</div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Promotions Section -->
+        <section id="home-promotions" class="promotions-section">
+            <div class="container">
+                <!-- Header -->
+                <div class="promotions-header">
+                    <h2 class="japanese-header">プロモ</h2>
+                    <h3 class="english-header">PROMO</h3>
+                </div>
+
+                <!-- Banners Stack -->
+                <div class="promotions-stack">
+                    <!-- Banner 1: Drink All You Can -->
+                    <div class="promo-banner banner-drink">
+                        <div class="promo-drink-left">
+                            <img src="assets/images/brandy1.png" alt="Brandy" class="promo-bottle promo-bottle-1"
+                                loading="lazy">
+                            <img src="assets/images/cocktail2 3.png" alt="Cocktail" class="promo-bottle promo-bottle-3"
+                                loading="lazy">
+                            <img src="assets/images/gin.png" alt="Gin" class="promo-bottle promo-bottle-2"
+                                loading="lazy">
+                            <img src="assets/images/brandy2 5.png" alt="Brandy" class="promo-bottle promo-bottle-4"
+                                loading="lazy">
+                        </div>
+                        <div class="promo-drink-right">
+                            <h4 class="promo-title">1 HOUR DRINK ALL<br>YOU CAN</h4>
+                            <p class="promo-price">¥3000</p>
+                        </div>
+                    </div>
+
+                    <!-- Banner 2: Karaoke -->
+                    <div class="promo-banner banner-karaoke">
+                        <div class="promo-karaoke-left">
+                            <img src="assets/images/record.png" alt="Vinyl Record" class="promo-record" loading="lazy">
+                        </div>
+                        <div class="promo-karaoke-center">
+                            <h4 class="promo-title"><span class="music-note-icon">&#9834;</span> SING ALL YOU CAN</h4>
+                            <p class="promo-price">¥1000</p>
+                            <p class="promo-sub-price"><span class="music-note-icon">&#9834;</span> REQUEST = ¥1000</p>
+                        </div>
+                        <div class="promo-karaoke-right">
+                            <img src="assets/images/singer.png" alt="Singer Silhouette" class="promo-singer"
+                                loading="lazy">
+                        </div>
+                    </div>
+
+                    <!-- Banner 3: Car Service -->
+                    <div class="promo-banner banner-car">
+                        <div class="promo-car-left">
+                            <h4 class="promo-title">WE OFFER CAR SERVICE<br>WITH CHARGE DEPEND PER<br>KILOMETER</h4>
+                        </div>
+                        <div class="promo-car-right">
+                            <img src="assets/images/car.png" alt="Car Service" class="promo-car-img" loading="lazy">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Featured Menu Section -->
+        <section id="home-featured" class="featured-menu-section section-line">
+            <!-- Decorative house images on the sides -->
+            <img src="assets/images/house.png" alt="" class="menu-deco-house menu-deco-house-left" aria-hidden="true">
+            <img src="assets/images/house.png" alt="" class="menu-deco-house menu-deco-house-right" aria-hidden="true">
+
+            <div class="container">
+                <div class="japanese-title text-center">御薦め</div>
+                <h2 class="section-title text-center text-dark" data-i18n="home.featured.title">Featured Dishes</h2>
+
+                <div class="menu-grid-container">
+                    <!-- The Cards -->
+                    <div class="menu-cards-row" id="menu-carousel">
+
+                        <!-- Card 1 -->
+                        <div class="menu-card card-left" data-index="0">
+                            <div class="menu-card-inner">
+                                <img src="assets/images/dish1.png" alt="Tonkotsu Ramen" class="card-img">
+                                <h5 class="card-title" data-i18n="home.featured.dish1.name">TONKOTSU RAMEN</h5>
+                                <p class="card-desc" data-i18n="home.featured.dish1.desc">Experience our signature rich,
+                                    creamy pork bone broth simmered to
+                                    perfection.</p>
+                            </div>
+                            <a href="menu.html" class="btn-primary card-btn" data-i18n="home.featured.btn">Check
+                                Menu</a>
+                        </div>
+
+                        <!-- Card 2 -->
+                        <div class="menu-card card-center" data-index="1">
+                            <div class="menu-card-inner">
+                                <img src="assets/images/sushi.png" alt="Sushi" class="card-img">
+                                <h5 class="card-title" data-i18n="home.featured.dish2.name">SUSHI</h5>
+                                <p class="card-desc" data-i18n="home.featured.dish2.desc">Fresh, handcrafted sushi rolls
+                                    prepared with the finest ingredients.</p>
+                            </div>
+                            <a href="menu.html" class="btn-primary card-btn" data-i18n="home.featured.btn">Check
+                                Menu</a>
+                        </div>
+
+                        <!-- Card 3 -->
+                        <div class="menu-card card-right" data-index="2">
+                            <div class="menu-card-inner">
+                                <img src="assets/images/karekare.webp" alt="Kare Kare" class="card-img">
+                                <h5 class="card-title" data-i18n="home.featured.dish3.name">KARE-KARE</h5>
+                                <p class="card-desc" data-i18n="home.featured.dish3.desc">A classic Filipino stew
+                                    featuring our savory, thick peanut sauce.</p>
+                            </div>
+                            <a href="menu.html" class="btn-primary card-btn" data-i18n="home.featured.btn">Check
+                                Menu</a>
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Featured Drinks Section -->
+        <section id="home-featured-drinks" class="featured-drinks-section ">
+            <div class="container">
+                <!-- Headers -->
+                <div class="drinks-header text-center">
+                    <h2 class="drinks-title-jp">注目のドリンク</h2>
+                    <h3 class="drinks-title-en" data-i18n="home.drinks.title">Featured Drinks</h3>
+                </div>
+
+                <!-- Cards Grid -->
+                <div class="drinks-grid">
+                    <!-- Card 1 (Gin) -->
+                    <div class="drink-card gin-card">
+                        <img src="assets/images/drinkfeatured1.png" alt="Gin" class="drink-img">
+                        <div class="drink-info">
+                            <h4 class="drink-name">ジン</h4>
+                            <p class="drink-desc" data-i18n="home.drinks.gin.desc">JAPANESE GIN IS WORLD-CLASS AND
+                                FAMOUS FOR ITS EXTREME SMOOTHNESS</p>
+                        </div>
+                    </div>
+
+                    <!-- Card 2 (Whisky) -->
+                    <div class="drink-card whisky-card">
+                        <img src="assets/images/drinkfeatured2.png" alt="Whisky" class="drink-img">
+                        <div class="drink-info">
+                            <h4 class="drink-name">ウィスキー</h4>
+                            <p class="drink-desc" data-i18n="home.drinks.whisky.desc">JAPANESE WHISKY IS WORLD-RENOWNED
+                                FOR ITS EXCEPTIONAL QUALITY</p>
+                        </div>
+                    </div>
+
+                    <!-- Card 3 (Wine) -->
+                    <div class="drink-card wine-card">
+                        <img src="assets/images/drinkfeatured3.png" alt="Wine" class="drink-img">
+                        <div class="drink-info">
+                            <h4 class="drink-name">ワイン</h4>
+                            <p class="drink-desc" data-i18n="home.drinks.wine.desc">JAPANESE WINE IS EXCELLENT AND
+                                RAPIDLY GROWING</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="carousel-see-more text-center" style="margin-top: 40px;">
+                    <a href="menu.html" class="see-more-text">もっと見る</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Events Preview Section -->
+        <section id="home-events" class="events-preview-section">
+            <!-- Atmospheric Background Layers removed -->
+
+            <div class="container events-container">
+                <!-- Headers -->
+                <div class="events-header text-center">
+                    <h3 class="events-title-jp">イベントプレビュー</h3>
+                    <h2 class="events-title-en" data-i18n="home.events.title">Featured Events</h2>
+                </div>
+
+                <!-- 3-Column Masonry Grid -->
+                <div class="events-grid">
+
+                    <!-- Left Column -->
+                    <div class="events-col events-col-left">
+                        <div class="events-img-wrapper">
+                            <img src="assets/images/insidebar.png" alt="Bar Interior" class="events-img img-left">
+                            <div class="events-vertical-tag">
+                                <span class="tag-text">今後のイベント</span>
+                            </div>
+                            <div class="events-tag-bottom">飲み放題</div>
+                        </div>
+                        <p class="events-desc desc-left" data-i18n="home.events.desc.left">
+                            Amour et Grace is an extraordinary, intimate dining experience in the heart of the city,
+                            beautifully
+                            blending Filipino-inspired cuisine with soulful Japanese hospitality.
+                        </p>
+                    </div>
+
+                    <!-- Center Column -->
+                    <div class="events-col events-col-center">
+                        <div class="events-img-wrapper center-wrapper">
+                            <img src="assets/images/insidebar.png" alt="Nomihodai Event" class="events-img img-center">
+                        </div>
+                        <h4 class="events-center-title">NOMIHODAI</h4>
+                    </div>
+
+                    <!-- Right Column -->
+                    <div class="events-col events-col-right">
+                        <p class="events-desc desc-right" data-i18n="home.events.desc.right">
+                            When the neon lights flicker to life across Japan, the real magic begins inside the bar. For
+                            those
+                            looking to experience Komaki City legendary nightlife at its absolute finest,
+                        </p>
+                        <div class="events-img-wrapper">
+                            <img src="assets/images/insidebar.png" alt="Nightlife" class="events-img img-right">
+                            <div class="events-vertical-tag tag-right">
+                                <span class="tag-text">遊びに来てね</span>
+                            </div>
+                            <div class="events-tag-bottom">飲み放題</div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Gallery Section -->
+        <section id="home-gallery" class="gallery-section section-line">
+
+            <div class="gallery-inner">
+
+                <!-- Header -->
+                <div class="gallery-header text-center">
+                    <h2 class="gallery-title" data-i18n="home.gallery.title">Gallery</h2>
+                    <p class="gallery-subtitle" data-i18n="home.gallery.subtitle">
+                        Step inside our world — where refined interiors meet handcrafted
+                        pours and every moment is worth savoring.
+                    </p>
+                </div>
+
+                <!-- Mosaic Grid Area -->
+                <div class="gallery-mosaic-wrapper">
+
+                    <!-- Japanese kanji text -->
+                    <div class="gallery-kanji">天井桟敷</div>
+
+                    <!-- Flex Column Grid (5 columns) -->
+                    <div class="gallery-flex-container">
+
+                        <!-- Col 1 -->
+                        <div class="g-col">
+                            <div class="gallery-item ar-3-4 reveal">
+                                <img src="assets/images/insidebar.png" alt="Chef at Work" class="gallery-img"
+                                    loading="lazy">
+                            </div>
+                        </div>
+
+                        <!-- Col 2 -->
+                        <div class="g-col">
+                            <div class="gallery-item ar-3-4 editorial-item-1 reveal">
+                                <img src="assets/images/landscape.png" alt="Japanese Street" class="gallery-img"
+                                    loading="lazy">
+                            </div>
+                            <div class="gallery-item ar-3-4 reveal">
+                                <img src="assets/images/insidebar.png" alt="Colorful Interior" class="gallery-img"
+                                    loading="lazy">
+                            </div>
+                        </div>
+
+                        <!-- Col 3 -->
+                        <div class="g-col">
+                            <div class="gallery-item ar-2-3 reveal">
+                                <img src="assets/images/insidebar.png" alt="Bar Interior" class="gallery-img"
+                                    loading="lazy">
+                            </div>
+                            <div class="gallery-item ar-16-9 editorial-item-2 reveal">
+                                <img src="assets/images/drink.png" alt="Sake Bottles" class="gallery-img"
+                                    loading="lazy">
+                            </div>
+                            <div class="gallery-item ar-4-5 reveal">
+                                <img src="assets/images/house.png" alt="Sushi Bar Exterior" class="gallery-img"
+                                    loading="lazy">
+                            </div>
+                        </div>
+
+                        <!-- Col 4 -->
+                        <div class="g-col">
+                            <div class="gallery-item ar-2-3 editorial-item-3 reveal">
+                                <img src="assets/images/insidebar.png" alt="Bar Counter" class="gallery-img"
+                                    loading="lazy">
+                            </div>
+                            <div class="gallery-item ar-3-4 reveal">
+                                <img src="assets/images/landscape.png" alt="Lantern Street" class="gallery-img"
+                                    loading="lazy">
+                            </div>
+                        </div>
+
+                        <!-- Col 5 -->
+                        <div class="g-col">
+                            <div class="gallery-item ar-3-4 editorial-item-4 reveal">
+                                <img src="assets/images/sushi.png" alt="Sushi Platter" class="gallery-img"
+                                    loading="lazy">
+                            </div>
+                        </div>
+
+                    </div>
+                    <!-- End Flex Grid -->
+
+                </div>
+                <!-- End Mosaic Grid Area -->
+
+            </div>
+            <!-- End gallery-inner -->
+
+            <!-- Cherry Blossom Decorations — full-width, anchored to section bottom -->
+            <div class="gallery-blossom-left" aria-hidden="true">
+                <img src="assets/images/gallery puno.png" alt="" class="blossom-img blossom-left" aria-hidden="true">
+            </div>
+            <div class="gallery-blossom-right" aria-hidden="true">
+                <img src="assets/images/gallery puno.png" alt="" class="blossom-img blossom-right" aria-hidden="true">
+            </div>
+
+        </section>
+
+        <!-- Gallery Lightbox Modal -->
+        <div id="gallery-lightbox" class="gallery-lightbox" role="dialog" aria-modal="true" aria-label="Image viewer">
+            <button class="lightbox-close" aria-label="Close image viewer">&times;</button>
+            <img class="lightbox-img" src="" alt="Gallery preview">
+        </div>
+
+        <!-- Home Reservation Section -->
+        <section id="home-reservation" class="home-reservation-section">
+            <div class="reservation-red-bg">
+                <div class="container reservation-container">
+                    <!-- Left: Images -->
+                    <div class="reservation-images">
+                        <img src="assets/images/reservationspic1.webp" alt="Cocktails" class="res-pic pic1">
+                        <img src="assets/images/reservationspic2.webp" alt="Party" class="res-pic pic2">
+                        <div class="res-circle-cutout"></div>
+                    </div>
+
+                    <!-- Right: Content -->
+                    <div class="reservation-content">
+                        <h3 class="res-title-en" data-i18n="home.res.title">Reservation</h3>
+                        <h2 class="res-title-jp">予約</h2>
+                        <p class="res-desc" data-i18n="home.res.desc">
+                            Planning something special? We'd love to be part of it. To reserve, provide your personal
+                            details, event type, celebrant's name, preferred date and time, number of guests,
+                            and food and beverage preferences. Our lounge is open daily from 10:00 AM to 5:00
+                            PM, with a maximum capacity of 20 guests. You can experience the extra ordinary nights from
+                            Thursday
+                            to Sunday at 7 pm to 1:45 am even without reservations. Closing time at 2 am. Music and
+                            karaoke are
+                            available at no extra
+                            charge. For decoration inquiries, please contact our owner at +81 903 856 2854.
+                        </p>
+                        <a href="reservations.html" class="btn-primary res-btn">予約する</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Testimonials Section -->
+        <section id="home-testimonials" class="testimonials-section">
+            <div class="container">
+                <!-- Headers -->
+                <div class="events-header text-center" style="margin-bottom: 40px;">
+                    <h2 class="events-title-en" data-i18n="home.testimonials.title">Testimonials</h2>
+                </div>
+            </div>
+
+            <div class="testimonials-wrapper">
+                <div class="testimonials-scroll">
+
+                    <!-- Card 1 -->
+                    <div class="testimonial-card">
+                        <div class="testimonial-label">THE CONTEMPORARY WORLD</div>
+                        <div class="testimonial-quote">
+                            Napakalopet mo Boss, galing ng concept mo sa paggawa ng mobile game!
+                        </div>
+                        <div class="testimonial-rating">
+                            <span class="stars">★★★★★</span>
+                            <span class="score">5.0</span>
+                        </div>
+                        <div class="testimonial-footer">
+                            <div class="testimonial-author">
+                                <img src="assets/images/landscape.png" alt="Axel Reyes" class="author-avatar">
+                                <div class="author-info">
+                                    <span class="author-name">Axel Reyes</span>
+                                    <span class="author-title">Game Concept Artist</span>
+                                </div>
+                            </div>
+                            <span class="quote-icon">❞</span>
+                        </div>
+                    </div>
+
+                    <!-- Card 2 -->
+                    <div class="testimonial-card">
+                        <div class="testimonial-label">E-NAZARENO WEBSITE</div>
+                        <div class="testimonial-quote">
+                            Thank you po, sa pag gawa ng website para sa subject namin. Maganda po lahat!.
+                        </div>
+                        <div class="testimonial-rating">
+                            <span class="stars">★★★★★</span>
+                            <span class="score">5.0</span>
+                        </div>
+                        <div class="testimonial-footer">
+                            <div class="testimonial-author">
+                                <img src="assets/images/landscape.png" alt="Stephanie Marca" class="author-avatar">
+                                <div class="author-info">
+                                    <span class="author-name">Stephanie Marca</span>
+                                    <span class="author-title">E-Nazareno Author</span>
+                                </div>
+                            </div>
+                            <span class="quote-icon">❞</span>
+                        </div>
+                    </div>
+
+                    <!-- Card 3 -->
+                    <div class="testimonial-card">
+                        <div class="testimonial-label">PORTFOLIO PROJECT</div>
+                        <div class="testimonial-quote">
+                            These designs are showcased perfectly. The dark theme really makes the content pop out and
+                            look
+                            professional.
+                        </div>
+                        <div class="testimonial-rating">
+                            <span class="stars">★★★★★</span>
+                            <span class="score">5.0</span>
+                        </div>
+                        <div class="testimonial-footer">
+                            <div class="testimonial-author">
+                                <img src="assets/images/landscape.png" alt="John Doe" class="author-avatar">
+                                <div class="author-info">
+                                    <span class="author-name">John Doe</span>
+                                    <span class="author-title">Creative Director</span>
+                                </div>
+                            </div>
+                            <span class="quote-icon">❞</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- Contacts Section -->
+        <section id="home-contact" class="contact-section section-line">
+            <!-- Background Cherry Blossoms -->
+            <img src="assets/images/contact picture.png" alt="" class="contact-blossom-left" aria-hidden="true">
+
+            <div class="container contact-container">
+                <!-- Left Side: Info -->
+                <div class="contact-info">
+                    <h2 class="contact-title" data-i18n="home.contact.title">Contacts</h2>
+                    <h3 class="contact-subtitle">AMOUR ET GRÀCE <span class="red-text">LOUNGE</span></h3>
+
+                    <ul class="contact-list">
+                        <li class="contact-item">
+                            <div class="contact-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                                    <circle cx="12" cy="10" r="3"></circle>
+                                </svg>
+                            </div>
+                            <span class="contact-text">3F, K-BOX Building, 1-198 Chuo,<br>Komaki City, Aichi
+                                Prefecture<br>485-009</span>
+                        </li>
+                        <li class="contact-item">
+                            <div class="contact-icon" style="margin-top: 10px;">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path
+                                        d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z">
+                                    </path>
+                                </svg>
+                            </div>
+                            <span class="contact-text" style="margin-top: 13px;">+81 903 856 2854</span>
+                        </li>
+                        <li class="contact-item" style="margin-top: 10px;">
+                            <div class="contact-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <circle cx="12" cy="12" r="10"></circle>
+                                    <polyline points="12 6 12 12 16 14"></polyline>
+                                </svg>
+                            </div>
+                            <span class="contact-text" style="margin-top: 4px;">OPEN DAILY 8:00 AM - 11:00 PM</span>
+                        </li>
+                        <li class="contact-item" style="margin-top: 10px;">
+                            <div class="contact-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path
+                                        d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z">
+                                    </path>
+                                    <polyline points="22,6 12,13 2,6"></polyline>
+                                </svg>
+                            </div>
+                            <span class="contact-text" style="margin-top: 4px;">EXAMPLE@GMAIL.COM</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Center: Japanese Text Circle -->
+                <div class="contact-center">
+                    <div class="contact-red-circle"></div>
+                    <span class="contact-jp-vertical">連絡する</span>
+                </div>
+
+                <!-- Right Side: Google Map Embed -->
+                <!-- Right Side: Google Map Embed -->
+                <div class="contact-map">
+                    <div class="map-wrapper">
+                        <iframe class="contact-map-iframe"
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d203.53850380153904!2d136.92718006009986!3d35.29067095169903!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60030cccaaf17a87%3A0x2ad0d4792589d91f!2zMS1jaMWNbWUtMTk4IENoxavFjSwgS29tYWtpLCBBaWNoaSA0ODUtMDAyOSwgSmFwYW4!5e0!3m2!1sen!2sph!4v1781853149261!5m2!1sen!2sph"
+                            width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy"
+                            referrerpolicy="no-referrer-when-downgrade" title="Amour et Grace Lounge Location">
+                        </iframe>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
 
     <!-- Main Footer -->
     <footer class="main-footer">
@@ -161,11 +784,11 @@
             <div class="footer-col footer-links">
                 <h3 class="footer-title" data-i18n="footer.links.title">LINKS</h3>
                 <ul>
-                    <li><a href="#home" data-i18n="footer.links.home">Home</a></li>
-                    <li><a href="#menu" data-i18n="footer.links.menu">Menu</a></li>
-                    <li><a href="#reservations" data-i18n="footer.links.reservation">Reservation</a></li>
-                    <li><a href="#events" data-i18n="footer.links.events">Events</a></li>
-                    <li><a href="#reviews" data-i18n="footer.links.reviews">Reviews</a></li>
+                    <li><a href="index.html" data-i18n="footer.links.home">Home</a></li>
+                    <li><a href="menu.html" data-i18n="footer.links.menu">Menu</a></li>
+                    <li><a href="reservations.html" data-i18n="footer.links.reservation">Reservation</a></li>
+                    <li><a href="events.html" data-i18n="footer.links.events">Events</a></li>
+                    <li><a href="reviews.html" data-i18n="footer.links.reviews">Reviews</a></li>
                 </ul>
             </div>
 
@@ -183,7 +806,8 @@
         <!-- Bottom Footer Bar -->
         <div class="footer-bottom">
             <div class="container footer-bottom-container">
-                <p class="copyright" data-i18n="footer.copyright">Copyright &copy; 2026 Lounge. Website. All Rights Reserved</p>
+                <p class="copyright" data-i18n="footer.copyright">Copyright &copy; 2026 Lounge. Website. All Rights
+                    Reserved</p>
                 <div class="footer-legal">
                     <a href="#" data-i18n="footer.terms">User terms and Conditions</a>
                     <span class="divider">|</span>
@@ -197,7 +821,6 @@
     <script src="js/i18n.js?v=1"></script>
     <script src="js/utils.js?v=3"></script>
     <script src="js/navbar.js?v=3"></script>
-    <script src="js/router.js?v=3"></script>
     <script src="js/home.js?v=3"></script>
     <script src="js/reservations.js?v=3"></script>
     <script src="js/reviews.js?v=3"></script>

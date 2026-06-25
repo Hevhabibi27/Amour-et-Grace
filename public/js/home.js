@@ -204,11 +204,10 @@ window.initGalleryLightbox = function () {
 
 // Run on DOM load for initial page load
 document.addEventListener('DOMContentLoaded', () => {
-    if (window.location.hash === '' || window.location.hash === '#home') {
-        setTimeout(() => {
-            if (typeof initHomeCarousel === 'function') initHomeCarousel();
-            if (typeof initTestimonialsCarousel === 'function') initTestimonialsCarousel();
-            if (typeof initGalleryLightbox === 'function') initGalleryLightbox();
-        }, 100);
-    }
+    setTimeout(() => {
+        if (typeof initHomeCarousel === 'function') initHomeCarousel();
+        if (typeof initTestimonialsCarousel === 'function') initTestimonialsCarousel();
+        if (typeof initGalleryLightbox === 'function') initGalleryLightbox();
+    }, 100);
 });
+
