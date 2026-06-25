@@ -73,6 +73,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // ── 2. Detach current page (keep it alive in cache)
         if (currentPage && pageCache[currentPage]) {
+            // Clean up Turnstile safely BEFORE detaching the DOM node to prevent state corruption
+            if (currentPage === 'reservations' && window.turnstile && turnstileWidgetId !== null) {
+                window.turnstile.remove(turnstileWidgetId);
+                turnstileWidgetId = null;
+            }
+
             pageCache[currentPage].remove();
 
             // Pause home carousel when leaving the home page
