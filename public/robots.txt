@@ -1,8 +1,3 @@
 User-agent: *
 Allow: /
-
-Sitemap: https://amour-et-grace.vercel.app/sitemap.xml
-
-# Block API and internal routes
-Disallow: /api/
-Disallow: /admin/
+Sitemap: https://amouretgrace.com/sitemap.xml

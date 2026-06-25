@@ -232,7 +232,7 @@ async function sendAdminReservationNotification(reservation) {
   const adminEmail = process.env.ADMIN_EMAIL;
   if (!adminEmail) return { success: false, error: 'No admin email configured' };
 
-  const dashboardUrl = `${process.env.SITE_URL || 'https://amour-et-grace.vercel.app'}/admin/reservations.html`;
+  const dashboardUrl = `${process.env.SITE_URL || 'https://amouretgrace.com'}/admin/reservations.html`;
 
   // Warn admin if guest count exceeds physical lounge capacity
   const capacityNote = reservation.guest_count > 20
@@ -285,7 +285,7 @@ async function sendAdminInquiryNotification(inquiry) {
   const adminEmail = process.env.ADMIN_EMAIL;
   if (!adminEmail) return { success: false, error: 'No admin email configured' };
 
-  const dashboardUrl = `${process.env.SITE_URL || 'https://amour-et-grace.vercel.app'}/admin/inquiries.html`;
+  const dashboardUrl = `${process.env.SITE_URL || 'https://amouretgrace.com'}/admin/inquiries.html`;
 
   try {
     const { data, error } = await resend.emails.send({
