@@ -1,4 +1,38 @@
 // public/js/router.js
+
+// ── SEO: Per-page meta data ──
+const pageMeta = {
+    home: {
+        title: 'Amour et GRÀCE | LOUNGE • RESTO • BAR',
+        description: 'A premium Filipino-Japanese lounge in Komaki City, Aichi. Experience fine dining, handcrafted cocktails, live DJ nights, and unforgettable events at Amour et Gràce.'
+    },
+    menu: {
+        title: 'Our Menu | Amour et GRÀCE',
+        description: 'Discover our curated menu of authentic Filipino and Japanese cuisine — sushi, ramen, wagyu, signature cocktails, and party platters in Komaki City, Aichi.'
+    },
+    events: {
+        title: 'Events | Amour et GRÀCE',
+        description: 'Join us for seasonal events, cocktail parties, karaoke nights, live DJ sets, and live music at Amour et Gràce lounge in Komaki City, Aichi, Japan.'
+    },
+    reservations: {
+        title: 'Reservations | Amour et GRÀCE',
+        description: 'Reserve your table or book a private event at Amour et Gràce lounge. Online reservations available for groups, private parties, and special celebrations.'
+    },
+    reviews: {
+        title: 'Customer Reviews | Amour et GRÀCE',
+        description: 'Read genuine customer reviews and share your own dining experience at Amour et Gràce — a top-rated Filipino-Japanese lounge in Komaki City, Aichi.'
+    }
+};
+
+const updateMeta = (page) => {
+    const meta = pageMeta[page] || pageMeta.home;
+    // Update title
+    document.title = meta.title;
+    // Update meta description
+    let descTag = document.querySelector('meta[name="description"]');
+    if (descTag) descTag.setAttribute('content', meta.description);
+};
+
 document.addEventListener('DOMContentLoaded', () => {
     const appContent = document.getElementById('app-content');
     const navbar = document.querySelector('.navbar');
@@ -51,6 +85,7 @@ document.addEventListener('DOMContentLoaded', () => {
             appContent.appendChild(pageCache[page]);
             currentPage = page;
             refreshNavbar();
+            updateMeta(page);
 
             // Re-initialize scroll animations for cached page
             if (typeof Utils !== 'undefined') {
@@ -101,6 +136,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 appContent.appendChild(wrapper);
                 currentPage = page;
                 refreshNavbar();
+                updateMeta(page);
 
                 // Initialize scroll animations
                 if (typeof Utils !== 'undefined') {
