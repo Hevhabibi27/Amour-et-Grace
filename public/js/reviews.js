@@ -446,18 +446,25 @@
         }
     });
 
-    // ── Auto-init: Fetch reviews when the page loads (MPA) ──
-    if (document.readyState === 'loading') {
-        document.addEventListener('DOMContentLoaded', () => {
-            if (document.getElementById('reviews-content')) {
-                fetchReviews();
+    // ── Auto-init: Watch for when the reviews page is loaded by the SPA router ──
+    const observer = new MutationObserver((mutations) => {
+        for (const mutation of mutations) {
+            for (const node of mutation.addedNodes) {
+                if (node.nodeType === 1 && (node.id === 'page-reviews' || node.querySelector?.('#reviews-content'))) {
+                    fetchReviews();
+                    return;
+                }
             }
-        });
-    } else {
-        // DOM already ready
-        if (document.getElementById('reviews-content')) {
-            fetchReviews();
         }
+    });
+
+    const appContent = document.getElementById('app-content');
+    if (appContent) {
+        observer.observe(appContent, { childList: true });
+    }
+
+    // Also try immediate init in case the page is already loaded
+    if (document.getElementById('reviews-content')) {
+        fetchReviews();
     }
 })();
-

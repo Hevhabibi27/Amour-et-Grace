@@ -144,12 +144,3 @@ const Utils = {
         }, { passive: true });
     }
 };
-
-// ── Auto-initialize on page load (MPA — no router needed) ──
-document.addEventListener('DOMContentLoaded', () => {
-    Utils.initScrollReveals();
-    Utils.initCinematicScroll();
-    Utils.initHorizontalTimeline();
-    Utils.initScrollEngine();
-});
-

@@ -41,14 +41,14 @@ document.addEventListener('submit', async function (e) {
 
     // ── 3. Collect form data (field names match backend exactly) ──
     const formData = {
-        name:        form.querySelector('#premFullName').value.trim(),
-        email:       form.querySelector('#premEmail').value.trim(),
-        phone:       form.querySelector('#premPhone').value.trim(),
+        name: form.querySelector('#premFullName').value.trim(),
+        email: form.querySelector('#premEmail').value.trim(),
+        phone: form.querySelector('#premPhone').value.trim(),
         guest_count: form.querySelector('#premGuests').value,
-        date:        form.querySelector('#premDate').value,
-        time:        form.querySelector('#premTime').value,
-        type:        form.querySelector('#premType').value,
-        message:     form.querySelector('#premSpecialRequest')?.value?.trim() || '',
+        date: form.querySelector('#premDate').value,
+        time: form.querySelector('#premTime').value,
+        type: form.querySelector('#premType').value,
+        message: form.querySelector('#premSpecialRequest')?.value?.trim() || '',
         captcha_token: document.querySelector('[name="cf-turnstile-response"]')?.value || '',
     };
 
