@@ -39,6 +39,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const pageCache = {};   // Stores live DOM wrappers by page name
     let currentPage = null;
     let isLoading = false;  // Race condition guard
+    let turnstileWidgetId = null; // Track Turnstile widget to prevent duplicate render errors
 
     // ── Loading Indicator (created once, reused) ──
     const loader = document.createElement('div');
@@ -104,6 +105,22 @@ document.addEventListener('DOMContentLoaded', () => {
             if (page === 'home' && typeof window.resumeHomeCarousel === 'function') {
                 window.resumeHomeCarousel();
             }
+
+            // Explicitly render Turnstile for the reservations page when restored from cache
+            if (page === 'reservations' && window.turnstile) {
+                const turnstileContainer = document.querySelector('.cf-turnstile');
+                if (turnstileContainer) {
+                    if (turnstileWidgetId !== null) {
+                        window.turnstile.remove(turnstileWidgetId);
+                        turnstileWidgetId = null;
+                    }
+                    turnstileWidgetId = window.turnstile.render(turnstileContainer, {
+                        sitekey: turnstileContainer.getAttribute('data-sitekey') || '0x4AAAAAADpbe91a9hwitDJ1',
+                        theme: turnstileContainer.getAttribute('data-theme') || 'dark'
+                    });
+                }
+            }
+
             return;
         }
 
@@ -151,6 +168,21 @@ document.addEventListener('DOMContentLoaded', () => {
                     if (typeof initHomeCarousel === 'function') initHomeCarousel();
                     if (typeof initTestimonialsCarousel === 'function') initTestimonialsCarousel();
                     if (typeof initGalleryLightbox === 'function') initGalleryLightbox();
+                }
+
+                // Explicitly render Turnstile for the reservations page
+                if (page === 'reservations' && window.turnstile) {
+                    const turnstileContainer = document.querySelector('.cf-turnstile');
+                    if (turnstileContainer) {
+                        if (turnstileWidgetId !== null) {
+                            window.turnstile.remove(turnstileWidgetId);
+                            turnstileWidgetId = null;
+                        }
+                        turnstileWidgetId = window.turnstile.render(turnstileContainer, {
+                            sitekey: turnstileContainer.getAttribute('data-sitekey') || '0x4AAAAAADpbe91a9hwitDJ1',
+                            theme: turnstileContainer.getAttribute('data-theme') || 'dark'
+                        });
+                    }
                 }
 
                 // Apply translations to freshly loaded page
