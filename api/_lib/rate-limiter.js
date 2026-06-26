@@ -62,7 +62,7 @@ const { supabaseAdmin } = require('./supabase');
 const LIMITS = {
   // Public endpoints
   '/api/auth/login':               { max: 5,   windowMs: 15 * 60 * 1000 },   // 5 per 15 min (brute-force)
-  '/api/reservations':             { max: 3,   windowMs: 60 * 60 * 1000 },   // 3 per hour
+  '/api/reservations':             { max: 10,  windowMs: 60 * 60 * 1000 },   // 10 per hour
   '/api/reviews':                  { max: 2,   windowMs: 24 * 60 * 60 * 1000 }, // 2 per day
   '/api/inquiry':                  { max: 5,   windowMs: 60 * 60 * 1000 },   // 5 per hour
   '/api/chat':                     { max: 20,  windowMs: 60 * 60 * 1000 },   // 20 per hour
