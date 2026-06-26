@@ -84,9 +84,11 @@
     cursor: pointer;
 }
 
-.culture-card:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+@media (hover: hover) {
+    .culture-card:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+    }
 }
 
 .culture-bg {
@@ -97,9 +99,11 @@
     filter: brightness(0.65);
 }
 
-.culture-card:hover .culture-bg {
-    transform: scale(1.05);
-    filter: brightness(0.85);
+@media (hover: hover) {
+    .culture-card:hover .culture-bg {
+        transform: scale(1.05);
+        filter: brightness(0.85);
+    }
 }
 
 .culture-content {
@@ -382,8 +386,10 @@
     transition: var(--transition-smooth);
 }
 
-.drink-card:hover {
-    transform: translateY(-10px);
+@media (hover: hover) {
+    .drink-card:hover {
+        transform: translateY(-10px);
+    }
 }
 
 .drink-img {
@@ -436,8 +442,10 @@
     transform: scale(1.08);
 }
 
-.whisky-card:hover {
-    transform: scale(1.08) translateY(-10px);
+@media (hover: hover) {
+    .whisky-card:hover {
+        transform: scale(1.08) translateY(-10px);
+    }
 }
 
 .whisky-card .drink-info {
@@ -2046,9 +2054,11 @@
     overflow: hidden;
 }
 
-.testimonial-card:hover {
-    transform: translateY(-5px) scale(1.03);
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.8);
+@media (hover: hover) {
+    .testimonial-card:hover {
+        transform: translateY(-5px) scale(1.03);
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.8);
+    }
 }
 
 .testimonial-label {
@@ -2086,8 +2096,10 @@
     transition: opacity 0.3s ease;
 }
 
-.testimonial-card:hover .testimonial-rating {
-    opacity: 1;
+@media (hover: hover) {
+    .testimonial-card:hover .testimonial-rating {
+        opacity: 1;
+    }
 }
 
 .testimonial-rating .stars {
@@ -2166,8 +2178,10 @@
     transition: opacity 0.3s ease;
 }
 
-.testimonial-card:hover::before {
-    opacity: 1;
+@media (hover: hover) {
+    .testimonial-card:hover::before {
+        opacity: 1;
+    }
 }
 
 @media (min-width: 768px) {
