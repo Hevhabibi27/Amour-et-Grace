@@ -1,0 +1,29 @@
+name: Supabase Keep-Alive
+
+on:
+  schedule:
+    # Runs every Wednesday and Sunday at 00:00 UTC (09:00 JST)
+    - cron: '0 0 * * 0,3'
+  workflow_dispatch: # Allow manual trigger from GitHub Actions tab
+
+jobs:
+  ping:
+    name: Ping database to prevent Supabase pause
+    runs-on: ubuntu-latest
+    timeout-minutes: 2
+
+    steps:
+      - name: Ping /api/reviews
+        run: |
+          HTTP_STATUS=$(curl --silent --output /dev/null --write-out "%{http_code}" \
+            --max-time 30 \
+            "https://amouretgrace.com/api/reviews")
+
+          echo "HTTP status: $HTTP_STATUS"
+
+          if [ "$HTTP_STATUS" -ge 200 ] && [ "$HTTP_STATUS" -lt 300 ]; then
+            echo "✅ Ping successful — Supabase database is active."
+          else
+            echo "⚠️  Ping returned status $HTTP_STATUS — check site health."
+            exit 1
+          fi
