@@ -49,7 +49,7 @@ document.addEventListener('submit', async function (e) {
         time: form.querySelector('#premTime').value,
         type: form.querySelector('#premType').value,
         message: form.querySelector('#premSpecialRequest')?.value?.trim() || '',
-        captcha_token: document.querySelector('[name="cf-turnstile-response"]')?.value || '',
+        captcha_token: form.querySelector('[name="cf-turnstile-response"]')?.value || '',
     };
 
     // ── 4. Call the API ──

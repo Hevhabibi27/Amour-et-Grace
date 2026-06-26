@@ -1080,7 +1080,7 @@
 }
 
 .past-event-title {
-    font-family: var(--font-heading);
+    font-family: 'Cinzel Decorative', serif;
     font-size: 1.4rem;
     color: var(--accent-red);
     margin: 0 0 10px 0;
@@ -1089,11 +1089,10 @@
 }
 
 .past-event-desc {
-    font-family: var(--font-heading);
+    font-family: 'Poppins', sans-serif;
     font-size: 0.85rem;
     line-height: 1.8;
-    color: #111;
-    text-transform: uppercase;
+    color: var(--text-dark);
     font-weight: 700;
     letter-spacing: 1px;
 }
