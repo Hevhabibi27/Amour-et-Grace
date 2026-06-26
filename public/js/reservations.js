@@ -36,7 +36,7 @@ document.addEventListener('submit', async function (e) {
 
     // ── 2. Double-submit guard ──
     submitBtn.disabled = true;
-    submitBtn.textContent = '送信中...'; // "Sending..."
+    submitBtn.textContent = 'Sending...';
     messageDiv.className = 'form-message hidden';
 
     // ── 3. Collect form data (field names match backend exactly) ──
@@ -64,8 +64,7 @@ document.addEventListener('submit', async function (e) {
 
         if (res.ok) {
             // ── Success ──
-            messageDiv.textContent = 'ありがとうございます！ご予約を承りました。確認メールをお送りします。';
-            // "Thank you! We received your reservation. A confirmation email will be sent."
+            messageDiv.textContent = 'Thank you! We received your reservation request. A confirmation email will be sent shortly.';
             messageDiv.className = 'form-message success';
             form.reset();
 
@@ -79,7 +78,7 @@ document.addEventListener('submit', async function (e) {
             }
 
             // Keep button in "sent" state, re-enable after 8s
-            submitBtn.textContent = '送信済み ✓'; // "Sent ✓"
+            submitBtn.textContent = 'Sent ✓';
             setTimeout(() => {
                 submitBtn.textContent = originalBtnText;
                 submitBtn.disabled = false;
@@ -96,8 +95,7 @@ document.addEventListener('submit', async function (e) {
 
         } else {
             // ── Backend returned an error (400, 409, 429, 500) ──
-            const errorMsg = data.error || 'エラーが発生しました。もう一度お試しください。';
-            // "An error occurred. Please try again."
+            const errorMsg = data.error || 'An error occurred. Please try again.';
             messageDiv.textContent = errorMsg;
             messageDiv.className = 'form-message error';
             submitBtn.textContent = originalBtnText;
@@ -109,8 +107,7 @@ document.addEventListener('submit', async function (e) {
 
     } catch (err) {
         // ── Network error (no internet, server unreachable) ──
-        messageDiv.textContent = 'ネットワークエラーが発生しました。接続を確認してください。';
-        // "A network error occurred. Please check your connection."
+        messageDiv.textContent = 'A network error occurred. Please check your connection.';
         messageDiv.className = 'form-message error';
         submitBtn.textContent = originalBtnText;
         submitBtn.disabled = false;
