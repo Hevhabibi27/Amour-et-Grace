@@ -314,11 +314,11 @@
     }
 
     .showcase-dish-img {
-        width: 140px;
-        height: 140px;
+        width: 165px;
+        height: 165px;
         object-fit: contain;
         margin-bottom: 15px;
-        filter: drop-shadow(0 10px 10px rgba(0, 0, 0, 0.5));
+        filter: drop-shadow(0 20px 10px rgba(0, 0, 0, 1));
     }
 
     .showcase-dish-title {
@@ -393,6 +393,7 @@
     }
 
     .sushi-text {
+        font-family: "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Yu Gothic UI", "Microsoft YaHei", sans-serif;
         font-size: 4rem;
         font-weight: 900;
         letter-spacing: 5px;
@@ -1064,10 +1065,9 @@
     }
 
     .bento-english-title {
-        font-family: 'Cinzel Decorative', serif;
+        font-family: 'Amanojaku', serif;
         font-size: 2.5rem;
-        text-transform: uppercase;
-        color: #ffffff;
+        color: var(--text-light);
         letter-spacing: 2px;
         margin-bottom: 30px;
     }
