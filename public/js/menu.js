@@ -3,8 +3,7 @@
 var MAX_VISIBLE = 8;
 
 function getCategory(btn) {
-    var text = btn.textContent.trim().toLowerCase();
-    return text === 'all' ? 'all' : text.replace(/\s+/g, '-');
+    return btn.getAttribute('data-filter') || 'all';
 }
 
 function updateGrid(section) {
