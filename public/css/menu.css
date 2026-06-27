@@ -1045,6 +1045,7 @@
     ============================================= */
 
     .bento-section {
+        margin-top: -90px;
         padding: 100px 0;
         background-color: #000000;
         color: #ffffff;
@@ -1089,11 +1090,11 @@
     .bento-grid {
         display: grid;
         grid-template-columns: repeat(4, 1fr);
-        gap: 40px 32px;
+        gap: 80px 32px;
         /* 40px row gap, 32px column gap */
         max-width: 1400px;
         margin: 0 auto;
-        padding-top: 60px;
+        padding-top: 10px;
         /* Space for the top overlapping image */
     }
 
@@ -1137,10 +1138,10 @@
     }
 
     .bento-card-img {
-        width: 140px;
-        height: 140px;
+        width: 180px;
+        height: 180px;
         object-fit: contain;
-        margin-top: -60px;
+        margin-top: -80px;
         /* Slight overlap naturally inside card */
         margin-bottom: 15px;
         filter: drop-shadow(0 10px 15px rgba(0, 0, 0, 0.8));
@@ -1208,8 +1209,8 @@
         }
 
         .bento-card-img {
-            width: 120px;
-            height: 120px;
-            margin-top: -50px;
+            width: 150px;
+            height: 150px;
+            margin-top: -65px;
         }
     }
