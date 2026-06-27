@@ -129,13 +129,13 @@ module.exports = async (req, res) => {
     return res.status(400).json({ error: `Please select a time between ${hoursMsg}.` });
   }
 
-  // Guest count: must be 1–500 (physical lounge cap of 20 is managed by admin)
+  // Guest count: must be 1–20 (matches frontend dropdown and physical venue capacity)
   const guestCount = parseInt(guest_count, 10);
   if (isNaN(guestCount) || guestCount < 1) {
     return res.status(400).json({ error: 'Guest count must be at least 1.' });
   }
-  if (guestCount > 500) {
-    return res.status(400).json({ error: 'Guest count cannot exceed 500.' });
+  if (guestCount > 20) {
+    return res.status(400).json({ error: 'Guest count cannot exceed 20.' });
   }
 
   // Message: optional, max 500 chars (already checked in max-length step)
