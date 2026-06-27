@@ -52,6 +52,37 @@ document.addEventListener('submit', async function (e) {
         captcha_token: form.querySelector('[name="cf-turnstile-response"]')?.value || '',
     };
 
+    // ── 3.5 Advanced Client-Side Validation ──
+    // Stops bad requests instantly before waking up Vercel serverless function
+    let clientError = null;
+
+    // 1. Guest count check
+    if (parseInt(formData.guest_count, 10) > 20) {
+        clientError = "Guest count cannot exceed 20.";
+    }
+
+    // 2. Future Date Check (Simple local check)
+    const selectedDate = new Date(formData.date);
+    const today = new Date();
+    today.setHours(0, 0, 0, 0); // Reset time to midnight for accurate day comparison
+    if (selectedDate <= today) {
+        clientError = "Reservation date must be in the future (same-day bookings are not available).";
+    }
+
+    // 3. Lounge closed on Tuesdays Check
+    if (formData.type === 'lounge' && selectedDate.getDay() === 2) { // 2 = Tuesday
+        clientError = "The Lounge is closed on Tuesdays. Please select another date.";
+    }
+
+    // If client validation fails, show error instantly and abort
+    if (clientError) {
+        messageDiv.textContent = clientError;
+        messageDiv.className = 'form-message error';
+        submitBtn.textContent = originalBtnText;
+        submitBtn.disabled = false;
+        return;
+    }
+
     // ── 4. Call the API ──
     try {
         const res = await fetch('/api/reservations', {
