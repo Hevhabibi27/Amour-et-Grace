@@ -93,15 +93,15 @@ function renderReservationRow(r) {
   return `
     <tr id="row-${r.id}">
       <td>
-        <strong>${r.name}</strong><br>
-        <span style="color: var(--admin-text-muted); font-size: 12px;">${r.email}</span>
-        ${r.phone ? `<br><span style="color: var(--admin-text-muted); font-size: 12px;">${r.phone}</span>` : ''}
-        ${r.message ? `<br><span style="color: var(--admin-accent); font-size: 12px; cursor: pointer;" onclick="toggleMessage('msg-${r.id}')">📝 View note</span><div id="msg-${r.id}" class="inquiry-message">${r.message}</div>` : ''}
+        <strong>${escapeHtml(r.name)}</strong><br>
+        <span style="color: var(--admin-text-muted); font-size: 12px;">${escapeHtml(r.email)}</span>
+        ${r.phone ? `<br><span style="color: var(--admin-text-muted); font-size: 12px;">${escapeHtml(r.phone)}</span>` : ''}
+        ${r.message ? `<br><span style="color: var(--admin-accent); font-size: 12px; cursor: pointer;" onclick="toggleMessage('msg-${r.id}')">📝 View note</span><div id="msg-${r.id}" class="inquiry-message">${escapeHtml(r.message)}</div>` : ''}
       </td>
-      <td style="text-transform: capitalize;">${r.type}</td>
-      <td>${r.date}<br><span style="color: var(--admin-text-muted); font-size: 12px;">${r.time}</span></td>
+      <td style="text-transform: capitalize;">${escapeHtml(r.type)}</td>
+      <td>${escapeHtml(r.date)}<br><span style="color: var(--admin-text-muted); font-size: 12px;">${escapeHtml(r.time)}</span></td>
       <td>${r.guest_count}</td>
-      <td><span class="badge badge--${r.status}">${r.status}</span></td>
+      <td><span class="badge badge--${r.status}">${escapeHtml(r.status)}</span></td>
       <td>${emailStatus}</td>
       <td style="font-size: 12px; color: var(--admin-text-muted);">${formatDateTime(r.created_at)}</td>
       <td>${actions}</td>

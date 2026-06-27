@@ -86,9 +86,9 @@ function renderReviewRow(r) {
 
   return `
     <tr id="review-row-${r.id}">
-      <td><strong>${r.name}</strong></td>
+      <td><strong>${escapeHtml(r.name)}</strong></td>
       <td><span class="stars">${starsHtml(r.rating)}</span><br><span style="font-size:12px; color: var(--admin-text-muted);">${r.rating}/5</span></td>
-      <td style="max-width: 300px;">${r.comment || '<span style="color: var(--admin-text-muted);">No comment</span>'}</td>
+      <td style="max-width: 300px;">${r.comment ? escapeHtml(r.comment) : '<span style="color: var(--admin-text-muted);">No comment</span>'}</td>
       <td>${statusBadge}</td>
       <td style="font-size: 12px; color: var(--admin-text-muted);">${formatDateTime(r.created_at)}</td>
       <td>

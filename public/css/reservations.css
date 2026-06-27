@@ -1011,3 +1011,108 @@
         padding: 0 20px 20px 20px;
     }
 }
+
+/* =============================================
+   FORM MESSAGES & SUCCESS MODAL (Optimized UI)
+   ============================================= */
+/* Inline Form Message (Default/Error) */
+.form-message {
+    margin-top: 20px;
+    padding: 15px 20px;
+    border-radius: 6px;
+    font-size: 0.95rem;
+    font-family: var(--font-body, "Poppins", sans-serif);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.form-message.hidden {
+    display: none;
+    opacity: 0;
+    transform: translateY(-10px);
+}
+
+.form-message.error {
+    background-color: #1a1a1a;
+    color: #ffb3b3;
+    border-left: 4px solid #c8102e;
+}
+
+/* Success Modal Overlay */
+.res-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.85);
+    /* Solid overlay, NO backdrop-filter for max performance */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    opacity: 1;
+    visibility: visible;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.res-modal.hidden {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+}
+
+/* Success Modal Content Card */
+.res-modal-content {
+    background-color: #ffffff;
+    color: #1a1a1a;
+    padding: 40px 30px;
+    border-radius: 12px;
+    width: 90%;
+    max-width: 400px;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    transform: scale(1);
+    transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.res-modal.hidden .res-modal-content {
+    transform: scale(0.9);
+}
+
+.res-modal-icon {
+    font-size: 3rem;
+    margin-bottom: 15px;
+}
+
+.res-modal-content h3 {
+    font-family: var(--font-heading, "Playfair Display", serif);
+    font-size: 1.6rem;
+    margin-bottom: 10px;
+    color: #1a1a1a;
+}
+
+.res-modal-content p {
+    font-size: 0.95rem;
+    color: #555555;
+    line-height: 1.5;
+    margin-bottom: 25px;
+}
+
+.res-modal-btn {
+    background-color: var(--accent-red, #c8102e);
+    color: #ffffff;
+    border: none;
+    padding: 12px 30px;
+    font-size: 1rem;
+    font-weight: 500;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+    width: 100%;
+}
+
+.res-modal-btn:hover {
+    background-color: #a00d25;
+}

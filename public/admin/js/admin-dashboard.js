@@ -94,11 +94,11 @@ async function loadRecentReservations() {
           <tbody>
             ${reservations.map((r) => `
               <tr>
-                <td><strong>${r.name}</strong><br><span style="color: var(--admin-text-muted); font-size: 12px;">${r.email}</span></td>
-                <td style="text-transform: capitalize;">${r.type}</td>
-                <td>${r.date} at ${r.time}</td>
+                <td><strong>${escapeHtml(r.name)}</strong><br><span style="color: var(--admin-text-muted); font-size: 12px;">${escapeHtml(r.email)}</span></td>
+                <td style="text-transform: capitalize;">${escapeHtml(r.type)}</td>
+                <td>${escapeHtml(r.date)} at ${escapeHtml(r.time)}</td>
                 <td>${r.guest_count}</td>
-                <td><span class="badge badge--${r.status}">${r.status}</span></td>
+                <td><span class="badge badge--${r.status}">${escapeHtml(r.status)}</span></td>
                 <td>${formatDateTime(r.created_at)}</td>
               </tr>
             `).join('')}

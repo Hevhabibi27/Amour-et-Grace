@@ -63,10 +63,17 @@ document.addEventListener('submit', async function (e) {
         const data = await res.json();
 
         if (res.ok) {
-            // ── Success ──
-            messageDiv.textContent = 'Thank you! We received your reservation request. A confirmation email will be sent shortly.';
-            messageDiv.className = 'form-message success';
+            // ── Success (Show Modal) ──
             form.reset();
+            submitBtn.textContent = originalBtnText;
+            submitBtn.disabled = false;
+            messageDiv.className = 'form-message hidden'; // Hide inline message
+
+            // Show Modal
+            const modal = document.getElementById('res-success-modal');
+            if (modal) {
+                modal.classList.remove('hidden');
+            }
 
             // Advance progress indicator to step 2
             const steps = document.querySelectorAll('.step-circle');
@@ -76,19 +83,6 @@ document.addEventListener('submit', async function (e) {
                 steps[1].style.backgroundColor = 'transparent';
                 steps[1].style.color = '#000';
             }
-
-            // Keep button in "sent" state, re-enable after 8s
-            submitBtn.textContent = 'Sent ✓';
-            setTimeout(() => {
-                submitBtn.textContent = originalBtnText;
-                submitBtn.disabled = false;
-                messageDiv.className = 'form-message hidden';
-                // Reset progress indicator back to step 1
-                if (steps.length >= 2) {
-                    steps[1].classList.remove('active');
-                    steps[0].classList.add('active');
-                }
-            }, 8000);
 
             // Reset Turnstile widget for potential next submission
             if (window.turnstile) turnstile.reset();
@@ -150,5 +144,24 @@ document.addEventListener('click', function (e) {
     if (!isCurrentlyActive) {
         currentItem.classList.add('active');
         currentAnswer.style.maxHeight = currentAnswer.scrollHeight + "px";
+    }
+});
+
+// === Success Modal Close Logic ===
+document.addEventListener('click', function (e) {
+    if (e.target && e.target.id === 'res-modal-close') {
+        const modal = document.getElementById('res-success-modal');
+        if (modal) {
+            modal.classList.add('hidden');
+
+            // Reset progress indicator back to step 1
+            const steps = document.querySelectorAll('.step-circle');
+            if (steps.length >= 2) {
+                steps[1].classList.remove('active');
+                steps[0].classList.add('active');
+                steps[1].style.backgroundColor = '';
+                steps[1].style.color = '';
+            }
+        }
     }
 });

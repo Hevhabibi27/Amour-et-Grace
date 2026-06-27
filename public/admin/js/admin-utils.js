@@ -5,6 +5,19 @@
 
 const API_BASE = '/api';
 
+// ── HTML Escape (XSS Prevention) ──
+// Always use this on user-submitted data before inserting into innerHTML.
+
+function escapeHtml(str) {
+  if (!str) return '';
+  return String(str)
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;')
+    .replace(/'/g, '&#39;');
+}
+
 // ── Token Management ──
 
 function getToken() {

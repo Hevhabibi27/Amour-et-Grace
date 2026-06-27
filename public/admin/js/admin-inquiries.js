@@ -86,17 +86,17 @@ function renderInquiryRow(inq) {
 
   return `
     <tr id="inq-row-${inq.id}" style="${rowStyle}">
-      <td><strong>${inq.name}</strong></td>
-      <td style="text-transform: capitalize;">${inq.type}</td>
+      <td><strong>${escapeHtml(inq.name)}</strong></td>
+      <td style="text-transform: capitalize;">${escapeHtml(inq.type)}</td>
       <td>
-        <span style="font-size: 13px;">${inq.email}</span>
-        ${inq.phone ? `<br><span style="color: var(--admin-text-muted); font-size: 12px;">${inq.phone}</span>` : ''}
+        <span style="font-size: 13px;">${escapeHtml(inq.email)}</span>
+        ${inq.phone ? `<br><span style="color: var(--admin-text-muted); font-size: 12px;">${escapeHtml(inq.phone)}</span>` : ''}
       </td>
       <td style="max-width: 280px;">
         <span style="color: var(--admin-accent); font-size: 13px; cursor: pointer;" onclick="toggleInquiryMsg('inq-msg-${inq.id}')">
           ${inq.is_read ? '📄' : '📬'} ${inq.is_read ? 'View' : 'Read message'}
         </span>
-        <div id="inq-msg-${inq.id}" class="inquiry-message">${inq.message}</div>
+        <div id="inq-msg-${inq.id}" class="inquiry-message">${escapeHtml(inq.message)}</div>
       </td>
       <td>${statusBadge}</td>
       <td style="font-size: 12px; color: var(--admin-text-muted);">${formatDateTime(inq.created_at)}</td>
