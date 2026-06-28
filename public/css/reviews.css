@@ -107,6 +107,7 @@
     color: #ffb400;
     font-size: 1.2rem;
     letter-spacing: 2px;
+    font-family: Arial, sans-serif;
 }
 
 .reviews-count {
@@ -141,6 +142,7 @@
 
 .star-label span {
     color: #ffb400;
+    font-family: Arial, sans-serif;
 }
 
 .bar-container {
@@ -155,7 +157,8 @@
     height: 100%;
     background-color: #ffb400;
     border-radius: 4px;
-    width: 0%; /* for animation */
+    width: 0%;
+    /* for animation */
     transition: width 1s ease-in-out;
 }
 
@@ -195,7 +198,8 @@
     display: flex;
     justify-content: center;
     gap: 5px;
-    direction: rtl; /* For hover logic */
+    direction: rtl;
+    /* For hover logic */
 }
 
 .star-rating-input input {
@@ -207,11 +211,12 @@
     color: #dcdcdc;
     cursor: pointer;
     transition: color 0.2s;
+    font-family: Arial, sans-serif;
 }
 
 .star-rating-input label:hover,
-.star-rating-input label:hover ~ label,
-.star-rating-input input:checked ~ label {
+.star-rating-input label:hover~label,
+.star-rating-input input:checked~label {
     color: #ffb400;
 }
 
@@ -256,7 +261,8 @@
 }
 
 .btn-submit-review {
-    background-color: #ff5e00; /* Matching screenshot orange/red */
+    background-color: #ff5e00;
+    /* Matching screenshot orange/red */
     color: #fff;
     border: none;
     border-radius: 8px;
@@ -365,7 +371,8 @@
 }
 
 .review-item-card {
-    background-color: #bd0026; /* Dark red matching the screenshot */
+    background-color: #bd0026;
+    /* Dark red matching the screenshot */
     border-radius: 15px;
     padding: 30px;
     color: #fff;
@@ -390,8 +397,10 @@
 
 .review-item-stars .star {
     color: transparent;
-    -webkit-text-stroke: 1px #fff; /* Hollow stars effect */
+    -webkit-text-stroke: 1px #fff;
+    /* Hollow stars effect */
 }
+
 .review-item-stars .star.filled {
     color: #fff;
     -webkit-text-stroke: 0;
@@ -438,7 +447,8 @@
 }
 
 .btn-load-more {
-    background-color: #d11232; /* Red matching screenshot */
+    background-color: #d11232;
+    /* Red matching screenshot */
     color: #fff;
     border: none;
     border-radius: 30px;
@@ -470,11 +480,11 @@
         flex-direction: column;
         align-items: center;
     }
-    
+
     .rev-card {
         max-width: 100%;
     }
-    
+
     .reviews-grid {
         grid-template-columns: 1fr;
     }
@@ -484,16 +494,16 @@
     .overall-score {
         font-size: 3rem;
     }
-    
+
     .rev-card {
         padding: 25px;
     }
-    
+
     .rev-bg-blossom {
         width: 250px;
         right: -20px;
     }
-    
+
     .rev-bg-house {
         width: 200px;
         left: -20px;

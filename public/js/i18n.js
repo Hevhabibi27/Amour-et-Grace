@@ -63,10 +63,6 @@ const i18n = (() => {
         'home.about.stat2': { en: '"Sell the Sizzle,\nNot the Steak"', ja: '「シズルを売れ、\nステーキではなく」' },
         'home.about.stat3': { en: 'Dynamic\nMenu', ja: 'ダイナミック\nメニュー' },
 
-        // Culture Cards
-        'home.culture.usa': { en: 'Love and Blessing', ja: '愛と祝福' },
-        'home.culture.ph': { en: 'Pag-ibig at Grasya', ja: 'パグイビグ アット グラシャ' },
-
         // Promotions
         'home.promo.drink.title': { en: '1 HOUR DRINK ALL\nYOU CAN', ja: '1時間\n飲み放題' },
         'home.promo.sing.title': { en: 'SING ALL YOU CAN', ja: '歌い放題' },
@@ -74,7 +70,6 @@ const i18n = (() => {
         'home.promo.car.title': { en: 'WE OFFER CAR SERVICE\nWITH CHARGE DEPEND PER\nKILOMETER', ja: '送迎サービスあり\nキロメートルごとの\n料金制' },
 
         // Featured Dishes
-        'home.featured.title': { en: 'Featured Dishes', ja: 'おすすめ料理' },
         'home.featured.dish1.name': { en: 'TONKOTSU RAMEN', ja: 'とんこつラーメン' },
         'home.featured.dish1.desc': { en: 'Experience our signature rich, creamy pork bone broth simmered to perfection.', ja: '濃厚でクリーミーな豚骨ブロスを心ゆくまでお楽しみください。' },
         'home.featured.dish2.name': { en: 'SUSHI', ja: '寿司' },
@@ -84,14 +79,12 @@ const i18n = (() => {
         'home.featured.btn': { en: 'Check Menu', ja: 'メニューを見る' },
 
         // Featured Drinks
-        'home.drinks.title': { en: 'Featured Drinks', ja: '注目のドリンク' },
         'home.drinks.gin.desc': { en: 'JAPANESE GIN IS WORLD-CLASS AND FAMOUS FOR ITS EXTREME SMOOTHNESS', ja: '日本のジンは世界最高峰で、極めて滑らかな口当たりで有名です' },
         'home.drinks.whisky.desc': { en: 'JAPANESE WHISKY IS WORLD-RENOWNED FOR ITS EXCEPTIONAL QUALITY', ja: '日本のウイスキーは卓越した品質で世界的に有名です' },
         'home.drinks.wine.desc': { en: 'JAPANESE WINE IS EXCELLENT AND RAPIDLY GROWING', ja: '日本のワインは優れており、急速に成長しています' },
         'home.drinks.seemore': { en: 'もっと見る', ja: 'もっと見る' },
 
         // Events Preview
-        'home.events.title': { en: 'Featured Events', ja: '注目のイベント' },
         'home.events.desc.left': {
             en: 'Amour et Grace is an extraordinary, intimate dining experience in the heart of the city, beautifully blending Filipino-inspired cuisine with soulful Japanese hospitality.',
             ja: 'Amour et Graceは、街の中心にある特別で親密なダイニング体験です。フィリピン風の料理と心のこもった日本のおもてなしが美しく融合しています。'
@@ -130,13 +123,12 @@ const i18n = (() => {
         // ═══════════════════════════════════════
         // MENU PAGE
         // ═══════════════════════════════════════
-        'menu.hero.title': { en: 'Our Menu', ja: '私たちのメニュー' },
         'menu.discover.title': { en: 'Discover Our Menu', ja: 'メニューをご覧ください' },
         'menu.discover.desc': {
             en: 'Experience a thoughtfully curated selection of authentic Japanese cuisine, premium wagyu, handcrafted beverages, and signature specialties. Every dish and drink is prepared to bring together tradition, quality, and unforgettable flavors.',
             ja: '本格的な日本料理、プレミアム和牛、手作りの飲料、シグネチャースペシャリティを厳選しました。すべての料理とドリンクは、伝統、品質、忘れられない味わいを一つにします。'
         },
-        'menu.selection.title': { en: 'Menu Selection', ja: 'メニューセレクション' },
+        'menu.selection.title': { en: 'Filipino Food Selection', ja: 'フィリピン料理セクション' },
         'menu.japanese.title': { en: 'Japanese Food Section', ja: '日本食セクション' },
         'menu.japanese.desc': {
             en: 'Rooted in tradition. Bursting with flavor. Our Filipino dishes bring the heart of Filipino cuisine straight to your table.',
@@ -155,10 +147,11 @@ const i18n = (() => {
 
         // Filter buttons
         'menu.filter.all': { en: 'All', ja: 'すべて' },
-        'menu.filter.new': { en: 'New', ja: '新着' },
-        'menu.filter.filipino': { en: 'Filipino Food', ja: 'フィリピン料理' },
-        'menu.filter.sushi': { en: 'Sushi', ja: '寿司' },
-        'menu.filter.ramen': { en: 'Ramen', ja: 'ラーメン' },
+        'menu.filter.meat': { en: 'Meat', ja: '肉料理' },
+        'menu.filter.vegetables': { en: 'Vegetables', ja: '野菜料理' },
+        'menu.filter.soup': { en: 'Soup', ja: 'スープ' },
+        'menu.filter.noodles': { en: 'Noodles', ja: '麺類' },
+        'menu.filter.snacks': { en: 'Snacks', ja: '軽食' },
 
         // Menu items
         'menu.item.tonkotsu.name': { en: 'TONKOTSU RAMEN', ja: 'とんこつラーメン' },
@@ -179,6 +172,59 @@ const i18n = (() => {
         'menu.btn.loadmore': { en: 'Load More', ja: 'もっと見る' },
         'menu.btn.showless': { en: 'Show Less', ja: '表示を減らす' },
         'menu.btn.loading': { en: 'Loading...', ja: '読み込み中...' },
+
+        // Filipino Food Section
+        'menu.filipino.karekare.name': { en: 'KARE-KARE', ja: 'カレカレ' },
+        'menu.filipino.karekare.desc': { en: 'A rich, golden peanut stew slow-cooked with tender meat and fresh vegetables — best paired with a touch of bagoong for that perfect savory kick.', ja: '柔らかいお肉と新鮮な野菜をじっくり煮込んだ、濃厚で黄金色のピーナッツシチュー。完璧な旨味を引き出すために、少量のバゴーン（エビの塩辛）と合わせるのが最適です。' },
+        'menu.filipino.sinigang.name': { en: 'PORK SINIGANG', ja: 'ポークシニガン' },
+        'menu.filipino.sinigang.desc': { en: 'Tender pork slow-simmered in a bold tamarind broth with fresh vegetables — a tangy, savory, and deeply comforting bowl that warms the soul from the inside out.', ja: '柔らかい豚肉と新鮮な野菜をタマリンドの酸味が効いたスープでじっくり煮込んだ、心から温まる酸っぱくて旨味のある一杯です。' },
+        'menu.filipino.patatim.name': { en: 'PATATIM', ja: 'パタティム' },
+        'menu.filipino.patatim.desc': { en: 'Fall-off-the-bone pork leg slow-braised in a sweet and savory soy sauce glaze with star anise — rich, tender, and melt-in-your-mouth good.', ja: '骨からポロリと取れるほど柔らかい豚足を、八角を効かせた甘辛い醤油ダレでじっくりと煮込みました。濃厚で口の中でとろける美味しさです。' },
+        'menu.filipino.adobo.name': { en: 'SPICY PORK ADOBO', ja: 'スパイシーポークアドボ' },
+        'menu.filipino.adobo.desc': { en: 'Your favorite Filipino adobo with a fiery twist — tender pork slow-cooked in vinegar, soy sauce, garlic, and a bold kick of chilies that lingers beautifully with every bite.', ja: 'おなじみのフィリピンのアドボにスパイシーなひねりを加えました。お酢、醤油、ニンニク、そして後引く辛さの唐辛子で豚肉を柔らかく煮込んでいます。' },
+        'menu.filipino.bicol.name': { en: 'BICOL EXPRESS', ja: 'ビコルエクスプレス' },
+        'menu.filipino.bicol.desc': { en: 'Fiery, creamy, and absolutely addictive — tender pork cooked in rich coconut milk with generous amounts of chilies and shrimp paste. Not for the faint-hearted.', ja: '辛くてクリーミーで、やみつきになる一品。柔らかい豚肉を濃厚なココナッツミルク、たっぷりの唐辛子、エビのペーストで煮込みました。辛いのが苦手な方はご注意を。' },
+        'menu.filipino.igado.name': { en: 'IGADO', ja: 'イガド' },
+        'menu.filipino.igado.desc': { en: 'A bold Ilocano classic — pork tenderloin and liver sautéed with vinegar, soy sauce, and bell peppers, delivering a tangy and savory punch in every bite', ja: 'イロカノ地方の定番料理。豚ヒレ肉とレバーをお酢、醤油、ピーマンで炒めた、酸味と旨味が一口ごとにガツンと来る一品です。' },
+        'menu.filipino.lumpia.name': { en: 'PORK LUMPIA', ja: 'ポーク ルンピア' },
+        'menu.filipino.lumpia.desc': { en: 'The most iconic and beloved type of Filipino lumpia. It is a smaller, tightly rolled deep-fried spring roll filled with ground pork, carrots, onions, and seasonings.', ja: '最も象徴的で愛されているフィリピンのルンピア（春巻き）。豚ひき肉、ニンジン、玉ねぎ、調味料を詰めた、小さくてきつく巻かれた揚げ春巻きです。' },
+        'menu.filipino.empanada.name': { en: 'EMPANADA', ja: 'エンパナーダ' },
+        'menu.filipino.empanada.desc': { en: 'Buttery, flaky pastry filled with tender shredded chicken, potatoes, and savory seasonings — a handheld delight that\'s crispy, hearty, and satisfying in every bite.', ja: '柔らかく裂いた鶏肉、ジャガイモ、香ばしい調味料を詰めた、サクサクのパイ生地。一口ごとに満足感のある、手軽で美味しい一品です。' },
+        'menu.filipino.chopseuy.name': { en: 'CHOPSEUY', ja: 'チャプスイ' },
+        'menu.filipino.chopseuy.desc': { en: 'A vibrant medley of fresh garden vegetables stir-fried to perfection with tender meat in a light, savory sauce — colorful, healthy, and delicious.', ja: '新鮮な野菜とお肉を軽くて香ばしいソースで完璧に炒めた、彩り豊かでヘルシーで美味しい一品です。' },
+        'menu.filipino.pakbet.name': { en: 'PAKBET', ja: 'パクベット' },
+        'menu.filipino.pakbet.desc': { en: 'A proud Filipino harvest dish — a hearty mix of bitter melon, eggplant, squash, and okra sautéed with shrimp paste for a deeply earthy, rustic flavor..', ja: 'フィリピンが誇る収穫の料理。ゴーヤ、ナス、カボチャ、オクラをエビのペーストで炒めた、素朴で深い味わいの一品です。' },
+        'menu.filipino.laing.name': { en: 'LAING', ja: 'ライン' },
+        'menu.filipino.laing.desc': { en: 'Tender dried taro leaves slow-simmered in creamy coconut milk with chilies and shrimp paste — smoky, spicy, and richly satisfying', ja: '乾燥したタロイモの葉をクリーミーなココナッツミルク、唐辛子、エビのペーストでじっくり煮込んだ、スモーキーでスパイシーで満足感のある一品です。' },
+        'menu.filipino.menudo.name': { en: 'MENUDO', ja: 'メヌード' },
+        'menu.filipino.menudo.desc': { en: 'A hearty tomato-based stew of diced pork, liver, potatoes, and carrots — savory, slightly sweet, and packed with comforting Filipino home-cooked goodness.', ja: '角切り豚肉、レバー、ジャガイモ、ニンジンを使ったトマトベースのシチュー。少し甘みがあり、フィリピンの家庭の味が詰まっています。' },
+        'menu.filipino.nilaga.name': { en: 'PORK NILAGA', ja: 'ポーク ニラガ' },
+        'menu.filipino.nilaga.desc': { en: 'A simple, soul-nourishing clear broth with tender boiled pork, potatoes, and cabbage — light, clean, and the ultimate Filipino comfort food.', ja: '柔らかく茹でた豚肉、ジャガイモ、キャベツが入ったシンプルで心温まるクリアスープ。軽くてすっきりとした究極のフィリピンのコンフォートフードです。' },
+        'menu.filipino.kawali.name': { en: 'LETCHON KAWALI', ja: 'レチョン カワリ' },
+        'menu.filipino.kawali.desc': { en: 'Crispy, crackling deep-fried pork belly with a golden crunch on the outside and juicy, tender meat on the inside — sinfully good and worth every bite.', ja: '外はカリッと黄金色、中はジューシーで柔らかい豚バラ肉のサクサク揚げ。一口食べる価値のある、罪深い美味しさです。' },
+        'menu.filipino.bihon.name': { en: 'BIHON GUISADO', ja: 'ビーフン ギサド' },
+        'menu.filipino.bihon.desc': { en: 'Silky rice noodles stir-fried with tender slices of pork, shrimp, and fresh vegetables in a savory soy-based sauce.', ja: '滑らかなライスヌードルを柔らかい豚肉、エビ、新鮮な野菜とともに、香ばしい醤油ベースのソースで炒めました。' },
+        'menu.filipino.paksiw.name': { en: 'LETCHON PAKSIW', ja: 'レチョン パクシウ' },
+        'menu.filipino.paksiw.desc': { en: 'Leftover lechon reimagined — slow-cooked in tangy vinegar, liver sauce, and spices until the pork is meltingly tender and packed with deep, complex flavor.', ja: '残ったレチョン（豚の丸焼き）を再構築。酸味のあるお酢、レバーソース、スパイスで豚肉がとろけるほど柔らかくなるまでじっくり煮込み、深く複雑な風味を詰め込みました。' },
+        'menu.filipino.inasal.name': { en: 'CHICKEN INASAL', ja: 'チキン イナサル' },
+        'menu.filipino.inasal.desc': { en: 'Juicy, smoky grilled chicken marinated in a fragrant blend of calamansi, lemongrass, and annatto — charred to perfection and bursting with Bacolod-style flavor.', ja: 'カラマンシー、レモングラス、アナトーの香り高いブレンドでマリネされた、ジューシーでスモーキーなグリルチキン。完璧に焦げ目がつき、バコロド風の風味が弾けます。' },
+        'menu.filipino.sisig.name': { en: 'SIZZLING SISIG', ja: 'シズリング シシグ' },
+        'menu.filipino.sisig.desc': { en: 'Arriving at your table with a dramatic sizzle — crispy chopped pork face and ears seasoned with calamansi, chilies, and onion, served on a scorching hot plate. Bold, tangy, and utterly addictive.', ja: 'ドラマチックな音とともにテーブルに。カリカリに刻んだ豚の顔と耳をカラマンシー、唐辛子、玉ねぎで味付けし、熱々の鉄板で提供。大胆で酸味が効いた、やみつきになる一品。' },
+        'menu.filipino.sizchicken.name': { en: 'SIZZLING CHICKEN', ja: 'シズリング チキン' },
+        'menu.filipino.sizchicken.desc': { en: 'Tender, juicy chicken pieces glazed in a savory garlic butter sauce, served sizzling hot on a cast iron plate — smoky, aromatic, and impossible to ignore.', ja: '柔らかくジューシーな鶏肉に香ばしいガーリックバターソースを絡め、熱々の鉄板で提供。スモーキーで香りが良く、無視できない美味しさです。' },
+        'menu.filipino.sizsquid.name': { en: 'SIZZLING SQUID', ja: 'シズリング スクイッド' },
+        'menu.filipino.sizsquid.desc': { en: 'Perfectly tender squid tossed in a rich, garlicky black bean sauce, arriving at your table in a blaze of sizzle and aroma — bold, briny, and irresistibly good.', ja: '完璧に柔らかいイカを濃厚なガーリックブラックビーンソースで和え、熱々と香りと共にテーブルに。大胆で磯の香りがたまらない一品です。' },
+        'menu.filipino.sizbopis.name': { en: 'SIZZLING BOPIS', ja: 'シズリング ボピス' },
+        'menu.filipino.sizbopis.desc': { en: 'a savory, spicy, and tangy Filipino dish made from finely minced pig lungs and heart. Served piping hot on a cast-iron plate, it is sautéed with garlic, onions, ginger, and chilies, then finished with a splash of vinegar and annatto oil for a vibrant, reddish-orange color.', ja: '細かく刻んだ豚の肺と心臓で作られた、香ばしくスパイシーで酸味のあるフィリピン料理。熱々の鉄板で提供され、ニンニク、玉ねぎ、生姜、唐辛子で炒め、最後にお酢とアナトーオイルで鮮やかな赤みがかったオレンジ色に仕上げます。' },
+        'menu.filipino.sizdinuguan.name': { en: 'SIZZLING DINUGUAN', ja: 'シズリング ディヌグアン' },
+        'menu.filipino.sizdinuguan.desc': { en: 'Rich, dark, and deeply savory — tender pork simmered in a bold pork blood, with vinegar and chilies, served sizzling hot for a truly authentic Filipino experience.', ja: '濃厚で深みのある香ばしさ。柔らかい豚肉を大胆な豚の血、お酢、唐辛子で煮込み、熱々で提供される真の本格的なフィリピン体験。' },
+        'menu.filipino.sizchickenfeet.name': { en: 'SIZZLING CHICKEN FEET', ja: 'シズリング チキンフィート' },
+        'menu.filipino.sizchickenfeet.desc': { en: 'Soft, gelatinous chicken feet slow-cooked until tender and tossed in a bold, spicy, and savory sauce — a daring Filipino delicacy that rewards the adventurous eater.', ja: '柔らかくなるまでじっくり煮込んだゼラチン質の鶏の足を、大胆でスパイシーで香ばしいソースで和えた一品。冒険好きな食べる人に報いる大胆なフィリピンの珍味。' },
+        'menu.filipino.sizbbq.name': { en: 'SIZZLING BARBBECUE', ja: 'シズリング バーベキュー' },
+        'menu.filipino.sizbbq.desc': { en: 'Juicy skewers of marinated pork or chicken grilled over open flames until perfectly charred — sweet, smoky, and glazed with our signature sauce that keeps you coming back for more.', ja: 'マリネした豚肉または鶏肉のジューシーな串焼きを、直火で完璧に焦げ目がつくまでグリルしました。甘くてスモーキーで、特製ソースが絡んで何度でも食べたくなる美味しさです。' },
+        'menu.item.special': { en: 'Special Order', ja: '特別注文' },
+        'menu.filter.sizzling': { en: 'Sizzling', ja: '鉄板料理' },
+
 
         // Sushi display
         'menu.sushi.nigiri.name': { en: 'SALMON NIGIRI SUSHI', ja: 'サーモンにぎり寿司' },
@@ -202,7 +248,6 @@ const i18n = (() => {
         // ═══════════════════════════════════════
         // EVENTS PAGE
         // ═══════════════════════════════════════
-        'events.hero.title': { en: 'Events', ja: 'イベント' },
         'events.marquee.seasonal': { en: 'Seasonal Events', ja: '季節のイベント' },
         'events.marquee.summer': { en: 'Summer', ja: '夏' },
         'events.marquee.winter': { en: 'Winter', ja: '冬' },
@@ -263,7 +308,6 @@ const i18n = (() => {
         // ═══════════════════════════════════════
         // RESERVATIONS PAGE
         // ═══════════════════════════════════════
-        'res.hero.title': { en: 'Reservations', ja: '予約' },
         'res.card.capacity': { en: 'Maximum capacity of\n20 Guest', ja: '最大収容人数\n20名' },
         'res.card.open': { en: 'Open\nMonday - Sunday', ja: '営業\n月曜日～日曜日' },
         'res.card.lounge': { en: 'Lounge Reservation\n10:00 am - 5:00pm', ja: 'ラウンジ予約\n10:00 - 17:00' },
@@ -308,7 +352,10 @@ const i18n = (() => {
 
         // Info card
         'res.info.address': { en: 'Address', ja: '住所' },
+        'res.info.address.text': { en: '3F, K-BOX Building, 1-198 Chuo,\nKomaki City, Aichi Prefecture\n485-009', ja: '〒485-009\n愛知県小牧市中央1-198\nK-BOXビル3階' },
         'res.info.contact': { en: 'Contact', ja: '連絡先' },
+        'res.info.contact.phone': { en: 'Phone : +81 903 856 2854', ja: 'Phone : +81 903 856 2854' },
+        'res.info.contact.email': { en: 'Email : amouretgrace2026@gmail.com', ja: 'Email : amouretgrace2026@gmail.com' },
         'res.info.opentime': { en: 'Open Time', ja: '営業時間' },
         'res.info.restobar': { en: 'Resto bar: 9:00 AM - 5:00 PM', ja: 'レストバー: 9:00 - 17:00' },
         'res.info.monday': { en: 'Monday - Sunday', ja: '月曜日～日曜日' },
@@ -334,7 +381,7 @@ const i18n = (() => {
         'res.faq.q5': { en: 'Can I request custom decorations?', ja: 'カスタムデコレーションをリクエストできますか？' },
         'res.faq.a5': { en: 'Yes, we welcome custom decorations for birthdays and celebrations. Let us know in advance so we can assist with the setup.', ja: 'はい、誕生日やお祝いのカスタムデコレーションを歓迎します。事前にお知らせいただければ、セットアップをお手伝いします。' },
         'res.faq.q6': { en: 'How far in advance should I make a reservation?', ja: 'どのくらい前に予約すべきですか？' },
-        'res.faq.a6': { en: 'We recommend booking at least a week in advance for regular tables, and at least 3-4 weeks in advance for large private events.', ja: '通常テーブルは少なくとも1週間前、大規模なプライベートイベントは少なくとも3〜4週間前のご予約をお勧めします。' },
+        'res.faq.a6': { en: 'We recommend reserving regular tables at least one day before your visit. For private group events or party platters, we kindly ask that reservations be made 2–3 days in advance.', ja: '通常のお席はご利用日の1日前までのご予約をおすすめしております。団体での貸切やパーティープラッターをご希望の場合は、2～3日前までのご予約をお願いいたします。。' },
         'res.faq.q7': { en: 'Will I receive a confirmation after booking?', ja: '予約後に確認は届きますか？' },
         'res.faq.a7': { en: 'Yes, our reservation team will review your submission and contact you within 24 hours to confirm your booking.', ja: 'はい、予約チームが送信内容を確認し、24時間以内にご連絡してご予約を確定します。' },
         'res.faq.q8': { en: 'Do you host seasonal events and cocktail parties?', ja: '季節のイベントやカクテルパーティーは開催していますか？' },
@@ -343,7 +390,6 @@ const i18n = (() => {
         // ═══════════════════════════════════════
         // REVIEWS PAGE
         // ═══════════════════════════════════════
-        'reviews.hero.title': { en: 'Reviews', ja: 'レビュー' },
         'reviews.overall': { en: 'Overall Rating', ja: '総合評価' },
         'reviews.share': { en: 'Share Your Experience', ja: '体験を共有する' },
         'reviews.yourrating': { en: 'Your Rating', ja: 'あなたの評価' },

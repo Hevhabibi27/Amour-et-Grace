@@ -13,13 +13,13 @@
         </div>
         <div class="menu-hero-text">
             <img src="assets/images/our menu japanese.png" alt="Japanese Calligraphy" class="menu-hero-jp-img">
-            <h1 class="menu-hero-title" data-i18n="menu.hero.title">Our Menu</h1>
+            <h1 class="menu-hero-title">Our Menu</h1>
         </div>
     </div>
 </section>
 
 <!-- Menu Discover Section -->
-<section class="menu-discover-section">
+<section class="menu-discover-section section-line">
     <div class="container">
         <!-- Headers -->
         <div class="menu-discover-header text-center">
@@ -72,260 +72,228 @@
         <!-- Headers -->
         <div class="menu-showcase-header text-center">
             <h2 class="japanese-header">メニューセクション</h2>
-            <h3 class="english-header" data-i18n="menu.selection.title">Menu Selection</h3>
+            <h3 class="english-header" data-i18n="menu.selection.title">Filipino Food Selection</h3>
         </div>
 
         <!-- Filter Bar -->
         <div class="menu-filter-bar">
             <button class="filter-btn active" data-filter="all" data-i18n="menu.filter.all">All</button>
-            <button class="filter-btn" data-filter="new" data-i18n="menu.filter.new">New</button>
-            <button class="filter-btn" data-filter="filipino-food" data-i18n="menu.filter.filipino">Filipino
-                Food</button>
-            <button class="filter-btn" data-filter="sushi" data-i18n="menu.filter.sushi">Sushi</button>
-            <button class="filter-btn" data-filter="ramen" data-i18n="menu.filter.ramen">Ramen</button>
+            <button class="filter-btn" data-filter="meat" data-i18n="menu.filter.meat">Meat</button>
+            <button class="filter-btn" data-filter="vegetables" data-i18n="menu.filter.vegetables">Vegetables</button>
+            <button class="filter-btn" data-filter="soup" data-i18n="menu.filter.soup">Soup</button>
+            <button class="filter-btn" data-filter="noodles" data-i18n="menu.filter.noodles">Noodles</button>
+            <button class="filter-btn" data-filter="snacks" data-i18n="menu.filter.snacks">Snacks</button>
+            <button class="filter-btn" data-filter="sizzling" data-i18n="menu.filter.sizzling">Sizzling</button>
         </div>
 
         <!-- Grid -->
         <div class="menu-showcase-grid" id="menu-showcase-grid-container">
 
             <!-- Card 1 -->
-            <div class="showcase-card" data-category="ramen">
-                <div class="card-top-tag">
-                    <img src="assets/images/star.png" alt="star" class="star-icon">
-                    Chef's Recommend Menu
-                </div>
+            <div class="showcase-card" data-category="meat">
+
                 <img src="assets/images/karekare.webp" alt="Tonkotsu Ramen" class="showcase-dish-img">
-                <h4 class="showcase-dish-title">KARE-KARE</h4>
-                <p class="showcase-dish-desc">A rich, golden peanut stew slow-cooked with tender meat and fresh
+                <h4 class="showcase-dish-title" data-i18n="menu.filipino.karekare.name">KARE-KARE</h4>
+                <p class="showcase-dish-desc" data-i18n="menu.filipino.karekare.desc">A rich, golden peanut stew
+                    slow-cooked with tender meat and fresh
                     vegetables — best paired with a touch of bagoong for that perfect savory kick.</p>
                 <button class="showcase-price-btn">9.98</button>
             </div>
 
             <!-- Card 2 -->
-            <div class="showcase-card" data-category="sushi">
-                <div class="card-top-tag invisible">
-                    <img src="assets/images/star.png" alt="star" class="star-icon">
-                    Placeholder
-                </div>
+            <div class="showcase-card" data-category="soup">
+
                 <img src="assets/images/porksinigang.webp" alt="Tonkotsu Ramen" class="showcase-dish-img">
-                <h4 class="showcase-dish-title">PORK SINIGANG</h4>
-                <p class="showcase-dish-desc">Tender pork slow-simmered in a bold tamarind broth with fresh
+                <h4 class="showcase-dish-title" data-i18n="menu.filipino.sinigang.name">PORK SINIGANG</h4>
+                <p class="showcase-dish-desc" data-i18n="menu.filipino.sinigang.desc">Tender pork slow-simmered in a
+                    bold tamarind broth with fresh
                     vegetables — a tangy, savory, and deeply comforting bowl that warms the soul from the inside out.
                 </p>
                 <button class="showcase-price-btn">9.99</button>
             </div>
 
             <!-- Card 3 -->
-            <div class="showcase-card" data-category="filipino-food">
-                <div class="card-top-tag invisible">
-                    <img src="assets/images/star.png" alt="star" class="star-icon">
-                    Placeholder
-                </div>
+            <div class="showcase-card" data-category="meat">
+
                 <img src="assets/images/pata_tim.webp" alt="Tonkotsu Ramen" class="showcase-dish-img">
-                <h4 class="showcase-dish-title">PATATIM</h4>
-                <p class="showcase-dish-desc">Fall-off-the-bone pork leg slow-braised in a sweet and savory soy sauce
+                <h4 class="showcase-dish-title" data-i18n="menu.filipino.patatim.name">PATATIM</h4>
+                <p class="showcase-dish-desc" data-i18n="menu.filipino.patatim.desc">Fall-off-the-bone pork leg
+                    slow-braised in a sweet and savory soy sauce
                     glaze with star anise — rich, tender, and melt-in-your-mouth good.</p>
                 <button class="showcase-price-btn">9.99</button>
             </div>
 
             <!-- Card 4 -->
-            <div class="showcase-card" data-category="ramen">
-                <div class="card-top-tag invisible">
-                    <img src="assets/images/star.png" alt="star" class="star-icon">
-                    Placeholder
-                </div>
+            <div class="showcase-card" data-category="meat">
+
                 <img src="assets/images/spicy_adobo.webp" alt="Tonkotsu Ramen" class="showcase-dish-img">
-                <h4 class="showcase-dish-title">SPICY PORK ADOBO</h4>
-                <p class="showcase-dish-desc">Your favorite Filipino adobo with a fiery twist — tender pork slow-cooked
+                <h4 class="showcase-dish-title" data-i18n="menu.filipino.adobo.name">SPICY PORK ADOBO</h4>
+                <p class="showcase-dish-desc" data-i18n="menu.filipino.adobo.desc">Your favorite Filipino adobo with a
+                    fiery twist — tender pork slow-cooked
                     in vinegar, soy sauce, garlic, and a bold kick of chilies that lingers beautifully with every bite.
                 </p>
                 <button class="showcase-price-btn">9.99</button>
             </div>
 
             <!-- Card 5 -->
-            <div class="showcase-card" data-category="new">
-                <div class="card-top-tag">
-                    <img src="assets/images/star.png" alt="star" class="star-icon">
-                    Chef's Recommend Menu
-                </div>
+            <div class="showcase-card" data-category="meat">
+
                 <img src="assets/images/bicolexpress.webp" alt="Tonkotsu Ramen" class="showcase-dish-img">
-                <h4 class="showcase-dish-title">BICOL EXPRESS</h4>
-                <p class="showcase-dish-desc">Fiery, creamy, and absolutely addictive — tender pork cooked in rich
+                <h4 class="showcase-dish-title" data-i18n="menu.filipino.bicol.name">BICOL EXPRESS</h4>
+                <p class="showcase-dish-desc" data-i18n="menu.filipino.bicol.desc">Fiery, creamy, and absolutely
+                    addictive — tender pork cooked in rich
                     coconut milk with generous amounts of chilies and shrimp paste. Not for the faint-hearted.</p>
                 <button class="showcase-price-btn">9.99</button>
             </div>
 
             <!-- Card 6 -->
-            <div class="showcase-card" data-category="sushi">
-                <div class="card-top-tag invisible">
-                    <img src="assets/images/star.png" alt="star" class="star-icon">
-                    Placeholder
-                </div>
+            <div class="showcase-card" data-category="meat">
+
                 <img src="assets/images/igado.webp" alt="Tonkotsu Ramen" class="showcase-dish-img">
-                <h4 class="showcase-dish-title">IGADO</h4>
-                <p class="showcase-dish-desc">A bold Ilocano classic — pork tenderloin and liver sautéed with vinegar,
+                <h4 class="showcase-dish-title" data-i18n="menu.filipino.igado.name">IGADO</h4>
+                <p class="showcase-dish-desc" data-i18n="menu.filipino.igado.desc">A bold Ilocano classic — pork
+                    tenderloin and liver sautéed with vinegar,
                     soy sauce, and bell peppers, delivering a tangy and savory punch in every bite</p>
                 <button class="showcase-price-btn">9.99</button>
             </div>
 
             <!-- Card 7 -->
-            <div class="showcase-card" data-category="filipino-food">
-                <div class="card-top-tag invisible">
-                    <img src="assets/images/star.png" alt="star" class="star-icon">
-                    Placeholder
-                </div>
+            <div class="showcase-card" data-category="snacks">
+
                 <img src="assets/images/pork_lumpia.webp" alt="Tonkotsu Ramen" class="showcase-dish-img">
-                <h4 class="showcase-dish-title">PORK LUMPIA</h4>
-                <p class="showcase-dish-desc"> The most iconic and beloved type of Filipino lumpia. It is a smaller,
+                <h4 class="showcase-dish-title" data-i18n="menu.filipino.lumpia.name">PORK LUMPIA</h4>
+                <p class="showcase-dish-desc" data-i18n="menu.filipino.lumpia.desc"> The most iconic and beloved type of
+                    Filipino lumpia. It is a smaller,
                     tightly rolled deep-fried spring roll filled with ground pork, carrots, onions, and seasonings.</p>
                 <button class="showcase-price-btn">9.99</button>
             </div>
 
             <!-- Card 8 -->
-            <div class="showcase-card" data-category="new">
-                <div class="card-top-tag invisible">
-                    <img src="assets/images/star.png" alt="star" class="star-icon">
-                    Placeholder
-                </div>
+            <div class="showcase-card" data-category="snacks">
+
                 <img src="assets/images/empanada.webp" alt="Tonkotsu Ramen" class="showcase-dish-img">
-                <h4 class="showcase-dish-title">EMPANADA</h4>
-                <p class="showcase-dish-desc">Buttery, flaky pastry filled with tender shredded chicken, potatoes, and
+                <h4 class="showcase-dish-title" data-i18n="menu.filipino.empanada.name">EMPANADA</h4>
+                <p class="showcase-dish-desc" data-i18n="menu.filipino.empanada.desc">Buttery, flaky pastry filled with
+                    tender shredded chicken, potatoes, and
                     savory seasonings — a handheld delight that's crispy, hearty, and satisfying in every bite.</p>
                 <button class="showcase-price-btn">9.99</button>
             </div>
 
             <!-- Extra Card 1 -->
-            <div class="showcase-card extra-menu-item" data-category="ramen" style="display: none;">
-                <div class="card-top-tag invisible">
-                    <img src="assets/images/star.png" alt="star" class="star-icon">
-                    Spicy
-                </div>
+            <div class="showcase-card extra-menu-item" data-category="vegetables" style="display: none;">
+
                 <img src="assets/images/suey.webp" alt="Spicy Miso Ramen" class="showcase-dish-img">
-                <h4 class="showcase-dish-title">CHOPSEUY</h4>
-                <p class="showcase-dish-desc">A vibrant medley of fresh garden vegetables stir-fried to perfection with
+                <h4 class="showcase-dish-title" data-i18n="menu.filipino.chopseuy.name">CHOPSEUY</h4>
+                <p class="showcase-dish-desc" data-i18n="menu.filipino.chopseuy.desc">A vibrant medley of fresh garden
+                    vegetables stir-fried to perfection with
                     tender meat in a light, savory sauce — colorful, healthy, and delicious.</p>
                 <button class="showcase-price-btn">10.99</button>
             </div>
 
             <!-- Extra Card 2 -->
-            <div class="showcase-card extra-menu-item" data-category="sushi" style="display: none;">
-                <div class="card-top-tag">
-                    <img src="assets/images/star.png" alt="star" class="star-icon">
-                    Chef's Recommend Menu
-                </div>
+            <div class="showcase-card extra-menu-item" data-category="vegetables" style="display: none;">
+
                 <img src="assets/images/pakbet.webp" alt="Dragon Roll" class="showcase-dish-img">
-                <h4 class="showcase-dish-title">PAKBET</h4>
-                <p class="showcase-dish-desc">A proud Filipino harvest dish — a hearty mix of bitter melon, eggplant,
+                <h4 class="showcase-dish-title" data-i18n="menu.filipino.pakbet.name">PAKBET</h4>
+                <p class="showcase-dish-desc" data-i18n="menu.filipino.pakbet.desc">A proud Filipino harvest dish — a
+                    hearty mix of bitter melon, eggplant,
                     squash, and okra sautéed with shrimp paste for a deeply earthy, rustic flavor..</p>
                 <button class="showcase-price-btn">12.99</button>
             </div>
 
             <!-- Extra Card 3 -->
-            <div class="showcase-card extra-menu-item" data-category="filipino-food" style="display: none;">
-                <div class="card-top-tag invisible">
-                    <img src="assets/images/star.png" alt="star" class="star-icon">
-                    Placeholder
-                </div>
+            <div class="showcase-card extra-menu-item" data-category="vegetables" style="display: none;">
+
                 <img src="assets/images/laing.png" alt="Chicken Teriyaki" class="showcase-dish-img">
-                <h4 class="showcase-dish-title">LAING</h4>
-                <p class="showcase-dish-desc">Tender dried taro leaves slow-simmered in creamy coconut milk with chilies
+                <h4 class="showcase-dish-title" data-i18n="menu.filipino.laing.name">LAING</h4>
+                <p class="showcase-dish-desc" data-i18n="menu.filipino.laing.desc">Tender dried taro leaves
+                    slow-simmered in creamy coconut milk with chilies
                     and shrimp paste — smoky, spicy, and richly satisfying</p>
                 <button class="showcase-price-btn">11.99</button>
             </div>
 
             <!-- Extra Card 4 -->
-            <div class="showcase-card extra-menu-item" data-category="new" style="display: none;">
-                <div class="card-top-tag invisible">
-                    <img src="assets/images/star.png" alt="star" class="star-icon">
-                    Placeholder
-                </div>
+            <div class="showcase-card extra-menu-item" data-category="meat" style="display: none;">
+
                 <img src="assets/images/menudo.webp" alt="Beef Gyudon" class="showcase-dish-img">
-                <h4 class="showcase-dish-title">MENUDO</h4>
-                <p class="showcase-dish-desc">A hearty tomato-based stew of diced pork, liver, potatoes, and carrots —
+                <h4 class="showcase-dish-title" data-i18n="menu.filipino.menudo.name">MENUDO</h4>
+                <p class="showcase-dish-desc" data-i18n="menu.filipino.menudo.desc">A hearty tomato-based stew of diced
+                    pork, liver, potatoes, and carrots —
                     savory, slightly sweet, and packed with comforting Filipino home-cooked goodness.
                 </p>
                 <button class="showcase-price-btn">9.99</button>
             </div>
 
             <!-- Extra Card 5 -->
-            <div class="showcase-card extra-menu-item" data-category="new" style="display: none;">
-                <div class="card-top-tag invisible">
-                    <img src="assets/images/star.png" alt="star" class="star-icon">
-                    Placeholder
-                </div>
+            <div class="showcase-card extra-menu-item" data-category="soup" style="display: none;">
+
                 <img src="assets/images/nilaga.webp" alt="Beef Gyudon" class="showcase-dish-img">
-                <h4 class="showcase-dish-title">PORK NILAGA</h4>
-                <p class="showcase-dish-desc">A simple, soul-nourishing clear broth with tender boiled pork, potatoes,
+                <h4 class="showcase-dish-title" data-i18n="menu.filipino.nilaga.name">PORK NILAGA</h4>
+                <p class="showcase-dish-desc" data-i18n="menu.filipino.nilaga.desc">A simple, soul-nourishing clear
+                    broth with tender boiled pork, potatoes,
                     and cabbage — light, clean, and the ultimate Filipino comfort food.
                 </p>
                 <button class="showcase-price-btn">9.99</button>
             </div>
 
             <!-- Extra Card 6 -->
-            <div class="showcase-card extra-menu-item" data-category="new" style="display: none;">
-                <div class="card-top-tag invisible">
-                    <img src="assets/images/star.png" alt="star" class="star-icon">
-                    Placeholder
-                </div>
+            <div class="showcase-card extra-menu-item" data-category="meat" style="display: none;">
+
                 <img src="assets/images/lechon_kawali.webp" alt="Beef Gyudon" class="showcase-dish-img">
-                <h4 class="showcase-dish-title">LETCHON KAWALI</h4>
-                <p class="showcase-dish-desc">Crispy, crackling deep-fried pork belly with a golden crunch on the
+                <h4 class="showcase-dish-title" data-i18n="menu.filipino.kawali.name">LETCHON KAWALI</h4>
+                <p class="showcase-dish-desc" data-i18n="menu.filipino.kawali.desc">Crispy, crackling deep-fried pork
+                    belly with a golden crunch on the
                     outside and juicy, tender meat on the inside — sinfully good and worth every bite.
                 </p>
                 <button class="showcase-price-btn">9.99</button>
             </div>
 
             <!-- Extra Card 7 -->
-            <div class="showcase-card extra-menu-item" data-category="new" style="display: none;">
-                <div class="card-top-tag invisible">
-                    <img src="assets/images/star.png" alt="star" class="star-icon">
-                    Placeholder
-                </div>
+            <div class="showcase-card extra-menu-item" data-category="noodles" style="display: none;">
+
                 <img src="assets/images/bihon_guisado.webp" alt="Beef Gyudon" class="showcase-dish-img">
-                <h4 class="showcase-dish-title">BIHON GUISADO</h4>
-                <p class="showcase-dish-desc">Silky rice noodles stir-fried with tender slices of pork, shrimp, and
+                <h4 class="showcase-dish-title" data-i18n="menu.filipino.bihon.name">BIHON GUISADO</h4>
+                <p class="showcase-dish-desc" data-i18n="menu.filipino.bihon.desc">Silky rice noodles stir-fried with
+                    tender slices of pork, shrimp, and
                     fresh vegetables in a savory soy-based sauce.
                 </p>
                 <button class="showcase-price-btn">9.99</button>
             </div>
 
             <!-- Extra Card 8 -->
-            <div class="showcase-card extra-menu-item" data-category="new" style="display: none;">
-                <div class="card-top-tag invisible">
-                    <img src="assets/images/star.png" alt="star" class="star-icon">
-                    Placeholder
-                </div>
+            <div class="showcase-card extra-menu-item" data-category="meat" style="display: none;">
+
                 <img src="assets/images/lechon_paksiw.webp" alt="Beef Gyudon" class="showcase-dish-img">
-                <h4 class="showcase-dish-title">LETCHON PAKSIW</h4>
-                <p class="showcase-dish-desc">Leftover lechon reimagined — slow-cooked in tangy vinegar, liver sauce,
+                <h4 class="showcase-dish-title" data-i18n="menu.filipino.paksiw.name">LETCHON PAKSIW</h4>
+                <p class="showcase-dish-desc" data-i18n="menu.filipino.paksiw.desc">Leftover lechon reimagined —
+                    slow-cooked in tangy vinegar, liver sauce,
                     and spices until the pork is meltingly tender and packed with deep, complex flavor.
                 </p>
                 <button class="showcase-price-btn">9.99</button>
             </div>
 
             <!-- Extra Card 9 -->
-            <div class="showcase-card extra-menu-item" data-category="new" style="display: none;">
-                <div class="card-top-tag invisible">
-                    <img src="assets/images/star.png" alt="star" class="star-icon">
-                    Placeholder
-                </div>
+            <div class="showcase-card extra-menu-item" data-category="meat" style="display: none;">
+
                 <img src="assets/images/chicken_inasal.webp" alt="Beef Gyudon" class="showcase-dish-img">
-                <h4 class="showcase-dish-title">CHICKEN INASAL</h4>
-                <p class="showcase-dish-desc">Juicy, smoky grilled chicken marinated in a fragrant blend of calamansi,
+                <h4 class="showcase-dish-title" data-i18n="menu.filipino.inasal.name">CHICKEN INASAL</h4>
+                <p class="showcase-dish-desc" data-i18n="menu.filipino.inasal.desc">Juicy, smoky grilled chicken
+                    marinated in a fragrant blend of calamansi,
                     lemongrass, and annatto — charred to perfection and bursting with Bacolod-style flavor.
                 </p>
                 <button class="showcase-price-btn">9.99</button>
             </div>
 
             <!-- Extra Card 10 -->
-            <div class="showcase-card extra-menu-item" data-category="new" style="display: none;">
-                <div class="card-top-tag invisible">
+            <div class="showcase-card extra-menu-item" data-category="sizzling" style="display: none;">
+                <div class="card-top-tag">
                     <img src="assets/images/star.png" alt="star" class="star-icon">
-                    Placeholder
+                    <span data-i18n="menu.item.special">Special Order</span>
                 </div>
                 <img src="assets/images/sisig.webp" alt="Beef Gyudon" class="showcase-dish-img">
-                <h4 class="showcase-dish-title">SIZZLING SISIG</h4>
-                <p class="showcase-dish-desc">Arriving at your table with a dramatic sizzle — crispy chopped pork face
+                <h4 class="showcase-dish-title" data-i18n="menu.filipino.sisig.name">SIZZLING SISIG</h4>
+                <p class="showcase-dish-desc" data-i18n="menu.filipino.sisig.desc">Arriving at your table with a
+                    dramatic sizzle — crispy chopped pork face
                     and ears seasoned with calamansi, chilies, and onion, served on a scorching hot plate. Bold, tangy,
                     and utterly addictive.
                 </p>
@@ -333,42 +301,45 @@
             </div>
 
             <!-- Extra Card 11 -->
-            <div class="showcase-card extra-menu-item" data-category="new" style="display: none;">
-                <div class="card-top-tag invisible">
+            <div class="showcase-card extra-menu-item" data-category="sizzling" style="display: none;">
+                <div class="card-top-tag">
                     <img src="assets/images/star.png" alt="star" class="star-icon">
-                    Placeholder
+                    <span data-i18n="menu.item.special">Special Order</span>
                 </div>
                 <img src="assets/images/sizzling_wings.webp" alt="Beef Gyudon" class="showcase-dish-img">
-                <h4 class="showcase-dish-title">SIZZLING CHICKEN</h4>
-                <p class="showcase-dish-desc">Tender, juicy chicken pieces glazed in a savory garlic butter sauce,
+                <h4 class="showcase-dish-title" data-i18n="menu.filipino.sizchicken.name">SIZZLING CHICKEN</h4>
+                <p class="showcase-dish-desc" data-i18n="menu.filipino.sizchicken.desc">Tender, juicy chicken pieces
+                    glazed in a savory garlic butter sauce,
                     served sizzling hot on a cast iron plate — smoky, aromatic, and impossible to ignore.
                 </p>
                 <button class="showcase-price-btn">9.99</button>
             </div>
 
             <!-- Extra Card 12 -->
-            <div class="showcase-card extra-menu-item" data-category="new" style="display: none;">
-                <div class="card-top-tag invisible">
+            <div class="showcase-card extra-menu-item" data-category="sizzling" style="display: none;">
+                <div class="card-top-tag">
                     <img src="assets/images/star.png" alt="star" class="star-icon">
-                    Placeholder
+                    <span data-i18n="menu.item.special">Special Order</span>
                 </div>
                 <img src="assets/images/sizzling_squid.webp" alt="Beef Gyudon" class="showcase-dish-img">
-                <h4 class="showcase-dish-title">SIZZLING SQUID</h4>
-                <p class="showcase-dish-desc">Perfectly tender squid tossed in a rich, garlicky black bean sauce,
+                <h4 class="showcase-dish-title" data-i18n="menu.filipino.sizsquid.name">SIZZLING SQUID</h4>
+                <p class="showcase-dish-desc" data-i18n="menu.filipino.sizsquid.desc">Perfectly tender squid tossed in a
+                    rich, garlicky black bean sauce,
                     arriving at your table in a blaze of sizzle and aroma — bold, briny, and irresistibly good.
                 </p>
                 <button class="showcase-price-btn">9.99</button>
             </div>
 
             <!-- Extra Card 13 -->
-            <div class="showcase-card extra-menu-item" data-category="new" style="display: none;">
-                <div class="card-top-tag invisible">
+            <div class="showcase-card extra-menu-item" data-category="sizzling" style="display: none;">
+                <div class="card-top-tag">
                     <img src="assets/images/star.png" alt="star" class="star-icon">
-                    Placeholder
+                    <span data-i18n="menu.item.special">Special Order</span>
                 </div>
                 <img src="assets/images/sizzling_bopis.webp" alt="Beef Gyudon" class="showcase-dish-img">
-                <h4 class="showcase-dish-title">SIZZLING BOPIS</h4>
-                <p class="showcase-dish-desc">a savory, spicy, and tangy Filipino dish made from finely minced pig lungs
+                <h4 class="showcase-dish-title" data-i18n="menu.filipino.sizbopis.name">SIZZLING BOPIS</h4>
+                <p class="showcase-dish-desc" data-i18n="menu.filipino.sizbopis.desc">a savory, spicy, and tangy
+                    Filipino dish made from finely minced pig lungs
                     and heart. Served piping hot on a cast-iron plate, it is sautéed with garlic, onions, ginger, and
                     chilies, then finished with a splash of vinegar and annatto oil for a vibrant, reddish-orange color.
                 </p>
@@ -376,42 +347,45 @@
             </div>
 
             <!-- Extra Card 14 -->
-            <div class="showcase-card extra-menu-item" data-category="new" style="display: none;">
-                <div class="card-top-tag invisible">
+            <div class="showcase-card extra-menu-item" data-category="sizzling" style="display: none;">
+                <div class="card-top-tag">
                     <img src="assets/images/star.png" alt="star" class="star-icon">
-                    Placeholder
+                    <span data-i18n="menu.item.special">Special Order</span>
                 </div>
                 <img src="assets/images/sizzling_dinuguan.webp" alt="Beef Gyudon" class="showcase-dish-img">
-                <h4 class="showcase-dish-title">SIZZLING DINUGUAN</h4>
-                <p class="showcase-dish-desc">Rich, dark, and deeply savory — tender pork simmered in a bold pork blood,
+                <h4 class="showcase-dish-title" data-i18n="menu.filipino.sizdinuguan.name">SIZZLING DINUGUAN</h4>
+                <p class="showcase-dish-desc" data-i18n="menu.filipino.sizdinuguan.desc">Rich, dark, and deeply savory —
+                    tender pork simmered in a bold pork blood,
                     with vinegar and chilies, served sizzling hot for a truly authentic Filipino experience.
                 </p>
                 <button class="showcase-price-btn">9.99</button>
             </div>
 
             <!-- Extra Card 15 -->
-            <div class="showcase-card extra-menu-item" data-category="new" style="display: none;">
-                <div class="card-top-tag invisible">
+            <div class="showcase-card extra-menu-item" data-category="sizzling" style="display: none;">
+                <div class="card-top-tag">
                     <img src="assets/images/star.png" alt="star" class="star-icon">
-                    Placeholder
+                    <span data-i18n="menu.item.special">Special Order</span>
                 </div>
                 <img src="assets/images/sizzling_chickenfeet.webp" alt="Beef Gyudon" class="showcase-dish-img">
-                <h4 class="showcase-dish-title">SIZZLING CHICKEN FEET</h4>
-                <p class="showcase-dish-desc">Soft, gelatinous chicken feet slow-cooked until tender and tossed in a
+                <h4 class="showcase-dish-title" data-i18n="menu.filipino.sizchickenfeet.name">SIZZLING CHICKEN FEET</h4>
+                <p class="showcase-dish-desc" data-i18n="menu.filipino.sizchickenfeet.desc">Soft, gelatinous chicken
+                    feet slow-cooked until tender and tossed in a
                     bold, spicy, and savory sauce — a daring Filipino delicacy that rewards the adventurous eater.
                 </p>
                 <button class="showcase-price-btn">9.99</button>
             </div>
 
             <!-- Extra Card 16 -->
-            <div class="showcase-card extra-menu-item" data-category="new" style="display: none;">
-                <div class="card-top-tag invisible">
+            <div class="showcase-card extra-menu-item" data-category="sizzling" style="display: none;">
+                <div class="card-top-tag">
                     <img src="assets/images/star.png" alt="star" class="star-icon">
-                    Placeholder
+                    <span data-i18n="menu.item.special">Special Order</span>
                 </div>
-                <img src="assets/images/menudishv1.png" alt="Beef Gyudon" class="showcase-dish-img">
-                <h4 class="showcase-dish-title">BARBECUE</h4>
-                <p class="showcase-dish-desc">Juicy skewers of marinated pork or chicken grilled over open flames until
+                <img src="assets/images/bbq_sizzling.webp" alt="Beef Gyudon" class="showcase-dish-img">
+                <h4 class="showcase-dish-title" data-i18n="menu.filipino.sizbbq.name">SIZZLING BARBBECUE</h4>
+                <p class="showcase-dish-desc" data-i18n="menu.filipino.sizbbq.desc">Juicy skewers of marinated pork or
+                    chicken grilled over open flames until
                     perfectly charred — sweet, smoky, and glazed with our signature sauce that keeps you coming back for
                     more.
                 </p>
@@ -420,10 +394,7 @@
 
 
             <!-- <div class="showcase-card extra-menu-item" data-category="new" style="display: none;">
-                <div class="card-top-tag invisible">
-                    <img src="assets/images/star.png" alt="star" class="star-icon">
-                    Placeholder
-                </div>
+
                 <img src="assets/images/menudishv1.png" alt="Beef Gyudon" class="showcase-dish-img">
                 <h4 class="showcase-dish-title">SIZZLING CHICKEN</h4>
                 <p class="showcase-dish-desc">Tender, juicy chicken pieces glazed in a savory garlic butter sauce,
@@ -433,10 +404,7 @@
             </div>
 
             <div class="showcase-card extra-menu-item" data-category="new" style="display: none;">
-                <div class="card-top-tag invisible">
-                    <img src="assets/images/star.png" alt="star" class="star-icon">
-                    Placeholder
-                </div>
+
                 <img src="assets/images/menudishv1.png" alt="Beef Gyudon" class="showcase-dish-img">
                 <h4 class="showcase-dish-title">SIZZLING CHICKEN</h4>
                 <p class="showcase-dish-desc">Tender, juicy chicken pieces glazed in a savory garlic butter sauce,
@@ -446,10 +414,7 @@
             </div>
 
             <div class="showcase-card extra-menu-item" data-category="new" style="display: none;">
-                <div class="card-top-tag invisible">
-                    <img src="assets/images/star.png" alt="star" class="star-icon">
-                    Placeholder
-                </div>
+
                 <img src="assets/images/menudishv1.png" alt="Beef Gyudon" class="showcase-dish-img">
                 <h4 class="showcase-dish-title">SIZZLING CHICKEN</h4>
                 <p class="showcase-dish-desc">Tender, juicy chicken pieces glazed in a savory garlic butter sauce,
@@ -459,10 +424,7 @@
             </div>
 
             <div class="showcase-card extra-menu-item" data-category="new" style="display: none;">
-                <div class="card-top-tag invisible">
-                    <img src="assets/images/star.png" alt="star" class="star-icon">
-                    Placeholder
-                </div>
+
                 <img src="assets/images/menudishv1.png" alt="Beef Gyudon" class="showcase-dish-img">
                 <h4 class="showcase-dish-title">SIZZLING CHICKEN</h4>
                 <p class="showcase-dish-desc">Tender, juicy chicken pieces glazed in a savory garlic butter sauce,
@@ -552,12 +514,9 @@
 
             <!-- Card 1 -->
             <div class="showcase-card" data-category="ramen">
-                <div class="card-top-tag">
-                    <img src="assets/images/star.png" alt="star" class="star-icon">
-                    Chef's Recommendation
-                </div>
+
                 <img src="assets/images/karaagi.webp" alt="Tonkotsu Ramen" class="showcase-dish-img">
-                <h4 class="showcase-dish-title">KARAAGI</h4>
+                <h4 class="showcase-dish-title">KARAAGE</h4>
                 <p class="showcase-dish-desc">Japanese-style fried chicken at its finest — bite-sized pieces marinated
                     in soy sauce, ginger, and garlic, then fried to a perfect golden crisp outside while staying
                     incredibly juicy inside. Light, flavorful, and dangerously moreish.</p>
@@ -565,10 +524,7 @@
             </div>
             <!-- Card 2 -->
             <div class="showcase-card" data-category="sushi">
-                <div class="card-top-tag invisible">
-                    <img src="assets/images/star.png" alt="star" class="star-icon">
-                    Placeholder
-                </div>
+
                 <img src="assets/images/yakisoba.webp" alt="Tonkotsu Ramen" class="showcase-dish-img">
                 <h4 class="showcase-dish-title">YAKISOBA</h4>
                 <p class="showcase-dish-desc">Classic Japanese street food — springy stir-fried noodles tossed with
@@ -578,10 +534,7 @@
             </div>
             <!-- Card 3 -->
             <div class="showcase-card" data-category="filipino-food">
-                <div class="card-top-tag invisible">
-                    <img src="assets/images/star.png" alt="star" class="star-icon">
-                    Placeholder
-                </div>
+
                 <img src="assets/images/yaki_udon.webp" alt="Tonkotsu Ramen" class="showcase-dish-img">
                 <h4 class="showcase-dish-title">YAKISOBA UDON</h4>
                 <p class="showcase-dish-desc">The best of both worlds — thick, chewy udon noodles stir-fried yakisoba
@@ -591,10 +544,7 @@
             </div>
             <!-- Card 4 -->
             <div class="showcase-card" data-category="ramen">
-                <div class="card-top-tag invisible">
-                    <img src="assets/images/star.png" alt="star" class="star-icon">
-                    Placeholder
-                </div>
+
                 <img src="assets/images/nikuman.webp" alt="Tonkotsu Ramen" class="showcase-dish-img">
                 <h4 class="showcase-dish-title">NIKUMAN</h4>
                 <p class="showcase-dish-desc">Soft, pillowy steamed buns filled with a savory seasoned pork filling —
@@ -604,10 +554,7 @@
             </div>
             <!-- Card 5 -->
             <div class="showcase-card" data-category="new">
-                <div class="card-top-tag">
-                    <img src="assets/images/star.png" alt="star" class="star-icon">
-                    Chef's Recommendation
-                </div>
+
                 <img src="assets/images/yasai_itame.webp" alt="Tonkotsu Ramen" class="showcase-dish-img">
                 <h4 class="showcase-dish-title">YASAI ITAME</h4>
                 <p class="showcase-dish-desc">Rich pork broth with chashu, egg, and spring onions.</p>
@@ -615,76 +562,71 @@
             </div>
             <!-- Card 6 -->
             <div class="showcase-card" data-category="sushi">
-                <div class="card-top-tag invisible">
-                    <img src="assets/images/star.png" alt="star" class="star-icon">
-                    Placeholder
-                </div>
-                <img src="assets/images/menudishv3.png" alt="Tonkotsu Ramen" class="showcase-dish-img">
-                <h4 class="showcase-dish-title">TONKOTSU RAMEN</h4>
+
+                <img src="assets/images/inari_platter.webp" alt="Tonkotsu Ramen" class="showcase-dish-img">
+                <h4 class="showcase-dish-title">INARI SUSHI</h4>
                 <p class="showcase-dish-desc">Rich pork broth with chashu, egg, and spring onions.</p>
                 <button class="showcase-price-btn">9.99</button>
             </div>
             <!-- Card 7 -->
             <div class="showcase-card" data-category="filipino-food">
-                <div class="card-top-tag invisible">
-                    <img src="assets/images/star.png" alt="star" class="star-icon">
-                    Placeholder
-                </div>
-                <img src="assets/images/menudishv1.png" alt="Tonkotsu Ramen" class="showcase-dish-img">
-                <h4 class="showcase-dish-title">TONKOTSU RAMEN</h4>
+
+                <img src="assets/images/porkcurry_platter.webp" alt="Tonkotsu Ramen" class="showcase-dish-img">
+                <h4 class="showcase-dish-title">PORK CURRY</h4>
                 <p class="showcase-dish-desc">Rich pork broth with chashu, egg, and spring onions.</p>
                 <button class="showcase-price-btn">9.99</button>
             </div>
             <!-- Card 8 -->
             <div class="showcase-card" data-category="new">
-                <div class="card-top-tag invisible">
-                    <img src="assets/images/star.png" alt="star" class="star-icon">
-                    Placeholder
-                </div>
-                <img src="assets/images/menudishv2.png" alt="Tonkotsu Ramen" class="showcase-dish-img">
-                <h4 class="showcase-dish-title">TONKOTSU RAMEN</h4>
+
+                <img src="assets/images/tonjiru_soup.webp" alt="Tonkotsu Ramen" class="showcase-dish-img">
+                <h4 class="showcase-dish-title">TONJIRU</h4>
                 <p class="showcase-dish-desc">Rich pork broth with chashu, egg, and spring onions.</p>
                 <button class="showcase-price-btn">9.99</button>
             </div>
 
             <!-- Extra Items for Load More -->
             <div class="showcase-card extra-japanese-item" data-category="ramen" style="display: none;">
-                <div class="card-top-tag invisible">
-                    <img src="assets/images/star.png" alt="star" class="star-icon">
-                    Placeholder
-                </div>
-                <img src="assets/images/menudishv3.png" alt="Tonkotsu Ramen" class="showcase-dish-img">
-                <h4 class="showcase-dish-title">TONKOTSU RAMEN</h4>
+
+                <img src="assets/images/miso_soup.webp" alt="Tonkotsu Ramen" class="showcase-dish-img">
+                <h4 class="showcase-dish-title">MISOSHIRO</h4>
                 <p class="showcase-dish-desc">Rich pork broth with chashu, egg, and spring onions.</p>
                 <button class="showcase-price-btn">9.99</button>
             </div>
             <div class="showcase-card extra-japanese-item" data-category="sushi" style="display: none;">
-                <div class="card-top-tag invisible">
-                    <img src="assets/images/star.png" alt="star" class="star-icon">
-                    Placeholder
-                </div>
-                <img src="assets/images/menudishv1.png" alt="Tonkotsu Ramen" class="showcase-dish-img">
-                <h4 class="showcase-dish-title">TONKOTSU RAMEN</h4>
+
+                <img src="assets/images/corn_soup.webp" alt="Tonkotsu Ramen" class="showcase-dish-img">
+                <h4 class="showcase-dish-title">CORN SOUP</h4>
                 <p class="showcase-dish-desc">Rich pork broth with chashu, egg, and spring onions.</p>
                 <button class="showcase-price-btn">9.99</button>
             </div>
             <div class="showcase-card extra-japanese-item" data-category="filipino-food" style="display: none;">
-                <div class="card-top-tag invisible">
-                    <img src="assets/images/star.png" alt="star" class="star-icon">
-                    Placeholder
-                </div>
-                <img src="assets/images/menudishv2.png" alt="Tonkotsu Ramen" class="showcase-dish-img">
-                <h4 class="showcase-dish-title">TONKOTSU RAMEN</h4>
+
+                <img src="assets/images/potato_soup.webp" alt="Tonkotsu Ramen" class="showcase-dish-img">
+                <h4 class="showcase-dish-title">POTATO SOUP</h4>
                 <p class="showcase-dish-desc">Rich pork broth with chashu, egg, and spring onions.</p>
                 <button class="showcase-price-btn">9.99</button>
             </div>
             <div class="showcase-card extra-japanese-item" data-category="new" style="display: none;">
-                <div class="card-top-tag invisible">
-                    <img src="assets/images/star.png" alt="star" class="star-icon">
-                    Placeholder
-                </div>
+
+                <img src="assets/images/wakame_soup.webp" alt="Tonkotsu Ramen" class="showcase-dish-img">
+                <h4 class="showcase-dish-title">WAKAME SOUP</h4>
+                <p class="showcase-dish-desc">Rich pork broth with chashu, egg, and spring onions.</p>
+                <button class="showcase-price-btn">9.99</button>
+            </div>
+
+            <div class="showcase-card extra-japanese-item" data-category="new" style="display: none;">
+
                 <img src="assets/images/menudishv3.png" alt="Tonkotsu Ramen" class="showcase-dish-img">
-                <h4 class="showcase-dish-title">TONKOTSU RAMEN</h4>
+                <h4 class="showcase-dish-title">TSUKIMONO</h4>
+                <p class="showcase-dish-desc">Rich pork broth with chashu, egg, and spring onions.</p>
+                <button class="showcase-price-btn">9.99</button>
+            </div>
+
+            <div class="showcase-card extra-japanese-item" data-category="new" style="display: none;">
+
+                <img src="assets/images/chawanmushi.webp" alt="Tonkotsu Ramen" class="showcase-dish-img">
+                <h4 class="showcase-dish-title">CHAWANMUSHI</h4>
                 <p class="showcase-dish-desc">Rich pork broth with chashu, egg, and spring onions.</p>
                 <button class="showcase-price-btn">9.99</button>
             </div>
@@ -694,7 +636,8 @@
         <div class="load-more-container">
             <button id="btnLoadMoreJapanese" class="btn-load-more" data-i18n="menu.btn.loadmore">Load More</button>
             <button id="btnShowLessJapanese" class="btn-load-more" style="display: none;"
-                data-i18n="menu.btn.showless">Show Less</button>
+                data-i18n="menu.btn.showless">Show
+                Less</button>
         </div>
     </div>
 </section>
@@ -739,7 +682,7 @@
             </div>
             <!-- Card 4 -->
             <div class="bento-card">
-                <img src="assets/images/bento.png" alt="Tinsilog Bento" class="bento-card-img" loading="lazy">
+                <img src="assets/images/tinsilog.webp" alt="Tinsilog Bento" class="bento-card-img" loading="lazy">
                 <h4 class="bento-card-title">Tinsilog</h4>
                 <p class="bento-card-desc">Chahan, smoked fish, fried egg, fresh salad</p>
                 <button class="showcase-price-btn">9.99</button>
@@ -753,21 +696,21 @@
             </div>
             <!-- Card 6 -->
             <div class="bento-card">
-                <img src="assets/images/bento.png" alt="Bursilog Bento" class="bento-card-img" loading="lazy">
+                <img src="assets/images/bursilog.webp" alt="Bursilog Bento" class="bento-card-img" loading="lazy">
                 <h4 class="bento-card-title">Bursilog</h4>
                 <p class="bento-card-desc">Chahan, pork burger, fried egg, fresh salad</p>
                 <button class="showcase-price-btn">9.99</button>
             </div>
             <!-- Card 7 -->
             <div class="bento-card">
-                <img src="assets/images/bento.png" alt="Lumpsilog Bento" class="bento-card-img" loading="lazy">
+                <img src="assets/images/lumsilog.webp" alt="Lumpsilog Bento" class="bento-card-img" loading="lazy">
                 <h4 class="bento-card-title">Lumpsilog</h4>
                 <p class="bento-card-desc">Chahan, lumpia, fried egg, fresh salad</p>
                 <button class="showcase-price-btn">9.99</button>
             </div>
             <!-- Card 8 -->
             <div class="bento-card">
-                <img src="assets/images/bento.png" alt="Emsilog Bento" class="bento-card-img" loading="lazy">
+                <img src="assets/images/emsilog.webp" alt="Emsilog Bento" class="bento-card-img" loading="lazy">
                 <h4 class="bento-card-title">Emsilog</h4>
                 <p class="bento-card-desc">Chahan, embutido, fried egg, fresh salad</p>
                 <button class="showcase-price-btn">9.99</button>
