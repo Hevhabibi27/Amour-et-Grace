@@ -17,7 +17,8 @@ body {
   color: var(--admin-text);
   min-height: 100vh;
   display: flex;
-  overflow-x: hidden; /* Prevent horizontal swiping */
+  overflow-x: hidden;
+  /* Prevent horizontal swiping */
 }
 
 /* ── Sidebar ── */
@@ -55,7 +56,8 @@ body {
   color: var(--admin-sidebar-text);
   font-size: 11px;
   margin-bottom: 16px;
-  aspect-ratio: 1/1; /* Prevent CLS */
+  aspect-ratio: 1/1;
+  /* Prevent CLS */
 }
 
 .admin-sidebar__brand h2 {
@@ -150,7 +152,8 @@ body {
   margin-left: var(--admin-sidebar-width);
   flex: 1;
   min-height: 100vh;
-  min-width: 0; /* Prevent flex children from breaking out */
+  min-width: 0;
+  /* Prevent flex children from breaking out */
 }
 
 .admin-topbar {
@@ -160,6 +163,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  gap: 16px;
   position: sticky;
   top: 0;
   z-index: 50;
@@ -170,11 +174,17 @@ body {
   font-size: 20px;
   font-weight: 700;
   color: var(--admin-text);
+  white-space: nowrap;
+  flex-shrink: 0;
 }
 
 .admin-topbar__user {
   font-size: 13px;
   color: var(--admin-text-muted);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  text-align: right;
 }
 
 .admin-content {
@@ -267,6 +277,9 @@ body {
 /* ── Tables ── */
 .admin-table-wrap {
   overflow-x: auto;
+  border: 1px solid #e5e7eb;
+  border-radius: var(--admin-radius);
+  background: white;
 }
 
 .admin-table {
@@ -277,8 +290,9 @@ body {
 
 .admin-table th {
   text-align: left;
-  padding: 12px 16px;
+  padding: 14px 16px;
   border-bottom: 2px solid #e5e7eb;
+  background: #f8f9fa;
   font-weight: 600;
   color: var(--admin-text-muted);
   font-size: 12px;
@@ -287,13 +301,21 @@ body {
 }
 
 .admin-table td {
-  padding: 12px 16px;
+  padding: 14px 16px;
   border-bottom: 1px solid #f3f4f6;
   vertical-align: middle;
 }
 
+.admin-table tbody tr {
+  transition: background 0.2s ease;
+}
+
+.admin-table tbody tr:nth-child(even) {
+  background: #fafafa;
+}
+
 .admin-table tbody tr:hover {
-  background: #f9fafb;
+  background: #f3f4f6;
 }
 
 /* ── Badges / Status Pills ── */
@@ -562,12 +584,15 @@ body {
   .admin-sidebar {
     width: 220px;
   }
+
   .admin-main {
     margin-left: 220px;
   }
+
   .admin-content {
     padding: 20px;
   }
+
   .admin-stats {
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   }
@@ -593,7 +618,8 @@ body {
   }
 
   .admin-topbar {
-    padding-left: 70px;
+    padding: 16px 16px 16px 70px;
+    /* Reduce right padding to give more space */
   }
 
   .admin-content {
