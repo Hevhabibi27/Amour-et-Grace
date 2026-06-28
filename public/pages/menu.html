@@ -23,8 +23,8 @@
     <div class="container">
         <!-- Headers -->
         <div class="menu-discover-header text-center">
-            <h2 class="japanese-header">メニューセクション</h2>
-            <h3 class="discover-english-header" data-i18n="menu.discover.title">Discover Our Menu</h3>
+            <h2 class="japanese-header">メニューをご覧ください</h2>
+            <h3 class="discover-english-header">Discover Our Menu</h3>
             <p class="discover-desc" data-i18n="menu.discover.desc">
                 Experience a thoughtfully curated selection of authentic Japanese cuisine, premium wagyu, handcrafted
                 beverages, and signature specialties. Every dish and drink is prepared to bring together tradition,
@@ -71,8 +71,12 @@
 
         <!-- Headers -->
         <div class="menu-showcase-header text-center">
-            <h2 class="japanese-header">メニューセクション</h2>
-            <h3 class="english-header" data-i18n="menu.selection.title">Filipino Food Selection</h3>
+            <h2 class="japanese-header">フィリピン料理セクション</h2>
+            <h3 class="english-header">Filipino Food Section</h3>
+            <p class="discover-desc section-desc-narrow" data-i18n="menu.japanese.desc">
+                Rooted in tradition. Bursting with flavor. Our Filipino dishes bring the heart of Filipino cuisine
+                straight to your table.
+            </p>
         </div>
 
         <!-- Filter Bar -->
@@ -442,6 +446,73 @@
                 Less</button>
         </div>
 
+
+    </div>
+</section>
+
+<!-- Party Platters Section -->
+<section class="menu-showcase-section party-platters-section" id="party-platters"
+    style="padding-top: 50px; padding-bottom: 80px;">
+    <div class="container menu-showcase-container">
+        <!-- Headers -->
+        <div class="menu-showcase-header text-center">
+            <h2 class="japanese-header drinks-jp" style="color: var(--accent-red); margin-bottom: 5px;">パーティープラッター</h2>
+            <h3 class="english-header drinks-header" style="color: #fff; letter-spacing: 2px;">Party Platters</h3>
+            <p class="platters-description" data-i18n="menu.platters.desc">
+                Every great celebration deserves an equally great spread. Our party platters are a carefully curated
+                selection of Japanese and Filipino favorites — generous, flavorful, and made to be shared.
+            </p>
+        </div>
+
+        <div class="platters-grid">
+            <!-- Platter Card 1 -->
+            <div class="platter-card">
+                <div class="platter-card-inner">
+                    <div class="platter-vertical-text">カレカレプラッター</div>
+                    <div class="platter-content">
+                        <h4 class="platter-title">KARE-KARE<br>PLATTER</h4>
+                        <p class="platter-desc">a traditional Filipino stew known for its rich, savory-sweet peanut
+                            sauce</p>
+                    </div>
+                    <img src="assets/images/karekare.webp" alt="Kare-Kare Platter" class="platter-img">
+                    <div class="platter-price">9, 99</div>
+                </div>
+            </div>
+
+            <!-- Platter Card 2 -->
+            <div class="platter-card">
+                <div class="platter-card-inner">
+                    <div class="platter-vertical-text">カレカレプラッター</div>
+                    <div class="platter-content">
+                        <h4 class="platter-title">KARE-KARE<br>PLATTER</h4>
+                        <p class="platter-desc">a traditional Filipino stew known for its rich, savory-sweet peanut
+                            sauce</p>
+                    </div>
+                    <img src="assets/images/karekare.webp" alt="Kare-Kare Platter" class="platter-img">
+                    <div class="platter-price">9, 99</div>
+                </div>
+            </div>
+
+            <!-- Platter Card 3 -->
+            <div class="platter-card">
+                <div class="platter-card-inner">
+                    <div class="platter-vertical-text">カレカレプラッター</div>
+                    <div class="platter-content">
+                        <h4 class="platter-title">KARE-KARE<br>PLATTER</h4>
+                        <p class="platter-desc">a traditional Filipino stew known for its rich, savory-sweet peanut
+                            sauce</p>
+                    </div>
+                    <img src="assets/images/karekare.webp" alt="Kare-Kare Platter" class="platter-img">
+                    <div class="platter-price">9, 99</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Sushi Footer Section -->
+<section class="menu-showcase-section" style="padding-top: 20px; padding-bottom: 50px;">
+    <div class="container">
         <!-- Sushi Footer Display -->
         <div class="sushi-display-footer">
             <!-- Row 1 -->
@@ -491,8 +562,8 @@
     <div class="container">
         <!-- Headers -->
         <div class="menu-showcase-header text-center">
-            <h2 class="japanese-header">メニューセクション</h2>
-            <h3 class="english-header" data-i18n="menu.japanese.title">Japanese Food Section</h3>
+            <h2 class="japanese-header">日本食セクション</h2>
+            <h3 class="english-header">Japanese Food Section</h3>
             <p class="discover-desc section-desc-narrow" data-i18n="menu.japanese.desc">
                 Rooted in tradition. Bursting with flavor. Our Filipino dishes bring the heart of Filipino cuisine
                 straight to your table.
@@ -502,11 +573,12 @@
         <!-- Filter Bar -->
         <div class="menu-filter-bar">
             <button class="filter-btn active" data-filter="all" data-i18n="menu.filter.all">All</button>
-            <button class="filter-btn" data-filter="new" data-i18n="menu.filter.new">New</button>
-            <button class="filter-btn" data-filter="filipino-food" data-i18n="menu.filter.filipino">Filipino
-                Food</button>
-            <button class="filter-btn" data-filter="sushi" data-i18n="menu.filter.sushi">Sushi</button>
-            <button class="filter-btn" data-filter="ramen" data-i18n="menu.filter.ramen">Ramen</button>
+            <button class="filter-btn" data-filter="meat" data-i18n="menu.filter.meat">Meat</button>
+            <button class="filter-btn" data-filter="vegetables" data-i18n="menu.filter.vegetables">Vegetables</button>
+            <button class="filter-btn" data-filter="soup" data-i18n="menu.filter.soup">Soup</button>
+            <button class="filter-btn" data-filter="noodles" data-i18n="menu.filter.noodles">Noodles</button>
+            <button class="filter-btn" data-filter="snacks" data-i18n="menu.filter.snacks">Snacks</button>
+            <button class="filter-btn" data-filter="sizzling" data-i18n="menu.filter.sizzling">Sizzling</button>
         </div>
 
         <!-- Grid -->
@@ -516,8 +588,8 @@
             <div class="showcase-card" data-category="ramen">
 
                 <img src="assets/images/karaagi.webp" alt="Tonkotsu Ramen" class="showcase-dish-img">
-                <h4 class="showcase-dish-title">KARAAGE</h4>
-                <p class="showcase-dish-desc">Japanese-style fried chicken at its finest — bite-sized pieces marinated
+                <h4 class="showcase-dish-title" data-i18n="menu.jp.karaage.name">KARAAGE</h4>
+                <p class="showcase-dish-desc" data-i18n="menu.jp.karaage.desc">Japanese-style fried chicken at its finest — bite-sized pieces marinated
                     in soy sauce, ginger, and garlic, then fried to a perfect golden crisp outside while staying
                     incredibly juicy inside. Light, flavorful, and dangerously moreish.</p>
                 <button class="showcase-price-btn">9.99</button>
@@ -526,8 +598,8 @@
             <div class="showcase-card" data-category="sushi">
 
                 <img src="assets/images/yakisoba.webp" alt="Tonkotsu Ramen" class="showcase-dish-img">
-                <h4 class="showcase-dish-title">YAKISOBA</h4>
-                <p class="showcase-dish-desc">Classic Japanese street food — springy stir-fried noodles tossed with
+                <h4 class="showcase-dish-title" data-i18n="menu.jp.yakisoba.name">YAKISOBA</h4>
+                <p class="showcase-dish-desc" data-i18n="menu.jp.yakisoba.desc">Classic Japanese street food — springy stir-fried noodles tossed with
                     tender pork, fresh cabbage, and vegetables in a rich, smoky yakisoba sauce, finished with a sprinkle
                     of bonito flakes and pickled ginger. Simple, satisfying, and full of umami.</p>
                 <button class="showcase-price-btn">9.99</button>
@@ -536,8 +608,8 @@
             <div class="showcase-card" data-category="filipino-food">
 
                 <img src="assets/images/yaki_udon.webp" alt="Tonkotsu Ramen" class="showcase-dish-img">
-                <h4 class="showcase-dish-title">YAKISOBA UDON</h4>
-                <p class="showcase-dish-desc">The best of both worlds — thick, chewy udon noodles stir-fried yakisoba
+                <h4 class="showcase-dish-title" data-i18n="menu.jp.yakisoba_udon.name">YAKISOBA UDON</h4>
+                <p class="showcase-dish-desc" data-i18n="menu.jp.yakisoba_udon.desc">The best of both worlds — thick, chewy udon noodles stir-fried yakisoba
                     style with savory sauce, tender meat, and crisp vegetables. Hearty, bold, and deeply satisfying in
                     every thick, saucy bite.</p>
                 <button class="showcase-price-btn">9.99</button>
@@ -546,8 +618,8 @@
             <div class="showcase-card" data-category="ramen">
 
                 <img src="assets/images/nikuman.webp" alt="Tonkotsu Ramen" class="showcase-dish-img">
-                <h4 class="showcase-dish-title">NIKUMAN</h4>
-                <p class="showcase-dish-desc">Soft, pillowy steamed buns filled with a savory seasoned pork filling —
+                <h4 class="showcase-dish-title" data-i18n="menu.jp.nikuman.name">NIKUMAN</h4>
+                <p class="showcase-dish-desc" data-i18n="menu.jp.nikuman.desc">Soft, pillowy steamed buns filled with a savory seasoned pork filling —
                     warm, fluffy, and comforting. A beloved Japanese street snack that melts in your mouth with every
                     bite.</p>
                 <button class="showcase-price-btn">9.99</button>
@@ -556,32 +628,37 @@
             <div class="showcase-card" data-category="new">
 
                 <img src="assets/images/yasai_itame.webp" alt="Tonkotsu Ramen" class="showcase-dish-img">
-                <h4 class="showcase-dish-title">YASAI ITAME</h4>
-                <p class="showcase-dish-desc">Rich pork broth with chashu, egg, and spring onions.</p>
+                <h4 class="showcase-dish-title" data-i18n="menu.jp.yasai_itame.name">YASAI ITAME</h4>
+                <p class="showcase-dish-desc" data-i18n="menu.jp.yasai_itame.desc">A light yet deeply flavorful Japanese stir-fry — a vibrant mix of fresh
+                    seasonal vegetables sautéed in a savory soy and sesame sauce. Clean, healthy, and bursting with
+                    natural goodness.</p>
                 <button class="showcase-price-btn">9.99</button>
             </div>
-            <!-- Card 6 -->
-            <div class="showcase-card" data-category="sushi">
+
+            <!-- <div class="showcase-card" data-category="sushi">
 
                 <img src="assets/images/inari_platter.webp" alt="Tonkotsu Ramen" class="showcase-dish-img">
                 <h4 class="showcase-dish-title">INARI SUSHI</h4>
                 <p class="showcase-dish-desc">Rich pork broth with chashu, egg, and spring onions.</p>
                 <button class="showcase-price-btn">9.99</button>
             </div>
-            <!-- Card 7 -->
+          
             <div class="showcase-card" data-category="filipino-food">
 
                 <img src="assets/images/porkcurry_platter.webp" alt="Tonkotsu Ramen" class="showcase-dish-img">
                 <h4 class="showcase-dish-title">PORK CURRY</h4>
                 <p class="showcase-dish-desc">Rich pork broth with chashu, egg, and spring onions.</p>
                 <button class="showcase-price-btn">9.99</button>
-            </div>
+            </div> -->
+
             <!-- Card 8 -->
             <div class="showcase-card" data-category="new">
 
                 <img src="assets/images/tonjiru_soup.webp" alt="Tonkotsu Ramen" class="showcase-dish-img">
-                <h4 class="showcase-dish-title">TONJIRU</h4>
-                <p class="showcase-dish-desc">Rich pork broth with chashu, egg, and spring onions.</p>
+                <h4 class="showcase-dish-title" data-i18n="menu.jp.tonjiru.name">TONJIRU</h4>
+                <p class="showcase-dish-desc" data-i18n="menu.jp.tonjiru.desc">A deeply nourishing Japanese country-style soup — tender pork and hearty
+                    root vegetables like daikon, burdock, and carrots slow-simmered in a rich miso broth. Earthy,
+                    warming, and soul-satisfying in every bowl.</p>
                 <button class="showcase-price-btn">9.99</button>
             </div>
 
@@ -589,45 +666,57 @@
             <div class="showcase-card extra-japanese-item" data-category="ramen" style="display: none;">
 
                 <img src="assets/images/miso_soup.webp" alt="Tonkotsu Ramen" class="showcase-dish-img">
-                <h4 class="showcase-dish-title">MISOSHIRO</h4>
-                <p class="showcase-dish-desc">Rich pork broth with chashu, egg, and spring onions.</p>
+                <h4 class="showcase-dish-title" data-i18n="menu.jp.misoshiro.name">MISOSHIRO</h4>
+                <p class="showcase-dish-desc" data-i18n="menu.jp.misoshiro.desc">Japan's most beloved daily ritual — a delicate, umami-rich broth of
+                    fermented soybean paste with silken tofu, wakame seaweed, and green onions. Simple, clean, and
+                    quietly comforting with every warm sip.</p>
                 <button class="showcase-price-btn">9.99</button>
             </div>
             <div class="showcase-card extra-japanese-item" data-category="sushi" style="display: none;">
 
                 <img src="assets/images/corn_soup.webp" alt="Tonkotsu Ramen" class="showcase-dish-img">
-                <h4 class="showcase-dish-title">CORN SOUP</h4>
-                <p class="showcase-dish-desc">Rich pork broth with chashu, egg, and spring onions.</p>
+                <h4 class="showcase-dish-title" data-i18n="menu.jp.corn_soup.name">CORN SOUP</h4>
+                <p class="showcase-dish-desc" data-i18n="menu.jp.corn_soup.desc">Velvety smooth and naturally sweet — a creamy, golden corn bisque made
+                    from fresh sweet corn kernels blended to perfection. Light, silky, and gently comforting — a
+                    crowd-pleaser for every age.</p>
                 <button class="showcase-price-btn">9.99</button>
             </div>
             <div class="showcase-card extra-japanese-item" data-category="filipino-food" style="display: none;">
 
                 <img src="assets/images/potato_soup.webp" alt="Tonkotsu Ramen" class="showcase-dish-img">
-                <h4 class="showcase-dish-title">POTATO SOUP</h4>
-                <p class="showcase-dish-desc">Rich pork broth with chashu, egg, and spring onions.</p>
+                <h4 class="showcase-dish-title" data-i18n="menu.jp.potato_soup.name">POTATO SOUP</h4>
+                <p class="showcase-dish-desc" data-i18n="menu.jp.potato_soup.desc">Thick, creamy, and wonderfully comforting — tender Japanese potatoes
+                    slow-cooked and blended into a smooth, buttery soup with a subtle hint of seasoning. Rich,
+                    wholesome, and deeply satisfying.</p>
                 <button class="showcase-price-btn">9.99</button>
             </div>
             <div class="showcase-card extra-japanese-item" data-category="new" style="display: none;">
 
                 <img src="assets/images/wakame_soup.webp" alt="Tonkotsu Ramen" class="showcase-dish-img">
-                <h4 class="showcase-dish-title">WAKAME SOUP</h4>
-                <p class="showcase-dish-desc">Rich pork broth with chashu, egg, and spring onions.</p>
+                <h4 class="showcase-dish-title" data-i18n="menu.jp.wakame_soup.name">WAKAME SOUP</h4>
+                <p class="showcase-dish-desc" data-i18n="menu.jp.wakame_soup.desc">A light, delicate broth featuring tender ribbons of wakame seaweed in a
+                    clean, umami-kissed dashi base. Subtle, nourishing, and refreshingly simple — a gentle start or
+                    finish to any meal.</p>
                 <button class="showcase-price-btn">9.99</button>
             </div>
 
             <div class="showcase-card extra-japanese-item" data-category="new" style="display: none;">
 
-                <img src="assets/images/menudishv3.png" alt="Tonkotsu Ramen" class="showcase-dish-img">
-                <h4 class="showcase-dish-title">TSUKIMONO</h4>
-                <p class="showcase-dish-desc">Rich pork broth with chashu, egg, and spring onions.</p>
+                <img src="assets/images/tsukemono_soup.webp" alt="Tonkotsu Ramen" class="showcase-dish-img">
+                <h4 class="showcase-dish-title" data-i18n="menu.jp.tsukemono.name">TSUKEMONO</h4>
+                <p class="showcase-dish-desc" data-i18n="menu.jp.tsukemono.desc">A refreshing assortment of traditional Japanese pickled vegetables —
+                    crisp, tangy, and lightly seasoned. The perfect palate cleanser that adds a bright, zesty contrast
+                    to any dish on your table.</p>
                 <button class="showcase-price-btn">9.99</button>
             </div>
 
             <div class="showcase-card extra-japanese-item" data-category="new" style="display: none;">
 
                 <img src="assets/images/chawanmushi.webp" alt="Tonkotsu Ramen" class="showcase-dish-img">
-                <h4 class="showcase-dish-title">CHAWANMUSHI</h4>
-                <p class="showcase-dish-desc">Rich pork broth with chashu, egg, and spring onions.</p>
+                <h4 class="showcase-dish-title" data-i18n="menu.jp.chawanmushi.name">CHAWANMUSHI</h4>
+                <p class="showcase-dish-desc" data-i18n="menu.jp.chawanmushi.desc">A silky, savory Japanese steamed egg custard hiding treasures within —
+                    tender chicken, shrimp, and mushrooms gently set in a delicate dashi-infused egg. Smooth, elegant,
+                    and unlike anything you've ever tasted.</p>
                 <button class="showcase-price-btn">9.99</button>
             </div>
         </div>
@@ -642,6 +731,114 @@
     </div>
 </section>
 
+<!-- Japanese Party Platters Section -->
+<section class="menu-showcase-section party-platters-section" id="japanese-party-platters"
+    style="padding-top: 50px; padding-bottom: 80px;">
+    <div class="container menu-showcase-container">
+        <!-- Headers -->
+        <div class="menu-showcase-header text-center">
+            <h2 class="japanese-header drinks-jp" style="color: var(--accent-red); margin-bottom: 5px;">パーティープラッター</h2>
+            <h3 class="english-header drinks-header" style="color: #fff; letter-spacing: 2px;">Party Platters</h3>
+            <p class="platters-description" data-i18n="menu.platters.desc">
+                Every great celebration deserves an equally great spread. Our party platters are a carefully curated
+                selection of Japanese and Filipino favorites — generous, flavorful, and made to be shared.
+            </p>
+        </div>
+
+        <div class="platters-grid">
+            <!-- Platter Card 1 -->
+            <div class="platter-card">
+                <div class="platter-card-inner">
+                    <div class="platter-vertical-text">焼きうどん</div>
+                    <div class="platter-content">
+                        <h4 class="platter-title">YAKI UDON</h4>
+                        <p class="platter-desc">Thick, chewy udon noodles stir-fried in a rich savory soy-based sauce
+                            with tender meat and crisp vegetables — bold, hearty, and satisfyingly filling with every
+                            silky, saucy bite.</p>
+                    </div>
+                    <img src="assets/images/yaki-platter.webp" alt="Yaki Udon Platter" class="platter-img">
+                    <div class="platter-price">9, 99</div>
+                </div>
+            </div>
+
+            <!-- Platter Card 2 -->
+            <div class="platter-card">
+                <div class="platter-card-inner">
+                    <div class="platter-vertical-text">焼きそば</div>
+                    <div class="platter-content">
+                        <h4 class="platter-title">YAKISOBA</h4>
+                        <p class="platter-desc">Thick, chewy udon noodles stir-fried in a rich savory soy-based sauce
+                            with tender meat and crisp vegetables — bold, hearty, and satisfyingly filling with every
+                            silky, saucy bite.</p>
+                    </div>
+                    <img src="assets/images/yakisoba_platter.webp" alt="Yakisoba Platter" class="platter-img">
+                    <div class="platter-price">9, 99</div>
+                </div>
+            </div>
+
+            <!-- Platter Card 3 -->
+            <div class="platter-card">
+                <div class="platter-card-inner">
+                    <div class="platter-vertical-text">巻き寿司</div>
+                    <div class="platter-content">
+                        <h4 class="platter-title">MAKI SUSHI</h4>
+                        <p class="platter-desc">Perfectly rolled sushi wrapped in a sheet of toasted nori — fresh,
+                            vibrant fillings of seasoned rice, vegetables, and your choice of protein, sliced into
+                            elegant bite-sized rounds. Clean, fresh, and beautiful on every plate.</p>
+                    </div>
+                    <img src="assets/images/maki_platter.webp" alt="Maki Sushi Platter" class="platter-img">
+                    <div class="platter-price">9, 99</div>
+                </div>
+            </div>
+
+            <!-- Platter Card 4 -->
+            <div class="platter-card">
+                <div class="platter-card-inner">
+                    <div class="platter-vertical-text">鶏のカラゲ</div>
+                    <div class="platter-content">
+                        <h4 class="platter-title">CHICKEN KARAAGE</h4>
+                        <p class="platter-desc">Irresistibly crispy Japanese fried chicken — bite-sized pieces marinated
+                            in a savory blend of soy sauce, ginger, and garlic, fried to a perfect golden crunch outside
+                            while staying tender and juicy inside. Light, bold, and addictive.</p>
+                    </div>
+                    <img src="assets/images/karaagi_platter.webp" alt="Chicken Karaage Platter" class="platter-img">
+                    <div class="platter-price">9, 99</div>
+                </div>
+            </div>
+
+            <!-- Platter Card 5 -->
+            <div class="platter-card">
+                <div class="platter-card-inner">
+                    <div class="platter-vertical-text">ポークカレー</div>
+                    <div class="platter-content">
+                        <h4 class="platter-title">PORK CURRY</h4>
+                        <p class="platter-desc">A deeply warming Japanese comfort dish — tender pork slow-simmered in a
+                            rich, mildly spiced curry sauce with potatoes and carrots, served over steamed rice. Thick,
+                            velvety, and packed with cozy, soul-warming flavor.</p>
+                    </div>
+                    <img src="assets/images/porkcurry_platter.webp" alt="Pork Curry Platter" class="platter-img">
+                    <div class="platter-price">9, 99</div>
+                </div>
+            </div>
+
+            <!-- Platter Card 6 -->
+            <div class="platter-card">
+                <div class="platter-card-inner">
+                    <div class="platter-vertical-text">いなり寿司</div>
+                    <div class="platter-content">
+                        <h4 class="platter-title">INARI SUSHI</h4>
+                        <p class="platter-desc">A deeply warming Japanese comfort dish — tender pork slow-simmered in a
+                            rich, mildly spiced curry sauce with potatoes and carrots, served over steamed rice. Thick,
+                            velvety, and packed with cozy, soul-warming flavor.</p>
+                    </div>
+                    <img src="assets/images/inari_platter.webp" alt="Inari Sushi Platter" class="platter-img">
+                    <div class="platter-price">9, 99</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
 <!-- Bento Packs Section -->
 <section class="bento-section">
     <div class="container">
@@ -650,9 +847,9 @@
             <h2 class="bento-japanese-title">パッケージ</h2>
             <h3 class="bento-english-title">Bento Packs</h3>
             <div class="bento-desc-container">
-                <p class="bento-desc-text">Bento packs for delivery only within the vicinity.</p>
-                <p class="bento-desc-text">Includes fresh salad or vegetables.</p>
-                <p class="bento-desc-text">Available daily from 8:00 AM – 2:00 AM.</p>
+                <p class="bento-desc-text" data-i18n="menu.bento.desc1">Bento packs for delivery only within the vicinity.</p>
+                <p class="bento-desc-text" data-i18n="menu.bento.desc2">Includes fresh salad or vegetables.</p>
+                <p class="bento-desc-text" data-i18n="menu.bento.desc3">Available daily from 8:00 AM – 2:00 AM.</p>
             </div>
         </div>
 
@@ -662,57 +859,57 @@
             <div class="bento-card">
                 <img src="assets/images/bento_porkchop.webp" alt="Porksilog Bento" class="bento-card-img"
                     loading="lazy">
-                <h4 class="bento-card-title">Porksilog</h4>
-                <p class="bento-card-desc">Chahan, grilled pork chop, fried egg, fresh salad</p>
+                <h4 class="bento-card-title" data-i18n="menu.bento.porksilog.name">Porksilog</h4>
+                <p class="bento-card-desc" data-i18n="menu.bento.porksilog.desc">Chahan, grilled pork chop, fried egg, fresh salad</p>
                 <button class="showcase-price-btn">9.99</button>
             </div>
             <!-- Card 2 -->
             <div class="bento-card">
                 <img src="assets/images/cornedsilog.webp" alt="Cornsilog Bento" class="bento-card-img" loading="lazy">
-                <h4 class="bento-card-title">Cornsilog</h4>
-                <p class="bento-card-desc">Chahan, corned beef, fried egg, fresh salad</p>
+                <h4 class="bento-card-title" data-i18n="menu.bento.cornsilog.name">Cornsilog</h4>
+                <p class="bento-card-desc" data-i18n="menu.bento.cornsilog.desc">Chahan, corned beef, fried egg, fresh salad</p>
                 <button class="showcase-price-btn">9.99</button>
             </div>
             <!-- Card 3 -->
             <div class="bento-card">
                 <img src="assets/images/bangsilog.webp" alt="Bangsilog Bento" class="bento-card-img" loading="lazy">
-                <h4 class="bento-card-title">Bangsilog</h4>
-                <p class="bento-card-desc">Chahan, fried bangus, fried egg, fresh salad</p>
+                <h4 class="bento-card-title" data-i18n="menu.bento.bangsilog.name">Bangsilog</h4>
+                <p class="bento-card-desc" data-i18n="menu.bento.bangsilog.desc">Chahan, fried bangus, fried egg, fresh salad</p>
                 <button class="showcase-price-btn">9.99</button>
             </div>
             <!-- Card 4 -->
             <div class="bento-card">
                 <img src="assets/images/tinsilog.webp" alt="Tinsilog Bento" class="bento-card-img" loading="lazy">
-                <h4 class="bento-card-title">Tinsilog</h4>
-                <p class="bento-card-desc">Chahan, smoked fish, fried egg, fresh salad</p>
+                <h4 class="bento-card-title" data-i18n="menu.bento.tinsilog.name">Tinsilog</h4>
+                <p class="bento-card-desc" data-i18n="menu.bento.tinsilog.desc">Chahan, smoked fish, fried egg, fresh salad</p>
                 <button class="showcase-price-btn">9.99</button>
             </div>
             <!-- Card 5 -->
             <div class="bento-card">
                 <img src="assets/images/longsilog.webp" alt="Longsilog Bento" class="bento-card-img" loading="lazy">
-                <h4 class="bento-card-title">Longsilog</h4>
-                <p class="bento-card-desc">Chahan, longganisa, fried egg, fresh salad</p>
+                <h4 class="bento-card-title" data-i18n="menu.bento.longsilog.name">Longsilog</h4>
+                <p class="bento-card-desc" data-i18n="menu.bento.longsilog.desc">Chahan, longganisa, fried egg, fresh salad</p>
                 <button class="showcase-price-btn">9.99</button>
             </div>
             <!-- Card 6 -->
             <div class="bento-card">
                 <img src="assets/images/bursilog.webp" alt="Bursilog Bento" class="bento-card-img" loading="lazy">
-                <h4 class="bento-card-title">Bursilog</h4>
-                <p class="bento-card-desc">Chahan, pork burger, fried egg, fresh salad</p>
+                <h4 class="bento-card-title" data-i18n="menu.bento.bursilog.name">Bursilog</h4>
+                <p class="bento-card-desc" data-i18n="menu.bento.bursilog.desc">Chahan, pork burger, fried egg, fresh salad</p>
                 <button class="showcase-price-btn">9.99</button>
             </div>
             <!-- Card 7 -->
             <div class="bento-card">
                 <img src="assets/images/lumsilog.webp" alt="Lumpsilog Bento" class="bento-card-img" loading="lazy">
-                <h4 class="bento-card-title">Lumpsilog</h4>
-                <p class="bento-card-desc">Chahan, lumpia, fried egg, fresh salad</p>
+                <h4 class="bento-card-title" data-i18n="menu.bento.lumpsilog.name">Lumpsilog</h4>
+                <p class="bento-card-desc" data-i18n="menu.bento.lumpsilog.desc">Chahan, lumpia, fried egg, fresh salad</p>
                 <button class="showcase-price-btn">9.99</button>
             </div>
             <!-- Card 8 -->
             <div class="bento-card">
                 <img src="assets/images/emsilog.webp" alt="Emsilog Bento" class="bento-card-img" loading="lazy">
-                <h4 class="bento-card-title">Emsilog</h4>
-                <p class="bento-card-desc">Chahan, embutido, fried egg, fresh salad</p>
+                <h4 class="bento-card-title" data-i18n="menu.bento.emsilog.name">Emsilog</h4>
+                <p class="bento-card-desc" data-i18n="menu.bento.emsilog.desc">Chahan, embutido, fried egg, fresh salad</p>
                 <button class="showcase-price-btn">9.99</button>
             </div>
         </div>
@@ -895,67 +1092,6 @@
             <button id="btnLoadMoreDrinks" class="btn-load-more" data-i18n="menu.btn.loadmore">Load More</button>
             <button id="btnShowLessDrinks" class="btn-load-more" style="display: none;"
                 data-i18n="menu.btn.showless">Show Less</button>
-        </div>
-    </div>
-</section>
-
-<!-- Party Platters Section -->
-<section class="menu-showcase-section party-platters-section" id="party-platters"
-    style="padding-top: 50px; padding-bottom: 80px;">
-    <div class="container menu-showcase-container">
-        <!-- Headers -->
-        <div class="menu-showcase-header text-center">
-            <h2 class="japanese-header drinks-jp" style="color: var(--accent-red); margin-bottom: 5px;">パッケージ</h2>
-            <h3 class="english-header drinks-header" style="color: #fff; letter-spacing: 2px;"
-                data-i18n="menu.platters.title">Party Platters</h3>
-            <p class="platters-description" data-i18n="menu.platters.desc">
-                Every great celebration deserves an equally great spread. Our party platters are a carefully curated
-                selection of Japanese and Filipino favorites — generous, flavorful, and made to be shared.
-            </p>
-        </div>
-
-        <div class="platters-grid">
-            <!-- Platter Card 1 -->
-            <div class="platter-card">
-                <div class="platter-card-inner">
-                    <div class="platter-vertical-text">カレカレプラッター</div>
-                    <div class="platter-content">
-                        <h4 class="platter-title">KARE-KARE<br>PLATTER</h4>
-                        <p class="platter-desc">a traditional Filipino stew known for its rich, savory-sweet peanut
-                            sauce</p>
-                    </div>
-                    <img src="assets/images/karekare.webp" alt="Kare-Kare Platter" class="platter-img">
-                    <div class="platter-price">9, 99</div>
-                </div>
-            </div>
-
-            <!-- Platter Card 2 -->
-            <div class="platter-card">
-                <div class="platter-card-inner">
-                    <div class="platter-vertical-text">カレカレプラッター</div>
-                    <div class="platter-content">
-                        <h4 class="platter-title">KARE-KARE<br>PLATTER</h4>
-                        <p class="platter-desc">a traditional Filipino stew known for its rich, savory-sweet peanut
-                            sauce</p>
-                    </div>
-                    <img src="assets/images/karekare.webp" alt="Kare-Kare Platter" class="platter-img">
-                    <div class="platter-price">9, 99</div>
-                </div>
-            </div>
-
-            <!-- Platter Card 3 -->
-            <div class="platter-card">
-                <div class="platter-card-inner">
-                    <div class="platter-vertical-text">カレカレプラッター</div>
-                    <div class="platter-content">
-                        <h4 class="platter-title">KARE-KARE<br>PLATTER</h4>
-                        <p class="platter-desc">a traditional Filipino stew known for its rich, savory-sweet peanut
-                            sauce</p>
-                    </div>
-                    <img src="assets/images/karekare.webp" alt="Kare-Kare Platter" class="platter-img">
-                    <div class="platter-price">9, 99</div>
-                </div>
-            </div>
         </div>
     </div>
 </section>

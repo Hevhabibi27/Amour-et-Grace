@@ -878,6 +878,7 @@
 
     /* --- Party Platters Section --- */
     .party-platters-section {
+        margin-top: -100px;
         padding-top: 50px;
         padding-bottom: 50px;
     }

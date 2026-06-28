@@ -112,6 +112,11 @@ document.addEventListener('DOMContentLoaded', () => {
                 window.resumeHomeCarousel();
             }
 
+            // Re-initialize menu grids when returning to menu
+            if (page === 'menu' && typeof initMenuGrids === 'function') {
+                initMenuGrids();
+            }
+
             // Explicitly render Turnstile for the reservations page when restored from cache
             if (page === 'reservations' && window.turnstile) {
                 const turnstileContainer = document.querySelector('.cf-turnstile');
@@ -174,6 +179,11 @@ document.addEventListener('DOMContentLoaded', () => {
                     if (typeof initHomeCarousel === 'function') initHomeCarousel();
                     if (typeof initTestimonialsCarousel === 'function') initTestimonialsCarousel();
                     if (typeof initGalleryLightbox === 'function') initGalleryLightbox();
+                }
+
+                // Initialize menu grids on first load
+                if (page === 'menu' && typeof initMenuGrids === 'function') {
+                    initMenuGrids();
                 }
 
                 // Explicitly render Turnstile for the reservations page

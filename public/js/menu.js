@@ -90,3 +90,11 @@ document.addEventListener('click', function (e) {
         updateGrid(section);
     }
 });
+
+// ── Initialize all grids (called by router after page load) ──
+function initMenuGrids() {
+    document.querySelectorAll('.menu-showcase-grid').forEach(function (grid) {
+        var section = grid.closest('.container');
+        if (section) updateGrid(section);
+    });
+}

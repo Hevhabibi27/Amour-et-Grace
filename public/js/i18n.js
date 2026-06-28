@@ -157,6 +157,100 @@ const i18n = (() => {
         'menu.item.tonkotsu.name': { en: 'TONKOTSU RAMEN', ja: 'とんこつラーメン' },
         'menu.item.tonkotsu.desc': { en: 'Rich pork broth with chashu, egg, and spring onion.', ja: 'チャーシュー、卵、ネギ入りの濃厚な豚骨スープ。' },
         'menu.item.tonkotsu.desc2': { en: 'Rich pork broth with chashu, egg, and spring onions.', ja: 'チャーシュー、卵、ネギ入りの濃厚な豚骨スープ。' },
+
+        // Japanese Food Section
+        'menu.jp.karaage.name': { en: 'KARAAGE', ja: '唐揚げ' },
+        'menu.jp.karaage.desc': {
+            en: 'Japanese-style fried chicken at its finest — bite-sized pieces marinated in soy sauce, ginger, and garlic, then fried to a perfect golden crisp outside while staying incredibly juicy inside. Light, flavorful, and dangerously moreish.',
+            ja: '最高の日本風フライドチキン — 醤油、生姜、にんにくの特製ダレに漬け込んだ一口サイズの鶏肉を、外はカリッと黄金色に、中は驚くほどジューシーに揚げました。軽くて風味豊かで、やみつきになる美味しさです。'
+        },
+        'menu.jp.yakisoba.name': { en: 'YAKISOBA', ja: '焼きそば' },
+        'menu.jp.yakisoba.desc': {
+            en: 'Classic Japanese street food — springy stir-fried noodles tossed with tender pork, fresh cabbage, and vegetables in a rich, smoky yakisoba sauce, finished with a sprinkle of bonito flakes and pickled ginger. Simple, satisfying, and full of umami.',
+            ja: '昔ながらの日本の屋台の味 — もちもちの炒め麺を、柔らかい豚肉、新鮮なキャベツ、野菜と一緒に、濃厚で香ばしい焼きそばソースで絡めました。仕上げにかつお節と紅しょうがをトッピング。シンプルで満足感のある、旨味たっぷりの一皿です。'
+        },
+        'menu.jp.yakisoba_udon.name': { en: 'YAKISOBA UDON', ja: '焼きうどん' },
+        'menu.jp.yakisoba_udon.desc': {
+            en: 'The best of both worlds — thick, chewy udon noodles stir-fried yakisoba style with savory sauce, tender meat, and crisp vegetables. Hearty, bold, and deeply satisfying in every thick, saucy bite.',
+            ja: '2つの良いとこ取り — 太くてもちもちのうどんを、焼きそば風に香ばしいソース、柔らかいお肉、シャキシャキの野菜と一緒に炒めました。ボリューム満点でパンチが効いており、一口ごとに深い満足感を味わえます。'
+        },
+        'menu.jp.nikuman.name': { en: 'NIKUMAN', ja: '肉まん' },
+        'menu.jp.nikuman.desc': {
+            en: 'Soft, pillowy steamed buns filled with a savory seasoned pork filling — warm, fluffy, and comforting. A beloved Japanese street snack that melts in your mouth with every bite.',
+            ja: 'ふかふかの蒸しパンの中に、旨味たっぷりの味付け豚肉が詰まった一品 — 温かく、ふわふわで、ホッとする味わい。一口ごとに口の中でとろける、日本で愛される定番のスナックです。'
+        },
+        'menu.jp.yasai_itame.name': { en: 'YASAI ITAME', ja: '野菜炒め' },
+        'menu.jp.yasai_itame.desc': {
+            en: 'A light yet deeply flavorful Japanese stir-fry — a vibrant mix of fresh seasonal vegetables sautéed in a savory soy and sesame sauce. Clean, healthy, and bursting with natural goodness.',
+            ja: '軽やかでありながら深い味わいの日本の炒め物 — 新鮮な季節の野菜を、香ばしい醤油とごま油のソースで色鮮やかに炒めました。さっぱりとして健康的で、素材の旨味が詰まっています。'
+        },
+        'menu.jp.tonjiru.name': { en: 'TONJIRU', ja: '豚汁' },
+        'menu.jp.tonjiru.desc': {
+            en: 'A deeply nourishing Japanese country-style soup — tender pork and hearty root vegetables like daikon, burdock, and carrots slow-simmered in a rich miso broth. Earthy, warming, and soul-satisfying in every bowl.',
+            ja: '深い栄養が染み渡る、日本の田舎風スープ — 柔らかい豚肉と、大根、ごぼう、にんじんなどの根菜を、濃厚な味噌のスープでじっくり煮込みました。素朴で温かく、心を満たす一杯です。'
+        },
+        'menu.jp.misoshiro.name': { en: 'MISOSHIRO', ja: '味噌汁' },
+        'menu.jp.misoshiro.desc': {
+            en: "Japan's most beloved daily ritual — a delicate, umami-rich broth of fermented soybean paste with silken tofu, wakame seaweed, and green onions. Simple, clean, and quietly comforting with every warm sip.",
+            ja: '日本で最も愛されている毎日の習慣 — 繊細で旨味豊かな発酵大豆ペースト（味噌）のスープに、絹ごし豆腐、わかめ、青ネギを合わせました。シンプルで澄んだ、温かい一口ごとに静かな安らぎを与えてくれます。'
+        },
+        'menu.jp.corn_soup.name': { en: 'CORN SOUP', ja: 'コーンスープ' },
+        'menu.jp.corn_soup.desc': {
+            en: 'Velvety smooth and naturally sweet — a creamy, golden corn bisque made from fresh sweet corn kernels blended to perfection. Light, silky, and gently comforting — a crowd-pleaser for every age.',
+            ja: 'ベルベットのようになめらかで、自然な甘み — 新鮮なスイートコーンを完璧にブレンドして作られた、クリーミーで黄金色のコーンビスク。軽やかで絹のように滑らかで、優しくホッとする味わいは、あらゆる年齢層に人気です。'
+        },
+        'menu.jp.potato_soup.name': { en: 'POTATO SOUP', ja: 'ポテトスープ' },
+        'menu.jp.potato_soup.desc': {
+            en: 'Thick, creamy, and wonderfully comforting — tender Japanese potatoes slow-cooked and blended into a smooth, buttery soup with a subtle hint of seasoning. Rich, wholesome, and deeply satisfying.',
+            ja: '濃厚でクリーミー、そして驚くほどホッとする味わい — 柔らかい日本のじゃがいもをじっくり煮込み、バターのような滑らかなスープにブレンドし、ほのかな味付けで仕上げました。コクがあり、健康的で、深い満足感が得られます。'
+        },
+        'menu.jp.wakame_soup.name': { en: 'WAKAME SOUP', ja: 'わかめスープ' },
+        'menu.jp.wakame_soup.desc': {
+            en: 'A light, delicate broth featuring tender ribbons of wakame seaweed in a clean, umami-kissed dashi base. Subtle, nourishing, and refreshingly simple — a gentle start or finish to any meal.',
+            ja: '澄んだ旨味のある出汁をベースに、柔らかいわかめをたっぷり加えた、軽やかで繊細なスープ。控えめで栄養価が高く、さっぱりとシンプルな味わいは、食事の始まりや締めくくりにぴったりです。'
+        },
+        'menu.jp.tsukemono.name': { en: 'TSUKEMONO', ja: '漬物' },
+        'menu.jp.tsukemono.desc': {
+            en: 'A refreshing assortment of traditional Japanese pickled vegetables — crisp, tangy, and lightly seasoned. The perfect palate cleanser that adds a bright, zesty contrast to any dish on your table.',
+            ja: '伝統的な日本の漬物の爽やかな盛り合わせ — シャキシャキとして酸味があり、軽めの味付け。食卓のどんな料理にも鮮やかなコントラストを与える、完璧な箸休めです。'
+        },
+        'menu.jp.chawanmushi.name': { en: 'CHAWANMUSHI', ja: '茶碗蒸し' },
+        'menu.jp.chawanmushi.desc': {
+            en: "A silky, savory Japanese steamed egg custard hiding treasures within — tender chicken, shrimp, and mushrooms gently set in a delicate dashi-infused egg. Smooth, elegant, and unlike anything you've ever tasted.",
+            ja: '絹のようになめらかで風味豊かな日本の茶碗蒸し。その中には宝物が隠れています — 繊細な出汁が香る卵液に、柔らかい鶏肉、エビ、キノコを優しく閉じ込めました。滑らかで上品、他では味わえない一品です。'
+        },
+
+        // Bento Packs Section
+        'menu.bento.desc1': {
+            en: 'Bento packs for delivery only within the vicinity.',
+            ja: '近隣への配達専用弁当パック。'
+        },
+        'menu.bento.desc2': {
+            en: 'Includes fresh salad or vegetables.',
+            ja: '新鮮なサラダまたは野菜付き。'
+        },
+        'menu.bento.desc3': {
+            en: 'Available daily from 8:00 AM – 2:00 AM.',
+            ja: '毎日午前8時から午前2時までご利用いただけます。'
+        },
+        'menu.bento.porksilog.name': { en: 'Porksilog', ja: 'ポークシログ' },
+        'menu.bento.porksilog.desc': { en: 'Chahan, grilled pork chop, fried egg, fresh salad', ja: 'チャーハン、豚のグリル、目玉焼き、新鮮なサラダ' },
+        'menu.bento.cornsilog.name': { en: 'Cornsilog', ja: 'コーンシログ' },
+        'menu.bento.cornsilog.desc': { en: 'Chahan, corned beef, fried egg, fresh salad', ja: 'チャーハン、コンビーフ、目玉焼き、新鮮なサラダ' },
+        'menu.bento.bangsilog.name': { en: 'Bangsilog', ja: 'バンシログ' },
+        'menu.bento.bangsilog.desc': { en: 'Chahan, fried bangus, fried egg, fresh salad', ja: 'チャーハン、バンゴスのフライ、目玉焼き、新鮮なサラダ' },
+        'menu.bento.tinsilog.name': { en: 'Tinsilog', ja: 'ティンシログ' },
+        'menu.bento.tinsilog.desc': { en: 'Chahan, smoked fish, fried egg, fresh salad', ja: 'チャーハン、燻製魚、目玉焼き、新鮮なサラダ' },
+        'menu.bento.longsilog.name': { en: 'Longsilog', ja: 'ロンシログ' },
+        'menu.bento.longsilog.desc': { en: 'Chahan, longganisa, fried egg, fresh salad', ja: 'チャーハン、ロンガニーサ（ソーセージ）、目玉焼き、新鮮なサラダ' },
+        'menu.bento.bursilog.name': { en: 'Bursilog', ja: 'バーシログ' },
+        'menu.bento.bursilog.desc': { en: 'Chahan, pork burger, fried egg, fresh salad', ja: 'チャーハン、ポークバーガー、目玉焼き、新鮮なサラダ' },
+        'menu.bento.lumpsilog.name': { en: 'Lumpsilog', ja: 'ルンプシログ' },
+        'menu.bento.lumpsilog.desc': { en: 'Chahan, lumpia, fried egg, fresh salad', ja: 'チャーハン、ルンピア（春巻き）、目玉焼き、新鮮なサラダ' },
+        'menu.bento.emsilog.name': { en: 'Emsilog', ja: 'エムシログ' },
+        'menu.bento.emsilog.desc': { en: 'Chahan, embutido, fried egg, fresh salad', ja: 'チャーハン、エンブティード（ミートローフ）、目玉焼き、新鮮なサラダ' },
+
+
         'menu.item.chefs': { en: "Chef's Recommend Menu", ja: 'シェフのおすすめ' },
         'menu.item.chefs.rec': { en: "Chef's Recommendation", ja: 'シェフのおすすめ' },
         'menu.item.spicymiso.name': { en: 'SPICY MISO RAMEN', ja: '辛味噌ラーメン' },
@@ -304,6 +398,8 @@ const i18n = (() => {
             en: 'WE HOST INTIMATE EVENINGS, LIVE PERFORMANCES, AND CELEBRATIONS THAT LINGER IN MEMORY LONG AFTER THE NIGHT HAS ENDED.',
             ja: '私たちは親密な夜、ライブパフォーマンス、そして夜が終わった後も長く記憶に残るお祝いを開催しています。'
         },
+        'events.past.featured.title': { en: 'LIVE MUSIC', ja: 'ライブミュージック' },
+        'events.past.list.title': { en: 'KARAOKE', ja: 'カラオケ' },
 
         // ═══════════════════════════════════════
         // RESERVATIONS PAGE

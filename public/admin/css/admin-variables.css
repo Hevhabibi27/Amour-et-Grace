@@ -1,25 +1,58 @@
 /* ============================
    Admin Dashboard — Design Tokens
    ============================ */
+
+@font-face {
+  font-family: 'Poppins';
+  src: url('../../assets/fonts/Poppins-Medium.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Poppins';
+  src: url('../../assets/fonts/Poppins-Medium.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Poppins';
+  src: url('../../assets/fonts/Poppins-Bold.ttf') format('truetype');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Poppins';
+  src: url('../../assets/fonts/Poppins-Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
 :root {
-  /* Sidebar */
-  --admin-sidebar-bg: #1a1a2e;
-  --admin-sidebar-hover: #16213e;
-  --admin-sidebar-active: #0f3460;
+/* Sidebar */
+  --admin-sidebar-bg: #111111;
+  --admin-sidebar-hover: #1f1f1f;
+  --admin-sidebar-active: rgba(230, 0, 0, 0.1);
   --admin-sidebar-text: #a0a0b8;
   --admin-sidebar-text-active: #ffffff;
   --admin-sidebar-width: 260px;
 
   /* Main area */
-  --admin-bg: #f0f2f5;
+  --admin-bg: #f8f9fa;
   --admin-card-bg: #ffffff;
-  --admin-text: #1a1a2e;
+  --admin-text: #1a1a1a;
   --admin-text-muted: #6b7280;
 
-  /* Brand accent (gold from restaurant) */
-  --admin-accent: #8B6914;
-  --admin-accent-light: #E8D5A3;
-  --admin-accent-hover: #a07818;
+  /* Brand accent (red and gold from website) */
+  --admin-accent: #e60000;
+  --admin-accent-light: #fbe5e5;
+  --admin-accent-hover: #c90022;
+  --admin-gold: #d4af37;
 
   /* Status colors */
   --admin-success: #059669;
@@ -34,11 +67,11 @@
   /* Spacing */
   --admin-radius: 8px;
   --admin-radius-lg: 12px;
-  --admin-shadow: 0 1px 3px rgba(0, 0, 0, 0.1), 0 1px 2px rgba(0, 0, 0, 0.06);
-  --admin-shadow-lg: 0 4px 12px rgba(0, 0, 0, 0.1);
+  --admin-shadow: 0 1px 3px rgba(0, 0, 0, 0.05), 0 1px 2px rgba(0, 0, 0, 0.03);
+  --admin-shadow-lg: 0 10px 25px rgba(0, 0, 0, 0.05);
 
   /* Typography */
-  --admin-font: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --admin-font: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
   --admin-font-mono: 'Fira Code', 'Consolas', monospace;
 
   /* Login Page Specific (Dark Theme) */
