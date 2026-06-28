@@ -17,6 +17,7 @@ body {
   color: var(--admin-text);
   min-height: 100vh;
   display: flex;
+  overflow-x: hidden; /* Prevent horizontal swiping */
 }
 
 /* ── Sidebar ── */
@@ -149,6 +150,7 @@ body {
   margin-left: var(--admin-sidebar-width);
   flex: 1;
   min-height: 100vh;
+  min-width: 0; /* Prevent flex children from breaking out */
 }
 
 .admin-topbar {

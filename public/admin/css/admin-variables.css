@@ -33,8 +33,9 @@
   font-style: normal;
   font-display: swap;
 }
+
 :root {
-/* Sidebar */
+  /* Sidebar */
   --admin-sidebar-bg: #111111;
   --admin-sidebar-hover: #1f1f1f;
   --admin-sidebar-active: rgba(230, 0, 0, 0.1);
