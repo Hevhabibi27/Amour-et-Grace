@@ -40,4 +40,19 @@
   /* Typography */
   --admin-font: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
   --admin-font-mono: 'Fira Code', 'Consolas', monospace;
+
+  /* Login Page Specific (Dark Theme) */
+  --login-bg: #0a0000;
+  --login-card-bg: rgba(15, 10, 10, 0.7);
+  --login-card-border: rgba(255, 50, 50, 0.2);
+  --login-card-glow: rgba(255, 0, 0, 0.15);
+  --login-text-primary: #ffffff;
+  --login-text-secondary: #aaaaaa;
+  --login-input-bg: rgba(0, 0, 0, 0.5);
+  --login-input-border: rgba(255, 255, 255, 0.1);
+  --login-input-focus: rgba(255, 50, 50, 0.5);
+  --login-accent: #ff2a2a;
+  --login-accent-hover: #ff4a4a;
+  --login-danger: #ff4d4d;
+  --login-danger-bg: rgba(255, 77, 77, 0.1);
 }
