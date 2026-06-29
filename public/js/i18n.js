@@ -336,8 +336,89 @@ const i18n = (() => {
         },
 
         // Platter items
-        'menu.platter.karekare.title': { en: 'KARE-KARE\nPLATTER', ja: 'カレカレ\nプラッター' },
-        'menu.platter.karekare.desc': { en: 'a traditional Filipino stew known for its rich, savory-sweet peanut sauce', ja: '濃厚で甘辛いピーナッツソースで知られるフィリピンの伝統的なシチュー' },
+        'menu.platter.kare_kare.name': { en: 'KARE-KARE PLATTER', ja: 'カレカレ プラッター' },
+        'menu.platter.kare_kare.desc': { en: 'A showstopping centerpiece for the table — a generous pot of rich, golden peanut stew slow-cooked with tender oxtail and fresh vegetables, served with bagoong on the side. Creamy, nutty, and deeply satisfying, this classic Filipino favorite is best enjoyed together.', ja: '食卓を彩る主役 — 柔らかい牛テールと新鮮な野菜をじっくり煮込んだ、濃厚で黄金色のピーナッツシチューのたっぷり鍋。バゴーンを添えて。クリーミーでコクがあり、深く満足できるフィリピンの定番料理を皆様でお楽しみください。' },
+        'menu.platter.pork_sinigang.name': { en: 'PORK SINIGANG PLATTER', ja: 'ポークシニガン プラッター' },
+        'menu.platter.pork_sinigang.desc': { en: 'A big, steaming bowl of soul-warming tamarind broth packed with tender pork and an abundance of fresh vegetables — tangy, savory, and comforting. A timeless Filipino classic that brings everyone around the table.', ja: '心温まるタマリンドスープに、柔らかい豚肉とたっぷりの新鮮な野菜を詰め込んだ、湯気の立つ大きなどんぶり — 酸味が効いて風味豊かでホッとする味わい。皆様を食卓に集める、時代を超えたフィリピンの定番料理です。' },
+        'menu.platter.spicy_adobo.name': { en: 'SPICY ADOBO PLATTER', ja: 'スパイシーアドボ プラッター' },
+        'menu.platter.spicy_adobo.desc': { en: 'A generous sharing plate of the Philippines\' most iconic dish — succulent pork or chicken slow-simmered in vinegar, soy sauce, garlic, and bay leaf until deeply tender and irresistibly flavorful. A true taste of home, made to be shared.', ja: 'フィリピンを代表する料理のたっぷりシェアプレート — ジューシーな豚肉または鶏肉を、酢、醤油、にんにく、ローリエで、驚くほど柔らかく魅力的な風味になるまでじっくり煮込みました。みんなで分け合うための、本物の家庭の味。' },
+        'menu.platter.pata_tim.name': { en: 'PATA TIM PLATTER', ja: 'パタティム プラッター' },
+        'menu.platter.pata_tim.desc': { en: 'A feast-worthy whole pork leg slow-braised for hours in a sweet and savory soy sauce glaze with star anise and mushrooms until fall-off-the-bone tender. Rich, melt-in-your-mouth, and absolutely indulgent.', ja: 'ごちそうにふさわしい豚の骨付きもも肉丸ごとを、八角とマッシュルームを使った甘辛い醤油ダレで、骨からホロリと崩れるほど何時間もじっくり煮込みました。濃厚で口の中でとろける、絶対的に贅沢な一品です。' },
+        'menu.platter.bicol_express.name': { en: 'BICOL EXPRESS PLATTER', ja: 'ビコルエクスプレス プラッター' },
+        'menu.platter.bicol_express.desc': { en: 'Turn up the heat with this fiery, creamy crowd-pleaser — tender pork generously cooked in rich coconut milk with chilies and shrimp paste, served in a big, shareable portion that keeps everyone reaching for more. Spicy, creamy, and addictive.', ja: 'このスパイシーでクリーミーな人気料理で熱気を高めましょう — 柔らかい豚肉を濃厚なココナッツミルク、唐辛子、エビペーストでたっぷりと煮込み、誰もがもっと食べたくなるような大きなシェアサイズで提供します。スパイシーでクリーミー、そしてやみつきになります。' },
+        'menu.platter.lumpia.name': { en: 'LUMPIA PLATTER', ja: 'ルンピア プラッター' },
+        'menu.platter.lumpia.desc': { en: 'A towering platter of crispy, golden spring rolls packed with seasoned minced pork and vegetables — crunchy, savory, and impossible to stop at just one. The ultimate crowd-pleasing Filipino snack, served fresh and hot.', ja: '味付けした豚ひき肉と野菜が詰まった、カリカリで黄金色の春巻きの山盛りプラッター — サクサクで風味豊かで、一つでは止められません。出来立て熱々で提供される、究極に人気のフィリピンスナックです。' },
+        'menu.platter.empanada.name': { en: 'EMPANADA PLATTER', ja: 'エンパナーダ プラッター' },
+        'menu.platter.empanada.desc': { en: 'A beautiful spread of flaky, golden pastries stuffed with savory seasoned meat and vegetables — crispy on the outside, warm and hearty on the inside. A beloved Filipino comfort snack best enjoyed with good company.', ja: '香ばしく味付けしたお肉と野菜を詰めた、サクサクで黄金色のペストリーの美しい盛り合わせ — 外はカリッと、中は温かくてボリューム満点。仲間と一緒に楽しむのに最適な、愛されるフィリピンのコンフォートスナックです。' },
+        'menu.platter.chopsuey.name': { en: 'CHOPSUEY PLATTER', ja: 'チャプスイ プラッター' },
+        'menu.platter.chopsuey.desc': { en: 'A vibrant, colorful platter of fresh garden vegetables stir-fried to perfection with tender meat in a light, savory sauce — healthy, delicious, and beautifully presented for the whole table to enjoy.', ja: '新鮮なガーデン野菜を柔らかいお肉とともに軽くて風味豊かなソースで完璧に炒めた、鮮やかでカラフルなプラッター — ヘルシーで美味しく、テーブル全体で楽しめるように美しく盛り付けられています。' },
+        'menu.platter.pakbet.name': { en: 'PAKBET PLATTER', ja: 'パクベット プラッター' },
+        'menu.platter.pakbet.desc': { en: 'A towering platter of crispy, golden spring rolls packed with seasoned minced pork and vegetables — crunchy, savory, and impossible to stop at just one. The ultimate crowd-pleasing Filipino snack, served fresh and hot.', ja: '味付けした豚ひき肉と野菜が詰まった、カリカリで黄金色の春巻きの山盛りプラッター — サクサクで風味豊かで、一つでは止められません。出来立て熱々で提供される、究極に人気のフィリピンスナックです。' },
+        'menu.platter.laing.name': { en: 'LAING PLATTER', ja: 'ライン プラッター' },
+        'menu.platter.laing.desc': { en: 'A rich, creamy, and indulgent sharing dish — dried taro leaves slow-simmered in coconut milk with chilies and shrimp paste, served in a generous portion that keeps the whole table warm and satisfied. Smoky, spicy, and deeply comforting.', ja: '濃厚でクリーミー、そして贅沢なシェア料理 — 乾燥タロイモの葉をココナッツミルク、唐辛子、エビペーストでじっくり煮込み、テーブル全体を温かく満足させるたっぷりの量で提供します。スモーキーでスパイシーで、深くホッとする味わいです。' },
+        'menu.platter.menudo.name': { en: 'MENUDO PLATTER', ja: 'メヌード プラッター' },
+        'menu.platter.menudo.desc': { en: 'A hearty, tomato-based sharing feast — diced pork, liver, potatoes, and carrots slow-cooked in a savory, slightly sweet sauce and served in a generous platter that feels just like a home-cooked family meal.', ja: 'ボリューム満点のトマトベースのシェアのごちそう — 角切りの豚肉、レバー、ジャガイモ、ニンジンを、風味豊かな少し甘めのソースでじっくり煮込み、家庭で作る家族の食事のようなたっぷりのプラッターで提供します。' },
+        'menu.platter.pork_nilaga.name': { en: 'PORK NILAGA PLATTER', ja: 'ポークニラガ プラッター' },
+        'menu.platter.pork_nilaga.desc': { en: 'A big, comforting pot of clear pork broth with tender boiled pork, potatoes, and cabbage — light, clean, and nourishing. The ultimate Filipino comfort food, served in a generous portion meant to be shared and savored slowly', ja: '柔らかく煮た豚肉、ジャガイモ、キャベツが入った、透き通った豚骨スープの大きくてホッとする鍋 — 軽くてすっきりとして栄養満点。ゆっくりと味わい、シェアするためのたっぷりの量で提供される、究極のフィリピンのコンフォートフード。' },
+        'menu.platter.lechon_kawali.name': { en: 'LECHON KAWALI PLATTER', ja: 'レチョンカワリ プラッター' },
+        'menu.platter.lechon_kawali.desc': { en: 'A glorious sharing platter of crispy, crackling deep-fried pork belly — shatteringly crunchy on the outside, juicy and tender within. Served in generous portions with dipping sauce on the side. Sinfully good and worth every bite.', ja: 'カリカリに揚げた豚バラ肉の素晴らしいシェアプラッター — 外は驚くほどサクサク、中はジューシーで柔らか。たっぷりの量で、ディッピングソースを添えて提供されます。罪深いほど美味しく、一口一口に価値があります。' },
+        'menu.platter.bihon.name': { en: 'BIHON PLATTER', ja: 'ビーフン プラッター' },
+        'menu.platter.bihon.desc': { en: 'A generous sharing plate of silky rice noodles stir-fried with tender pork, shrimp, and fresh vegetables in a savory soy-based sauce — light yet satisfying, and a guaranteed crowd favorite at any table.', ja: '滑らかなライスヌードルを柔らかい豚肉、エビ、新鮮な野菜とともに香ばしい醤油ベースのソースで炒めた、たっぷりのシェアプレート — 軽いのに満足感があり、どんなテーブルでも確実に人気を集める一品です。' },
+        'menu.platter.lechon_paksiw.name': { en: 'LECHON PAKSIW PLATTER', ja: 'レチョンパクシウ プラッター' },
+        'menu.platter.lechon_paksiw.desc': { en: 'A rich, tangy, and deeply flavorful sharing dish — slow-cooked pork in vinegar, liver sauce, and spices until meltingly tender and packed with complex, bold flavor. A brilliant way to celebrate Filipino culinary creativity together.', ja: '濃厚で酸味が効き、深く風味豊かなシェア料理 — 豚肉を酢、レバーソース、スパイスでとろけるほど柔らかくなるまでじっくり煮込み、複雑で大胆な風味が詰まっています。フィリピンの料理の創造性を一緒に祝う素晴らしい一品です。' },
+        'menu.platter.igado.name': { en: 'IGADO PLATTER', ja: 'イガド プラッター' },
+        'menu.platter.igado.desc': { en: 'A bold and hearty Ilocano classic served platter-style — tender pork tenderloin and liver sautéed with vinegar, soy sauce, and bell peppers, delivering a tangy, savory punch in every bite. Best enjoyed with steaming white rice all around.', ja: '大胆でボリューム満点のイロカノの定番料理をプラッタースタイルで — 柔らかい豚ヒレ肉とレバーを酢、醤油、ピーマンで炒め、一口ごとに酸味と風味のパンチをお届けします。湯気の立つ白ご飯と一緒に楽しむのが最高です。' },
+        'menu.platter.chicken_inasal.name': { en: 'CHICKEN INASAL PLATTER', ja: 'チキンイナサル プラッター' },
+        'menu.platter.chicken_inasal.desc': { en: 'A juicy grilled chicken marinated in calamansi, lemongrass, and annatto — charred to perfection and bursting with Bacolod-style flavor. Generous portions made for sharing, dipping, and celebrating.', ja: 'カラマンシー、レモングラス、アナトーでマリネしたジューシーなグリルチキン — 完璧に焦げ目がつき、バコロドスタイルの風味が弾けます。シェアしたり、ディップしたり、お祝いしたりするためのたっぷりの量です。' },
+        'menu.platter.yaki_udon.name': { en: 'YAKI UDON', ja: '焼きうどん' },
+        'menu.platter.yaki_udon.desc': { en: 'Thick, chewy udon noodles stir-fried in a rich savory soy-based sauce with tender meat and crisp vegetables — bold, hearty, and satisfyingly filling with every silky, saucy bite.', ja: '太くてもちもちのうどんを、柔らかいお肉とシャキシャキの野菜とともに濃厚で香ばしい醤油ベースのソースで炒めました — 大胆でボリュームがあり、滑らかでソースたっぷりの一口ごとに大満足の食べ応えです。' },
+        'menu.platter.yakisoba.name': { en: 'YAKISOBA', ja: '焼きそば' },
+        'menu.platter.yakisoba.desc': { en: 'Japan\'s beloved street noodle — springy wheat noodles wok-tossed with pork, cabbage, and vegetables in a smoky, tangy yakisoba sauce, crowned with bonito flakes and pickled ginger for an authentic umami finish.', ja: '日本で愛される屋台の麺 — もちもちの小麦麺を豚肉、キャベツ、野菜とともにスモーキーで酸味のある焼きそばソースで炒め、かつお節と紅しょうがをのせて本格的な旨味に仕上げました。' },
+        'menu.platter.maki_sushi.name': { en: 'MAKI SUSHI', ja: '巻き寿司' },
+        'menu.platter.maki_sushi.desc': { en: 'Perfectly rolled sushi wrapped in a sheet of toasted nori — fresh, vibrant fillings of seasoned rice, vegetables, and your choice of protein, sliced into elegant bite-sized rounds. Clean, fresh, and beautiful on every plate.', ja: 'パリッとした海苔で巻かれた完璧な巻き寿司 — 酢飯、野菜、お好みの具材の新鮮で鮮やかなフィリングを、上品な一口サイズにスライス。どのお皿でもすっきりと新鮮で美しい一品です。' },
+        'menu.platter.chicken_karaage.name': { en: 'CHICKEN KARAAGE', ja: '鶏のから揚げ' },
+        'menu.platter.chicken_karaage.desc': { en: 'Irresistibly crispy Japanese fried chicken — bite-sized pieces marinated in a savory blend of soy sauce, ginger, and garlic, fried to a perfect golden crunch outside while staying tender and juicy inside. Light, bold, and addictive.', ja: 'たまらなくサクサクの日本のフライドチキン — 醤油、生姜、にんにくの風味豊かなブレンドでマリネした一口大の鶏肉を、外は完璧な黄金色のクランチに、中は柔らかくジューシーに揚げました。軽く、大胆で、やみつきになります。' },
+        'menu.platter.pork_curry.name': { en: 'PORK CURRY', ja: 'ポークカレー' },
+        'menu.platter.pork_curry.desc': { en: 'A deeply warming Japanese comfort dish — tender pork slow-simmered in a rich, mildly spiced curry sauce with potatoes and carrots, served over steamed rice. Thick, velvety, and packed with cozy, soul-warming flavor.', ja: '心から温まる日本のコンフォートディッシュ — 柔らかい豚肉をジャガイモやニンジンとともに、マイルドなスパイスの効いた濃厚なカレーソースでじっくり煮込み、ご飯にかけました。とろみがあり、滑らかで、心温まる風味が詰まっています。' },
+        'menu.platter.inari_sushi.name': { en: 'INARI SUSHI', ja: 'いなり寿司' },
+        'menu.platter.inari_sushi.desc': { en: 'Delicate, golden tofu pockets sweetly seasoned and generously stuffed with lightly seasoned sushi rice — soft, subtly sweet, and beautifully simple. A gentle, crowd-pleasing bite of Japanese tradition.', ja: '繊細で黄金色の豆腐のポケット（油揚げ）を甘く味付けし、薄味の酢飯をたっぷりと詰めました — 柔らかく、ほのかに甘く、美しくシンプル。日本の伝統の優しく、誰もが喜ぶ一口です。' },
+
+        // ═══════════════════════════════════════
+        // DRINKS SECTION
+        // ═══════════════════════════════════════
+        'menu.drinks.title': { en: 'Drinks Section', ja: 'ドリンクセクション' },
+        'menu.drinks.moet.name': { en: 'MOËT & CHANDON IMPÉRIAL BRUT', ja: 'モエ・エ・シャンドン アンペリアル ブリュット' },
+        'menu.drinks.moet.desc': { en: 'Crisp, fresh, and celebratory in every sip. Alcohol: 12% ABV. Perfect for toasts and special celebrations.', ja: '一口ごとに爽やかでフレッシュ、そしてお祝いの気分に。アルコール度数：12%。乾杯や特別なお祝いに最適です。' },
+        
+        'menu.drinks.hibiki.name': { en: 'HIBIKI JAPANESE HARMONY', ja: '響 ジャパニーズハーモニー' },
+        'menu.drinks.hibiki.desc': { en: 'A true expression of Japanese harmony in a glass. Alcohol: 43% ABV. Best enjoyed neat or on the rocks.', ja: 'グラスの中の日本の調和の真の表現。アルコール度数：43%。ストレートまたはオンザロックで楽しむのが最高です。' },
+        
+        'menu.drinks.kirin.name': { en: 'KIRIN GREEN', ja: 'キリングリーン' },
+        'menu.drinks.kirin.desc': { en: 'Perfect enjoyed straight, on the rocks, or mixed with your favorite juice or soda. Great for first-time spirit drinkers.', ja: 'ストレート、オンザロック、またはお好みのジュースやソーダと混ぜて楽しむのに最適です。初めてスピリッツを飲む方にもおすすめです。' },
+        
+        'menu.drinks.hennessy.name': { en: 'HENNESSY V.S.O.P COGNAC', ja: 'ヘネシー V.S.O.P コニャック' },
+        'menu.drinks.hennessy.desc': { en: 'One of the world\'s most recognized and beloved cognacs, best savored neat, with ice, or in classic cocktails.', ja: '世界で最も認知され愛されているコニャックの一つ。ストレート、氷を入れて、またはクラシックなカクテルで味わうのが最高です。' },
+        
+        'menu.drinks.lereveil.name': { en: 'LE RÉVEIL CABERNET SAUVIGNON', ja: 'ル・レヴェイユ カベルネ・ソーヴィニヨン' },
+        'menu.drinks.lereveil.desc': { en: 'Crisp, fresh, and celebratory in every sip. Alcohol: 12% ABV. Perfect for toasts and special celebrations.', ja: '一口ごとに爽やかでフレッシュ、そしてお祝いの気分に。アルコール度数：12%。乾杯や特別なお祝いに最適です。' },
+        
+        'menu.drinks.suntory_vsop.name': { en: 'V.S.O.P SUNTORY BRANDY', ja: 'V.S.O.P サントリー ブランデー' },
+        'menu.drinks.suntory_vsop.desc': { en: 'Rich with notes of caramel, dried fruit, vanilla, and a gentle woody finish, it is approachable yet sophisticated.', ja: 'キャラメル、ドライフルーツ、バニラ、そして穏やかなウッディなフィニッシュの豊かな香り。親しみやすく、かつ洗練されています。' },
+        
+        'menu.drinks.kahlua.name': { en: 'KAHLÚA COFFEE LIQUEUR', ja: 'カルーア コーヒーリキュール' },
+        'menu.drinks.kahlua.desc': { en: 'Perfect on its own over ice, mixed with milk, or as the star ingredient in classic cocktails like an Espresso Martini or White Russian.', ja: '氷を入れてそのままでも、ミルクと混ぜても、またはエスプレッソマティーニやホワイトルシアンなどのクラシックカクテルの主役としても最適です。' },
+        
+        'menu.drinks.pompador.name': { en: 'POMPA D\'OR MUSCAT SPARKLING WINE', ja: 'ポンパドール マスカット スパークリングワイン' },
+        'menu.drinks.pompador.desc': { en: 'Refreshing, easy to drink, and a crowd favorite for those who love a sweeter sparkle.', ja: '爽やかで飲みやすく、甘めのスパークリングが好きな方に人気の定番です。' },
+        
+        'menu.drinks.pink_lady.name': { en: 'PINK LADY SPARKLING PEAR CIDER', ja: 'ピンクレディー スパークリング ペアシードル' },
+        'menu.drinks.pink_lady.desc': { en: 'A perfect choice for those who prefer something lighter, sweeter, and wonderfully refreshing.', ja: '軽くて甘く、そして素晴らしく爽やかなものを好む方に最適な選択です。' },
+        
+        'menu.drinks.tokyo_highball.name': { en: 'TOKYO HIGHBALL', ja: '東京ハイボール' },
+        'menu.drinks.tokyo_highball.desc': { en: 'Easy to drink, endlessly refreshing, and the perfect companion for good food and great company.', ja: '飲みやすく、どこまでも爽やかで、美味しい食事と素晴らしい仲間にぴったりの一杯です。' },
+        
+        'menu.drinks.asahi_syrup.name': { en: 'ASAHI SYRUP', ja: 'アサヒ シロップ' },
+        'menu.drinks.asahi_syrup.desc': { en: 'Non-alcoholic. A great choice for those who prefer a lighter, customizable beverage.', ja: 'ノンアルコール。軽めでカスタマイズ可能な飲み物を好む方に最適な選択です。' },
 
         // ═══════════════════════════════════════
         // EVENTS PAGE
@@ -391,7 +472,7 @@ const i18n = (() => {
         // Past Events
         'events.past.title': { en: 'PAST EVENTS', ja: '過去のイベント' },
         'events.past.featured.desc': {
-            en: 'We host intimate evenings, live performances, and celebrations that linger in memory long after the night has ended. We host intimate evenings, live performances, and celebrations that linger in memory long after the night has ended.\n\nWe host intimate evenings, live performances, and celebrations that linger in memory long after the night has ended.\n\nWe host intimate evenings, live performances, and celebrations that linger in memory long after the night has ended.',
+            en: 'We host intimate evenings, live performances, and celebrations that linger in memory long after the night has ended.',
             ja: '私たちは親密な夜、ライブパフォーマンス、そして夜が終わった後も長く記憶に残るお祝いを開催しています。\n\n私たちは親密な夜、ライブパフォーマンス、そして夜が終わった後も長く記憶に残るお祝いを開催しています。\n\n私たちは親密な夜、ライブパフォーマンス、そして夜が終わった後も長く記憶に残るお祝いを開催しています。'
         },
         'events.past.item.desc': {

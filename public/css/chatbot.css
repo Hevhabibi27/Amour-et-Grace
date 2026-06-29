@@ -73,6 +73,7 @@
         transform: scale(1);
         opacity: 0.4;
     }
+
     100% {
         transform: scale(1.7);
         opacity: 0;
@@ -228,6 +229,7 @@
         opacity: 0;
         transform: translateY(8px);
     }
+
     to {
         opacity: 1;
         transform: translateY(0);
@@ -279,10 +281,14 @@
 }
 
 @keyframes chatbot-dot-bounce {
-    0%, 60%, 100% {
+
+    0%,
+    60%,
+    100% {
         transform: translateY(0);
         opacity: 0.35;
     }
+
     30% {
         transform: translateY(-6px);
         opacity: 1;
@@ -438,7 +444,7 @@
     }
 
     /* Hide FAB when panel is open on mobile */
-    .chatbot-panel.visible ~ .chatbot-fab,
+    .chatbot-panel.visible~.chatbot-fab,
     .chatbot-fab.open {
         opacity: 0;
         pointer-events: none;
