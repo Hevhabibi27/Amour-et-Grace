@@ -153,6 +153,14 @@ const i18n = (() => {
         'menu.filter.noodles': { en: 'Noodles', ja: '麺類' },
         'menu.filter.snacks': { en: 'Snacks', ja: '軽食' },
 
+        // Drink Filter buttons
+        'menu.filter.sparkling': { en: 'Sparkling', ja: 'スパークリング' },
+        'menu.filter.spirits': { en: 'Spirits', ja: 'スピリッツ' },
+        'menu.filter.beer': { en: 'Beer', ja: 'ビール' },
+        'menu.filter.wine': { en: 'Wine', ja: 'ワイン' },
+        'menu.filter.cocktails': { en: 'Cocktails', ja: 'カクテル' },
+        'menu.filter.non_alcoholic': { en: 'Non-Alcoholic', ja: 'ノンアルコール' },
+
         // Menu items
         'menu.item.tonkotsu.name': { en: 'TONKOTSU RAMEN', ja: 'とんこつラーメン' },
         'menu.item.tonkotsu.desc': { en: 'Rich pork broth with chashu, egg, and spring onion.', ja: 'チャーシュー、卵、ネギ入りの濃厚な豚骨スープ。' },
@@ -321,18 +329,18 @@ const i18n = (() => {
 
 
         // Sushi display
-        'menu.sushi.nigiri.name': { en: 'SALMON NIGIRI SUSHI', ja: 'サーモンにぎり寿司' },
-        'menu.sushi.nigiri.desc1': {
-            en: 'Premium fresh salmon layered atop perfectly seasoned sushi rice and secured with a delicate nori wrap',
-            ja: '新鮮なサーモンを完璧に味付けされた酢飯の上にのせ、繊細な海苔で巻きました'
+
+        'menu.bicol.express.desc1': {
+            en: 'Fiery, creamy, and absolutely addictive — tender pork',
+            ja: '辛くてクリーミー、そして絶対にクセになる — 柔らかい豚肉'
         },
-        'menu.sushi.nigiri.desc2': {
-            en: 'Premium fresh salmon layered atop perfectly seasoned sushi rice and secured with a delicate nori wrap',
-            ja: '新鮮なサーモンを完璧に味付けされた酢飯の上にのせ、繊細な海苔で巻きました'
+        'menu.hibiki.harmony.desc2': {
+            en: 'A true expression of Japanese harmony in a glass.',
+            ja: 'グラスに込められた、日本の調和の真の表現。'
         },
-        'menu.sushi.roll.desc': {
-            en: 'Fresh cucumber, savory crab stick, and a rich creamy filling are rolled in premium sushi rice and nori, then finished with delicate fish roe for a burst of flavor and texture.',
-            ja: '新鮮なきゅうり、カニカマ、クリーミーなフィリングをプレミアム酢飯と海苔で巻き、魚卵で仕上げた一品。'
+        'menu.halo.halo.desc': {
+            en: "The Philippines' most beloved dessert",
+            ja: 'フィリピンで最も愛されているデザート'
         },
 
         // Platter items
@@ -567,34 +575,36 @@ const i18n = (() => {
         // ═══════════════════════════════════════
         // FRESH FRUIT SHAKES & JUICES
         // ═══════════════════════════════════════
+        'menu.shakes.subtitle': { en: 'Real fruit. Real refreshment. Sip on our creamy, naturally sweet fruit shakes — Mango, Strawberry, Apple, or Banana — the perfect non-alcoholic treat for any time of day.', ja: '本物のフルーツ。本物のリフレッシュメント。マンゴー、ストロベリー、アップル、バナナのクリーミーで自然な甘さのフルーツシェイクをお楽しみください。どんな時間帯にもぴったりのノンアルコールデザートです。' },
+
         'menu.shake.mango.name': { en: 'MANGO SHAKE', ja: 'マンゴーシェイク' },
-        'menu.shake.mango.desc': { en: 'Thick, creamy, and tropical — blended from ripe golden mangoes for a naturally sweet and velvety shake that tastes like sunshine in every sip.', ja: '完熟マンゴーを使用した、濃厚でクリーミーなトロピカルシェイク。' },
+        'menu.shake.mango.desc': { en: 'Made with ripe mangoes for a rich, creamy, and refreshing tropical treat.', ja: '完熟マンゴーを使用した、リッチでクリーミー、そして爽やかなトロピカルシェイク。' },
 
         'menu.shake.banana.name': { en: 'BANANA SHAKE', ja: 'バナナシェイク' },
-        'menu.shake.banana.desc': { en: 'Smooth, rich, and naturally sweet — blended from ripe bananas into a thick, creamy, and satisfying shake loved by everyone.', ja: 'スムーズでリッチ、自然の甘さが嬉しいバナナシェイク。' },
+        'menu.shake.banana.desc': { en: 'Creamy, naturally sweet, and made with ripe bananas.', ja: '完熟バナナを使用した、クリーミーで自然の甘さが嬉しいシェイク。' },
 
         'menu.shake.strawberry.name': { en: 'STRAWBERRY SHAKE', ja: 'ストロベリーシェイク' },
-        'menu.shake.strawberry.desc': { en: 'Bright, creamy, and refreshingly sweet — made from fresh ripe strawberries with a gentle tangy twist. Light, fruity, and impossible to resist.', ja: '爽やかな甘さと酸味のバランスが絶妙なクリーミーなイチゴシェイク。' },
+        'menu.shake.strawberry.desc': { en: 'Sweet, creamy, and bursting with fresh strawberry flavor.', ja: '甘くてクリーミー、フレッシュなイチゴの風味が弾けるシェイク。' },
 
         'menu.shake.apple.name': { en: 'APPLE SHAKE', ja: 'アップルシェイク' },
-        'menu.shake.apple.desc': { en: 'Crisp, light, and refreshingly sweet — made from real apples blended into a smooth, clean, and uniquely satisfying shake.', ja: 'フレッシュなリンゴを使用した、軽やかで爽やかな甘さのシェイク。' },
+        'menu.shake.apple.desc': { en: 'Crisp, light, and refreshingly sweet—made with real apples.', ja: '本物のリンゴを使用した、サクサクと軽く、爽やかな甘さのシェイク。' },
 
         'menu.juices.subtitle': { en: 'Pure & Refreshing — Made fresh from real fruit, our juices are naturally sweet, vibrant, and bursting with flavor in every sip.', ja: '絞りたてのフレッシュなフルーツを使用した、自然な甘さと爽やかさが広がるピュアなジュース。' },
 
         'menu.juice.mango.name': { en: 'MANGO JUICE', ja: 'マンゴージュース' },
-        'menu.juice.mango.desc': { en: 'Sweet, golden, and tropical — freshly squeezed from ripe mangoes for a rich, smooth, and naturally refreshing glass of pure sunshine.', ja: '甘くてトロピカルな完熟マンゴーの絞りたてジュース。' },
+        'menu.juice.mango.desc': { en: 'Freshly squeezed ripe mangoes for a rich, refreshing taste.', ja: '完熟マンゴーを絞った、リッチで爽快な味わい。' },
 
         'menu.juice.kalamansi.name': { en: 'KALAMANSI JUICE', ja: 'カラマンシージュース' },
-        'menu.juice.kalamansi.desc': { en: 'Bright, tangy, and refreshing — freshly squeezed kalamansi delivering a perfect citrusy balance of tart and sweet in every sip.', ja: '爽やかな酸味と甘みが絶妙なバランスのカラマンシージュース。' },
+        'menu.juice.kalamansi.desc': { en: 'A refreshing citrus drink bursting with fresh kalamansi flavor.', ja: '新鮮なカラマンシーの風味が弾ける、爽やかなシトラスドリンク。' },
 
         'menu.juice.pineapple.name': { en: 'PINEAPPLE JUICE', ja: 'パイナップルジュース' },
-        'menu.juice.pineapple.desc': { en: 'Bold, tangy, and naturally sweet — made from fresh ripe pineapple for a bright, tropical juice that instantly lifts your mood.', ja: 'フレッシュなパイナップルを使用した、甘酸っぱくてトロピカルなジュース。' },
+        'menu.juice.pineapple.desc': { en: 'Bright, tropical, and bursting with fresh pineapple flavor.', ja: '明るくトロピカル、フレッシュなパイナップルの風味が弾けるジュース。' },
 
         'menu.juice.guava.name': { en: 'GUAVA JUICE', ja: 'グアバジュース' },
-        'menu.juice.guava.desc': { en: 'Sweet, fragrant, and tropical — made from fresh ripe guava for a smooth, naturally flavored juice that refreshes with every glass.', ja: '甘くて香り高い完熟グアバを使用したスムーズなジュース。' },
+        'menu.juice.guava.desc': { en: 'Naturally refreshing with the sweet taste of ripe guava.', ja: '完熟グアバの甘みが広がる、自然の爽やかさ。' },
 
         'menu.juice.guyabano.name': { en: 'GUYABANO JUICE', ja: 'グヤバノジュース' },
-        'menu.juice.guyabano.desc': { en: 'Creamy, sweet, and uniquely tropical — made from fresh soursop with a smooth, custard-like texture.', ja: 'クリーミーでユニークなトロピカルな風味のサワーソップジュース。' },
+        'menu.juice.guyabano.desc': { en: 'A creamy soursop drink with a naturally sweet tropical flavor..', ja: 'クリーミーなサワーソップを使用。自然な甘さのトロピカルな風味。' },
 
         'menu.juice.halohalo.name': { en: 'HALO-HALO', ja: 'ハロハロ' },
         'menu.juice.halohalo.desc': { en: "The Philippines' most beloved dessert — a colorful, refreshing medley of shaved ice, sweet beans, jackfruit, banana, and other delicious mix-ins, topped with creamy leche flan, purple yam (ube), and a drizzle of evaporated milk.", ja: 'フィリピンで最も愛されるデザート。かき氷に甘い豆、ジャックフルーツ、バナナ、レチェフランやウベをトッピングした贅沢な一品。' },

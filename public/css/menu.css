@@ -380,10 +380,14 @@
     }
 
     .sushi-display-img {
-        width: 240px;
+        width: 150px;
         object-fit: contain;
         filter: drop-shadow(0 10px 15px rgba(0, 0, 0, 0.6));
         flex-shrink: 0;
+    }
+
+    .bicol-img {
+        transform: scale(1.3);
     }
 
     .sushi-text-group {
@@ -394,7 +398,7 @@
 
     .sushi-text {
         font-family: "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Yu Gothic UI", "Microsoft YaHei", sans-serif;
-        font-size: 4rem;
+        font-size: 1.5rem;
         font-weight: 900;
         letter-spacing: 5px;
         line-height: 1;
@@ -405,13 +409,13 @@
         font-family: 'Cinzel Decorative', serif;
         font-size: 0.85rem;
         letter-spacing: 2px;
-        color: #ccc;
+        color: var(--accent-gold);
         margin-top: 10px;
     }
 
     .sushi-desc {
         width: 220px;
-        font-size: 0.75rem;
+        font-size: 1rem;
         line-height: 1.5;
         color: #ccc;
         text-align: left;
@@ -684,19 +688,19 @@
         }
 
         .sushi-text {
-            font-size: 1.8rem;
+            font-size: 1rem;
             letter-spacing: 2px;
         }
 
         .sushi-sub {
-            font-size: 0.5rem;
+            font-size: 0.6rem;
             letter-spacing: 1px;
         }
 
         .sushi-desc {
             width: 40%;
             flex-shrink: 1;
-            font-size: 0.55rem;
+            font-size: 0.65rem;
             line-height: 1.4;
             text-align: left;
         }
@@ -1350,11 +1354,21 @@
 
     .fshake-en-title {
         font-family: 'Amanojaku', serif;
-        font-size: clamp(1.4rem, 3.5vw, 2.8rem);
-        color: var(--text-light);
-        letter-spacing: 5px;
+        font-size: clamp(1.6rem, 3.5vw, 2.8rem);
+        color: var(--text-light, #fff);
+        letter-spacing: 4px;
         font-weight: 700;
-        margin-top: 5px;
+        margin-bottom: 20px;
+    }
+
+    .fshake-subtitle {
+        color: rgba(255, 255, 255, 0.9);
+        font-family: var(--font-body);
+        font-size: 1rem;
+        max-width: 800px;
+        margin: 0 auto;
+        line-height: 1.6;
+        padding: 0 20px;
         margin-bottom: 70px;
     }
 
@@ -1377,7 +1391,7 @@
 
     .fshake-drink-name {
         font-family: 'Cinzel Decorative', serif;
-        font-size: clamp(0.6rem, 1.4vw, 0.95rem);
+        font-size: clamp(1rem, 1.4vw, 1rem);
         font-weight: 700;
         letter-spacing: 2px;
         margin-bottom: 0.35em;
@@ -1386,7 +1400,7 @@
 
     .fshake-drink-desc {
         font-family: var(--font-body);
-        font-size: clamp(0.48rem, 1.05vw, 0.7rem);
+        font-size: clamp(1rem, 1.05vw, 0.7rem);
         font-weight: 300;
         line-height: 1.5;
         color: rgba(255, 255, 255, 0.88);
@@ -1568,6 +1582,18 @@
         .fshake-amount {
             font-size: clamp(0.4rem, 2.5vw, 0.55rem);
         }
+
+        .fshake-drink-desc {
+            font-size: clamp(0.68rem, 1.05vw, 0.7rem);
+        }
+
+        .fshake-subtitle {
+            font-size: 0.8rem;
+        }
+
+        .fshake-drink-name {
+            font-size: clamp(0.7rem, 2.5vw, 0.7rem);
+        }
     }
 
     /* =========================================================================
@@ -1586,7 +1612,7 @@
 
     .fjuice-en-title {
         font-family: 'Amanojaku', serif;
-        font-size: clamp(1.4rem, 3.5vw, 2.8rem);
+        font-size: clamp(1.6rem, 3.5vw, 2.8rem);
         color: var(--text-light, #fff);
         letter-spacing: 4px;
         font-weight: 700;
@@ -1596,7 +1622,7 @@
     .fjuice-subtitle {
         color: rgba(255, 255, 255, 0.9);
         font-family: var(--font-body);
-        font-size: clamp(0.8rem, 1.5vw, 1.2rem);
+        font-size: 1rem;
         max-width: 800px;
         margin: 0 auto;
         line-height: 1.6;
@@ -1623,7 +1649,7 @@
 
     .fjuice-drink-name {
         font-family: 'Cinzel Decorative', serif;
-        font-size: clamp(0.6rem, 1.4vw, 1rem);
+        font-size: clamp(1rem, 1.4vw, 1rem);
         font-weight: 700;
         letter-spacing: 2px;
         margin-bottom: 0.35em;
@@ -1633,7 +1659,7 @@
 
     .fjuice-drink-desc {
         font-family: var(--font-body);
-        font-size: clamp(0.48rem, 1.05vw, 0.75rem);
+        font-size: clamp(1rem, 1.05vw, 0.7rem);
         font-weight: 300;
         line-height: 1.5;
         color: rgba(255, 255, 255, 0.88);
@@ -1865,13 +1891,17 @@
         }
 
         .fjuice-drink-name {
-            font-size: clamp(0.45rem, 2.5vw, 0.6rem);
-            margin-bottom: 0.2em;
+            font-size: clamp(0.6rem, 2.5vw, 0.7rem);
+
         }
 
         .fjuice-drink-desc {
-            font-size: clamp(0.35rem, 2vw, 0.45rem);
+            font-size: clamp(0.68rem, 2vw, 0.7rem);
             line-height: 1.3;
+        }
+
+        .fjuice-subtitle {
+            font-size: 0.8rem;
         }
 
         .fjuice-size,
@@ -1917,7 +1947,11 @@
         }
 
         .fjuice-kalamansi-info {
-            top: 7%;
+            top: 4%;
+        }
+
+        .fjuice-guyabano-info {
+            top: 62%;
         }
 
     }
