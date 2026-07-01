@@ -389,34 +389,34 @@ const i18n = (() => {
         'menu.drinks.title': { en: 'Drinks Section', ja: 'ドリンクセクション' },
         'menu.drinks.moet.name': { en: 'MOËT & CHANDON IMPÉRIAL BRUT', ja: 'モエ・エ・シャンドン アンペリアル ブリュット' },
         'menu.drinks.moet.desc': { en: 'Crisp, fresh, and celebratory in every sip. Alcohol: 12% ABV. Perfect for toasts and special celebrations.', ja: '一口ごとに爽やかでフレッシュ、そしてお祝いの気分に。アルコール度数：12%。乾杯や特別なお祝いに最適です。' },
-        
+
         'menu.drinks.hibiki.name': { en: 'HIBIKI JAPANESE HARMONY', ja: '響 ジャパニーズハーモニー' },
         'menu.drinks.hibiki.desc': { en: 'A true expression of Japanese harmony in a glass. Alcohol: 43% ABV. Best enjoyed neat or on the rocks.', ja: 'グラスの中の日本の調和の真の表現。アルコール度数：43%。ストレートまたはオンザロックで楽しむのが最高です。' },
-        
+
         'menu.drinks.kirin.name': { en: 'KIRIN GREEN', ja: 'キリングリーン' },
         'menu.drinks.kirin.desc': { en: 'Perfect enjoyed straight, on the rocks, or mixed with your favorite juice or soda. Great for first-time spirit drinkers.', ja: 'ストレート、オンザロック、またはお好みのジュースやソーダと混ぜて楽しむのに最適です。初めてスピリッツを飲む方にもおすすめです。' },
-        
+
         'menu.drinks.hennessy.name': { en: 'HENNESSY V.S.O.P COGNAC', ja: 'ヘネシー V.S.O.P コニャック' },
         'menu.drinks.hennessy.desc': { en: 'One of the world\'s most recognized and beloved cognacs, best savored neat, with ice, or in classic cocktails.', ja: '世界で最も認知され愛されているコニャックの一つ。ストレート、氷を入れて、またはクラシックなカクテルで味わうのが最高です。' },
-        
+
         'menu.drinks.lereveil.name': { en: 'LE RÉVEIL CABERNET SAUVIGNON', ja: 'ル・レヴェイユ カベルネ・ソーヴィニヨン' },
         'menu.drinks.lereveil.desc': { en: 'Crisp, fresh, and celebratory in every sip. Alcohol: 12% ABV. Perfect for toasts and special celebrations.', ja: '一口ごとに爽やかでフレッシュ、そしてお祝いの気分に。アルコール度数：12%。乾杯や特別なお祝いに最適です。' },
-        
+
         'menu.drinks.suntory_vsop.name': { en: 'V.S.O.P SUNTORY BRANDY', ja: 'V.S.O.P サントリー ブランデー' },
         'menu.drinks.suntory_vsop.desc': { en: 'Rich with notes of caramel, dried fruit, vanilla, and a gentle woody finish, it is approachable yet sophisticated.', ja: 'キャラメル、ドライフルーツ、バニラ、そして穏やかなウッディなフィニッシュの豊かな香り。親しみやすく、かつ洗練されています。' },
-        
+
         'menu.drinks.kahlua.name': { en: 'KAHLÚA COFFEE LIQUEUR', ja: 'カルーア コーヒーリキュール' },
         'menu.drinks.kahlua.desc': { en: 'Perfect on its own over ice, mixed with milk, or as the star ingredient in classic cocktails like an Espresso Martini or White Russian.', ja: '氷を入れてそのままでも、ミルクと混ぜても、またはエスプレッソマティーニやホワイトルシアンなどのクラシックカクテルの主役としても最適です。' },
-        
+
         'menu.drinks.pompador.name': { en: 'POMPA D\'OR MUSCAT SPARKLING WINE', ja: 'ポンパドール マスカット スパークリングワイン' },
         'menu.drinks.pompador.desc': { en: 'Refreshing, easy to drink, and a crowd favorite for those who love a sweeter sparkle.', ja: '爽やかで飲みやすく、甘めのスパークリングが好きな方に人気の定番です。' },
-        
+
         'menu.drinks.pink_lady.name': { en: 'PINK LADY SPARKLING PEAR CIDER', ja: 'ピンクレディー スパークリング ペアシードル' },
         'menu.drinks.pink_lady.desc': { en: 'A perfect choice for those who prefer something lighter, sweeter, and wonderfully refreshing.', ja: '軽くて甘く、そして素晴らしく爽やかなものを好む方に最適な選択です。' },
-        
+
         'menu.drinks.tokyo_highball.name': { en: 'TOKYO HIGHBALL', ja: '東京ハイボール' },
         'menu.drinks.tokyo_highball.desc': { en: 'Easy to drink, endlessly refreshing, and the perfect companion for good food and great company.', ja: '飲みやすく、どこまでも爽やかで、美味しい食事と素晴らしい仲間にぴったりの一杯です。' },
-        
+
         'menu.drinks.asahi_syrup.name': { en: 'ASAHI SYRUP', ja: 'アサヒ シロップ' },
         'menu.drinks.asahi_syrup.desc': { en: 'Non-alcoholic. A great choice for those who prefer a lighter, customizable beverage.', ja: 'ノンアルコール。軽めでカスタマイズ可能な飲み物を好む方に最適な選択です。' },
 
@@ -563,6 +563,63 @@ const i18n = (() => {
         'res.faq.a7': { en: 'Yes, our reservation team will review your submission and contact you within 24 hours to confirm your booking.', ja: 'はい、予約チームが送信内容を確認し、24時間以内にご連絡してご予約を確定します。' },
         'res.faq.q8': { en: 'Do you host seasonal events and cocktail parties?', ja: '季節のイベントやカクテルパーティーは開催していますか？' },
         'res.faq.a8': { en: 'Yes! We frequently host seasonal events, live music, and themed cocktail parties. Keep an eye on our social media for updates.', ja: 'はい！季節のイベント、ライブミュージック、テーマ別カクテルパーティーを頻繁に開催しています。最新情報はSNSをチェックしてください。' },
+
+        // ═══════════════════════════════════════
+        // FRESH FRUIT SHAKES & JUICES
+        // ═══════════════════════════════════════
+        'menu.shake.mango.name': { en: 'MANGO SHAKE', ja: 'マンゴーシェイク' },
+        'menu.shake.mango.desc': { en: 'Thick, creamy, and tropical — blended from ripe golden mangoes for a naturally sweet and velvety shake that tastes like sunshine in every sip.', ja: '完熟マンゴーを使用した、濃厚でクリーミーなトロピカルシェイク。' },
+
+        'menu.shake.banana.name': { en: 'BANANA SHAKE', ja: 'バナナシェイク' },
+        'menu.shake.banana.desc': { en: 'Smooth, rich, and naturally sweet — blended from ripe bananas into a thick, creamy, and satisfying shake loved by everyone.', ja: 'スムーズでリッチ、自然の甘さが嬉しいバナナシェイク。' },
+
+        'menu.shake.strawberry.name': { en: 'STRAWBERRY SHAKE', ja: 'ストロベリーシェイク' },
+        'menu.shake.strawberry.desc': { en: 'Bright, creamy, and refreshingly sweet — made from fresh ripe strawberries with a gentle tangy twist. Light, fruity, and impossible to resist.', ja: '爽やかな甘さと酸味のバランスが絶妙なクリーミーなイチゴシェイク。' },
+
+        'menu.shake.apple.name': { en: 'APPLE SHAKE', ja: 'アップルシェイク' },
+        'menu.shake.apple.desc': { en: 'Crisp, light, and refreshingly sweet — made from real apples blended into a smooth, clean, and uniquely satisfying shake.', ja: 'フレッシュなリンゴを使用した、軽やかで爽やかな甘さのシェイク。' },
+
+        'menu.juices.subtitle': { en: 'Pure & Refreshing — Made fresh from real fruit, our juices are naturally sweet, vibrant, and bursting with flavor in every sip.', ja: '絞りたてのフレッシュなフルーツを使用した、自然な甘さと爽やかさが広がるピュアなジュース。' },
+
+        'menu.juice.mango.name': { en: 'MANGO JUICE', ja: 'マンゴージュース' },
+        'menu.juice.mango.desc': { en: 'Sweet, golden, and tropical — freshly squeezed from ripe mangoes for a rich, smooth, and naturally refreshing glass of pure sunshine.', ja: '甘くてトロピカルな完熟マンゴーの絞りたてジュース。' },
+
+        'menu.juice.kalamansi.name': { en: 'KALAMANSI JUICE', ja: 'カラマンシージュース' },
+        'menu.juice.kalamansi.desc': { en: 'Bright, tangy, and refreshing — freshly squeezed kalamansi delivering a perfect citrusy balance of tart and sweet in every sip.', ja: '爽やかな酸味と甘みが絶妙なバランスのカラマンシージュース。' },
+
+        'menu.juice.pineapple.name': { en: 'PINEAPPLE JUICE', ja: 'パイナップルジュース' },
+        'menu.juice.pineapple.desc': { en: 'Bold, tangy, and naturally sweet — made from fresh ripe pineapple for a bright, tropical juice that instantly lifts your mood.', ja: 'フレッシュなパイナップルを使用した、甘酸っぱくてトロピカルなジュース。' },
+
+        'menu.juice.guava.name': { en: 'GUAVA JUICE', ja: 'グアバジュース' },
+        'menu.juice.guava.desc': { en: 'Sweet, fragrant, and tropical — made from fresh ripe guava for a smooth, naturally flavored juice that refreshes with every glass.', ja: '甘くて香り高い完熟グアバを使用したスムーズなジュース。' },
+
+        'menu.juice.guyabano.name': { en: 'GUYABANO JUICE', ja: 'グヤバノジュース' },
+        'menu.juice.guyabano.desc': { en: 'Creamy, sweet, and uniquely tropical — made from fresh soursop with a smooth, custard-like texture.', ja: 'クリーミーでユニークなトロピカルな風味のサワーソップジュース。' },
+
+        'menu.juice.halohalo.name': { en: 'HALO-HALO', ja: 'ハロハロ' },
+        'menu.juice.halohalo.desc': { en: "The Philippines' most beloved dessert — a colorful, refreshing medley of shaved ice, sweet beans, jackfruit, banana, and other delicious mix-ins, topped with creamy leche flan, purple yam (ube), and a drizzle of evaporated milk.", ja: 'フィリピンで最も愛されるデザート。かき氷に甘い豆、ジャックフルーツ、バナナ、レチェフランやウベをトッピングした贅沢な一品。' },
+
+        'menu.size.large': { en: 'LARGE', ja: '大 (L)' },
+        'menu.size.medium': { en: 'MEDIUM', ja: '中 (M)' },
+
+        // ═══════════════════════════════════════
+        // COFFEE BASED DRINKS
+        // ═══════════════════════════════════════
+        'menu.coffee.subtitle': { en: 'From rich, aromatic hot brews to cool, refreshing iced classics — our coffee menu is made to keep you energized, comforted, and satisfied, any time of day.', ja: '豊かで香り高いホットコーヒーから、冷たくて爽快なアイスコーヒーまで。いつでもあなたに活力を与え、心を満たすコーヒーメニューをご用意しています。' },
+
+        'menu.coffee.hot_americano.name': { en: 'HOT COFFEE<br>AMERICANO', ja: 'ホットコーヒー<br>アメリカーノ' },
+        'menu.coffee.hot_americano.desc': { en: 'Bold and full-bodied — a classic blend of rich espresso and hot water, delivering a smooth, robust coffee experience with a clean, slightly bitter finish. Simple, strong, and perfect for those who love coffee in its purest form.', ja: 'リッチなエスプレッソとお湯のクラシックなブレンド。シンプルで力強く、すっきりとした苦味が特徴です。' },
+
+        'menu.coffee.hot_cappuccino.name': { en: 'HOT COFFEE<br>CAPPUCCINO', ja: 'ホットコーヒー<br>カプチーノ' },
+        'menu.coffee.hot_cappuccino.desc': { en: 'Creamy, smooth, and beautifully balanced — a perfect harmony of rich espresso, steamed milk, and a generous layer of velvety foam. Warm, comforting, and topped with a light dusting of flavor in every sip.', ja: 'リッチなエスプレッソ、スチームミルク、ベルベットのようなフォームの完璧なハーモニー。クリーミーで滑らかな一杯です。' },
+
+        'menu.coffee.iced_americano.name': { en: 'ICED COFFEE<br>AMERICANO', ja: 'アイスコーヒー<br>アメリカーノ' },
+        'menu.coffee.iced_americano.desc': { en: 'Bold and refreshing — rich espresso poured over ice, delivering a smooth, robust coffee flavor with a clean, crisp finish. Light, energizing, and perfect for cooling down without compromising on taste.', ja: 'リッチなエスプレッソを氷に注ぎ、スムーズで力強い味わいと爽やかな後味を楽しめる一杯です。' },
+
+        'menu.coffee.iced_cappuccino.name': { en: 'ICED COFFEE<br>CAPPUCCINO', ja: 'アイスコーヒー<br>カプチーノ' },
+        'menu.coffee.iced_cappuccino.desc': { en: 'Creamy and refreshing — a chilled blend of rich espresso, cold milk, and silky foam served over ice. Smooth, lightly sweet, and perfectly balanced for a cool, satisfying coffee fix any time of day.', ja: '冷たいミルクとリッチなエスプレッソのブレンド。クリーミーで爽快、どんな時間帯にもぴったりの一杯です。' },
+
+        'menu.size.only_available': { en: 'ONLY AVAILABLE SIZE:', ja: '提供サイズ：' },
 
         // ═══════════════════════════════════════
         // REVIEWS PAGE

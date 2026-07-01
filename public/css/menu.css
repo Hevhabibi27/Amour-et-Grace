@@ -324,7 +324,7 @@
     .showcase-dish-title {
         color: var(--accent-gold);
         font-family: 'Cinzel Decorative', serif;
-        font-size: 0.8rem;
+        font-size: 1rem;
         margin-bottom: 10px;
         letter-spacing: 1px;
     }
@@ -633,8 +633,8 @@
         }
 
         .showcase-dish-img {
-            max-width: 80px;
-            max-height: 80px;
+            max-width: 100px;
+            max-height: 100px;
         }
 
         .showcase-dish-title {
@@ -965,7 +965,7 @@
         font-family: 'Cinzel Decorative', serif;
         font-size: 1.3rem;
         font-weight: 700;
-        color: #fff;
+        color: var(--accent-gold);
         margin-bottom: 10px;
         line-height: 1.2;
     }
@@ -1263,7 +1263,7 @@
     }
 
     .bento-card-title {
-        color: #C8102E;
+        color: var(--accent-gold);
         font-family: 'Cinzel Decorative', serif;
         font-size: 1.2rem;
         font-weight: 700;
@@ -1320,5 +1320,746 @@
             width: 150px;
             height: 150px;
             margin-top: -65px;
+        }
+    }
+
+    /* =============================================
+       FRESH FRUIT SHAKE SECTION
+       ============================================= */
+
+    .fruit-shake-section {
+        background-color: #000000;
+        padding: 80px 0;
+        overflow: hidden;
+    }
+
+    /* ── Header ── */
+    .fshake-header {
+        text-align: center;
+        margin-bottom: 30px;
+    }
+
+    .fshake-jp-title {
+        font-size: clamp(2.5rem, 7vw, 6rem);
+        color: var(--accent-red);
+        font-weight: 800;
+        letter-spacing: 4px;
+        margin-bottom: 0;
+        font-family: var(--font-heading, sans-serif);
+    }
+
+    .fshake-en-title {
+        font-family: 'Amanojaku', serif;
+        font-size: clamp(1.4rem, 3.5vw, 2.8rem);
+        color: var(--text-light);
+        letter-spacing: 5px;
+        font-weight: 700;
+        margin-top: 5px;
+        margin-bottom: 70px;
+    }
+
+    /* ── Composition Container ── */
+    .fshake-composition {
+        position: relative;
+        width: 100%;
+        max-width: 800px;
+        aspect-ratio: 10 / 11;
+        margin: 0 auto;
+        overflow: visible;
+    }
+
+    /* ── Drink Info Blocks (shared styles) ── */
+    .fshake-item {
+        position: absolute;
+        color: #fff;
+        z-index: 10;
+    }
+
+    .fshake-drink-name {
+        font-family: 'Cinzel Decorative', serif;
+        font-size: clamp(0.6rem, 1.4vw, 0.95rem);
+        font-weight: 700;
+        letter-spacing: 2px;
+        margin-bottom: 0.35em;
+        color: var(--accent-gold);
+    }
+
+    .fshake-drink-desc {
+        font-family: var(--font-body);
+        font-size: clamp(0.48rem, 1.05vw, 0.7rem);
+        font-weight: 300;
+        line-height: 1.5;
+        color: rgba(255, 255, 255, 0.88);
+        text-align: left;
+        margin-bottom: 0.5em;
+    }
+
+    .fshake-prices {
+        display: flex;
+        flex-direction: column;
+        gap: 0.1em;
+    }
+
+    .fshake-price-row {
+        display: flex;
+        gap: 1.5em;
+        align-items: baseline;
+    }
+
+    .fshake-size {
+        font-family: var(--font-body);
+        font-size: clamp(0.7rem, 1.5vw, 1rem);
+        font-weight: 700;
+        letter-spacing: 1px;
+        color: #fff;
+    }
+
+    .fshake-amount {
+        font-family: var(--font-body);
+        font-size: clamp(0.7rem, 1.5vw, 1rem);
+        font-weight: 400;
+        letter-spacing: 2px;
+        color: #fff;
+    }
+
+    /* ── Individual Drink Info Positions ── */
+    .fshake-mango-info {
+        left: 1%;
+        top: 7%;
+        z-index: 3;
+        width: 35%;
+    }
+
+    .fshake-banana-info {
+        left: 74%;
+        top: 15%;
+        width: 35%;
+    }
+
+    .fshake-strawberry-info {
+        left: 1%;
+        top: 69%;
+        z-index: 10;
+        width: 35%;
+    }
+
+    .fshake-apple-info {
+        left: 68%;
+        top: 63%;
+        width: 35%;
+    }
+
+    /* ── Center Drink Images ── */
+    .fshake-drink-img {
+        position: absolute;
+        object-fit: contain;
+        filter: drop-shadow(0 10px 25px rgba(0, 0, 0, 0.6));
+        max-height: 62%;
+    }
+
+    .fshake-drink-mango {
+        left: 35%;
+        top: 1%;
+        width: 23%;
+        z-index: 3;
+        transform: rotate(-10deg);
+    }
+
+    .fshake-drink-banana {
+        left: 45%;
+        top: 15%;
+        width: 23%;
+        z-index: 4;
+        transform: rotate(13deg);
+    }
+
+    .fshake-drink-apple {
+        left: 32%;
+        top: 39%;
+        width: 25%;
+        z-index: 5;
+        transform: rotate(9deg);
+    }
+
+    .fshake-drink-strawberry {
+        left: 26%;
+        top: 50%;
+        width: 23%;
+        z-index: 6;
+        transform: rotate(-13deg);
+    }
+
+    /* ── Decorative Fruit Graphics ── */
+    .fshake-fruit {
+        position: absolute;
+        object-fit: contain;
+        pointer-events: none;
+        z-index: 7;
+    }
+
+    .fshake-fruit-mango {
+        left: 25%;
+        top: 27%;
+        width: 18%;
+        z-index: 2;
+        transform: rotate(-15deg);
+    }
+
+    .fshake-fruit-banana {
+        left: 52%;
+        top: 49%;
+        z-index: 4;
+        width: 23%;
+    }
+
+    .fshake-fruit-apple {
+        left: 46%;
+        top: 64%;
+        width: 17%;
+    }
+
+    .fshake-fruit-strawberry {
+        left: 40%;
+        top: 82%;
+        width: 14%;
+    }
+
+
+    /* .fshake-red-accent {
+        position: absolute;
+        left: 25%;
+        top: 64%;
+        width: 11%;
+        height: 33%;
+        background-color: var(--accent-red, #c90022);
+        z-index: 1;
+    } */
+
+    /* ── Responsive Fine-tuning ── */
+    @media (max-width: 768px) {
+        .fruit-shake-section {
+            padding: 50px 0;
+        }
+
+        .fshake-header {
+            margin-bottom: 15px;
+        }
+
+        .fshake-en-title {
+            margin-bottom: 30px;
+        }
+    }
+
+    @media (max-width: 480px) {
+        .fruit-shake-section {
+            margin-top: -100px;
+            padding: 100px 10px;
+        }
+
+        .fshake-header {
+            margin-bottom: 10px;
+        }
+
+        .fshake-en-title {
+            margin-bottom: 5px;
+        }
+
+        .fshake-size,
+        .fshake-amount {
+            font-size: clamp(0.4rem, 2.5vw, 0.55rem);
+        }
+    }
+
+    /* =========================================================================
+       FRESH FRUIT JUICE SECTION
+       ========================================================================= */
+    .fruit-juice-section {
+        background-color: #000000;
+        padding: 80px 0;
+        overflow: hidden;
+    }
+
+    .fjuice-header {
+        text-align: center;
+        margin-bottom: 40px;
+    }
+
+    .fjuice-en-title {
+        font-family: 'Amanojaku', serif;
+        font-size: clamp(1.4rem, 3.5vw, 2.8rem);
+        color: var(--text-light, #fff);
+        letter-spacing: 4px;
+        font-weight: 700;
+        margin-bottom: 20px;
+    }
+
+    .fjuice-subtitle {
+        color: rgba(255, 255, 255, 0.9);
+        font-family: var(--font-body);
+        font-size: clamp(0.8rem, 1.5vw, 1.2rem);
+        max-width: 800px;
+        margin: 0 auto;
+        line-height: 1.6;
+        padding: 0 20px;
+    }
+
+    /* ── Composition Container ── */
+    .fjuice-composition {
+        position: relative;
+        width: 100%;
+        max-width: 800px;
+        aspect-ratio: 2 / 3;
+        margin: 0 auto;
+        overflow: visible;
+        margin-top: 40px;
+    }
+
+    /* ── Drink Info Blocks (shared styles) ── */
+    .fjuice-item {
+        position: absolute;
+        color: #fff;
+        z-index: 10;
+    }
+
+    .fjuice-drink-name {
+        font-family: 'Cinzel Decorative', serif;
+        font-size: clamp(0.6rem, 1.4vw, 1rem);
+        font-weight: 700;
+        letter-spacing: 2px;
+        margin-bottom: 0.35em;
+        color: var(--accent-gold);
+        text-transform: uppercase;
+    }
+
+    .fjuice-drink-desc {
+        font-family: var(--font-body);
+        font-size: clamp(0.48rem, 1.05vw, 0.75rem);
+        font-weight: 300;
+        line-height: 1.5;
+        color: rgba(255, 255, 255, 0.88);
+        text-align: left;
+        margin-bottom: 0.5em;
+    }
+
+    .fjuice-prices {
+        display: flex;
+        flex-direction: column;
+        gap: 0.1em;
+    }
+
+    .fjuice-price-row {
+        display: flex;
+        gap: 1.5em;
+        align-items: baseline;
+    }
+
+    .fjuice-size {
+        font-family: var(--font-body);
+        font-size: clamp(0.7rem, 1.5vw, 1rem);
+        font-weight: 700;
+        letter-spacing: 1px;
+        color: #fff;
+    }
+
+    .fjuice-amount {
+        font-family: var(--font-body);
+        font-size: clamp(0.7rem, 1.5vw, 1rem);
+        font-weight: 400;
+        letter-spacing: 2px;
+        color: #fff;
+    }
+
+    /* ── Individual Drink Info Positions ── */
+    .fjuice-mango-info {
+        left: 3%;
+        top: 4%;
+        width: 30%;
+    }
+
+    .fjuice-kalamansi-info {
+        left: 75%;
+        top: 13%;
+        width: 30%;
+    }
+
+    .fjuice-guava-info {
+        left: 72%;
+        top: 35%;
+        width: 30%;
+    }
+
+    .fjuice-pineapple-info {
+        left: 1%;
+        top: 45%;
+        width: 30%;
+    }
+
+    .fjuice-guyabano-info {
+        left: 67%;
+        top: 59%;
+        width: 30%;
+    }
+
+    /* ── Center Drink Images ── */
+    .fjuice-drink-img {
+        position: absolute;
+        object-fit: contain;
+        filter: drop-shadow(0 10px 25px rgba(0, 0, 0, 0.6));
+    }
+
+    .fjuice-drink-mango {
+        left: 37%;
+        top: 2%;
+        width: 16%;
+        z-index: 1;
+        transform: rotate(-9deg);
+    }
+
+    .fjuice-drink-kalamansi {
+        left: 53%;
+        top: 9%;
+        width: 17%;
+        z-index: 2;
+        transform: rotate(9deg);
+    }
+
+    .fjuice-drink-pineapple {
+        left: 31%;
+        top: 35%;
+        width: 21%;
+
+        transform: rotate(-12deg);
+    }
+
+    .fjuice-drink-guava {
+        left: 37%;
+        top: 24%;
+        width: 21%;
+        z-index: 4;
+        transform: rotate(3deg);
+    }
+
+    .fjuice-drink-guyabano {
+        left: 41%;
+        top: 55%;
+        width: 17%;
+        z-index: 5;
+        transform: rotate(14deg);
+    }
+
+    /* ── Decorative Fruit Graphics ── */
+    .fjuice-fruit {
+        position: absolute;
+        object-fit: contain;
+        pointer-events: none;
+        z-index: 6;
+    }
+
+    .fjuice-fruit-mango {
+        left: 27%;
+        top: 18%;
+        width: 16%;
+        transform: rotate(-10deg);
+    }
+
+    .fjuice-fruit-kalamansi {
+        left: 59%;
+        top: 27%;
+        width: 12%;
+    }
+
+    .fjuice-fruit-pineapple {
+        left: 20%;
+        top: 60%;
+        z-index: 1;
+        width: 22%;
+    }
+
+    .fjuice-fruit-guava {
+        left: 52%;
+        top: 41%;
+        width: 17%;
+    }
+
+    .fjuice-fruit-guyabano {
+        left: 46%;
+        top: 72%;
+        width: 22%;
+    }
+
+    /* ── Halo-Halo specific styles ── */
+    .halohalo-composition {
+        aspect-ratio: 2.2 / 1;
+        margin-top: -15%;
+    }
+
+    .fjuice-halohalo-info {
+        left: 45%;
+        top: 20%;
+        width: 50%;
+    }
+
+    .fjuice-drink-halohalo {
+        left: 12%;
+        top: 5%;
+        width: 25%;
+        max-height: 90%;
+        z-index: 2;
+    }
+
+    .fjuice-prices-horizontal {
+        flex-direction: row;
+        gap: 2.5em;
+    }
+
+    .fjuice-price-col {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5em;
+        align-items: flex-start;
+    }
+
+    /* ── Responsive Fine-tuning ── */
+    @media (max-width: 768px) {
+        .fruit-juice-section {
+            padding: 50px 0;
+        }
+
+        .fjuice-header {
+            margin-bottom: 20px;
+        }
+
+        .fjuice-en-title {
+            margin-bottom: 15px;
+        }
+
+        .halohalo-composition {
+            aspect-ratio: 1 / 1;
+            margin-top: -10%;
+        }
+
+        .fjuice-drink-halohalo {
+            left: 5%;
+            top: 10%;
+            width: 35%;
+        }
+
+        .fjuice-halohalo-info {
+            left: 45%;
+            top: 20%;
+            width: 50%;
+        }
+    }
+
+    @media (max-width: 480px) {
+        .fruit-juice-section {
+            padding: 30px 10px;
+        }
+
+        .fjuice-header {
+            margin-bottom: 10px;
+        }
+
+        .fjuice-en-title {
+            margin-bottom: 5px;
+        }
+
+        .fjuice-drink-name {
+            font-size: clamp(0.45rem, 2.5vw, 0.6rem);
+            margin-bottom: 0.2em;
+        }
+
+        .fjuice-drink-desc {
+            font-size: clamp(0.35rem, 2vw, 0.45rem);
+            line-height: 1.3;
+        }
+
+        .fjuice-size,
+        .fjuice-amount {
+            font-size: clamp(0.4rem, 2.5vw, 0.55rem);
+        }
+
+        .halohalo-composition {
+            display: flex;
+            flex-direction: row-reverse;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            aspect-ratio: auto;
+            min-height: 100px;
+            margin-top: -10%;
+        }
+
+        .fjuice-drink-halohalo {
+            position: static;
+            width: 30%;
+            margin: 0;
+        }
+
+        .fjuice-halohalo-info {
+            position: static;
+            width: 65%;
+            text-align: left;
+            margin-top: 0;
+        }
+
+        .fjuice-halohalo-info .fjuice-drink-desc {
+            text-align: left;
+        }
+
+        .fjuice-prices-horizontal {
+            justify-content: flex-start;
+            gap: 1em;
+        }
+
+        .fjuice-price-col {
+            align-items: flex-start;
+        }
+
+        .fjuice-kalamansi-info {
+            top: 7%;
+        }
+
+    }
+
+    /* =========================================================================
+       COFFEE SECTION
+       ========================================================================= */
+    .coffee-section {
+        background-color: #000000;
+        padding: 80px 0;
+    }
+
+    .coffee-header {
+        margin-bottom: 50px;
+    }
+
+    .coffee-title {
+        font-family: 'Amanojaku', serif;
+        font-size: clamp(1.5rem, 4vw, 2.5rem);
+        color: var(--text-light, #fff);
+        letter-spacing: 2px;
+        font-weight: 700;
+        margin-bottom: 20px;
+    }
+
+    .coffee-subtitle {
+        color: rgba(255, 255, 255, 0.9);
+        font-family: var(--font-body);
+        font-size: clamp(0.7rem, 1.2vw, 0.9rem);
+        max-width: 700px;
+        margin: 0 auto;
+        line-height: 1.6;
+    }
+
+    /* ── Coffee Grid ── */
+    .coffee-grid {
+        align-items: stretch;
+    }
+
+    /* ── Coffee Card ── */
+    .coffee-card {
+        background-color: transparent;
+        border: none;
+        display: flex;
+        flex-direction: column;
+        color: #fff;
+    }
+
+    .coffee-card-img {
+        width: 100%;
+        aspect-ratio: 1 / 1;
+        object-fit: cover;
+        border-radius: 30px 30px 0 0;
+        margin-bottom: 20px;
+    }
+
+    .coffee-card-content {
+        padding: 0 10px;
+        display: flex;
+        flex-direction: column;
+        flex-grow: 1;
+        text-align: center;
+    }
+
+    .coffee-card-title {
+        font-family: 'Cinzel Decorative', serif;
+        font-size: clamp(0.7rem, 2vw, 0.9rem);
+        font-weight: 700;
+        color: var(--accent-gold);
+        margin-bottom: 10px;
+        line-height: 1.3;
+    }
+
+    .coffee-card-desc {
+        font-family: var(--font-body);
+        font-size: clamp(0.8rem, 1vw, 0.65rem);
+        color: rgba(255, 255, 255, 0.85);
+        font-weight: 300;
+        line-height: 1.4;
+        margin-bottom: 15px;
+        flex-grow: 1;
+    }
+
+    .coffee-sizes {
+        text-align: left;
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+        margin-top: auto;
+    }
+
+    .coffee-size-label {
+        font-family: var(--font-body);
+        font-size: clamp(0.7rem, 1vw, 0.55rem);
+        color: rgba(255, 255, 255, 0.8);
+        margin-bottom: 5px;
+        text-transform: uppercase;
+    }
+
+    .coffee-price-row {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-family: var(--font-body);
+        font-size: clamp(1rem, 1vw, 0.7rem);
+        font-weight: 700;
+    }
+
+    /* ── Responsive ── */
+    @media (max-width: 768px) {
+        .coffee-section {
+            padding: 50px 0;
+        }
+
+        .coffee-card-img {
+            border-radius: 12px 12px 0 0;
+        }
+
+        .coffee-title {
+            margin-bottom: 15px;
+        }
+    }
+
+    @media (max-width: 480px) {
+        .coffee-section {
+            padding: 30px 10px;
+        }
+
+        .coffee-card-title {
+            font-size: clamp(0.9rem, 1vw, 0.65rem);
+        }
+
+        .coffee-card-content {
+            padding: 0;
+        }
+
+        .coffee-card-desc {
+            font-size: clamp(0.65rem, 1vw, 0.65rem);
+
+        }
+
+        .coffee-price-row {
+            font-size: clamp(0.8rem, 1vw, 0.65rem);
         }
     }
