@@ -70,18 +70,18 @@ const i18n = (() => {
         'home.promo.car.title': { en: 'WE OFFER CAR SERVICE\nWITH CHARGE DEPEND PER\nKILOMETER', ja: '送迎サービスあり\nキロメートルごとの\n料金制' },
 
         // Featured Dishes
-        'home.featured.dish1.name': { en: 'TONKOTSU RAMEN', ja: 'とんこつラーメン' },
-        'home.featured.dish1.desc': { en: 'Experience our signature rich, creamy pork bone broth simmered to perfection.', ja: '濃厚でクリーミーな豚骨ブロスを心ゆくまでお楽しみください。' },
-        'home.featured.dish2.name': { en: 'SUSHI', ja: '寿司' },
-        'home.featured.dish2.desc': { en: 'Fresh, handcrafted sushi rolls prepared with the finest ingredients.', ja: '厳選された食材で手作りした新鮮な寿司をお楽しみください。' },
+        'home.featured.dish1.name': { en: 'BICOL EXPRESS', ja: 'ビコールエクスプレス' },
+        'home.featured.dish1.desc': { en: 'Fiery, creamy, and absolutely addictive — tender pork cooked in rich coconut milk with generous amounts of chilies and shrimp paste.', ja: '濃厚なココナッツミルクとたっぷりの唐辛子、エビのペーストで豚肉を煮込んだ、辛くてクリーミーで絶対にクセになる一品。' },
+        'home.featured.dish2.name': { en: 'YAKISOBA', ja: '焼きそば' },
+        'home.featured.dish2.desc': { en: 'Classic Japanese street food — springy stir-fried noodles tossed with tender pork, fresh cabbage, and vegetables.', ja: '定番の日本のストリートフード — 弾力のある炒め麺に、柔らかい豚肉、新鮮なキャベツと野菜を絡めました。' },
         'home.featured.dish3.name': { en: 'KARE-KARE', ja: 'カレカレ' },
-        'home.featured.dish3.desc': { en: 'A classic Filipino stew featuring our savory, thick peanut sauce.', ja: '濃厚なピーナッツソースが特徴のフィリピンの伝統シチュー。' },
+        'home.featured.dish3.desc': { en: 'A rich, golden peanut stew slow-cooked with tender meat and fresh vegetables — best paired with a touch of bagoong for that perfect savory kick.', ja: '柔らかいお肉と新鮮な野菜をじっくり煮込んだ、コクのある黄金色のピーナッツシチュー。旨味たっぷりのバゴーン（エビペースト）を添えて。' },
         'home.featured.btn': { en: 'Check Menu', ja: 'メニューを見る' },
 
         // Featured Drinks
-        'home.drinks.gin.desc': { en: 'JAPANESE GIN IS WORLD-CLASS AND FAMOUS FOR ITS EXTREME SMOOTHNESS', ja: '日本のジンは世界最高峰で、極めて滑らかな口当たりで有名です' },
-        'home.drinks.whisky.desc': { en: 'JAPANESE WHISKY IS WORLD-RENOWNED FOR ITS EXCEPTIONAL QUALITY', ja: '日本のウイスキーは卓越した品質で世界的に有名です' },
-        'home.drinks.wine.desc': { en: 'JAPANESE WINE IS EXCELLENT AND RAPIDLY GROWING', ja: '日本のワインは優れており、急速に成長しています' },
+        'home.drinks.gin.desc': { en: 'A true expression of Japanese harmony in a glass.', ja: 'グラスに込められた、日本の調和の真の表現。' },
+        'home.drinks.whisky.desc': { en: 'The Philippines most beloved dessert', ja: 'フィリピンで最も愛されているデザート。' },
+        'home.drinks.wine.desc': { en: 'Made with ripe mangoes for a rich, creamy, and refreshing tropical treat', ja: '完熟マンゴーを使用した、リッチでクリーミー、爽やかなトロピカルシェイク。' },
         'home.drinks.seemore': { en: 'もっと見る', ja: 'もっと見る' },
 
         // Events Preview
