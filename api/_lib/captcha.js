@@ -32,6 +32,10 @@ async function verifyCaptcha(token) {
 
   // Skip CAPTCHA in development if secret key is not configured
   if (!process.env.TURNSTILE_SECRET_KEY) {
+    if (process.env.VERCEL_ENV === 'production') {
+      console.error('TURNSTILE_SECRET_KEY missing in production!');
+      return false; // hard-fail in production
+    }
     console.warn('TURNSTILE_SECRET_KEY not set — skipping CAPTCHA verification (dev mode).');
     return true;
   }

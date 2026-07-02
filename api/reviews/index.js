@@ -2,6 +2,7 @@ const { supabaseAdmin } = require('../_lib/supabase');
 const { supabase } = require('../_lib/supabase');
 const { validateRequired, sanitize, checkMaxLengths } = require('../_lib/validate');
 const { checkRateLimit, getClientIp } = require('../_lib/rate-limiter');
+const { verifyCaptcha } = require('../_lib/captcha');
 
 /**
  * /api/reviews
@@ -53,7 +54,13 @@ module.exports = async (req, res) => {
       return res.status(400).json({ error: `Missing required fields: ${missing.join(', ')}` });
     }
 
-    const { name, rating, comment } = req.body;
+    const { name, rating, comment, captcha_token } = req.body;
+
+    // CAPTCHA verification
+    const captchaValid = await verifyCaptcha(captcha_token);
+    if (!captchaValid) {
+      return res.status(400).json({ error: 'CAPTCHA verification failed. Please try again.' });
+    }
 
     // Validate rating
     const ratingNum = parseInt(rating, 10);

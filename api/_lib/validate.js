@@ -271,7 +271,7 @@ function sanitize(str) {
     .trim()
     .replace(/<[^>]*>?/gm, '')       // Strip all HTML tags (including malformed/unclosed)
     .replace(/javascript\s*:/gi, '')  // Strip javascript: protocol
-    .replace(/on\w+\s*=/gi, '');      // Strip inline event handlers (onclick=, onerror=, etc.)
+    .replace(/\bon\w+\s*=/gi, '');    // Strip inline event handlers (onclick=, onerror=, etc.)
 }
 
 // ── Exports ──────────────────────────────────────────────────────

@@ -39,7 +39,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const pageCache = {};   // Stores live DOM wrappers by page name
     let currentPage = null;
     let isLoading = false;  // Race condition guard
-    let turnstileWidgetId = null; // Track Turnstile widget to prevent duplicate render errors
+    let turnstileWidgets = {}; // Track Turnstile widgets per page to prevent duplicate render errors
 
     // ── Loading Indicator (created once, reused) ──
     const loader = document.createElement('div');
@@ -74,9 +74,9 @@ document.addEventListener('DOMContentLoaded', () => {
         // ── 2. Detach current page (keep it alive in cache)
         if (currentPage && pageCache[currentPage]) {
             // Clean up Turnstile safely BEFORE detaching the DOM node to prevent state corruption
-            if (currentPage === 'reservations' && window.turnstile && turnstileWidgetId !== null) {
-                window.turnstile.remove(turnstileWidgetId);
-                turnstileWidgetId = null;
+            if ((currentPage === 'reservations' || currentPage === 'reviews') && window.turnstile && turnstileWidgets[currentPage] !== undefined) {
+                window.turnstile.remove(turnstileWidgets[currentPage]);
+                delete turnstileWidgets[currentPage];
             }
 
             pageCache[currentPage].remove();
@@ -117,15 +117,15 @@ document.addEventListener('DOMContentLoaded', () => {
                 initMenuGrids();
             }
 
-            // Explicitly render Turnstile for the reservations page when restored from cache
-            if (page === 'reservations' && window.turnstile) {
+            // Explicitly render Turnstile when restored from cache (reservations + reviews)
+            if ((page === 'reservations' || page === 'reviews') && window.turnstile) {
                 const turnstileContainer = document.querySelector('.cf-turnstile');
                 if (turnstileContainer) {
-                    if (turnstileWidgetId !== null) {
-                        window.turnstile.remove(turnstileWidgetId);
-                        turnstileWidgetId = null;
+                    if (turnstileWidgets[page] !== undefined) {
+                        window.turnstile.remove(turnstileWidgets[page]);
+                        delete turnstileWidgets[page];
                     }
-                    turnstileWidgetId = window.turnstile.render(turnstileContainer, {
+                    turnstileWidgets[page] = window.turnstile.render(turnstileContainer, {
                         sitekey: turnstileContainer.getAttribute('data-sitekey') || '0x4AAAAAADpbe91a9hwitDJ1',
                         theme: turnstileContainer.getAttribute('data-theme') || 'dark'
                     });
@@ -186,15 +186,15 @@ document.addEventListener('DOMContentLoaded', () => {
                     initMenuGrids();
                 }
 
-                // Explicitly render Turnstile for the reservations page
-                if (page === 'reservations' && window.turnstile) {
+                // Explicitly render Turnstile for pages that use it (reservations + reviews)
+                if ((page === 'reservations' || page === 'reviews') && window.turnstile) {
                     const turnstileContainer = document.querySelector('.cf-turnstile');
                     if (turnstileContainer) {
-                        if (turnstileWidgetId !== null) {
-                            window.turnstile.remove(turnstileWidgetId);
-                            turnstileWidgetId = null;
+                        if (turnstileWidgets[page] !== undefined) {
+                            window.turnstile.remove(turnstileWidgets[page]);
+                            delete turnstileWidgets[page];
                         }
-                        turnstileWidgetId = window.turnstile.render(turnstileContainer, {
+                        turnstileWidgets[page] = window.turnstile.render(turnstileContainer, {
                             sitekey: turnstileContainer.getAttribute('data-sitekey') || '0x4AAAAAADpbe91a9hwitDJ1',
                             theme: turnstileContainer.getAttribute('data-theme') || 'dark'
                         });

@@ -67,7 +67,7 @@ const i18n = (() => {
         'home.promo.drink.title': { en: '1 HOUR DRINK ALL\nYOU CAN', ja: '1時間\n飲み放題' },
         'home.promo.sing.title': { en: 'SING ALL YOU CAN', ja: '歌い放題' },
         'home.promo.sing.request': { en: 'REQUEST = ¥1000', ja: 'リクエスト = ¥1000' },
-        'home.promo.car.title': { en: 'WE OFFER CAR SERVICE\nWITH CHARGE DEPEND PER\nKILOMETER', ja: '送迎サービスあり\nキロメートルごとの\n料金制' },
+        'home.promo.car.title': { en: 'WE OFFER CAR SERVICE\nPICK UP AND\nDROP OFF', ja: '送迎サービス\nお迎え・お送り' },
 
         // Featured Dishes
         'home.featured.dish1.name': { en: 'BICOL EXPRESS', ja: 'ビコールエクスプレス' },
@@ -86,8 +86,8 @@ const i18n = (() => {
 
         // Events Preview
         'home.events.desc.left': {
-            en: 'Amour et Grace is an extraordinary, intimate dining experience in the heart of the city, beautifully blending Filipino-inspired cuisine with soulful Japanese hospitality.',
-            ja: 'Amour et Graceは、街の中心にある特別で親密なダイニング体験です。フィリピン風の料理と心のこもった日本のおもてなしが美しく融合しています。'
+            en: 'Amour et Grace is an extraordinary venue in the heart of the city, beautifully blending Filipino-inspired cuisine with lively karaoke, singing, dancing, and unforgettable event experiences.',
+            ja: 'Amour et Graceは、街の中心にある特別な空間です。フィリピン風の料理と、活気あふれるカラオケ、歌、ダンス、そして忘れられないイベント体験が美しく融合しています。'
         },
         'home.events.desc.right': {
             en: 'When the neon lights flicker to life across Japan, the real magic begins inside the bar. For those looking to experience Komaki City legendary nightlife at its absolute finest,',
@@ -453,7 +453,7 @@ const i18n = (() => {
         'events.card.spring': { en: 'Spring', ja: '春' },
         'events.card.winter': { en: 'Winter', ja: '冬' },
         'events.card.summer': { en: 'Summer', ja: '夏' },
-        'events.card.livemusic': { en: 'Live Music', ja: 'ライブミュージック' },
+        'events.card.livemusic': { en: 'Fall', ja: '秋' },
 
         // Cinematic story
         'events.story.wehost': { en: 'We Host', ja: '私たちが開催' },
@@ -650,6 +650,23 @@ const i18n = (() => {
         'reviews.results': { en: 'results', ja: '件' },
         'reviews.loadmore': { en: 'もっと見る', ja: 'もっと見る' },
         'reviews.showless': { en: 'Show Less', ja: '表示を減らす' },
+        
+        // Past Events
+        'events.past.bday.title': { en: 'Birthday Party', ja: 'バースデーパーティー' },
+        'events.past.bday.desc': { 
+            en: 'A vibrant birthday celebration filled with joy, great food, and unforgettable memories with friends and family.', 
+            ja: '美味しい料理と大切な家族や友人たちとの喜びに満ちた、活気あふれる誕生日のお祝い。' 
+        },
+        'events.past.karaoke.title': { en: 'Karaoke Nights', ja: 'カラオケナイト' },
+        'events.past.karaoke.desc': { 
+            en: 'An exciting night of singing, laughter, and great drinks where guests took center stage and sang their hearts out.', 
+            ja: '美味しいお酒を片手に、歌って笑って大盛り上がり。ゲストが主役となって思い切り歌い上げたエキサイティングな夜。' 
+        },
+        'events.past.anniv.title': { en: 'Anniversary Celebration', ja: 'アニバーサリー（記念日）' },
+        'events.past.anniv.desc': { 
+            en: 'A romantic and elegant anniversary dinner celebrating love and milestones with our signature dishes and cocktails.', 
+            ja: '当店のシグネチャー料理やカクテルとともに、愛と節目を祝うロマンチックでエレガントな記念日ディナー。' 
+        }
     };
 
     // ── Private State ──
@@ -697,7 +714,6 @@ const i18n = (() => {
                 el.innerHTML = entry[lang];
             }
         }
-
         // Placeholder translations
         const placeholders = document.querySelectorAll('[data-i18n-placeholder]');
         for (let i = 0; i < placeholders.length; i++) {

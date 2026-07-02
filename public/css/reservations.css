@@ -535,42 +535,67 @@
     text-align: center;
     width: 150px;
     z-index: 2;
+    cursor: default;
 }
 
 .step-circle {
-    width: 40px;
-    height: 40px;
+    width: 48px;
+    height: 48px;
     border-radius: 50%;
-    background-color: #000000;
-    color: var(--text-light);
+    background-color: rgba(255, 255, 255, 0.1);
+    color: rgba(255, 255, 255, 0.7);
     display: flex;
     justify-content: center;
     align-items: center;
-    font-weight: bold;
-    font-size: 1.1rem;
+    font-weight: 700;
+    font-size: 1.2rem;
     margin-bottom: 15px;
-    border: 2px solid #000000;
-    transition: var(--transition-smooth, all 0.3s ease);
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(8px);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    z-index: 2;
 }
 
 .step-circle.active {
-    background-color: transparent;
-    border-color: #000000;
-    color: #000000;
+    background-color: #ffffff;
+    border-color: #ffffff;
+    color: var(--accent-red);
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
+    transform: scale(1.1);
+}
+
+.progress-step:hover .step-circle:not(.active) {
+    background-color: rgba(255, 255, 255, 0.2);
+    border-color: rgba(255, 255, 255, 0.5);
+    color: #ffffff;
 }
 
 .progress-step p {
-    font-size: 0.85rem;
+    font-size: 0.9rem;
     line-height: 1.4;
-    color: rgba(255, 255, 255, 0.9);
+    color: rgba(255, 255, 255, 0.7);
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.progress-step:hover p {
+    color: #ffffff;
+}
+
+.step-circle.active+p {
+    color: #ffffff;
+    font-weight: 600;
 }
 
 .progress-line {
     flex-grow: 1;
-    height: 2px;
-    background-color: #000000;
-    margin-top: 20px;
+    height: 3px;
+    background-color: rgba(255, 255, 255, 0.15);
+    margin-top: 23px;
+    /* (48px height / 2) - 1px */
     z-index: 1;
+    border-radius: 2px;
 }
 
 /* Grid Layout */
@@ -746,21 +771,31 @@
 }
 
 .social-circle {
-    width: 40px;
-    height: 40px;
+    width: 44px;
+    height: 44px;
     border-radius: 50%;
-    background-color: #ff5e3a;
-    /* Orange matching the screenshot */
+    background-color: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
     display: flex;
     justify-content: center;
     align-items: center;
     color: #ffffff;
     text-decoration: none;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(4px);
+}
+
+.social-circle svg {
+    width: 20px;
+    height: 20px;
     transition: transform 0.3s ease;
 }
 
 .social-circle:hover {
-    transform: scale(1.1);
+    background-color: var(--accent-red);
+    border-color: var(--accent-red);
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(201, 0, 34, 0.4);
 }
 
 /* Responsive */

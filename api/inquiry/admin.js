@@ -1,5 +1,7 @@
 const { supabaseAdmin } = require('../_lib/supabase');
 const { verifyAdmin } = require('../_lib/auth');
+const { isValidUUID } = require('../_lib/validate');
+const { checkRateLimit, getClientIp } = require('../_lib/rate-limiter');
 
 /**
  * /api/inquiry/admin
@@ -22,6 +24,10 @@ module.exports = async (req, res) => {
 
   // ── GET: List all inquiries ──
   if (req.method === 'GET') {
+    const ip = getClientIp(req);
+    const { allowed: getAllowed } = await checkRateLimit(ip, '/api/inquiry/admin/get');
+    if (!getAllowed) return res.status(429).json({ error: 'Too many requests. Please slow down.' });
+
     try {
       let query = supabaseAdmin
         .from('inquiries')
@@ -52,10 +58,18 @@ module.exports = async (req, res) => {
 
   // ── PATCH: Mark inquiry as read/unread ──
   if (req.method === 'PATCH') {
+    const ip = getClientIp(req);
+    const { allowed: patchAllowed } = await checkRateLimit(ip, '/api/inquiry/admin/patch');
+    if (!patchAllowed) return res.status(429).json({ error: 'Too many requests. Please slow down.' });
+
     const { id, is_read } = req.body || {};
 
     if (!id) {
       return res.status(400).json({ error: 'Inquiry ID is required' });
+    }
+
+    if (!isValidUUID(id)) {
+      return res.status(400).json({ error: 'Invalid Inquiry ID format' });
     }
 
     if (typeof is_read !== 'boolean') {

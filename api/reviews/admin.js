@@ -1,5 +1,7 @@
 const { supabaseAdmin } = require('../_lib/supabase');
 const { verifyAdmin } = require('../_lib/auth');
+const { isValidUUID } = require('../_lib/validate');
+const { checkRateLimit, getClientIp } = require('../_lib/rate-limiter');
 
 /**
  * /api/reviews/admin
@@ -22,6 +24,10 @@ module.exports = async (req, res) => {
 
   // ── GET: List all reviews ──
   if (req.method === 'GET') {
+    const ip = getClientIp(req);
+    const { allowed: getAllowed } = await checkRateLimit(ip, '/api/reviews/admin/get');
+    if (!getAllowed) return res.status(429).json({ error: 'Too many requests. Please slow down.' });
+
     try {
       let query = supabaseAdmin
         .from('reviews')
@@ -52,10 +58,18 @@ module.exports = async (req, res) => {
 
   // ── PATCH: Approve or reject a review ──
   if (req.method === 'PATCH') {
+    const ip = getClientIp(req);
+    const { allowed: patchAllowed } = await checkRateLimit(ip, '/api/reviews/admin/patch');
+    if (!patchAllowed) return res.status(429).json({ error: 'Too many requests. Please slow down.' });
+
     const { id, is_approved } = req.body || {};
 
     if (!id) {
       return res.status(400).json({ error: 'Review ID is required' });
+    }
+
+    if (!isValidUUID(id)) {
+      return res.status(400).json({ error: 'Invalid Review ID format' });
     }
 
     if (typeof is_approved !== 'boolean') {
@@ -91,10 +105,18 @@ module.exports = async (req, res) => {
 
   // ── DELETE: Remove a review ──
   if (req.method === 'DELETE') {
+    const ip = getClientIp(req);
+    const { allowed: deleteAllowed } = await checkRateLimit(ip, '/api/reviews/admin/delete');
+    if (!deleteAllowed) return res.status(429).json({ error: 'Too many requests. Please slow down.' });
+
     const { id } = req.body || {};
 
     if (!id) {
       return res.status(400).json({ error: 'Review ID is required' });
+    }
+
+    if (!isValidUUID(id)) {
+      return res.status(400).json({ error: 'Invalid Review ID format' });
     }
 
     try {

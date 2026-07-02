@@ -326,6 +326,9 @@
         submitBtn.disabled = true;
 
         try {
+            // Get CAPTCHA token
+            const captchaToken = form.querySelector('[name="cf-turnstile-response"]')?.value || '';
+
             const response = await fetch(API_URL, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
@@ -333,6 +336,7 @@
                     name: cleanName,
                     rating: rating,
                     comment: cleanComment,
+                    captcha_token: captchaToken,
                 }),
             });
 
@@ -344,6 +348,8 @@
                 messageDiv.classList.add('error');
                 submitBtn.innerHTML = originalBtnHtml;
                 submitBtn.disabled = false;
+                // Reset Turnstile so user can re-submit
+                if (window.turnstile) turnstile.reset();
                 return;
             }
 
@@ -363,10 +369,14 @@
                 messageDiv.textContent = '';
             }, 8000);
 
+            // Reset Turnstile widget for potential next submission
+            if (window.turnstile) turnstile.reset();
+
         } catch (err) {
             console.error('Review submit error:', err);
             messageDiv.textContent = 'Network error. Please check your connection and try again.';
             messageDiv.classList.add('error');
+            if (window.turnstile) turnstile.reset();
         } finally {
             submitBtn.innerHTML = originalBtnHtml;
             submitBtn.disabled = false;

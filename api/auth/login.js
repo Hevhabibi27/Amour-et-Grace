@@ -19,7 +19,7 @@ module.exports = async (req, res) => {
 
   // Rate limiting — strict for login
   const ip = getClientIp(req);
-  const { allowed, retryAfterMs } = await checkRateLimit(ip, '/api/auth/login');
+  const { allowed, retryAfterMs } = await checkRateLimit(ip, '/api/auth/login', { failClosed: true });
   if (!allowed) {
     return res.status(429).json({
       error: 'Too many login attempts. Please try again later.',

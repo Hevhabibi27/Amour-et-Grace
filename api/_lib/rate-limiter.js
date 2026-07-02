@@ -67,9 +67,14 @@ const LIMITS = {
   '/api/inquiry':                  { max: 5,   windowMs: 60 * 60 * 1000 },   // 5 per hour
   '/api/chat':                     { max: 20,  windowMs: 60 * 60 * 1000 },   // 20 per hour
 
-  // Admin endpoints (previously unprotected)
+  // Admin endpoints
   '/api/reservations/admin/get':   { max: 120, windowMs: 60 * 1000 },        // 120 per minute
   '/api/reservations/admin/patch': { max: 60,  windowMs: 60 * 1000 },        // 60 per minute
+  '/api/reviews/admin/get':        { max: 120, windowMs: 60 * 1000 },        // 120 per minute
+  '/api/reviews/admin/patch':      { max: 60,  windowMs: 60 * 1000 },        // 60 per minute
+  '/api/reviews/admin/delete':     { max: 30,  windowMs: 60 * 1000 },        // 30 per minute
+  '/api/inquiry/admin/get':        { max: 120, windowMs: 60 * 1000 },        // 120 per minute
+  '/api/inquiry/admin/patch':      { max: 60,  windowMs: 60 * 1000 },        // 60 per minute
 };
 
 // ── Atomic rate limit check ──────────────────────────────────────
@@ -83,9 +88,11 @@ const LIMITS = {
  *
  * @param {string} ip       - Client IP address
  * @param {string} endpoint - API endpoint path (must match a LIMITS key)
+ * @param {object} [opts]   - Options
+ * @param {boolean} [opts.failClosed=false] - If true, DB errors block the request (use for login)
  * @returns {Promise<{ allowed: boolean, remaining: number, retryAfterMs?: number }>}
  */
-async function checkRateLimit(ip, endpoint) {
+async function checkRateLimit(ip, endpoint, { failClosed = false } = {}) {
   const config = LIMITS[endpoint];
   if (!config) return { allowed: true, remaining: Infinity };
 
@@ -104,8 +111,9 @@ async function checkRateLimit(ip, endpoint) {
         console.warn('increment_rate_limit RPC not found — using legacy rate limiter. Please run the SQL migration.');
         return checkRateLimitLegacy(ip, endpoint, config);
       }
-      // Other DB error — fail open (don't block users)
+      // Other DB error — fail closed for sensitive endpoints, fail open otherwise
       console.error('Rate limit RPC error:', error);
+      if (failClosed) return { allowed: false, remaining: 0, retryAfterMs: config.windowMs };
       return { allowed: true, remaining: config.max };
     }
 
@@ -119,8 +127,9 @@ async function checkRateLimit(ip, endpoint) {
       retryAfterMs: allowed ? undefined : config.windowMs,
     };
   } catch (err) {
-    // Network error or unexpected failure — fail open
+    // Network error or unexpected failure
     console.error('Rate limit exception:', err);
+    if (failClosed) return { allowed: false, remaining: 0, retryAfterMs: config.windowMs };
     return { allowed: true, remaining: config.max };
   }
 }

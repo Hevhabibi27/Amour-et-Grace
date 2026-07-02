@@ -22,6 +22,8 @@ const FROM_EMAIL = process.env.RESEND_FROM_EMAIL || 'noreply@amouretgrace.com';
 
 // ── Helpers ──────────────────────────────────────────────────────
 
+let resendClient = null;
+
 /**
  * Get the Resend client lazily.
  * Returns null if RESEND_API_KEY is not set — callers must check for null.
@@ -32,7 +34,10 @@ function getResend() {
     console.warn('RESEND_API_KEY is not set — email sending is disabled.');
     return null;
   }
-  return new Resend(process.env.RESEND_API_KEY);
+  if (!resendClient) {
+    resendClient = new Resend(process.env.RESEND_API_KEY);
+  }
+  return resendClient;
 }
 
 /**
