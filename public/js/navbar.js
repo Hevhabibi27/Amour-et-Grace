@@ -75,35 +75,54 @@ document.addEventListener('DOMContentLoaded', () => {
             const dot = statusBadge.querySelector('.status-dot');
             const text = statusBadge.querySelector('.status-text');
 
+            let key = '';
+            let defaultText = '';
+
             if (restoOpen && loungeOpen) {
                 // Both open (unlikely overlap but handle it)
                 statusBadge.classList.add('open');
                 statusBadge.classList.remove('closed');
-                text.textContent = 'Open Now — Closes 2:00 AM';
+                key = 'nav.status.open.lounge';
+                defaultText = 'Open Now — Closes 2:00 AM';
             } else if (restoOpen) {
                 statusBadge.classList.add('open');
                 statusBadge.classList.remove('closed');
-                text.textContent = 'Open Now — Closes 5:00 PM';
+                key = 'nav.status.open.resto';
+                defaultText = 'Open Now — Closes 5:00 PM';
             } else if (loungeOpen) {
                 statusBadge.classList.add('open');
                 statusBadge.classList.remove('closed');
-                text.textContent = 'Open Now — Closes 2:00 AM';
+                key = 'nav.status.open.lounge';
+                defaultText = 'Open Now — Closes 2:00 AM';
             } else {
                 statusBadge.classList.add('closed');
                 statusBadge.classList.remove('open');
                 // Figure out what opens next
                 if (hours >= 2 && hours < 9) {
-                    text.textContent = 'Closed — Opens 9:00 AM';
+                    key = 'nav.status.closed.9am';
+                    defaultText = 'Closed — Opens 9:00 AM';
                 } else if (hours >= 17 && hours < 19) {
                     if (day === 2) {
                         // Tuesday evening, lounge is closed
-                        text.textContent = 'Closed — Opens 9:00 AM';
+                        key = 'nav.status.closed.9am';
+                        defaultText = 'Closed — Opens 9:00 AM';
                     } else {
-                        text.textContent = 'Closed — Opens 7:00 PM';
+                        key = 'nav.status.closed.7pm';
+                        defaultText = 'Closed — Opens 7:00 PM';
                     }
                 } else {
-                    text.textContent = 'Closed — Opens 9:00 AM';
+                    key = 'nav.status.closed.9am';
+                    defaultText = 'Closed — Opens 9:00 AM';
                 }
+            }
+
+            text.setAttribute('data-i18n', key);
+
+            if (typeof i18n !== 'undefined' && i18n.translations[key]) {
+                const lang = i18n.getLang();
+                text.textContent = i18n.translations[key][lang] || defaultText;
+            } else {
+                text.textContent = defaultText;
             }
         };
 

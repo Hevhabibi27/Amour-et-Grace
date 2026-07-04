@@ -284,6 +284,8 @@ h6 {
     z-index: 10;
 }
 
+
+
 /* ── Hamburger Menu & Mobile Navbar ── */
 .hamburger {
     display: none;
@@ -655,13 +657,10 @@ h6 {
     background: rgba(255, 255, 255, 0.08);
     border: 1px solid rgba(255, 255, 255, 0.2);
     border-radius: 20px;
-    padding: 6px 14px;
+    padding: 6px 12px;
     cursor: pointer;
     font-family: var(--font-body);
-    font-size: 0.8rem;
-    font-weight: 500;
     color: #fff;
-    letter-spacing: 1px;
     transition: all 0.3s ease;
     white-space: nowrap;
     line-height: 1;
@@ -678,21 +677,45 @@ h6 {
 }
 
 .lang-toggle-btn .lang-icon {
-    font-size: 1rem;
-    line-height: 1;
+    width: 16px;
+    height: 16px;
+    opacity: 0.8;
 }
 
 .lang-toggle-btn .lang-label {
     font-weight: 600;
     font-size: 0.75rem;
-    letter-spacing: 1.5px;
+    letter-spacing: 1px;
+    display: flex;
+    align-items: center;
 }
 
-/* Mobile: ensure toggle is visible in hamburger menu */
-@media (max-width: 768px) {
+.lang-toggle-btn .lang-label span {
+    opacity: 0.4;
+    transition: all 0.3s ease;
+    font-weight: 400;
+}
+
+.lang-toggle-btn .lang-label span.active {
+    opacity: 1;
+    font-weight: 700;
+}
+
+.lang-toggle-btn .lang-label .divider {
+    opacity: 0.3;
+    margin: 0 4px;
+    font-weight: 300;
+}
+
+/* Mobile: Center the toggle in the dropdown menu */
+@media (max-width: 1024px) {
+    .mobile-lang-item {
+        margin-top: 10px;
+        display: flex;
+        justify-content: center;
+        width: 100%;
+    }
     .lang-toggle-btn {
-        margin: 10px auto 0;
-        background: rgba(255, 255, 255, 0.1);
-        border-color: rgba(255, 255, 255, 0.25);
+        padding: 8px 16px;
     }
 }

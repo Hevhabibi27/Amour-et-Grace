@@ -19,6 +19,10 @@ const i18n = (() => {
         'nav.reservation': { en: 'Reservation', ja: '予約' },
         'nav.reviews': { en: 'Reviews', ja: 'レビュー' },
         'lang.label': { en: 'EN', ja: 'JA' },
+        'nav.status.open.lounge': { en: 'Open Now — Closes 2:00 AM', ja: '営業中 — 2:00 AM閉店' },
+        'nav.status.open.resto': { en: 'Open Now — Closes 5:00 PM', ja: '営業中 — 5:00 PM閉店' },
+        'nav.status.closed.9am': { en: 'Closed — Opens 9:00 AM', ja: '準備中 — 9:00 AM開店' },
+        'nav.status.closed.7pm': { en: 'Closed — Opens 7:00 PM', ja: '準備中 — 7:00 PM開店' },
 
         // ═══════════════════════════════════════
         // FOOTER
@@ -650,22 +654,22 @@ const i18n = (() => {
         'reviews.results': { en: 'results', ja: '件' },
         'reviews.loadmore': { en: 'もっと見る', ja: 'もっと見る' },
         'reviews.showless': { en: 'Show Less', ja: '表示を減らす' },
-        
+
         // Past Events
         'events.past.bday.title': { en: 'Birthday Party', ja: 'バースデーパーティー' },
-        'events.past.bday.desc': { 
-            en: 'A vibrant birthday celebration filled with joy, great food, and unforgettable memories with friends and family.', 
-            ja: '美味しい料理と大切な家族や友人たちとの喜びに満ちた、活気あふれる誕生日のお祝い。' 
+        'events.past.bday.desc': {
+            en: 'A vibrant birthday celebration filled with joy, great food, and unforgettable memories with friends and family.',
+            ja: '美味しい料理と大切な家族や友人たちとの喜びに満ちた、活気あふれる誕生日のお祝い。'
         },
         'events.past.karaoke.title': { en: 'Karaoke Nights', ja: 'カラオケナイト' },
-        'events.past.karaoke.desc': { 
-            en: 'An exciting night of singing, laughter, and great drinks where guests took center stage and sang their hearts out.', 
-            ja: '美味しいお酒を片手に、歌って笑って大盛り上がり。ゲストが主役となって思い切り歌い上げたエキサイティングな夜。' 
+        'events.past.karaoke.desc': {
+            en: 'An exciting night of singing, laughter, and great drinks where guests took center stage and sang their hearts out.',
+            ja: '美味しいお酒を片手に、歌って笑って大盛り上がり。ゲストが主役となって思い切り歌い上げたエキサイティングな夜。'
         },
         'events.past.anniv.title': { en: 'Anniversary Celebration', ja: 'アニバーサリー（記念日）' },
-        'events.past.anniv.desc': { 
-            en: 'A romantic and elegant anniversary dinner celebrating love and milestones with our signature dishes and cocktails.', 
-            ja: '当店のシグネチャー料理やカクテルとともに、愛と節目を祝うロマンチックでエレガントな記念日ディナー。' 
+        'events.past.anniv.desc': {
+            en: 'A romantic and elegant anniversary dinner celebrating love and milestones with our signature dishes and cocktails.',
+            ja: '当店のシグネチャー料理やカクテルとともに、愛と節目を祝うロマンチックでエレガントな記念日ディナー。'
         }
     };
 
@@ -728,7 +732,9 @@ const i18n = (() => {
         // Update the toggle button label
         const toggleLabel = document.querySelector('[data-i18n="lang.label"]');
         if (toggleLabel) {
-            toggleLabel.textContent = lang === 'en' ? 'EN' : 'JA';
+            toggleLabel.innerHTML = lang === 'en' 
+                ? '<span class="active">EN</span><span class="divider">|</span><span>JA</span>' 
+                : '<span>EN</span><span class="divider">|</span><span class="active">JA</span>';
         }
 
         // Update <html lang="..."> for accessibility / SEO
