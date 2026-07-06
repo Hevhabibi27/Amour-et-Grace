@@ -129,24 +129,33 @@ const i18n = (() => {
         // ═══════════════════════════════════════
         'menu.discover.title': { en: 'Discover Our Menu', ja: 'メニューをご覧ください' },
         'menu.discover.desc': {
-            en: 'Experience a thoughtfully curated selection of authentic Japanese cuisine, premium wagyu, handcrafted beverages, and signature specialties. Every dish and drink is prepared to bring together tradition, quality, and unforgettable flavors.',
-            ja: '本格的な日本料理、プレミアム和牛、手作りの飲料、シグネチャースペシャリティを厳選しました。すべての料理とドリンクは、伝統、品質、忘れられない味わいを一つにします。'
+            en: 'Experience a thoughtfully homemade dishes, together with a variety of beverages and drinks that sparkle your mood for the unexpected night life.',
+            ja: '手作りの料理と、予期せぬナイトライフの気分を盛り上げる多彩なドリンクをお楽しみください。'
         },
         'menu.selection.title': { en: 'Filipino Food Selection', ja: 'フィリピン料理セクション' },
-        'menu.japanese.title': { en: 'Japanese Food Section', ja: '日本食セクション' },
-        'menu.japanese.desc': {
+        'menu.filipino.desc': {
             en: 'Rooted in tradition. Bursting with flavor. Our Filipino dishes bring the heart of Filipino cuisine straight to your table.',
             ja: '伝統に根ざし、風味豊かに。フィリピン料理の心をそのまま食卓にお届けします。'
+        },
+        'menu.japanese.title': { en: 'Japanese Food Section', ja: '日本食セクション' },
+        'menu.japanese.desc': {
+            en: 'Authentic and refined. From crispy karaage to comforting bowls of udon, experience the true taste of Japanese culinary excellence.',
+            ja: '本格的で洗練された味わい。サクサクの唐揚げから心温まるうどんまで、日本の卓越した料理の真髄をご堪能ください。'
         },
         'menu.drinks.title': { en: 'Drinks Section', ja: 'ドリンクセクション' },
         'menu.drinks.desc': {
-            en: 'Rooted in tradition. Bursting with flavor. Our Filipino dishes bring the heart of Filipino cuisine straight to your table.',
-            ja: '伝統に根ざし、風味豊かに。フィリピン料理の心をそのまま食卓にお届けします。'
+            en: 'Sip, savor, and celebrate. From premium spirits to refreshing cocktails, find the perfect drink to elevate your dining experience.',
+            ja: '味わい、楽しみ、そしてお祝いを。プレミアムなスピリッツから爽やかなカクテルまで、お食事をさらに引き立てる最高の一杯を見つけてください。'
         },
-        'menu.platters.title': { en: 'Party Platters', ja: 'パーティープラッター' },
-        'menu.platters.desc': {
-            en: 'Every great celebration deserves an equally great spread. Our party platters are a carefully curated selection of Japanese and Filipino favorites — generous, flavorful, and made to be shared.',
-            ja: 'すべての素晴らしいお祝いには、同様に素晴らしい料理が必要です。パーティープラッターは、日本とフィリピンのお気に入りを厳選した、豊富で風味豊かなシェアメニューです。'
+        'menu.platters.filipino.title': { en: 'Filipino Party Platters', ja: 'フィリピンのパーティープラッター' },
+        'menu.platters.filipino.desc': {
+            en: 'Every great celebration deserves an equally great spread. Our Filipino party platters are a carefully curated selection of our best traditional favorites — generous, flavorful, and made to be shared.',
+            ja: 'すべてのお祝いには、それにふさわしい素晴らしい料理が必要です。フィリピンのパーティープラッターは、伝統的な人気メニューを厳選したもので、ボリューム満点、風味豊かで、シェアするのに最適です。'
+        },
+        'menu.platters.japanese.title': { en: 'Japanese Party Platters', ja: '日本のパーティープラッター' },
+        'menu.platters.japanese.desc': {
+            en: 'Elevate your gatherings with our premium Japanese party platters. Featuring fresh sushi rolls, savory noodles, and crispy karaage — beautifully presented and perfect for sharing.',
+            ja: 'プレミアムな日本のパーティープラッターで集まりを華やかに。新鮮な巻き寿司、香ばしい麺類、サクサクの唐揚げなど、美しく盛り付けられており、シェアするのにぴったりです。'
         },
 
         // Filter buttons
@@ -732,8 +741,8 @@ const i18n = (() => {
         // Update the toggle button label
         const toggleLabel = document.querySelector('[data-i18n="lang.label"]');
         if (toggleLabel) {
-            toggleLabel.innerHTML = lang === 'en' 
-                ? '<span class="active">EN</span><span class="divider">|</span><span>JA</span>' 
+            toggleLabel.innerHTML = lang === 'en'
+                ? '<span class="active">EN</span><span class="divider">|</span><span>JA</span>'
                 : '<span>EN</span><span class="divider">|</span><span class="active">JA</span>';
         }
 
