@@ -139,8 +139,8 @@ const i18n = (() => {
         },
         'menu.japanese.title': { en: 'Japanese Food Section', ja: '日本食セクション' },
         'menu.japanese.desc': {
-            en: 'Authentic and refined. From crispy karaage to comforting bowls of udon, experience the true taste of Japanese culinary excellence.',
-            ja: '本格的で洗練された味わい。サクサクの唐揚げから心温まるうどんまで、日本の卓越した料理の真髄をご堪能ください。'
+            en: '"Comfort in its simplest form." Itadakimasu—let’s eat!',
+            ja: 'シンプルな心地よさ。いただきます。さあ、召し上がれ！'
         },
         'menu.drinks.title': { en: 'Drinks Section', ja: 'ドリンクセクション' },
         'menu.drinks.desc': {
