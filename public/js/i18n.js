@@ -190,10 +190,10 @@ const i18n = (() => {
             en: 'Classic Japanese street food — springy stir-fried noodles tossed with tender pork, fresh cabbage, and vegetables in a rich, smoky yakisoba sauce, finished with a sprinkle of bonito flakes and pickled ginger. Simple, satisfying, and full of umami.',
             ja: '昔ながらの日本の屋台の味 — もちもちの炒め麺を、柔らかい豚肉、新鮮なキャベツ、野菜と一緒に、濃厚で香ばしい焼きそばソースで絡めました。仕上げにかつお節と紅しょうがをトッピング。シンプルで満足感のある、旨味たっぷりの一皿です。'
         },
-        'menu.jp.yakisoba_udon.name': { en: 'YAKISOBA UDON', ja: '焼きうどん' },
-        'menu.jp.yakisoba_udon.desc': {
-            en: 'The best of both worlds — thick, chewy udon noodles stir-fried yakisoba style with savory sauce, tender meat, and crisp vegetables. Hearty, bold, and deeply satisfying in every thick, saucy bite.',
-            ja: '2つの良いとこ取り — 太くてもちもちのうどんを、焼きそば風に香ばしいソース、柔らかいお肉、シャキシャキの野菜と一緒に炒めました。ボリューム満点でパンチが効いており、一口ごとに深い満足感を味わえます。'
+        'menu.jp.yakitori.name': { en: 'YAKITORI', ja: '焼き鳥' },
+        'menu.jp.yakitori.desc': {
+            en: 'Tender, perfectly grilled chicken skewers brushed with a savory-sweet glaze or lightly seasoned with salt — smoky, juicy, and bursting with authentic Japanese flavor. A classic izakaya favorite that\'s simple, satisfying, and delicious with every bite.',
+            ja: '香ばしい甘辛いタレ、または軽く塩を振って完璧に焼き上げた柔らかな鶏の串焼き。スモーキーでジューシー、そして本格的な日本の風味が口いっぱいに広がります。シンプルで満足感があり、一口ごとに美味しさが溢れる、定番の居酒屋メニューです。'
         },
         'menu.jp.nikuman.name': { en: 'NIKUMAN', ja: '肉まん' },
         'menu.jp.nikuman.desc': {
