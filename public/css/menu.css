@@ -343,13 +343,16 @@
         border: none;
         padding: 8px 30px;
         border-radius: var(--radius-pill);
-        font-family: 'Cinzel Decorative', 'serif';
-        ;
-        font-weight: 700;
-        font-size: 1.1rem;
+        font-family: 'Poppins', sans-serif;
+        font-weight: 600;
+        font-size: 0.85rem;
         cursor: pointer;
         width: 80%;
         transition: var(--transition-smooth);
+        text-decoration: none;
+        display: inline-block;
+        text-align: center;
+        letter-spacing: 1px;
     }
 
     .showcase-price-btn:hover {

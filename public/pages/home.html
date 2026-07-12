@@ -116,51 +116,78 @@
         <!-- Banners Stack -->
         <div class="promotions-stack">
             <!-- Banner 1: Drink All You Can -->
-            <div class="promo-banner banner-drink">
-                <div class="promo-drink-left">
-                    <img src="assets/images/brandy1.png" alt="Brandy" class="promo-bottle promo-bottle-1"
-                        loading="lazy">
-                    <img src="assets/images/cocktail2 3.png" alt="Cocktail" class="promo-bottle promo-bottle-3"
-                        loading="lazy">
-                    <img src="assets/images/gin.png" alt="Gin" class="promo-bottle promo-bottle-2" loading="lazy">
-                    <img src="assets/images/brandy2 5.png" alt="Brandy" class="promo-bottle promo-bottle-4"
-                        loading="lazy">
-                </div>
-                <div class="promo-drink-right">
-                    <h4 class="promo-title" data-i18n="home.promo.drink.title" style="white-space: pre-line;">1 HOUR
-                        DRINK ALL
-                        YOU CAN</h4>
+            <div class="promo-banner banner-drink glass-card reveal">
+                <div class="promo-drink-content">
+                    <h4 class="promo-title" data-i18n="home.promo.drink.title">1 HOUR<br>DRINK ALL<br>YOU CAN</h4>
                     <p class="promo-price">¥3000</p>
                 </div>
+                <div class="promo-drink-images">
+                    <img src="assets/images/brandy1.png" alt="Brandy" class="promo-bottle p-b-1" loading="lazy">
+                    <img src="assets/images/cocktail2 3.png" alt="Cocktail" class="promo-bottle p-b-2" loading="lazy">
+                    <img src="assets/images/gin.png" alt="Gin" class="promo-bottle p-b-3" loading="lazy">
+                    <img src="assets/images/brandy2 5.png" alt="Brandy" class="promo-bottle p-b-4" loading="lazy">
+                </div>
+                <div class="glass-overlay"></div>
             </div>
 
-            <!-- Banner 2: Karaoke -->
-            <div class="promo-banner banner-karaoke">
-                <div class="promo-karaoke-left">
+            <!-- Banner 2: All You Can Eat -->
+            <div class="promo-banner banner-eat glass-card reveal">
+                <div class="promo-eat-content">
+                    <h4 class="promo-title" data-i18n-html="home.promo.eat.title">ALL YOU CAN EAT<br><span class="highlight-promo">PROMO</span></h4>
+                    <div class="promo-eat-details">
+                        <p class="promo-time">
+                            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <circle cx="12" cy="12" r="10"></circle>
+                                <polyline points="12 6 12 12 16 14"></polyline>
+                            </svg> <span data-i18n="home.promo.eat.time">11 am to 7 pm</span>
+                        </p>
+                        <p class="promo-day">
+                            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                                <line x1="16" y1="2" x2="16" y2="6"></line>
+                                <line x1="8" y1="2" x2="8" y2="6"></line>
+                                <line x1="3" y1="10" x2="21" y2="10"></line>
+                            </svg> <span data-i18n="home.promo.eat.day">Every Sunday</span>
+                        </p>
+                    </div>
+                </div>
+                <div class="promo-eat-images">
+                    <div class="platter-wrapper p-w-1">
+                        <img src="assets/images/kare-kare_platter.webp" alt="Kare-Kare Platter" class="promo-platter" loading="lazy">
+                    </div>
+                    <div class="platter-wrapper p-w-2">
+                        <img src="assets/images/yakisoba_platter.webp" alt="Yakisoba Platter" class="promo-platter" loading="lazy">
+                    </div>
+                </div>
+                <div class="eat-backdrop"></div>
+            </div>
+
+            <!-- Banner 3: Karaoke -->
+            <div class="promo-banner banner-karaoke glass-card reveal">
+                <div class="promo-karaoke-content">
+                    <h4 class="promo-title"><span class="music-note-icon">&#9834;</span> <span data-i18n="home.promo.sing.title">SING ALL YOU CAN</span></h4>
+                    <div class="promo-karaoke-pricing">
+                        <p class="promo-price">¥1000</p>
+                        <div class="divider"></div>
+                        <p class="promo-sub-price"><span data-i18n="home.promo.sing.request">REQUEST = ¥1000</span></p>
+                    </div>
+                </div>
+                <div class="promo-karaoke-images">
                     <img src="assets/images/record.png" alt="Vinyl Record" class="promo-record" loading="lazy">
-                </div>
-                <div class="promo-karaoke-center">
-                    <h4 class="promo-title"><span class="music-note-icon">&#9834;</span> <span
-                            data-i18n="home.promo.sing.title">SING ALL YOU CAN</span></h4>
-                    <p class="promo-price">¥1000</p>
-                    <p class="promo-sub-price"><span class="music-note-icon">&#9834;</span> <span
-                            data-i18n="home.promo.sing.request">REQUEST = ¥1000</span></p>
-                </div>
-                <div class="promo-karaoke-right">
                     <img src="assets/images/singer.png" alt="Singer Silhouette" class="promo-singer" loading="lazy">
                 </div>
+                <div class="karaoke-backdrop"></div>
             </div>
 
-            <!-- Banner 3: Car Service -->
-            <div class="promo-banner banner-car">
-                <div class="promo-car-left">
-                    <h4 class="promo-title" data-i18n="home.promo.car.title" style="white-space: pre-line;">WE OFFER CAR
-                        SERVICE
-                        PICK UP AND DROP OFF</h4>
+            <!-- Banner 4: Car Service -->
+            <div class="promo-banner banner-car glass-card reveal">
+                <div class="promo-car-content">
+                    <h4 class="promo-title" data-i18n="home.promo.car.title">WE OFFER CAR SERVICE<br><span class="highlight-car">PICK UP AND DROP OFF</span></h4>
                 </div>
-                <div class="promo-car-right">
+                <div class="promo-car-images">
                     <img src="assets/images/car.png" alt="Car Service" class="promo-car-img" loading="lazy">
                 </div>
+                <div class="car-backdrop"></div>
             </div>
         </div>
     </div>

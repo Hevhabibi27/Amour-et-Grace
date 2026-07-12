@@ -71,6 +71,9 @@ const i18n = (() => {
         'home.promo.drink.title': { en: '1 HOUR DRINK ALL\nYOU CAN', ja: '1時間\n飲み放題' },
         'home.promo.sing.title': { en: 'SING ALL YOU CAN', ja: '歌い放題' },
         'home.promo.sing.request': { en: 'REQUEST = ¥1000', ja: 'リクエスト = ¥1000' },
+        'home.promo.eat.title': { en: 'ALL YOU CAN EAT<br><span class="highlight-promo">PROMO</span>', ja: '食べ放題<br><span class="highlight-promo">プロモ</span>' },
+        'home.promo.eat.time': { en: '11 am to 7 pm', ja: '午前11時〜午後7時' },
+        'home.promo.eat.day': { en: 'Every Sunday', ja: '毎週日曜日' },
         'home.promo.car.title': { en: 'WE OFFER CAR SERVICE\nPICK UP AND\nDROP OFF', ja: '送迎サービス\nお迎え・お送り' },
 
         // Featured Dishes
@@ -134,13 +137,13 @@ const i18n = (() => {
         },
         'menu.selection.title': { en: 'Filipino Food Selection', ja: 'フィリピン料理セクション' },
         'menu.filipino.desc': {
-            en: 'Rooted in tradition. Bursting with flavor. Our Filipino dishes bring the heart of Filipino cuisine straight to your table.',
-            ja: '伝統に根ざし、風味豊かに。フィリピン料理の心をそのまま食卓にお届けします。'
+            en: 'Rooted in tradition. Bursting with flavor. Our Filipino dishes bring the heart of Filipino cuisine straight to your table. ¥1000~2000 per serving',
+            ja: '伝統に根ざし、風味豊かに。フィリピン料理の心をそのまま食卓にお届けします。1人前 ¥1,000〜¥2,000'
         },
         'menu.japanese.title': { en: 'Japanese Food Section', ja: '日本食セクション' },
         'menu.japanese.desc': {
-            en: '"Comfort in its simplest form." Itadakimasu—let’s eat!',
-            ja: 'シンプルな心地よさ。いただきます。さあ、召し上がれ！'
+            en: '"Comfort in its simplest form." Itadakimasu—let’s eat! ¥1000~2000 per serving',
+            ja: 'シンプルな心地よさ。いただきます。さあ、召し上がれ！ 1人前 ¥1,000〜¥2,000'
         },
         'menu.drinks.title': { en: 'Drinks Section', ja: 'ドリンクセクション' },
         'menu.drinks.desc': {
@@ -679,7 +682,8 @@ const i18n = (() => {
         'events.past.anniv.desc': {
             en: 'A romantic and elegant anniversary dinner celebrating love and milestones with our signature dishes and cocktails.',
             ja: '当店のシグネチャー料理やカクテルとともに、愛と節目を祝うロマンチックでエレガントな記念日ディナー。'
-        }
+        },
+        'menu.btn.inquire': { en: 'Inquire Now', ja: 'お問い合わせ' }
     };
 
     // ── Private State ──
