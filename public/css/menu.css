@@ -942,7 +942,7 @@
         grid-column: 1 / 2;
         grid-row: 1 / 3;
         writing-mode: vertical-rl;
-        text-orientation: mixed;
+        text-orientation: upright;
         font-size: 1.2rem;
         font-weight: 800;
         letter-spacing: 5px;
