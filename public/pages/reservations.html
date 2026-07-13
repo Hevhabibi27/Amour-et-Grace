@@ -166,44 +166,121 @@
                         </div>
                         <div class="prem-form-group">
                             <label for="premGuests" data-i18n="res.form.guests">Number of Guest <span>*</span></label>
-                            <select id="premGuests" name="guest_count" required>
-                                <option value="" disabled selected>Select number of guests</option>
-                                <option value="1">1 Person</option>
-                                <option value="2">2 People</option>
-                                <option value="3">3 People</option>
-                                <option value="4">4 People</option>
-                                <option value="5">5 People</option>
-                                <option value="6">6 People</option>
-                                <option value="7">7 People</option>
-                                <option value="8">8 People</option>
-                                <option value="9">9 People</option>
-                                <option value="10">10 People</option>
-                                <option value="15">15 People</option>
-                                <option value="20">20 People</option>
-                            </select>
+                            <div class="prem-custom-select" id="premGuestsWrapper">
+                                <select id="premGuests" name="guest_count" required tabindex="-1"
+                                    class="prem-native-hidden">
+                                    <option value="" disabled selected>Select number of guests</option>
+                                    <option value="1">1 Person</option>
+                                    <option value="2">2 People</option>
+                                    <option value="3">3 People</option>
+                                    <option value="4">4 People</option>
+                                    <option value="5">5 People</option>
+                                    <option value="6">6 People</option>
+                                    <option value="7">7 People</option>
+                                    <option value="8">8 People</option>
+                                    <option value="9">9 People</option>
+                                    <option value="10">10 People</option>
+                                    <option value="15">15 People</option>
+                                    <option value="20">20 People</option>
+                                </select>
+                                <button type="button" class="prem-select-trigger" aria-haspopup="listbox"
+                                    aria-expanded="false">
+                                    <svg class="prem-trigger-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                                        <circle cx="9" cy="7" r="4"></circle>
+                                        <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                                        <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                                    </svg>
+                                    <span class="prem-select-value is-placeholder">Select number of guests</span>
+                                    <svg class="prem-trigger-chevron" viewBox="0 0 24 24" fill="none"
+                                        stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                        stroke-linejoin="round">
+                                        <polyline points="6 9 12 15 18 9"></polyline>
+                                    </svg>
+                                </button>
+                                <div class="prem-select-dropdown" role="listbox"></div>
+                            </div>
                         </div>
                     </div>
 
                     <div class="prem-form-row">
                         <div class="prem-form-group">
-                            <label for="premDate" data-i18n="res.form.date">Date of Reservation <span>*</span></label>
-                            <input type="date" id="premDate" name="date" required>
+                            <label for="premType" data-i18n="res.form.type">Type of Reservation <span>*</span></label>
+                            <div class="prem-custom-select" id="premTypeWrapper">
+                                <select id="premType" name="type" required tabindex="-1" class="prem-native-hidden">
+                                    <option value="" disabled selected>Select</option>
+                                    <option value="table">Table Reservation</option>
+                                    <option value="lounge">Lounge</option>
+                                    <option value="event">Private Event</option>
+                                </select>
+                                <button type="button" class="prem-select-trigger" aria-haspopup="listbox"
+                                    aria-expanded="false">
+                                    <svg class="prem-trigger-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <path
+                                            d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z">
+                                        </path>
+                                        <line x1="7" y1="7" x2="7.01" y2="7"></line>
+                                    </svg>
+                                    <span class="prem-select-value is-placeholder">Select</span>
+                                    <svg class="prem-trigger-chevron" viewBox="0 0 24 24" fill="none"
+                                        stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                        stroke-linejoin="round">
+                                        <polyline points="6 9 12 15 18 9"></polyline>
+                                    </svg>
+                                </button>
+                                <div class="prem-select-dropdown" role="listbox"></div>
+                            </div>
                         </div>
                         <div class="prem-form-group">
-                            <label for="premTime" data-i18n="res.form.time">Time of Reservation <span>*</span></label>
-                            <input type="time" id="premTime" name="time" required>
+                            <label for="premDate" data-i18n="res.form.date">Date of Reservation <span>*</span></label>
+                            <div class="prem-datepicker" id="premDateWrapper">
+                                <input type="date" id="premDate" name="date" required tabindex="-1"
+                                    class="prem-native-hidden">
+                                <button type="button" class="prem-select-trigger" aria-haspopup="dialog"
+                                    aria-expanded="false">
+                                    <svg class="prem-trigger-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                                        <line x1="16" y1="2" x2="16" y2="6"></line>
+                                        <line x1="8" y1="2" x2="8" y2="6"></line>
+                                        <line x1="3" y1="10" x2="21" y2="10"></line>
+                                    </svg>
+                                    <span class="prem-select-value is-placeholder">Select a date</span>
+                                    <svg class="prem-trigger-chevron" viewBox="0 0 24 24" fill="none"
+                                        stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                        stroke-linejoin="round">
+                                        <polyline points="6 9 12 15 18 9"></polyline>
+                                    </svg>
+                                </button>
+                                <div class="prem-datepicker-panel" role="dialog" aria-label="Choose date"></div>
+                            </div>
                         </div>
                     </div>
 
                     <div class="prem-form-row half-width">
                         <div class="prem-form-group">
-                            <label for="premType" data-i18n="res.form.type">Type of Reservation <span>*</span></label>
-                            <select id="premType" name="type" required>
-                                <option value="" disabled selected>Select</option>
-                                <option value="table">Table Reservation</option>
-                                <option value="lounge">Lounge</option>
-                                <option value="event">Private Event</option>
-                            </select>
+                            <label for="premTime" data-i18n="res.form.time">Time of Reservation <span>*</span></label>
+                            <div class="prem-timepicker" id="premTimeWrapper">
+                                <input type="time" id="premTime" name="time" required tabindex="-1"
+                                    class="prem-native-hidden">
+                                <button type="button" class="prem-select-trigger" aria-haspopup="listbox"
+                                    aria-expanded="false">
+                                    <svg class="prem-trigger-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <circle cx="12" cy="12" r="10"></circle>
+                                        <polyline points="12 6 12 12 16 14"></polyline>
+                                    </svg>
+                                    <span class="prem-select-value is-placeholder">Select a time</span>
+                                    <svg class="prem-trigger-chevron" viewBox="0 0 24 24" fill="none"
+                                        stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                        stroke-linejoin="round">
+                                        <polyline points="6 9 12 15 18 9"></polyline>
+                                    </svg>
+                                </button>
+                                <div class="prem-timepicker-panel" role="listbox"></div>
+                            </div>
                         </div>
                     </div>
 

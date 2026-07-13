@@ -1,0 +1,477 @@
+/* =============================================
+   PREMIUM FORM COMPONENTS
+   Custom date picker, time picker, select dropdowns
+   – Amour et Grâce Design System
+   ============================================= */
+
+/* ── Component Wrappers ── */
+.prem-custom-select,
+.prem-datepicker,
+.prem-timepicker {
+    position: relative;
+}
+
+/* ── Hidden Native Elements ──
+   Screen-reader accessible but visually hidden.
+   Native elements stay in the form for validation + submission. */
+.prem-native-hidden {
+    position: absolute !important;
+    width: 1px !important;
+    height: 1px !important;
+    padding: 0 !important;
+    margin: -1px !important;
+    overflow: hidden !important;
+    clip: rect(0, 0, 0, 0) !important;
+    white-space: nowrap !important;
+    border: 0 !important;
+}
+
+/* ══════════════════════════════════════
+   TRIGGER BUTTON (shared by all components)
+   ══════════════════════════════════════ */
+.prem-select-trigger {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    width: 100%;
+    padding: 15px;
+    background-color: #ffffff;
+    border: 2px solid transparent;
+    border-radius: var(--radius-md, 8px);
+    cursor: pointer;
+    font-family: var(--font-body, 'Poppins', sans-serif);
+    font-size: 1rem;
+    color: #333333;
+    text-align: left;
+    line-height: 1.4;
+    transition: border-color 0.25s ease, box-shadow 0.25s ease;
+    -webkit-appearance: none;
+    appearance: none;
+}
+
+@media (hover: hover) {
+    .prem-select-trigger:hover {
+        border-color: rgba(0, 0, 0, 0.12);
+    }
+}
+
+.prem-select-trigger:focus-visible {
+    outline: none;
+    border-color: #000000;
+    box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.15);
+}
+
+/* Open state */
+.prem-custom-select.open .prem-select-trigger,
+.prem-datepicker.open .prem-select-trigger,
+.prem-timepicker.open .prem-select-trigger {
+    border-color: #000000;
+}
+
+/* Error state – propagated from hidden native element via CSS sibling selector */
+.prem-native-hidden.error ~ .prem-select-trigger {
+    border-color: #ffcccc;
+    background-color: #fff5f5;
+}
+
+/* ── Trigger Icon ── */
+.prem-trigger-icon {
+    width: 18px;
+    height: 18px;
+    flex-shrink: 0;
+    color: #aaaaaa;
+    transition: color 0.2s ease;
+}
+
+.prem-custom-select.open .prem-trigger-icon,
+.prem-datepicker.open .prem-trigger-icon,
+.prem-timepicker.open .prem-trigger-icon {
+    color: #555555;
+}
+
+/* ── Trigger Value Text ── */
+.prem-select-value {
+    flex: 1;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.prem-select-value.is-placeholder {
+    color: #999999;
+}
+
+/* ── Trigger Chevron ── */
+.prem-trigger-chevron {
+    width: 16px;
+    height: 16px;
+    flex-shrink: 0;
+    color: #aaaaaa;
+    transition: transform 0.25s cubic-bezier(0.4, 0, 0.2, 1), color 0.2s ease;
+}
+
+.prem-custom-select.open .prem-trigger-chevron,
+.prem-datepicker.open .prem-trigger-chevron,
+.prem-timepicker.open .prem-trigger-chevron {
+    transform: rotate(180deg);
+    color: #555555;
+}
+
+
+/* ══════════════════════════════════════
+   DROPDOWN PANEL (shared base)
+   ══════════════════════════════════════ */
+.prem-select-dropdown,
+.prem-datepicker-panel,
+.prem-timepicker-panel {
+    position: absolute;
+    top: calc(100% + 6px);
+    left: 0;
+    right: 0;
+    background-color: #ffffff;
+    border-radius: var(--radius-lg, 12px);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.12), 0 2px 8px rgba(0, 0, 0, 0.08);
+    z-index: 100;
+    /* Animation: fade + slide */
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(8px);
+    transition: opacity 0.2s ease, transform 0.2s cubic-bezier(0.4, 0, 0.2, 1), visibility 0.2s ease;
+    overflow: hidden;
+}
+
+.prem-custom-select.open .prem-select-dropdown,
+.prem-datepicker.open .prem-datepicker-panel,
+.prem-timepicker.open .prem-timepicker-panel {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+
+/* ══════════════════════════════════════
+   CUSTOM SELECT DROPDOWN (Guests, Type)
+   ══════════════════════════════════════ */
+.prem-select-dropdown {
+    padding: 6px;
+    max-height: 280px;
+    overflow-y: auto;
+}
+
+/* Custom scrollbar */
+.prem-select-dropdown::-webkit-scrollbar { width: 5px; }
+.prem-select-dropdown::-webkit-scrollbar-track { background: transparent; }
+.prem-select-dropdown::-webkit-scrollbar-thumb { background: #ddd; border-radius: 3px; }
+
+/* Option */
+.prem-select-option {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    padding: 12px 14px;
+    border: none;
+    background: transparent;
+    font-family: var(--font-body, 'Poppins', sans-serif);
+    font-size: 0.95rem;
+    color: #333333;
+    cursor: pointer;
+    border-radius: var(--radius-md, 8px);
+    transition: background-color 0.15s ease;
+    text-align: left;
+}
+
+@media (hover: hover) {
+    .prem-select-option:hover {
+        background-color: #f5f5f5;
+    }
+}
+
+.prem-select-option:focus-visible {
+    outline: none;
+    background-color: #f0f0f0;
+}
+
+.prem-select-option.selected {
+    background-color: rgba(201, 0, 34, 0.06);
+    color: var(--accent-red, #c90022);
+    font-weight: 500;
+}
+
+/* Checkmark */
+.prem-option-check {
+    width: 16px;
+    height: 16px;
+    margin-left: auto;
+    flex-shrink: 0;
+    opacity: 0;
+    color: var(--accent-red, #c90022);
+    transition: opacity 0.15s ease;
+}
+
+.prem-select-option.selected .prem-option-check {
+    opacity: 1;
+}
+
+
+/* ══════════════════════════════════════
+   DATEPICKER CALENDAR
+   ══════════════════════════════════════ */
+.prem-datepicker-panel {
+    right: auto;
+    width: 320px;
+    max-width: calc(100vw - 40px);
+    padding: 20px;
+    overflow: visible;
+}
+
+/* Calendar Header */
+.prem-cal-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 16px;
+}
+
+.prem-cal-month-year {
+    font-family: var(--font-body, 'Poppins', sans-serif);
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: #1a1a1a;
+    user-select: none;
+}
+
+.prem-cal-nav {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 34px;
+    height: 34px;
+    border: none;
+    background: transparent;
+    border-radius: 50%;
+    cursor: pointer;
+    color: #888;
+    transition: background-color 0.15s ease, color 0.15s ease;
+}
+
+@media (hover: hover) {
+    .prem-cal-nav:hover {
+        background-color: #f0f0f0;
+        color: #1a1a1a;
+    }
+}
+
+.prem-cal-nav:focus-visible {
+    outline: 2px solid #000;
+    outline-offset: 2px;
+}
+
+.prem-cal-nav svg {
+    width: 18px;
+    height: 18px;
+}
+
+/* Weekday Headers */
+.prem-cal-weekdays {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    margin-bottom: 4px;
+}
+
+.prem-cal-weekdays span {
+    text-align: center;
+    font-size: 0.7rem;
+    font-weight: 600;
+    color: #999;
+    padding: 6px 0;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    user-select: none;
+}
+
+/* Monday header subtle accent to hint closed day */
+.prem-cal-weekdays span:nth-child(2) {
+    color: #ccc;
+}
+
+/* Day Grid */
+.prem-cal-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 2px;
+}
+
+.prem-cal-day {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    aspect-ratio: 1;
+    border: none;
+    background: transparent;
+    font-family: var(--font-body, 'Poppins', sans-serif);
+    font-size: 0.85rem;
+    color: #333;
+    cursor: pointer;
+    border-radius: 50%;
+    transition: background-color 0.15s ease, color 0.15s ease;
+    position: relative;
+    min-width: 0;
+}
+
+@media (hover: hover) {
+    .prem-cal-day:hover:not(.disabled):not(.selected) {
+        background-color: #f0f0f0;
+    }
+}
+
+.prem-cal-day:focus-visible {
+    outline: 2px solid #000;
+    outline-offset: 1px;
+}
+
+/* Today marker */
+.prem-cal-day.today:not(.selected) {
+    font-weight: 700;
+    color: var(--accent-red, #c90022);
+}
+
+.prem-cal-day.today:not(.selected)::after {
+    content: '';
+    position: absolute;
+    bottom: 3px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    background-color: var(--accent-red, #c90022);
+}
+
+/* Selected day */
+.prem-cal-day.selected {
+    background-color: var(--accent-red, #c90022);
+    color: #ffffff;
+    font-weight: 600;
+}
+
+/* Disabled days (past, Mondays, >180 days) */
+.prem-cal-day.disabled {
+    color: #ddd;
+    cursor: default;
+    pointer-events: none;
+}
+
+/* Other-month days */
+.prem-cal-day.other-month {
+    color: #ccc;
+}
+
+.prem-cal-day.other-month.disabled {
+    color: #eee;
+}
+
+
+/* ══════════════════════════════════════
+   TIME PICKER
+   ══════════════════════════════════════ */
+.prem-timepicker-panel {
+    padding: 16px;
+    max-height: 340px;
+    overflow-y: auto;
+}
+
+/* Custom scrollbar */
+.prem-timepicker-panel::-webkit-scrollbar { width: 5px; }
+.prem-timepicker-panel::-webkit-scrollbar-track { background: transparent; }
+.prem-timepicker-panel::-webkit-scrollbar-thumb { background: #ddd; border-radius: 3px; }
+
+/* Section label */
+.prem-time-section-label {
+    font-size: 0.7rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #999;
+    padding: 4px 4px 8px;
+    user-select: none;
+}
+
+/* Time slot grid */
+.prem-time-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 6px;
+}
+
+/* Time slot button */
+.prem-time-slot {
+    padding: 10px 6px;
+    border: 1.5px solid #e8e8e8;
+    background: transparent;
+    border-radius: var(--radius-md, 8px);
+    font-family: var(--font-body, 'Poppins', sans-serif);
+    font-size: 0.85rem;
+    color: #444;
+    cursor: pointer;
+    transition: border-color 0.15s ease, background-color 0.15s ease, color 0.15s ease;
+    text-align: center;
+    white-space: nowrap;
+}
+
+@media (hover: hover) {
+    .prem-time-slot:hover:not(.selected) {
+        border-color: #bbb;
+        background-color: #fafafa;
+    }
+}
+
+.prem-time-slot:focus-visible {
+    outline: 2px solid #000;
+    outline-offset: 1px;
+}
+
+.prem-time-slot.selected {
+    background-color: var(--accent-red, #c90022);
+    border-color: var(--accent-red, #c90022);
+    color: #ffffff;
+    font-weight: 500;
+}
+
+/* Empty state message */
+.prem-time-empty-msg {
+    text-align: center;
+    padding: 24px 16px;
+    color: #999;
+    font-size: 0.9rem;
+    font-family: var(--font-body, 'Poppins', sans-serif);
+}
+
+
+/* ══════════════════════════════════════
+   RESPONSIVE
+   ══════════════════════════════════════ */
+@media (max-width: 768px) {
+    .prem-datepicker-panel {
+        width: 100%;
+        min-width: 280px;
+    }
+}
+
+@media (max-width: 480px) {
+    .prem-datepicker-panel {
+        padding: 16px;
+    }
+
+    .prem-cal-day {
+        font-size: 0.8rem;
+    }
+
+    .prem-time-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .prem-select-trigger {
+        padding: 13px;
+        gap: 10px;
+    }
+}
