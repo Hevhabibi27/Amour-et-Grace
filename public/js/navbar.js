@@ -45,8 +45,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // ── Live Status Badge ──
     // Nagoya City, Japan (JST / UTC+9)
-    // Resto Bar: 9:00 AM – 5:00 PM  (Monday – Sunday)
-    // Lounge:    7:00 PM – 2:00 AM  (Every day except Tuesday)
+    // Resto Bar: 9:00 AM – 5:00 PM  (Tuesday – Sunday)
+    // Lounge:    8:00 PM – 2:00 AM  (Tuesday – Sunday)
     const statusBadge = document.getElementById('status-badge');
     if (statusBadge) {
         const updateStatus = () => {
@@ -56,21 +56,24 @@ document.addEventListener('DOMContentLoaded', () => {
             const jstTime = new Date(utc + (3600000 * 9));
 
             const hours = jstTime.getHours();
-            const day = jstTime.getDay(); // 0 = Sunday, 2 = Tuesday
+            const day = jstTime.getDay(); // 0 = Sunday, 1 = Monday
 
-            // Resto Bar: 9:00 – 17:00 every day
-            const restoOpen = hours >= 9 && hours < 17;
+            // Whole restaurant closed on Mondays
+            const isMonday = day === 1;
 
-            // Lounge: 19:00 – 02:00 every day EXCEPT Tuesday
-            // If it's 19:00–23:59, the lounge is open (unless today is Tuesday)
-            // If it's 00:00–01:59, the lounge is open (unless today is Tuesday,
-            //   meaning it was Monday night → still open. The closed night is
-            //   Tuesday evening into Wednesday morning.)
-            // Closed window: Tuesday 19:00 → Wednesday 01:59
-            const isTuesdayEvening = day === 2 && hours >= 19;
-            const isWednesdayEarlyMorning = day === 3 && hours < 2;
-            const loungeHours = (hours >= 19) || (hours < 2);
-            const loungeOpen = loungeHours && !isTuesdayEvening && !isWednesdayEarlyMorning;
+            // Resto Bar: 9:00 – 17:00 every day except Monday
+            const restoOpen = !isMonday && hours >= 9 && hours < 17;
+
+            // Lounge: 20:00 – 02:00 every day EXCEPT Monday
+            // If it's 20:00–23:59, the lounge is open (unless today is Monday)
+            // If it's 00:00–01:59, the lounge is open (unless today is Monday,
+            //   meaning it was Sunday night → still open. The closed night is
+            //   Monday evening into Tuesday morning.)
+            // Closed window: Monday 20:00 → Tuesday 01:59
+            const isMondayEvening = day === 1 && hours >= 20;
+            const isTuesdayEarlyMorning = day === 2 && hours < 2;
+            const loungeHours = (hours >= 20) || (hours < 2);
+            const loungeOpen = loungeHours && !isMondayEvening && !isTuesdayEarlyMorning;
 
             const dot = statusBadge.querySelector('.status-dot');
             const text = statusBadge.querySelector('.status-text');
@@ -101,14 +104,14 @@ document.addEventListener('DOMContentLoaded', () => {
                 if (hours >= 2 && hours < 9) {
                     key = 'nav.status.closed.9am';
                     defaultText = 'Closed — Opens 9:00 AM';
-                } else if (hours >= 17 && hours < 19) {
-                    if (day === 2) {
-                        // Tuesday evening, lounge is closed
+                } else if (hours >= 17 && hours < 20) {
+                    if (day === 1) {
+                        // Monday evening, whole restaurant is closed
                         key = 'nav.status.closed.9am';
                         defaultText = 'Closed — Opens 9:00 AM';
                     } else {
-                        key = 'nav.status.closed.7pm';
-                        defaultText = 'Closed — Opens 7:00 PM';
+                        key = 'nav.status.closed.8pm';
+                        defaultText = 'Closed — Opens 8:00 PM';
                     }
                 } else {
                     key = 'nav.status.closed.9am';

@@ -4,7 +4,7 @@
 // Replaces the old setTimeout fake with a real fetch() to POST /api/reservations.
 // Aligned with:
 //   - api/reservations/index.js (expects: name, email, phone, guest_count, date, time, type, message, captcha_token)
-//   - api/_lib/validate.js (type-dependent hours, lounge closed Tuesdays)
+//   - api/_lib/validate.js (type-dependent hours, restaurant closed Mondays)
 //   - api/_lib/captcha.js (Cloudflare Turnstile token)
 
 document.addEventListener('submit', async function (e) {
@@ -69,9 +69,9 @@ document.addEventListener('submit', async function (e) {
         clientError = "Reservation date must be in the future (same-day bookings are not available).";
     }
 
-    // 3. Lounge closed on Tuesdays Check
-    if (formData.type === 'lounge' && selectedDate.getDay() === 2) { // 2 = Tuesday
-        clientError = "The Lounge is closed on Tuesdays. Please select another date.";
+    // 3. Restaurant closed on Mondays Check
+    if (selectedDate.getDay() === 1) { // 1 = Monday
+        clientError = "We are closed on Mondays. Please select another date.";
     }
 
     // If client validation fails, show error instantly and abort

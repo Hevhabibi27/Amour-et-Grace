@@ -73,9 +73,11 @@ test('09:00 passes for event', v.isValidTime('09:00', 'event'), true);
 test('17:00 passes for event', v.isValidTime('17:00', 'event'), true);
 test('18:00 fails for event', v.isValidTime('18:00', 'event'), false);
 
-// ── isValidTime — LOUNGE: 19:00–02:00 (spans midnight) ──
-console.log('\n--- isValidTime (lounge = 19:00–02:00) ---');
-test('19:00 passes (opening)', v.isValidTime('19:00', 'lounge'), true);
+// ── isValidTime — LOUNGE: 20:00–02:00 (spans midnight) ──
+console.log('\n--- isValidTime (lounge = 20:00–02:00) ---');
+test('19:00 fails (before open)', v.isValidTime('19:00', 'lounge'), false);
+test('19:59 fails (before open)', v.isValidTime('19:59', 'lounge'), false);
+test('20:00 passes (opening)', v.isValidTime('20:00', 'lounge'), true);
 test('21:00 passes (evening)', v.isValidTime('21:00', 'lounge'), true);
 test('23:59 passes (late night)', v.isValidTime('23:59', 'lounge'), true);
 test('00:00 passes (midnight)', v.isValidTime('00:00', 'lounge'), true);
@@ -91,17 +93,17 @@ console.log('\n--- isValidTime (format) ---');
 test('invalid format fails', v.isValidTime('3pm', 'table'), false);
 test('empty string fails', v.isValidTime('', 'table'), false);
 
-// ── isLoungeOpenOnDate ──
-console.log('\n--- isLoungeOpenOnDate ---');
-// 2026-06-23 is a Tuesday
-test('Tuesday is closed', v.isLoungeOpenOnDate('2026-06-23').open, false);
-test('Tuesday reason msg', v.isLoungeOpenOnDate('2026-06-23').reason, 'The lounge is closed on Tuesdays.');
-// 2026-06-24 is a Wednesday
-test('Wednesday is open', v.isLoungeOpenOnDate('2026-06-24').open, true);
+// ── isRestaurantOpenOnDate ──
+console.log('\n--- isRestaurantOpenOnDate ---');
 // 2026-06-22 is a Monday
-test('Monday is open', v.isLoungeOpenOnDate('2026-06-22').open, true);
+test('Monday is closed', v.isRestaurantOpenOnDate('2026-06-22').open, false);
+test('Monday reason msg', v.isRestaurantOpenOnDate('2026-06-22').reason, 'We are closed on Mondays.');
+// 2026-06-23 is a Tuesday
+test('Tuesday is open', v.isRestaurantOpenOnDate('2026-06-23').open, true);
+// 2026-06-24 is a Wednesday
+test('Wednesday is open', v.isRestaurantOpenOnDate('2026-06-24').open, true);
 // 2026-06-28 is a Sunday
-test('Sunday is open', v.isLoungeOpenOnDate('2026-06-28').open, true);
+test('Sunday is open', v.isRestaurantOpenOnDate('2026-06-28').open, true);
 
 // ── getDayOfWeekJST ──
 console.log('\n--- getDayOfWeekJST ---');

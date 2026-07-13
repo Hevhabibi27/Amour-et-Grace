@@ -18,8 +18,8 @@ RESTAURANT FACTS:
 - Address: 3F, K-BOX Building, 1-198 Chuo, Komaki City, Aichi Prefecture, 485-0029, Japan
 - Phone (reservations/inquiries): +81 90-3856-2854
 - Email: amouretgrace2026@gmail.com
-- Resto Bar hours: 9:00 AM – 5:00 PM, daily
-- Lounge hours: 7:00 PM – 2:00 AM, closed Tuesdays. Thursday–Sunday nights are the flagship nights with live entertainment, open even without a reservation.
+- Resto Bar hours: 9:00 AM – 5:00 PM, Tuesday – Sunday (closed Mondays)
+- Lounge hours: 8:00 PM – 2:00 AM, Tuesday – Sunday (closed Mondays). Thursday–Sunday nights are the flagship nights with live entertainment, open even without a reservation.
 - Max seating capacity: 20 guests (larger parties/full venue buyout = contact management directly)
 - Karaoke and music are free of charge with any visit.
 - Free car pick-up/drop-off service is available.

@@ -22,7 +22,7 @@ const i18n = (() => {
         'nav.status.open.lounge': { en: 'Open Now — Closes 2:00 AM', ja: '営業中 — 2:00 AM閉店' },
         'nav.status.open.resto': { en: 'Open Now — Closes 5:00 PM', ja: '営業中 — 5:00 PM閉店' },
         'nav.status.closed.9am': { en: 'Closed — Opens 9:00 AM', ja: '準備中 — 9:00 AM開店' },
-        'nav.status.closed.7pm': { en: 'Closed — Opens 7:00 PM', ja: '準備中 — 7:00 PM開店' },
+        'nav.status.closed.8pm': { en: 'Closed — Opens 8:00 PM', ja: '準備中 — 8:00 PM開店' },
 
         // ═══════════════════════════════════════
         // FOOTER
@@ -111,8 +111,8 @@ const i18n = (() => {
         // Reservation CTA
         'home.res.title': { en: 'Reservation', ja: '予約' },
         'home.res.desc': {
-            en: 'Planning something special? We\'d love to be part of it. To reserve, provide your personal details, event type, celebrant\'s name, preferred date and time, number of guests, and food and beverage preferences. Our lounge is open daily from 10:00 AM to 5:00 PM, with a maximum capacity of 20 guests. You can experience the extra ordinary nights from Thursday to Sunday at 7 pm to 1:45 am even without reservations. Closing time at 2 am. Music and karaoke are available at no extra charge. For decoration inquiries, please contact our owner at +81 903 856 2854.',
-            ja: '特別なことを計画していますか？ぜひお手伝いさせてください。ご予約には、個人情報、イベントの種類、主役の名前、希望の日時、ゲスト数、料理やドリンクのご希望をお知らせください。ラウンジは毎日10:00から17:00まで営業しており、最大収容人数は20名です。木曜日から日曜日の19:00から1:45まで、予約なしでも特別な夜をお楽しみいただけます。閉店時間は午前2時です。音楽とカラオケは無料でご利用いただけます。デコレーションのお問い合わせは、オーナーの+81 903 856 2854までご連絡ください。'
+            en: 'Planning something special? We\'d love to be part of it. To reserve, provide your personal details, event type, celebrant\'s name, preferred date and time, number of guests, and food and beverage preferences. Our lounge is open daily from 10:00 AM to 5:00 PM, with a maximum capacity of 20 guests. You can experience the extra ordinary nights from Thursday to Sunday at 8 pm to 1:45 am even without reservations. Closing time at 2 am. Music and karaoke are available at no extra charge. For decoration inquiries, please contact our owner at +81 903 856 2854.',
+            ja: '特別なことを計画していますか？ぜひお手伝いさせてください。ご予約には、個人情報、イベントの種類、主役の名前、希望の日時、ゲスト数、料理やドリンクのご希望をお知らせください。ラウンジは毎日10:00から17:00まで営業しており、最大収容人数は20名です。木曜日から日曜日の20:00から1:45まで、予約なしでも特別な夜をお楽しみいただけます。閉店時間は午前2時です。音楽とカラオケは無料でご利用いただけます。デコレーションのお問い合わせは、オーナーの+81 903 856 2854までご連絡ください。'
         },
         'home.res.btn': { en: '予約する', ja: '予約する' },
 
@@ -510,7 +510,7 @@ const i18n = (() => {
         // RESERVATIONS PAGE
         // ═══════════════════════════════════════
         'res.card.capacity': { en: 'Maximum capacity of\n20 Guest', ja: '最大収容人数\n20名' },
-        'res.card.open': { en: 'Open\nMonday - Sunday', ja: '営業\n月曜日～日曜日' },
+        'res.card.open': { en: 'Open\nTuesday - Sunday', ja: '営業\n火曜日～日曜日' },
         'res.card.lounge': { en: 'Lounge Reservation\n10:00 am - 5:00pm', ja: 'ラウンジ予約\n10:00 - 17:00' },
         'res.card.entertainment': { en: 'Entertainment\nKaraoke & Music\nFree of Charge', ja: 'エンターテイメント\nカラオケ＆音楽\n無料' },
         'res.card.decorations': { en: 'Simple decorations\navailable upon request.', ja: 'シンプルなデコレーション\nリクエストに応じてご用意。' },
@@ -559,9 +559,9 @@ const i18n = (() => {
         'res.info.contact.email': { en: 'Email : amouretgrace2026@gmail.com', ja: 'Email : amouretgrace2026@gmail.com' },
         'res.info.opentime': { en: 'Open Time', ja: '営業時間' },
         'res.info.restobar': { en: 'Resto bar: 9:00 AM - 5:00 PM', ja: 'レストバー: 9:00 - 17:00' },
-        'res.info.monday': { en: 'Monday - Sunday', ja: '月曜日～日曜日' },
-        'res.info.lounge': { en: 'Lounge: 7:00 PM - 2:00 AM', ja: 'ラウンジ: 19:00 - 2:00' },
-        'res.info.except': { en: 'Except Tuesday', ja: '火曜日を除く' },
+        'res.info.days': { en: 'Tuesday - Sunday', ja: '火曜日～日曜日' },
+        'res.info.lounge': { en: 'Lounge: 8:00 PM - 2:00 AM', ja: 'ラウンジ: 20:00 - 2:00' },
+        'res.info.except': { en: 'Closed on Mondays', ja: '月曜日定休' },
         'res.info.social': { en: 'Stay Connected', ja: 'フォローする' },
 
         // FAQ

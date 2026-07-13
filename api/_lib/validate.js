@@ -7,7 +7,7 @@
  *
  *   Hours (type-dependent):
  *     - Resto•bar (table, event): 09:00–17:00 JST (9 AM – 5 PM), Mon–Sun
- *     - Lounge:                   19:00–02:00 JST (7 PM – 2 AM), Mon–Sun EXCEPT Tuesday
+ *     - Lounge:                   20:00–02:00 JST (8 PM – 2 AM), Tue–Sun
  *
  *   Guest count:  1–500 (backend max; physical lounge is 20, admin manages)
  *   Timezone:     JST = UTC+9 (no daylight saving in Japan)
@@ -23,16 +23,16 @@ const VALID_TYPES = ['table', 'event', 'lounge'];
  * Resto•bar covers: 'table', 'event'
  * Lounge covers:    'lounge'
  *
- * Lounge spans midnight (19:00 → 02:00 next day), so we check
- * that the time is >= 19:00 OR <= 02:00.
+ * Lounge spans midnight (20:00 → 02:00 next day), so we check
+ * that the time is >= 20:00 OR <= 02:00.
  */
 const BUSINESS_HOURS = {
   restobar: { open: 9 * 60, close: 17 * 60 },    // 09:00–17:00 (540–1020 min)
-  lounge: { open: 19 * 60, close: 2 * 60 },     // 19:00–02:00 (spans midnight)
+  lounge: { open: 20 * 60, close: 2 * 60 },     // 20:00–02:00 (spans midnight)
 };
 
-/** Lounge is closed on Tuesdays (day 2 in JS Date.getDay()) */
-const LOUNGE_CLOSED_DAY = 2; // Tuesday
+/** Restaurant is closed on Mondays (day 1 in JS Date.getDay()) */
+const RESTAURANT_CLOSED_DAY = 1; // Monday
 
 // ── JST Helpers ──────────────────────────────────────────────────
 
@@ -158,7 +158,7 @@ function parseTimeToMinutes(timeStr) {
  *
  * Hours depend on reservation type:
  *   - 'table' or 'event' (resto•bar): 09:00–17:00 JST
- *   - 'lounge':                        19:00–02:00 JST (spans midnight)
+ *   - 'lounge':                        20:00–02:00 JST (spans midnight)
  *
  * @param {string} timeStr - "HH:MM"
  * @param {string} type - reservation type ('table', 'event', 'lounge')
@@ -169,8 +169,8 @@ function isValidTime(timeStr, type) {
   if (totalMinutes === null) return false;
 
   if (type === 'lounge') {
-    // Lounge: 19:00–02:00 (spans midnight)
-    // Valid if time >= 19:00 OR time <= 02:00
+    // Lounge: 20:00–02:00 (spans midnight)
+    // Valid if time >= 20:00 OR time <= 02:00
     const { open, close } = BUSINESS_HOURS.lounge;
     return totalMinutes >= open || totalMinutes <= close;
   } else {
@@ -183,16 +183,16 @@ function isValidTime(timeStr, type) {
 // ── Date + type combined validation ──────────────────────────────
 
 /**
- * Check if the lounge is open on the given date.
- * Lounge is closed on Tuesdays.
+ * Check if the restaurant is open on the given date.
+ * The restaurant is closed on Mondays.
  *
  * @param {string} dateStr - "YYYY-MM-DD"
  * @returns {{ open: boolean, reason?: string }}
  */
-function isLoungeOpenOnDate(dateStr) {
+function isRestaurantOpenOnDate(dateStr) {
   const dayOfWeek = getDayOfWeekJST(dateStr);
-  if (dayOfWeek === LOUNGE_CLOSED_DAY) {
-    return { open: false, reason: 'The lounge is closed on Tuesdays.' };
+  if (dayOfWeek === RESTAURANT_CLOSED_DAY) {
+    return { open: false, reason: 'We are closed on Mondays.' };
   }
   return { open: true };
 }
@@ -285,7 +285,7 @@ module.exports = {
   // Type & time (type-dependent)
   isValidType,
   isValidTime,
-  isLoungeOpenOnDate,
+  isRestaurantOpenOnDate,
   // Field validators
   isValidPhone,
   isValidUUID,

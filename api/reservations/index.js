@@ -6,7 +6,7 @@ const {
   isDateWithinMaxAdvance,
   isValidType,
   isValidTime,
-  isLoungeOpenOnDate,
+  isRestaurantOpenOnDate,
   isValidPhone,
   checkMaxLengths,
   sanitize,
@@ -32,7 +32,7 @@ const { verifyCaptcha } = require('../_lib/captcha');
  *   6. Type validation
  *   7. Max-length enforcement
  *   8. Field-level validation (name, email, phone, date, time, guests, message)
- *   9. Lounge day-of-week check (Tuesdays closed)
+ *   9. Closed-day check (Mondays closed)
  *  10. Duplicate guard (same email + date + time within 5 min)
  *  11. Insert to Supabase
  *  12. Send emails (non-blocking — failures never block the save)
@@ -124,7 +124,7 @@ module.exports = async (req, res) => {
   //   - lounge: 19:00–02:00 JST
   if (!isValidTime(time, type)) {
     const hoursMsg = type === 'lounge'
-      ? '7:00 PM and 2:00 AM (JST)'
+      ? '8:00 PM and 2:00 AM (JST)'
       : '9:00 AM and 5:00 PM (JST)';
     return res.status(400).json({ error: `Please select a time between ${hoursMsg}.` });
   }
@@ -140,12 +140,12 @@ module.exports = async (req, res) => {
 
   // Message: optional, max 500 chars (already checked in max-length step)
 
-  // ── 9. Lounge day-of-week check ──
-  // The lounge is closed on Tuesdays
-  if (type === 'lounge') {
-    const loungeCheck = isLoungeOpenOnDate(date);
-    if (!loungeCheck.open) {
-      return res.status(400).json({ error: loungeCheck.reason });
+  // ── 9. Closed-day check ──
+  // The restaurant is closed on Mondays
+  {
+    const openCheck = isRestaurantOpenOnDate(date);
+    if (!openCheck.open) {
+      return res.status(400).json({ error: openCheck.reason });
     }
   }
 
