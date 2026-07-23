@@ -19,10 +19,12 @@ const i18n = (() => {
         'nav.reservation': { en: 'Reservation', ja: '予約' },
         'nav.reviews': { en: 'Reviews', ja: 'レビュー' },
         'lang.label': { en: 'EN', ja: 'JA' },
-        'nav.status.open.lounge': { en: 'Open Now — Closes 2:00 AM', ja: '営業中 — 2:00 AM閉店' },
-        'nav.status.open.resto': { en: 'Open Now — Closes 5:00 PM', ja: '営業中 — 5:00 PM閉店' },
-        'nav.status.closed.9am': { en: 'Closed — Opens 9:00 AM', ja: '準備中 — 9:00 AM開店' },
-        'nav.status.closed.8pm': { en: 'Closed — Opens 8:00 PM', ja: '準備中 — 8:00 PM開店' },
+        'nav.status.open.lounge': { en: 'Open Now — Lounge', ja: '営業中 — ラウンジ' },
+        'nav.status.open.resto': { en: 'Open Now — Resto Bar', ja: '営業中 — レストバー' },
+        'nav.status.closed.11am': { en: 'Closed — Resto Bar Opens 11:00 AM', ja: '準備中 — レストバー 11:00 AM開店' },
+        'nav.status.closed.8pm': { en: 'Closed — Lounge Opens 8:00 PM', ja: '準備中 — ラウンジ 8:00 PM開店' },
+        'nav.status.closed.7pm': { en: 'Closed — Lounge Opens 7:00 PM', ja: '準備中 — ラウンジ 7:00 PM開店' },
+        'nav.status.closed.wed': { en: 'Closed — Opens Wednesday 8:00 PM', ja: '準備中 — 水曜日 8:00 PM開店' },
 
         // ═══════════════════════════════════════
         // FOOTER
@@ -111,8 +113,8 @@ const i18n = (() => {
         // Reservation CTA
         'home.res.title': { en: 'Reservation', ja: '予約' },
         'home.res.desc': {
-            en: 'Planning something special? We\'d love to be part of it. To reserve, provide your personal details, event type, celebrant\'s name, preferred date and time, number of guests, and food and beverage preferences. Our lounge is open daily from 10:00 AM to 5:00 PM, with a maximum capacity of 20 guests. You can experience the extra ordinary nights from Thursday to Sunday at 8 pm to 1:45 am even without reservations. Closing time at 2 am. Music and karaoke are available at no extra charge. For decoration inquiries, please contact our owner at +81 903 856 2854.',
-            ja: '特別なことを計画していますか？ぜひお手伝いさせてください。ご予約には、個人情報、イベントの種類、主役の名前、希望の日時、ゲスト数、料理やドリンクのご希望をお知らせください。ラウンジは毎日10:00から17:00まで営業しており、最大収容人数は20名です。木曜日から日曜日の20:00から1:45まで、予約なしでも特別な夜をお楽しみいただけます。閉店時間は午前2時です。音楽とカラオケは無料でご利用いただけます。デコレーションのお問い合わせは、オーナーの+81 903 856 2854までご連絡ください。'
+            en: 'Planning something special? We\'d love to be part of it. To reserve, provide your personal details, event type, celebrant\'s name, preferred date and time, number of guests, and food and beverage preferences. Our Resto Bar is open every Sunday from 11:00 AM to 12 Midnight. Lounge nights are Wednesday & Thursday from 8:00 PM to 12 Midnight, and Friday & Saturday from 7:00 PM to 2:00 AM. Closed on Monday and Tuesday. For party and event reservations, please book between 9:00 AM to 5:00 PM. Maximum capacity of 20 guests. Music and karaoke are available at no extra charge. For decoration inquiries, please contact our owner at 090 3856 2854.',
+            ja: '特別なことを計画していますか？ぜひお手伝いさせてください。ご予約には、個人情報、イベントの種類、主役の名前、希望の日時、ゲスト数、料理やドリンクのご希望をお知らせください。レストバーは毎週日曜日11:00から24:00まで営業しています。ラウンジは水曜・木曜20:00〜24:00、金曜・土曜19:00〜翌2:00です。月曜・火曜は定休日です。パーティー・イベントのご予約は9:00〜17:00にお問い合わせください。最大収容人数は20名です。音楽とカラオケは無料でご利用いただけます。デコレーションのお問い合わせは、オーナーの090 3856 2854までご連絡ください。'
         },
         'home.res.btn': { en: '予約する', ja: '予約する' },
 
@@ -125,7 +127,7 @@ const i18n = (() => {
             en: '3F, K-BOX Building, 1-198 Chuo,\nKomaki City, Aichi Prefecture\n485-009',
             ja: '愛知県小牧市中央1-198\nK-BOXビル3F\n485-009'
         },
-        'home.contact.hours': { en: 'OPEN DAILY 8:00 AM - 11:00 PM', ja: '毎日営業 8:00 - 23:00' },
+        'home.contact.hours': { en: 'Resto Bar: Sun 11AM-12MN | Lounge: Wed-Sat', ja: 'レストバー: 日曜 11:00-24:00 | ラウンジ: 水〜土' },
 
         // ═══════════════════════════════════════
         // MENU PAGE
@@ -510,8 +512,8 @@ const i18n = (() => {
         // RESERVATIONS PAGE
         // ═══════════════════════════════════════
         'res.card.capacity': { en: 'Maximum capacity of\n20 Guest', ja: '最大収容人数\n20名' },
-        'res.card.open': { en: 'Open\nTuesday - Sunday', ja: '営業\n火曜日～日曜日' },
-        'res.card.lounge': { en: 'Lounge Reservation\n10:00 am - 5:00pm', ja: 'ラウンジ予約\n10:00 - 17:00' },
+        'res.card.open': { en: 'Open\nWed - Sun', ja: '営業\n水曜日～日曜日' },
+        'res.card.lounge': { en: 'Party & Event\nReservations 9AM-5PM', ja: 'パーティー＆イベント\n予約 9:00-17:00' },
         'res.card.entertainment': { en: 'Entertainment\nKaraoke & Music\nFree of Charge', ja: 'エンターテイメント\nカラオケ＆音楽\n無料' },
         'res.card.decorations': { en: 'Simple decorations\navailable upon request.', ja: 'シンプルなデコレーション\nリクエストに応じてご用意。' },
 
@@ -555,13 +557,14 @@ const i18n = (() => {
         'res.info.address': { en: 'Address', ja: '住所' },
         'res.info.address.text': { en: '3F, K-BOX Building, 1-198 Chuo,\nKomaki City, Aichi Prefecture\n485-009', ja: '〒485-009\n愛知県小牧市中央1-198\nK-BOXビル3階' },
         'res.info.contact': { en: 'Contact', ja: '連絡先' },
-        'res.info.contact.phone': { en: 'Phone : +81 903 856 2854', ja: 'Phone : +81 903 856 2854' },
+        'res.info.contact.phone': { en: 'Phone : 090 3856 2854', ja: 'Phone : 090 3856 2854' },
         'res.info.contact.email': { en: 'Email : amouretgrace2026@gmail.com', ja: 'Email : amouretgrace2026@gmail.com' },
         'res.info.opentime': { en: 'Open Time', ja: '営業時間' },
-        'res.info.restobar': { en: 'Resto bar: 9:00 AM - 5:00 PM', ja: 'レストバー: 9:00 - 17:00' },
-        'res.info.days': { en: 'Tuesday - Sunday', ja: '火曜日～日曜日' },
-        'res.info.lounge': { en: 'Lounge: 8:00 PM - 2:00 AM', ja: 'ラウンジ: 20:00 - 2:00' },
-        'res.info.except': { en: 'Closed on Mondays', ja: '月曜日定休' },
+        'res.info.restobar': { en: 'Resto Bar: Sunday 11:00 AM - 12 Midnight', ja: 'レストバー: 日曜日 11:00 - 24:00' },
+        'res.info.lounge': { en: 'Lounge: Wed & Thu 8:00 PM - 12 MN', ja: 'ラウンジ: 水・木 20:00 - 24:00' },
+        'res.info.lounge2': { en: 'Fri & Sat 7:00 PM - 2:00 AM', ja: '金・土 19:00 - 翌2:00' },
+        'res.info.except': { en: 'Closed on Monday & Tuesday', ja: '月曜・火曜定休' },
+        'res.info.reservations': { en: 'Party & Event Reservations: 9 AM - 5 PM', ja: 'パーティー＆イベント予約: 9:00 - 17:00' },
         'res.info.social': { en: 'Stay Connected', ja: 'フォローする' },
 
         // FAQ

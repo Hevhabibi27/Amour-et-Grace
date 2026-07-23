@@ -69,9 +69,10 @@ document.addEventListener('submit', async function (e) {
         clientError = "Reservation date must be in the future (same-day bookings are not available).";
     }
 
-    // 3. Restaurant closed on Mondays Check
-    if (selectedDate.getDay() === 1) { // 1 = Monday
-        clientError = "We are closed on Mondays. Please select another date.";
+    // 3. Restaurant closed on Mondays and Tuesdays Check
+    const closedDay = selectedDate.getDay();
+    if (closedDay === 1 || closedDay === 2) { // 1 = Monday, 2 = Tuesday
+        clientError = "We are closed on Mondays and Tuesdays. Please select another date.";
     }
 
     // If client validation fails, show error instantly and abort
@@ -427,29 +428,62 @@ document.addEventListener('click', function (e) {
 
         var slots = [];
         if (type === 'lounge') {
-            // 8:00 PM to 2:00 AM (20:00–02:00)
-            for (var h = 20; h <= 23; h++) {
-                slots.push({ t: pad(h) + ':00', l: formatTime12(h, 0) });
-                slots.push({ t: pad(h) + ':30', l: formatTime12(h, 30) });
+            // Check selected date to determine which lounge hours apply
+            var dateEl = document.getElementById('premDate');
+            var selectedDateVal = dateEl ? dateEl.value : '';
+            var selectedDay = -1;
+            if (selectedDateVal) {
+                selectedDay = new Date(selectedDateVal + 'T12:00:00').getDay();
             }
-            for (var h2 = 0; h2 <= 1; h2++) {
-                slots.push({ t: pad(h2) + ':00', l: formatTime12(h2, 0) });
-                slots.push({ t: pad(h2) + ':30', l: formatTime12(h2, 30) });
+
+            if (selectedDay === 3 || selectedDay === 4) {
+                // Wed/Thu: 8:00 PM to 12 Midnight (20:00–24:00)
+                for (var h = 20; h <= 23; h++) {
+                    slots.push({ t: pad(h) + ':00', l: formatTime12(h, 0) });
+                    slots.push({ t: pad(h) + ':30', l: formatTime12(h, 30) });
+                }
+            } else if (selectedDay === 5 || selectedDay === 6) {
+                // Fri/Sat: 7:00 PM to 2:00 AM (19:00–02:00)
+                for (var h = 19; h <= 23; h++) {
+                    slots.push({ t: pad(h) + ':00', l: formatTime12(h, 0) });
+                    slots.push({ t: pad(h) + ':30', l: formatTime12(h, 30) });
+                }
+                for (var h2 = 0; h2 <= 1; h2++) {
+                    slots.push({ t: pad(h2) + ':00', l: formatTime12(h2, 0) });
+                    slots.push({ t: pad(h2) + ':30', l: formatTime12(h2, 30) });
+                }
+                slots.push({ t: '02:00', l: formatTime12(2, 0) });
+            } else {
+                // No date selected or non-lounge day — show widest range (Fri/Sat)
+                for (var h = 19; h <= 23; h++) {
+                    slots.push({ t: pad(h) + ':00', l: formatTime12(h, 0) });
+                    slots.push({ t: pad(h) + ':30', l: formatTime12(h, 30) });
+                }
+                for (var h2 = 0; h2 <= 1; h2++) {
+                    slots.push({ t: pad(h2) + ':00', l: formatTime12(h2, 0) });
+                    slots.push({ t: pad(h2) + ':30', l: formatTime12(h2, 30) });
+                }
+                slots.push({ t: '02:00', l: formatTime12(2, 0) });
             }
-            slots.push({ t: '02:00', l: formatTime12(2, 0) });
-        } else {
-            // Restobar: 9:00 AM to 5:00 PM (09:00–17:00)
+        } else if (type === 'event') {
+            // Event booking window: 9:00 AM to 5:00 PM (09:00–17:00)
             for (var h3 = 9; h3 <= 16; h3++) {
                 slots.push({ t: pad(h3) + ':00', l: formatTime12(h3, 0) });
                 slots.push({ t: pad(h3) + ':30', l: formatTime12(h3, 30) });
             }
             slots.push({ t: '17:00', l: formatTime12(17, 0) });
+        } else {
+            // Table (Resto Bar): Sunday 11:00 AM to 12 Midnight (11:00–24:00)
+            for (var h3 = 11; h3 <= 23; h3++) {
+                slots.push({ t: pad(h3) + ':00', l: formatTime12(h3, 0) });
+                slots.push({ t: pad(h3) + ':30', l: formatTime12(h3, 30) });
+            }
         }
 
         var nativeTime = document.getElementById('premTime');
         var current = nativeTime ? nativeTime.value : '';
 
-        var label = type === 'lounge' ? 'Evening &amp; Late Night' : 'Daytime';
+        var label = type === 'lounge' ? 'Evening &amp; Late Night' : (type === 'event' ? 'Booking Window (9AM-5PM)' : 'Sunday Resto Bar');
         var html = '<div class="prem-time-section-label">' + label + '</div><div class="prem-time-grid">';
         for (var s = 0; s < slots.length; s++) {
             html += '<button type="button" class="prem-time-slot' +

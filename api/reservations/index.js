@@ -119,13 +119,19 @@ module.exports = async (req, res) => {
     return res.status(400).json({ error: 'Reservations cannot be made more than 6 months in advance.' });
   }
 
-  // Time: must be valid HH:MM AND within business hours for the type
-  //   - table/event (resto•bar): 09:00–17:00 JST
-  //   - lounge: 19:00–02:00 JST
-  if (!isValidTime(time, type)) {
-    const hoursMsg = type === 'lounge'
-      ? '8:00 PM and 2:00 AM (JST)'
-      : '9:00 AM and 5:00 PM (JST)';
+  // Time: must be valid HH:MM AND within business hours for the type + day
+  //   - table (resto bar): Sunday 11:00–24:00
+  //   - event: 9:00–17:00 (booking window)
+  //   - lounge: Wed/Thu 20:00–24:00, Fri/Sat 19:00–02:00
+  if (!isValidTime(time, type, date)) {
+    let hoursMsg;
+    if (type === 'lounge') {
+      hoursMsg = 'Wed/Thu 8:00 PM–12 MN or Fri/Sat 7:00 PM–2:00 AM (JST)';
+    } else if (type === 'event') {
+      hoursMsg = '9:00 AM and 5:00 PM (JST)';
+    } else {
+      hoursMsg = '11:00 AM and 12 Midnight on Sundays (JST)';
+    }
     return res.status(400).json({ error: `Please select a time between ${hoursMsg}.` });
   }
 
