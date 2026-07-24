@@ -2781,19 +2781,39 @@
     transform: scale(1.05) translateY(-5px);
 }
 
-.p-b-1 { left: 10%; z-index: 1; height: 75%; }
-.p-b-2 { left: 30%; z-index: 3; height: 85%; }
-.p-b-3 { left: 50%; z-index: 2; height: 70%; }
-.p-b-4 { left: 65%; z-index: 1; height: 60%; }
+.p-b-1 {
+    left: 10%;
+    z-index: 1;
+    height: 75%;
+}
+
+.p-b-2 {
+    left: 30%;
+    z-index: 3;
+    height: 85%;
+}
+
+.p-b-3 {
+    left: 50%;
+    z-index: 2;
+    height: 70%;
+}
+
+.p-b-4 {
+    left: 65%;
+    z-index: 1;
+    height: 60%;
+}
 
 /* ── Banner 2: Sunday Sing & Eat Promo ── */
 .banner-sunday {
     background: linear-gradient(135deg, #181818 0%, #0a0a0a 100%);
     justify-content: center;
-    padding: 0 20px;
+    padding: 30px 20px;
     border: 1px solid rgba(209, 18, 50, 0.25);
     overflow: hidden;
-    height: 280px;
+    height: auto;
+    min-height: 280px;
     text-align: center;
 }
 
@@ -2811,6 +2831,17 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+}
+
+.promo-sunday-best {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.8rem;
+    color: #ffc107;
+    text-shadow: 0 2px 15px rgba(255, 193, 7, 0.5);
+    margin-bottom: 12px;
+    letter-spacing: 2px;
+    font-style: italic;
+    font-weight: 700;
 }
 
 .sunday-badge {
@@ -2923,8 +2954,11 @@
 .banner-karaoke::after {
     content: '';
     position: absolute;
-    top: 0; left: 0; right: 0; bottom: 0;
-    background: linear-gradient(to right, transparent, rgba(0,0,0,0.3), transparent);
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(to right, transparent, rgba(0, 0, 0, 0.3), transparent);
     z-index: 2;
 }
 
@@ -2944,10 +2978,10 @@
     justify-content: center;
     gap: 15px;
     margin-top: 10px;
-    background: rgba(0,0,0,0.3);
+    background: rgba(0, 0, 0, 0.3);
     padding: 8px 25px;
     border-radius: 50px;
-    border: 1px solid rgba(255,255,255,0.1);
+    border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .promo-karaoke-pricing .divider {
@@ -2968,14 +3002,15 @@
     display: inline-block;
     color: #fff;
     margin-right: 5px;
-    text-shadow: 0 0 10px rgba(255,255,255,0.8);
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
 }
 
 .promo-karaoke-images {
     position: absolute;
     width: 100%;
     height: 100%;
-    top: 0; left: 0;
+    top: 0;
+    left: 0;
     z-index: 5;
     pointer-events: none;
 }
@@ -2991,7 +3026,11 @@
     animation: spin-record 20s linear infinite;
 }
 
-@keyframes spin-record { 100% { transform: translateY(-50%) rotate(360deg); } }
+@keyframes spin-record {
+    100% {
+        transform: translateY(-50%) rotate(360deg);
+    }
+}
 
 .promo-singer {
     position: absolute;
@@ -3012,8 +3051,8 @@
 /* ── Banner 4: Car Service ── */
 .banner-car {
     background: linear-gradient(110deg, #d11232 45%, transparent 45%),
-                linear-gradient(110deg, transparent 75%, #111 75%),
-                #1a1a1a;
+        linear-gradient(110deg, transparent 75%, #111 75%),
+        #1a1a1a;
     justify-content: space-between;
     padding-left: 30px;
 }
@@ -3037,7 +3076,7 @@
     margin-top: 10px;
     font-family: 'Poppins', sans-serif;
     font-weight: 300;
-    background: rgba(0,0,0,0.4);
+    background: rgba(0, 0, 0, 0.4);
     padding: 5px 12px;
     border-radius: 6px;
     border-left: 3px solid #fff;
@@ -3085,29 +3124,94 @@
     }
 
     /* Drink */
-    .banner-drink { padding-right: 20px; }
-    .promo-drink-content { width: 55%; }
-    .promo-drink-images { width: 45%; }
-    .p-b-1 { left: -10%; height: 65%; }
-    .p-b-2 { left: 10%; height: 75%; }
-    .p-b-3 { left: 30%; height: 60%; }
-    .p-b-4 { left: 45%; height: 50%; }
+    .banner-drink {
+        padding-right: 20px;
+    }
+
+    .promo-drink-content {
+        width: 55%;
+    }
+
+    .promo-drink-images {
+        width: 45%;
+    }
+
+    .p-b-1 {
+        left: -10%;
+        height: 65%;
+    }
+
+    .p-b-2 {
+        left: 10%;
+        height: 75%;
+    }
+
+    .p-b-3 {
+        left: 30%;
+        height: 60%;
+    }
+
+    .p-b-4 {
+        left: 45%;
+        height: 50%;
+    }
 
     /* Sunday */
-    .banner-sunday { padding: 0 20px; height: 250px; }
-    .promo-sunday-content .promo-title { font-size: 1.8rem; }
-    .sunday-badge { font-size: 0.7rem; padding: 4px 12px; letter-spacing: 1px; }
-    .promo-sunday-pricing { padding: 10px 25px; gap: 20px; }
-    .sunday-price-label { font-size: 0.7rem; }
-    .sunday-price-value { font-size: 1.8rem; }
-    .sunday-price-sub { font-size: 0.8rem; }
-    .promo-sunday-details { font-size: 0.75rem; }
+    .banner-sunday {
+        padding: 30px 20px;
+        height: auto;
+        min-height: 250px;
+    }
+
+    .promo-sunday-content .promo-title {
+        font-size: 1.8rem;
+    }
+
+    .sunday-badge {
+        font-size: 0.7rem;
+        padding: 4px 12px;
+        letter-spacing: 1px;
+    }
+
+    .promo-sunday-pricing {
+        padding: 10px 25px;
+        gap: 20px;
+    }
+
+    .sunday-price-label {
+        font-size: 0.7rem;
+    }
+
+    .sunday-price-value {
+        font-size: 1.8rem;
+    }
+
+    .sunday-price-sub {
+        font-size: 0.8rem;
+    }
+
+    .promo-sunday-details {
+        font-size: 0.75rem;
+    }
 
     /* Karaoke */
-    .promo-record { left: -80px; width: 180px; }
-    .promo-sub-price { font-size: 1.2rem; }
-    .promo-karaoke-content .promo-title { font-size: 1.8rem; }
-    .promo-karaoke-pricing { gap: 10px; padding: 6px 20px; }
+    .promo-record {
+        left: -80px;
+        width: 180px;
+    }
+
+    .promo-sub-price {
+        font-size: 1.2rem;
+    }
+
+    .promo-karaoke-content .promo-title {
+        font-size: 1.8rem;
+    }
+
+    .promo-karaoke-pricing {
+        gap: 10px;
+        padding: 6px 20px;
+    }
 
     /* Car */
     .banner-car {
@@ -3116,36 +3220,98 @@
             #1a1a1a;
         padding-left: 15px;
     }
-    .promo-car-content { width: 55%; }
-    .banner-car .promo-title { font-size: 1rem; }
-    .highlight-car { font-size: 0.9rem; letter-spacing: 2px; padding: 4px 10px; }
-    .promo-car-img { max-width: 250px; }
+
+    .promo-car-content {
+        width: 55%;
+    }
+
+    .banner-car .promo-title {
+        font-size: 1rem;
+    }
+
+    .highlight-car {
+        font-size: 0.9rem;
+        letter-spacing: 2px;
+        padding: 4px 10px;
+    }
+
+    .promo-car-img {
+        max-width: 250px;
+    }
 }
 
 /* ── Responsive: Small mobile (≤480px) ── */
 @media (max-width: 480px) {
-    .promotions-header .japanese-header { font-size: 1.8rem; }
-    .promotions-header .english-header { font-size: 1.4rem; }
+    .promotions-header .japanese-header {
+        font-size: 1.8rem;
+    }
 
-    .promo-banner { height: 160px; }
-    .banner-karaoke { height: 180px; }
+    .promotions-header .english-header {
+        font-size: 1.4rem;
+    }
 
-    .promo-banner .promo-title { font-size: 1.1rem; letter-spacing: 1px; }
-    .promo-banner .promo-price { font-size: 1.3rem; }
+    .promo-banner {
+        height: 160px;
+    }
+
+    .banner-karaoke {
+        height: 180px;
+    }
+
+    .promo-banner .promo-title {
+        font-size: 1.1rem;
+        letter-spacing: 1px;
+    }
+
+    .promo-banner .promo-price {
+        font-size: 1.3rem;
+    }
 
     /* Drink */
-    .banner-drink { padding-right: 15px; }
-    .promo-drink-content { width: 50%; }
-    .p-b-1 { left: -15%; height: 60%; }
-    .p-b-2 { left: 5%; height: 70%; }
-    .p-b-3 { left: 25%; height: 55%; }
-    .p-b-4 { left: 40%; height: 45%; }
+    .banner-drink {
+        padding-right: 15px;
+    }
+
+    .promo-drink-content {
+        width: 50%;
+    }
+
+    .p-b-1 {
+        left: -15%;
+        height: 60%;
+    }
+
+    .p-b-2 {
+        left: 5%;
+        height: 70%;
+    }
+
+    .p-b-3 {
+        left: 25%;
+        height: 55%;
+    }
+
+    .p-b-4 {
+        left: 40%;
+        height: 45%;
+    }
 
     /* Sunday */
     /* Sunday */
-    .banner-sunday { height: auto; padding: 25px 15px; }
-    .promo-sunday-content .promo-title { font-size: 1.4rem; }
-    .sunday-badge { font-size: 0.6rem; padding: 3px 10px; }
+    .banner-sunday {
+        height: auto;
+        padding: 25px 15px;
+    }
+
+    .promo-sunday-content .promo-title {
+        font-size: 1.4rem;
+    }
+
+    .sunday-badge {
+        font-size: 0.6rem;
+        padding: 3px 10px;
+    }
+
     .promo-sunday-pricing {
         flex-direction: column;
         gap: 10px;
@@ -3153,18 +3319,51 @@
         border-radius: 20px;
         width: 90%;
     }
-    .promo-sunday-pricing .divider { width: 60px; height: 1px; }
-    .sunday-price-value { font-size: 1.5rem; }
-    .sunday-price-sub { font-size: 0.7rem; }
-    .sunday-price-label { font-size: 0.65rem; }
-    .promo-sunday-details { font-size: 0.65rem; margin-top: 10px; }
+
+    .promo-sunday-pricing .divider {
+        width: 60px;
+        height: 1px;
+    }
+
+    .sunday-price-value {
+        font-size: 1.5rem;
+    }
+
+    .sunday-price-sub {
+        font-size: 0.7rem;
+    }
+
+    .sunday-price-label {
+        font-size: 0.65rem;
+    }
+
+    .promo-sunday-details {
+        font-size: 0.65rem;
+        margin-top: 10px;
+    }
 
     /* Karaoke */
-    .promo-record { left: -100px; width: 150px; }
-    .promo-karaoke-content .promo-title { font-size: 1.3rem; }
-    .promo-karaoke-pricing { gap: 8px; padding: 5px 15px; }
-    .promo-karaoke-pricing .divider { height: 20px; }
-    .promo-sub-price { font-size: 1rem; }
+    .promo-record {
+        left: -100px;
+        width: 150px;
+    }
+
+    .promo-karaoke-content .promo-title {
+        font-size: 1.3rem;
+    }
+
+    .promo-karaoke-pricing {
+        gap: 8px;
+        padding: 5px 15px;
+    }
+
+    .promo-karaoke-pricing .divider {
+        height: 20px;
+    }
+
+    .promo-sub-price {
+        font-size: 1rem;
+    }
 
     /* Car */
     .banner-car {
@@ -3173,8 +3372,23 @@
             #1a1a1a;
         padding-left: 10px;
     }
-    .promo-car-content { width: 60%; }
-    .banner-car .promo-title { font-size: 0.9rem; }
-    .highlight-car { font-size: 0.75rem; letter-spacing: 1px; padding: 3px 8px; margin-top: 5px; }
-    .promo-car-img { max-width: 180px; }
+
+    .promo-car-content {
+        width: 60%;
+    }
+
+    .banner-car .promo-title {
+        font-size: 0.9rem;
+    }
+
+    .highlight-car {
+        font-size: 0.75rem;
+        letter-spacing: 1px;
+        padding: 3px 8px;
+        margin-top: 5px;
+    }
+
+    .promo-car-img {
+        max-width: 180px;
+    }
 }

@@ -76,7 +76,15 @@ const i18n = (() => {
         'home.promo.eat.title': { en: 'ALL YOU CAN EAT<br><span class="highlight-promo">PROMO</span>', ja: '食べ放題<br><span class="highlight-promo">プロモ</span>' },
         'home.promo.eat.time': { en: '11 am to 7 pm', ja: '午前11時〜午後7時' },
         'home.promo.eat.day': { en: 'Every Sunday', ja: '毎週日曜日' },
-        'home.promo.car.title': { en: 'WE OFFER CAR SERVICE\nPICK UP AND\nDROP OFF', ja: '送迎サービス\nお迎え・お送り' },
+        'home.promo.car.title': { en: 'WE OFFER CAR SERVICE', ja: '送迎サービスを提供しております。' },
+        'home.promo.sunday.best': { en: "Sunday's Best", ja: "サンデーズベスト" },
+        'home.promo.sunday.badge': { en: 'SUNDAY 11 AM - 5 PM', ja: '日曜日 11 AM - 5 PM' },
+        'home.promo.sunday.title': { en: 'SING & EAT <span class="highlight-promo">ALL YOU CAN</span>', ja: '歌って食べて <span class="highlight-promo">食べ放題</span>' },
+        'home.promo.sunday.eatLabel': { en: 'EAT ALL YOU CAN', ja: '食べ放題' },
+        'home.promo.sunday.perPerson': { en: '/ person', ja: '/ 1人' },
+        'home.promo.sunday.songLabel': { en: 'PER SONG', ja: '1曲' },
+        'home.promo.sunday.detail1': { en: '(Sing all you can in 1 group of 4 people and up)', ja: '(4名様以上のグループで歌い放題)' },
+        'home.promo.sunday.detail2': { en: '* Drinks price depends on your choice', ja: '※ ドリンク代はご注文内容により異なります' },
 
         // Featured Dishes
         'home.featured.dish1.name': { en: 'BICOL EXPRESS', ja: 'ビコールエクスプレス' },
