@@ -2805,125 +2805,36 @@
     height: 60%;
 }
 
-/* ── Banner 2: Sunday Sing & Eat Promo ── */
+/* ── Banner 2: Eat All You Can ── */
 .banner-sunday {
-    background: linear-gradient(135deg, #181818 0%, #0a0a0a 100%);
-    justify-content: center;
-    padding: 30px 20px;
-    border: 1px solid rgba(209, 18, 50, 0.25);
+    background: #0a0a0a;
+    padding: 0;
     overflow: hidden;
     height: auto;
-    min-height: 280px;
-    text-align: center;
+    min-height: unset;
+    border: 1px solid rgba(209, 18, 50, 0.25);
 }
 
-.sunday-backdrop {
+.banner-sunday-img {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: contain;
+    z-index: 1;
+    position: relative;
+}
+
+.banner-sunday-overlay {
     position: absolute;
     inset: 0;
-    background: radial-gradient(circle at center, rgba(209, 18, 50, 0.15) 0%, transparent 70%);
-    z-index: 1;
-}
-
-.promo-sunday-content {
-    position: relative;
-    z-index: 10;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.promo-sunday-best {
-    font-family: 'Playfair Display', serif;
-    font-size: 1.8rem;
-    color: #ffc107;
-    text-shadow: 0 2px 15px rgba(255, 193, 7, 0.5);
-    margin-bottom: 12px;
-    letter-spacing: 2px;
-    font-style: italic;
-    font-weight: 700;
-}
-
-.sunday-badge {
-    background: rgba(209, 18, 50, 0.2);
-    border: 1px solid rgba(209, 18, 50, 0.4);
-    color: #ff6b7f;
-    padding: 5px 15px;
-    border-radius: 50px;
-    font-size: 0.8rem;
-    font-weight: 600;
-    letter-spacing: 2px;
-    margin-bottom: 10px;
-    font-family: 'Poppins', sans-serif;
-}
-
-.promo-sunday-content .promo-title {
-    font-size: 2.2rem;
-    margin-bottom: 5px;
-}
-
-.promo-sunday-content .highlight-promo {
-    color: var(--accent-red);
-    text-shadow: 0 2px 10px rgba(209, 18, 50, 0.5);
-}
-
-.promo-sunday-pricing {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 30px;
-    margin-top: 15px;
-    background: rgba(0, 0, 0, 0.4);
-    padding: 12px 35px;
-    border-radius: 50px;
-    border: 1px solid rgba(255, 255, 255, 0.1);
-}
-
-.promo-sunday-pricing .divider {
-    width: 2px;
-    height: 40px;
-    background-color: rgba(255, 255, 255, 0.2);
-}
-
-.sunday-price-group {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.sunday-price-label {
-    font-family: 'Poppins', sans-serif;
-    font-size: 0.8rem;
-    color: rgba(255, 255, 255, 0.8);
-    letter-spacing: 1px;
-    text-transform: uppercase;
-    margin-bottom: 2px;
-}
-
-.sunday-price-value {
-    font-family: 'Playfair Display', serif;
-    font-size: 2.2rem;
-    font-weight: bold;
-    color: var(--accent-red);
-    line-height: 1;
-}
-
-.sunday-price-sub {
-    font-size: 0.9rem;
-    color: rgba(255, 255, 255, 0.6);
-    font-family: 'Poppins', sans-serif;
-    font-weight: normal;
-}
-
-.promo-sunday-details {
-    margin-top: 15px;
-    font-family: 'Poppins', sans-serif;
-    font-size: 0.85rem;
-    color: rgba(255, 255, 255, 0.5);
-    line-height: 1.4;
-    display: flex;
-    flex-direction: column;
-    gap: 2px;
+    background: linear-gradient(
+        135deg,
+        rgba(10, 10, 10, 0.15) 0%,
+        rgba(0, 0, 0, 0.05) 50%,
+        rgba(10, 10, 10, 0.15) 100%
+    );
+    z-index: 2;
+    pointer-events: none;
 }
 
 .banner-sunday:hover {
@@ -3158,41 +3069,17 @@
 
     /* Sunday */
     .banner-sunday {
-        padding: 30px 20px;
-        height: auto;
-        min-height: 250px;
+        height: 220px;
     }
 
-    .promo-sunday-content .promo-title {
-        font-size: 1.8rem;
+    .banner-sunday-img {
+        position: absolute;
+        inset: 0;
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
     }
 
-    .sunday-badge {
-        font-size: 0.7rem;
-        padding: 4px 12px;
-        letter-spacing: 1px;
-    }
-
-    .promo-sunday-pricing {
-        padding: 10px 25px;
-        gap: 20px;
-    }
-
-    .sunday-price-label {
-        font-size: 0.7rem;
-    }
-
-    .sunday-price-value {
-        font-size: 1.8rem;
-    }
-
-    .sunday-price-sub {
-        font-size: 0.8rem;
-    }
-
-    .promo-sunday-details {
-        font-size: 0.75rem;
-    }
 
     /* Karaoke */
     .promo-record {
@@ -3296,50 +3183,10 @@
         height: 45%;
     }
 
-    /* Sunday */
+
     /* Sunday */
     .banner-sunday {
-        height: auto;
-        padding: 25px 15px;
-    }
-
-    .promo-sunday-content .promo-title {
-        font-size: 1.4rem;
-    }
-
-    .sunday-badge {
-        font-size: 0.6rem;
-        padding: 3px 10px;
-    }
-
-    .promo-sunday-pricing {
-        flex-direction: column;
-        gap: 10px;
-        padding: 15px 20px;
-        border-radius: 20px;
-        width: 90%;
-    }
-
-    .promo-sunday-pricing .divider {
-        width: 60px;
-        height: 1px;
-    }
-
-    .sunday-price-value {
-        font-size: 1.5rem;
-    }
-
-    .sunday-price-sub {
-        font-size: 0.7rem;
-    }
-
-    .sunday-price-label {
-        font-size: 0.65rem;
-    }
-
-    .promo-sunday-details {
-        font-size: 0.65rem;
-        margin-top: 10px;
+        height: 200px;
     }
 
     /* Karaoke */
