@@ -120,17 +120,16 @@ module.exports = async (req, res) => {
   }
 
   // Time: must be valid HH:MM AND within business hours for the type + day
-  //   - table (resto bar): Sunday 11:00–24:00
   //   - event: 9:00–17:00 (booking window)
-  //   - lounge: Wed/Thu 20:00–24:00, Fri/Sat 19:00–02:00
+  //   - lounge: Mon/Tue/Thu 20:00–24:00, Fri/Sat 19:00–24:00
   if (!isValidTime(time, type, date)) {
     let hoursMsg;
     if (type === 'lounge') {
-      hoursMsg = 'Wed/Thu 8:00 PM–12 MN or Fri/Sat 7:00 PM–2:00 AM (JST)';
+      hoursMsg = 'Mon/Tue/Thu 8:00 PM–12 MN or Fri/Sat 7:00 PM–12 MN (JST)';
     } else if (type === 'event') {
       hoursMsg = '9:00 AM and 5:00 PM (JST)';
     } else {
-      hoursMsg = '11:00 AM and 12 Midnight on Sundays (JST)';
+      hoursMsg = 'our business hours (JST)';
     }
     return res.status(400).json({ error: `Please select a time between ${hoursMsg}.` });
   }

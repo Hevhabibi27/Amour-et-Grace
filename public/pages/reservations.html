@@ -48,7 +48,7 @@
                 <div class="res-info-card-overlay"></div>
                 <div class="res-info-card-content">
                     <h4 data-i18n="res.card.lounge" style="white-space: pre-line;">Party & Event
-                        Reservations 9AM-5PM Except Sunday</h4>
+                        Reservations 9AM-5PM</h4>
                 </div>
             </div>
 
@@ -208,11 +208,10 @@
                         <div class="prem-form-group">
                             <label for="premType" data-i18n="res.form.type">Type of Reservation <span>*</span></label>
                             <div class="prem-custom-select" id="premTypeWrapper">
-                                <select id="premType" name="type" required tabindex="-1" class="prem-native-hidden">
-                                    <option value="" disabled selected>Select</option>
-                                    <option value="table">Table Reservation</option>
-                                    <option value="lounge">Lounge</option>
-                                    <option value="event">Private Event</option>
+                                <select id="premType" name="type" required tabindex="-1" class="prem-native-hidden">\r
+                                    <option value="" disabled selected>Select</option>\r
+                                    <option value="lounge">Lounge</option>\r
+                                    <option value="event">Private Event</option>\r
                                 </select>
                                 <button type="button" class="prem-select-trigger" aria-haspopup="listbox"
                                     aria-expanded="false">
@@ -330,19 +329,17 @@
 
                     <h4 data-i18n="res.info.opentime">Open Time</h4>
                     <div class="open-time-grid">
-                        <span data-i18n="res.info.restobar">Resto Bar: Sunday 11:00 AM - 12 Midnight</span>
+                        <span data-i18n="res.info.lounge">Mon, Tue & Thu 8:00 PM - 12 MN</span>
+                        <br>
+                        <span data-i18n="res.info.lounge2">Fri & Sat 7:00 PM - 12 MN</span>
                         <br>
                         <br>
-                        <span data-i18n="res.info.lounge">Lounge: Wed & Thu 8:00 PM - 12 MN</span>
+                        <span data-i18n="res.info.except">Closed on Wednesday & Sunday</span>
                         <br>
-                        <span data-i18n="res.info.lounge2">Fri & Sat 7:00 PM - 2:00 AM</span>
-                        <br>
-                        <br>
-                        <span data-i18n="res.info.except">Closed on Monday & Tuesday</span>
+                        <span data-i18n="res.info.sunday.special">Sunday: Special occasions only (reservations needed 1 week ahead)</span>
                         <br>
                         <br>
-                        <span data-i18n="res.info.reservations">Party & Event Reservations: 9 AM - 5 PM Except
-                            Sunday</span>
+                        <span data-i18n="res.info.reservations">Party & Event Reservations: 9 AM - 5 PM</span>
                     </div>
 
                     <h4 data-i18n="res.info.social">Stay Connected</h4>

@@ -3,38 +3,36 @@
  *
  * Business rules (Amour et Grace — Japan):
  *
- *   Reservation types: 'table', 'event', 'lounge'
+ *   Reservation types: 'event', 'lounge'
  *
  *   Hours (day-dependent):
- *     - Resto Bar:  Sunday 11:00–24:00
- *     - Lounge:     Wed & Thu 20:00–24:00, Fri & Sat 19:00–02:00
+ *     - Lounge:     Mon, Tue & Thu 20:00–24:00, Fri & Sat 19:00–24:00
  *     - Events:     9:00–17:00 (booking window)
  *
- *   Closed:    Monday & Tuesday
+ *   Closed:    Wednesday & Sunday
+ *   Sunday:    Special occasions only (reservation required 1 week ahead)
  *   Guest count:  1–500 (backend max; physical lounge is 20, admin manages)
  *   Timezone:     JST = UTC+9 (no daylight saving in Japan)
  */
 
 // ── Constants ────────────────────────────────────────────────────
 
-const VALID_TYPES = ['table', 'event', 'lounge'];
+const VALID_TYPES = ['event', 'lounge'];
 
 /**
  * Business hours by service category.
  *
- * Resto Bar:  Sunday only, 11:00–24:00
- * Lounge:     Wed/Thu 20:00–24:00, Fri/Sat 19:00–02:00
+ * Lounge:     Mon/Tue/Thu 20:00–24:00, Fri/Sat 19:00–24:00
  * Events:     9:00–17:00 (booking window for party & event reservations)
  */
 const BUSINESS_HOURS = {
-  restobar: { open: 11 * 60, close: 24 * 60 },   // 11:00–24:00 (660–1440 min) — Sunday only
-  lounge_wed_thu: { open: 20 * 60, close: 24 * 60 },  // 20:00–24:00
-  lounge_fri_sat: { open: 19 * 60, close: 2 * 60 },   // 19:00–02:00 (spans midnight)
-  event: { open: 9 * 60, close: 17 * 60 },        // 09:00–17:00 (booking window)
+  lounge_mon_tue_thu: { open: 20 * 60, close: 24 * 60 },  // 20:00–24:00
+  lounge_fri_sat: { open: 19 * 60, close: 24 * 60 },       // 19:00–24:00
+  event: { open: 9 * 60, close: 17 * 60 },                 // 09:00–17:00 (booking window)
 };
 
-/** Restaurant is closed on Monday (1) and Tuesday (2) */
-const RESTAURANT_CLOSED_DAYS = [1, 2]; // Monday, Tuesday
+/** Restaurant is closed on Wednesday (3) and Sunday (0) */
+const RESTAURANT_CLOSED_DAYS = [0, 3]; // Sunday, Wednesday
 
 // ── JST Helpers ──────────────────────────────────────────────────
 
@@ -159,12 +157,11 @@ function parseTimeToMinutes(timeStr) {
  * for the given reservation type and day of the week.
  *
  * Hours depend on reservation type and day:
- *   - 'table' (resto bar): Sunday only 11:00–24:00
  *   - 'event':             9:00–17:00 (booking window)
- *   - 'lounge':            Wed/Thu 20:00–24:00, Fri/Sat 19:00–02:00
+ *   - 'lounge':            Mon/Tue/Thu 20:00–24:00, Fri/Sat 19:00–24:00
  *
  * @param {string} timeStr - "HH:MM"
- * @param {string} type - reservation type ('table', 'event', 'lounge')
+ * @param {string} type - reservation type ('event', 'lounge')
  * @param {string} [dateStr] - optional "YYYY-MM-DD" for day-dependent hours
  * @returns {boolean}
  */
@@ -180,22 +177,21 @@ function isValidTime(timeStr, type, dateStr) {
     // Lounge: day-dependent
     if (dateStr) {
       const dayOfWeek = getDayOfWeekJST(dateStr);
-      if (dayOfWeek === 3 || dayOfWeek === 4) {
-        // Wed/Thu: 20:00–24:00
-        const { open, close } = BUSINESS_HOURS.lounge_wed_thu;
+      if (dayOfWeek === 1 || dayOfWeek === 2 || dayOfWeek === 4) {
+        // Mon/Tue/Thu: 20:00–24:00
+        const { open, close } = BUSINESS_HOURS.lounge_mon_tue_thu;
         return totalMinutes >= open && totalMinutes <= close;
       } else if (dayOfWeek === 5 || dayOfWeek === 6) {
-        // Fri/Sat: 19:00–02:00 (spans midnight)
+        // Fri/Sat: 19:00–24:00
         const { open, close } = BUSINESS_HOURS.lounge_fri_sat;
-        return totalMinutes >= open || totalMinutes <= close;
+        return totalMinutes >= open && totalMinutes <= close;
       }
     }
-    // Fallback: accept any lounge hour (19:00–02:00 widest range)
-    return totalMinutes >= 19 * 60 || totalMinutes <= 2 * 60;
+    // Fallback: accept any lounge hour (19:00–24:00 widest range)
+    return totalMinutes >= 19 * 60 && totalMinutes <= 24 * 60;
   } else {
-    // Table (resto bar): Sunday 11:00–24:00
-    const { open, close } = BUSINESS_HOURS.restobar;
-    return totalMinutes >= open && totalMinutes <= close;
+    // Unknown type — reject
+    return false;
   }
 }
 
@@ -203,7 +199,8 @@ function isValidTime(timeStr, type, dateStr) {
 
 /**
  * Check if the restaurant is open on the given date.
- * The restaurant is closed on Mondays and Tuesdays.
+ * The restaurant is closed on Wednesdays and Sundays.
+ * Sunday is for special occasions only (reservation required 1 week ahead).
  *
  * @param {string} dateStr - "YYYY-MM-DD"
  * @returns {{ open: boolean, reason?: string }}
@@ -211,7 +208,7 @@ function isValidTime(timeStr, type, dateStr) {
 function isRestaurantOpenOnDate(dateStr) {
   const dayOfWeek = getDayOfWeekJST(dateStr);
   if (RESTAURANT_CLOSED_DAYS.includes(dayOfWeek)) {
-    return { open: false, reason: 'We are closed on Mondays and Tuesdays.' };
+    return { open: false, reason: 'We are closed on Wednesdays and Sundays. For Sunday special occasions, please use the Event reservation type.' };
   }
   return { open: true };
 }

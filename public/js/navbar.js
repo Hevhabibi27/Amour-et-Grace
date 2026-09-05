@@ -46,11 +46,11 @@ document.addEventListener('DOMContentLoaded', () => {
     // ── Live Status Badge ──
     // Komaki City, Aichi, Japan (JST / UTC+9)
     //
-    // NEW SCHEDULE:
-    //   Resto Bar:   Sunday 11:00 AM – 12 Midnight
-    //   Lounge:      Wed & Thu 8:00 PM – 12 MN
-    //                Fri & Sat 7:00 PM – 2:00 AM
-    //   Closed:      Monday & Tuesday
+    // SCHEDULE:
+    //   Mon, Tue & Thu:  8:00 PM – 12 MN  (20:00–24:00)
+    //   Fri & Sat:       7:00 PM – 12 MN  (19:00–24:00)
+    //   Wed & Sun:       Day off
+    //   Sunday:          Special occasions only (reservation required 1 week ahead)
     const statusBadge = document.getElementById('status-badge');
     if (statusBadge) {
         const updateStatus = () => {
@@ -66,61 +66,35 @@ document.addEventListener('DOMContentLoaded', () => {
             let key = '';
             let defaultText = '';
 
-            // ── Resto Bar: Sunday (day 0) 11:00–24:00 ──
-            const isRestoOpen = day === 0 && hours >= 11;
+            // ── Mon (1), Tue (2), Thu (4): 20:00–24:00 ──
+            const isLoungeMonTueThu = (day === 1 || day === 2 || day === 4) && hours >= 20;
 
-            // ── Lounge logic ──
-            // Wed (3) & Thu (4): 20:00–24:00
-            const isLoungeWedThu = (day === 3 || day === 4) && hours >= 20;
-
-            // Fri (5) & Sat (6): 19:00–02:00 (next day)
+            // ── Fri (5) & Sat (6): 19:00–24:00 ──
             const isLoungeFriSat = (day === 5 || day === 6) && hours >= 19;
 
-            // Spillover: Sat 00:00–01:59 (from Friday night) or Sun 00:00–01:59 (from Saturday night)
-            const isSatSpillover = day === 6 && hours < 2;  // Saturday early AM from Friday night
-            const isSunSpillover = day === 0 && hours < 2;  // Sunday early AM from Saturday night
+            isOpen = isLoungeMonTueThu || isLoungeFriSat;
 
-            const isLoungeOpen = isLoungeWedThu || isLoungeFriSat || isSatSpillover || isSunSpillover;
-
-            if (isRestoOpen && isLoungeOpen) {
-                // Unlikely overlap but handle it
-                isOpen = true;
-                key = 'nav.status.open.resto';
-                defaultText = 'Open Now — Resto Bar';
-            } else if (isRestoOpen) {
-                isOpen = true;
-                key = 'nav.status.open.resto';
-                defaultText = 'Open Now — Closes 12 MN';
-            } else if (isLoungeOpen) {
-                isOpen = true;
+            if (isOpen) {
                 key = 'nav.status.open.lounge';
-                if (isSatSpillover || isSunSpillover) {
-                    defaultText = 'Open Now — Closes 2:00 AM';
-                } else if (day === 5 || day === 6) {
-                    defaultText = 'Open Now — Closes 2:00 AM';
-                } else {
-                    defaultText = 'Open Now — Closes 12 MN';
-                }
+                defaultText = 'Open Now — Closes 12 MN';
             } else {
                 // Closed — figure out what opens next
                 if (day === 0) {
-                    // Sunday
-                    if (hours >= 2 && hours < 11) {
-                        key = 'nav.status.closed.11am';
-                        defaultText = 'Closed — Resto Bar Opens 11:00 AM';
-                    } else {
-                        // After midnight Sunday (= Monday)
-                        key = 'nav.status.closed.wed';
-                        defaultText = 'Closed — Opens Wednesday 8:00 PM';
-                    }
-                } else if (day === 1 || day === 2) {
-                    // Monday or Tuesday — fully closed
-                    key = 'nav.status.closed.wed';
-                    defaultText = 'Closed — Opens Wednesday 8:00 PM';
-                } else if (day === 3) {
-                    // Wednesday before 20:00
+                    // Sunday — day off, next open is Monday 8:00 PM
+                    key = 'nav.status.closed.dayoff';
+                    defaultText = 'Day Off — Opens Monday 8:00 PM';
+                } else if (day === 1) {
+                    // Monday before 20:00
                     key = 'nav.status.closed.8pm';
                     defaultText = 'Closed — Lounge Opens 8:00 PM';
+                } else if (day === 2) {
+                    // Tuesday before 20:00
+                    key = 'nav.status.closed.8pm';
+                    defaultText = 'Closed — Lounge Opens 8:00 PM';
+                } else if (day === 3) {
+                    // Wednesday — day off, next open is Thursday 8:00 PM
+                    key = 'nav.status.closed.dayoff.wed';
+                    defaultText = 'Day Off — Opens Thursday 8:00 PM';
                 } else if (day === 4) {
                     // Thursday before 20:00
                     key = 'nav.status.closed.8pm';
@@ -130,7 +104,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     key = 'nav.status.closed.7pm';
                     defaultText = 'Closed — Lounge Opens 7:00 PM';
                 } else if (day === 6) {
-                    // Saturday 2:00–19:00
+                    // Saturday before 19:00
                     key = 'nav.status.closed.7pm';
                     defaultText = 'Closed — Lounge Opens 7:00 PM';
                 }
