@@ -61,20 +61,20 @@ const { supabaseAdmin } = require('./supabase');
 
 const LIMITS = {
   // Public endpoints
-  '/api/auth/login':               { max: 5,   windowMs: 15 * 60 * 1000 },   // 5 per 15 min (brute-force)
-  '/api/reservations':             { max: 10,  windowMs: 60 * 60 * 1000 },   // 10 per hour
-  '/api/reviews':                  { max: 2,   windowMs: 24 * 60 * 60 * 1000 }, // 2 per day
-  '/api/inquiry':                  { max: 5,   windowMs: 60 * 60 * 1000 },   // 5 per hour
-  '/api/chat':                     { max: 20,  windowMs: 60 * 60 * 1000 },   // 20 per hour
+  '/api/auth/login': { max: 5, windowMs: 15 * 60 * 1000 },   // 5 per 15 min (brute-force)
+  '/api/reservations': { max: 10, windowMs: 60 * 60 * 1000 },   // 10 per hour
+  '/api/reviews': { max: 2, windowMs: 24 * 60 * 60 * 1000 }, // 2 per day
+  '/api/inquiry': { max: 5, windowMs: 60 * 60 * 1000 },   // 5 per hour
+  '/api/chat': { max: 20, windowMs: 60 * 60 * 1000 },   // 20 per hour
 
   // Admin endpoints
-  '/api/reservations/admin/get':   { max: 120, windowMs: 60 * 1000 },        // 120 per minute
-  '/api/reservations/admin/patch': { max: 60,  windowMs: 60 * 1000 },        // 60 per minute
-  '/api/reviews/admin/get':        { max: 120, windowMs: 60 * 1000 },        // 120 per minute
-  '/api/reviews/admin/patch':      { max: 60,  windowMs: 60 * 1000 },        // 60 per minute
-  '/api/reviews/admin/delete':     { max: 30,  windowMs: 60 * 1000 },        // 30 per minute
-  '/api/inquiry/admin/get':        { max: 120, windowMs: 60 * 1000 },        // 120 per minute
-  '/api/inquiry/admin/patch':      { max: 60,  windowMs: 60 * 1000 },        // 60 per minute
+  '/api/reservations/admin/get': { max: 120, windowMs: 60 * 1000 },        // 120 per minute
+  '/api/reservations/admin/patch': { max: 60, windowMs: 60 * 1000 },        // 60 per minute
+  '/api/reviews/admin/get': { max: 120, windowMs: 60 * 1000 },        // 120 per minute
+  '/api/reviews/admin/patch': { max: 60, windowMs: 60 * 1000 },        // 60 per minute
+  '/api/reviews/admin/delete': { max: 30, windowMs: 60 * 1000 },        // 30 per minute
+  '/api/inquiry/admin/get': { max: 120, windowMs: 60 * 1000 },        // 120 per minute
+  '/api/inquiry/admin/patch': { max: 60, windowMs: 60 * 1000 },        // 60 per minute
 };
 
 // ── Atomic rate limit check ──────────────────────────────────────
@@ -99,10 +99,10 @@ async function checkRateLimit(ip, endpoint, { failClosed = false } = {}) {
   try {
     // ── Try atomic RPC first ──
     const { data, error } = await supabaseAdmin.rpc('increment_rate_limit', {
-      p_ip:        ip,
-      p_endpoint:  endpoint,
+      p_ip: ip,
+      p_endpoint: endpoint,
       p_window_ms: config.windowMs,
-      p_max:       config.max,
+      p_max: config.max,
     });
 
     if (error) {

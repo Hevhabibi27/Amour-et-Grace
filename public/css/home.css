@@ -3019,11 +3019,17 @@
 
 /* Responsive adjustments */
 @media (max-width: 768px) {
+    .banner-video {
+        height: auto;
+        min-height: 580px;
+        padding: 30px 0;
+    }
     .banner-video-container {
         flex-direction: column;
         justify-content: center;
+        align-items: center;
         padding: 20px;
-        gap: 20px;
+        gap: 24px;
     }
     .banner-video-overlay {
         background: linear-gradient(
@@ -3037,6 +3043,7 @@
         align-items: center;
         text-align: center;
         padding-right: 0;
+        flex: 0 0 auto;
     }
     .banner-video-caption {
         align-items: center;
@@ -3053,10 +3060,20 @@
         margin-right: 0;
     }
     .banner-video-media {
+        flex: 0 0 auto;
         height: auto;
-        width: 60%;
-        max-width: 200px;
+        width: 55%;
+        max-width: 220px;
+        min-height: 250px;
+        aspect-ratio: 9 / 16;
         transform: rotate(0);
+        display: block;
+    }
+    .banner-video-main {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
     }
 }
 
