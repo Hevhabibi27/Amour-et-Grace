@@ -68,7 +68,18 @@ const i18n = (() => {
         'home.about.stat2': { en: '"Sell the Sizzle,\nNot the Steak"', ja: '「シズルを売れ、\nステーキではなく」' },
         'home.about.stat3': { en: 'Dynamic\nMenu', ja: 'ダイナミック\nメニュー' },
 
-        // Promotions
+        // Promotions - Price List Banner
+        'home.promo.pricelist.badge': { en: 'SYSTEM & RATES • 料金表', ja: 'システム & 料金表' },
+        'home.promo.pricelist.eyebrow': { en: 'Lounge Amour et Gràce', ja: 'ラウンジ アムール エ グラース' },
+        'home.promo.pricelist.title': { en: 'PRICE LIST', ja: '料金表' },
+        'home.promo.pricelist.hours': { en: 'Open 19:00 〜 0:00 (Midnight)', ja: '営業時間 19:00 〜 0:00' },
+        'home.promo.pricelist.drink': { en: 'Drink All You Can (飲み放題)', ja: '飲み放題' },
+        'home.promo.pricelist.sing': { en: 'Sing All You Can (歌い放題)', ja: '歌い放題' },
+        'home.promo.pricelist.perHour': { en: '/ 1 HOUR (Tax Incl.)', ja: '/ 1時間 (税込)' },
+        'home.promo.pricelist.bottleKeep': { en: '🍾 Bottle Keep Available (Separate Menu)', ja: '🍾 ボトルキープ有 (別メニュー)' },
+        'home.promo.pricelist.nomination': { en: '✨ Nomination Fee: ¥1,100 (Tax Incl.)', ja: '✨ 指名料: ¥1,100 (税込)' },
+        'home.promo.pricelist.reserve': { en: 'Book A Table', ja: 'テーブルを予約する' },
+        'home.promo.pricelist.viewPoster': { en: 'View Poster 🔍', ja: 'ポスターを拡大 🔍' },
         'home.promo.drink.title': { en: '1 HOUR DRINK ALL\nYOU CAN', ja: '1時間\n飲み放題' },
         'home.promo.sing.title': { en: 'SING ALL YOU CAN', ja: '歌い放題' },
         'home.promo.sing.request': { en: 'REQUEST = ¥1000', ja: 'リクエスト = ¥1000' },
@@ -491,6 +502,27 @@ const i18n = (() => {
         'events.story.djnights': { en: 'Dj Nights.', ja: 'DJナイト。' },
 
         // Timeline
+        'events.featured.badge': { en: 'SPECIAL SEASONAL EVENT • 期間限定イベント', ja: '特別季節イベント • 期間限定イベント' },
+        'events.featured.eyebrow': { en: 'Lounge Amour et Gràce', ja: 'ラウンジ アムール エ グラース' },
+        'events.featured.sub': { en: 'October fest', ja: 'オクトーバーフェスト' },
+        'events.featured.title': { en: '”HALLOWEEN PROMO”', ja: '「ハロウィンプロモ」' },
+        'events.timeline.halloween.sub': { en: 'OCTOBER FEST', ja: 'オクトーバーフェスト' },
+        'events.timeline.halloween.title': { en: '”HALLOWEEN PROMO”', ja: '「ハロウィンプロモ」' },
+        'events.featured.days': { en: 'Every FRIDAY, SATURDAY, SUNDAY', ja: '10月の毎週 金曜日・土曜日・日曜日' },
+        'events.featured.hours': { en: '(7:00 pm to 11:00 pm) only', ja: '（19:00〜23:00のみ）' },
+        'events.featured.drink': { en: 'Drink All You Can', ja: '飲み放題' },
+        'events.featured.sing': { en: 'Sing All You Can', ja: '歌い放題' },
+        'events.featured.duration': { en: '/ 1 HOUR each', ja: '1名様 1時間' },
+        'events.featured.tax': { en: '📌 Tax Included 🍂', ja: '📌 税込 🍂' },
+        'events.featured.invite': { en: '💞 PLEASE COME AND ENJOY WITH US ✨', ja: '💞 宜しくお願いします・ぜひお楽しみください ✨' },
+        'events.featured.reserve': { en: 'Reserve Your Table', ja: 'テーブルを予約する' },
+        'events.featured.zoom': { en: 'View Poster 🔍', ja: 'ポスターを拡大 🔍' },
+        'events.timeline.halloween.month': { en: 'OCT', ja: '10月' },
+        'events.timeline.halloween.days': { en: 'FRI-SUN', ja: '金土日' },
+        'events.timeline.halloween.desc': {
+            en: 'Every FRIDAY, SATURDAY, SUNDAY (7:00 pm to 11:00 pm) only : 🍻drink and 🎤sing all you can for 1 HOUR (3,300¥📌tax included) each 🍂 💞PLEASE COME AND ENJOY WITH US ✨',
+            ja: '10月の毎週 金曜日・土曜日・日曜日（19:00〜23:00のみ）限定: 🍻 飲み放題 ＆ 🎤 歌い放題 1名様 1時間（3,300円 税込）🍂 💞 宜しくお願いします・ぜひお楽しみください ✨'
+        },
         'events.upcoming.title': { en: 'Upcoming Events', ja: '今後のイベント' },
         'events.upcoming.desc': {
             en: 'Something exciting is always happening at our lounge. Check back regularly and be the first to know about our upcoming events, special nights, and exclusive celebrations.',

@@ -168,19 +168,25 @@ window.initGalleryLightbox = function () {
     const closeBtn = lightbox.querySelector('.lightbox-close');
 
     function showImage(src, alt) {
+        if (!src) return;
         if (lightboxVideo) { lightboxVideo.pause(); lightboxVideo.style.display = 'none'; lightboxVideo.removeAttribute('src'); }
         lightboxImg.src = src;
-        lightboxImg.alt = alt || 'Gallery preview';
+        lightboxImg.alt = alt || 'Poster preview';
         lightboxImg.style.display = 'block';
+        lightbox.classList.add('active');
+        document.body.style.overflow = 'hidden';
     }
 
     function showVideo(src) {
+        if (!src) return;
         lightboxImg.style.display = 'none';
         lightboxImg.removeAttribute('src');
         if (lightboxVideo) {
             lightboxVideo.src = src;
             lightboxVideo.style.display = 'block';
-            lightboxVideo.play().catch(function () { /* autoplay may be blocked, user can press play */ });
+            lightboxVideo.play().catch(function () { /* autoplay may be blocked */ });
+            lightbox.classList.add('active');
+            document.body.style.overflow = 'hidden';
         }
     }
 
@@ -192,54 +198,62 @@ window.initGalleryLightbox = function () {
         lightboxImg.style.display = 'none';
     }
 
-    // Attach click to all gallery items (images and video thumbnails)
-    document.querySelectorAll('.gallery-item .gallery-img').forEach(function (el) {
-        el.addEventListener('click', function (e) {
+    if (!lightbox._hasGlobalListeners) {
+        if (closeBtn) closeBtn.addEventListener('click', function (e) { e.stopPropagation(); closeLightbox(); });
+        lightbox.addEventListener('click', closeLightbox);
+        if (lightboxImg) lightboxImg.addEventListener('click', function (e) { e.stopPropagation(); });
+        if (lightboxVideo) lightboxVideo.addEventListener('click', function (e) { e.stopPropagation(); });
+
+        document.addEventListener('keydown', function (e) {
+            if (e.key === 'Escape' && lightbox.classList.contains('active')) { closeLightbox(); }
+        });
+
+        // Global delegated click handler for any image/video trigger across all pages
+        document.addEventListener('click', function (e) {
+            var target = e.target.closest('.gallery-item .gallery-img, .gallery-play-btn, .lightbox-trigger, [data-lightbox-src], .halloween-poster-img, .event-poster-img');
+            if (!target) return;
             e.stopPropagation();
-            var videoSrc = el.getAttribute('data-video-src');
+
+            if (target.classList.contains('gallery-play-btn')) {
+                var thumb = target.parentElement.querySelector('.gallery-video-thumb');
+                if (thumb && thumb.getAttribute('data-video-src')) {
+                    showVideo(thumb.getAttribute('data-video-src'));
+                }
+                return;
+            }
+
+            var videoSrc = target.getAttribute('data-video-src');
             if (videoSrc) {
                 showVideo(videoSrc);
-            } else {
-                showImage(el.src, el.alt);
+                return;
             }
-            lightbox.classList.add('active');
-            document.body.style.overflow = 'hidden';
-        });
-    });
 
-    // Also allow clicking the play button overlay
-    document.querySelectorAll('.gallery-play-btn').forEach(function (btn) {
-        btn.addEventListener('click', function (e) {
-            e.stopPropagation();
-            var thumb = btn.parentElement.querySelector('.gallery-video-thumb');
-            if (thumb) {
-                var videoSrc = thumb.getAttribute('data-video-src');
-                if (videoSrc) {
-                    showVideo(videoSrc);
-                    lightbox.classList.add('active');
-                    document.body.style.overflow = 'hidden';
-                }
+            var imgSrc = target.getAttribute('data-lightbox-src') || target.currentSrc || target.src;
+            if (!imgSrc && target.querySelector('img')) {
+                var innerImg = target.querySelector('img');
+                imgSrc = innerImg.getAttribute('data-lightbox-src') || innerImg.currentSrc || innerImg.src;
+            }
+            if (imgSrc) {
+                showImage(imgSrc, target.alt || 'Poster preview');
             }
         });
-    });
 
-    closeBtn.addEventListener('click', function (e) { e.stopPropagation(); closeLightbox(); });
-    lightbox.addEventListener('click', closeLightbox);
-    lightboxImg.addEventListener('click', function (e) { e.stopPropagation(); });
-    if (lightboxVideo) { lightboxVideo.addEventListener('click', function (e) { e.stopPropagation(); }); }
-
-    document.addEventListener('keydown', function (e) {
-        if (e.key === 'Escape' && lightbox.classList.contains('active')) { closeLightbox(); }
-    });
+        lightbox._hasGlobalListeners = true;
+    }
 };
 
 // Run on DOM load for initial page load
 document.addEventListener('DOMContentLoaded', () => {
+    if (typeof initGalleryLightbox === 'function') initGalleryLightbox();
     if (window.location.hash === '' || window.location.hash === '#home') {
         setTimeout(() => {
             if (typeof initHomeCarousel === 'function') initHomeCarousel();
             if (typeof initTestimonialsCarousel === 'function') initTestimonialsCarousel();
-            if (typeof initGalleryLightbox === 'function') initGalleryLightbox();
         }, 100);
     }
 });
+
+// Also initialize lightbox immediately if DOM is already parsed
+if (document.readyState === 'interactive' || document.readyState === 'complete') {
+    if (typeof initGalleryLightbox === 'function') initGalleryLightbox();
+}

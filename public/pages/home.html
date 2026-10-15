@@ -115,6 +115,75 @@
 
         <!-- Banners Stack -->
         <div class="promotions-stack">
+            <!-- Banner 0: Lounge Rates & Price List (料金表) -->
+            <div class="promo-banner banner-pricelist glass-card reveal">
+                <div class="banner-pricelist-ambient"></div>
+                <div class="banner-pricelist-glow"></div>
+                <div class="banner-pricelist-container">
+                    <div class="promo-pricelist-content">
+                        <div class="pricelist-badge">
+                            <span class="badge-icon">✨</span>
+                            <span class="badge-text" data-i18n="home.promo.pricelist.badge">SYSTEM &amp; RATES • 料金表</span>
+                        </div>
+                        
+                        <h4 class="promo-title pricelist-title">
+                            <span class="pricelist-title-sub" data-i18n="home.promo.pricelist.eyebrow">Lounge Amour et Gràce</span>
+                            <span class="pricelist-title-main"><span data-i18n="home.promo.pricelist.title">PRICE LIST</span> <span class="jp-title-tag">料金表</span></span>
+                        </h4>
+                        
+                        <div class="pricelist-hours-pill">
+                            <svg class="pricelist-clock-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="12" cy="12" r="10"></circle>
+                                <polyline points="12 6 12 12 16 14"></polyline>
+                            </svg>
+                            <span data-i18n="home.promo.pricelist.hours">Open 19:00 〜 0:00 (Midnight)</span>
+                        </div>
+
+                        <div class="pricelist-items-grid">
+                            <div class="pricelist-item-card">
+                                <div class="item-header">
+                                    <span class="item-icon">🍻</span>
+                                    <span class="item-name" data-i18n="home.promo.pricelist.drink">飲み放題 / Drink All You Can</span>
+                                </div>
+                                <div class="item-price-wrap">
+                                    <span class="item-price">¥3,300</span>
+                                    <span class="item-duration" data-i18n="home.promo.pricelist.perHour">/ 1 HOUR (税込)</span>
+                                </div>
+                            </div>
+                            <div class="pricelist-item-card">
+                                <div class="item-header">
+                                    <span class="item-icon">🎤</span>
+                                    <span class="item-name" data-i18n="home.promo.pricelist.sing">歌い放題 / Sing All You Can</span>
+                                </div>
+                                <div class="item-price-wrap">
+                                    <span class="item-price">¥1,100</span>
+                                    <span class="item-duration" data-i18n="home.promo.pricelist.perHour">/ 1 HOUR (税込)</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="pricelist-extras-row">
+                            <span class="extra-pill" data-i18n="home.promo.pricelist.bottleKeep">🍾 ボトルキープ有 (別メニュー)</span>
+                            <span class="extra-pill" data-i18n="home.promo.pricelist.nomination">✨ 指名料: ¥1,100 (税込)</span>
+                        </div>
+
+                        <div class="pricelist-actions">
+                            <a href="#reservations" class="btn-pricelist-reserve" data-i18n="home.promo.pricelist.reserve">Book A Table</a>
+                            <button type="button" class="btn-pricelist-view lightbox-trigger" data-lightbox-src="assets/images/price-list-banner.jpg" data-i18n="home.promo.pricelist.viewPoster">View Poster 🔍</button>
+                        </div>
+                    </div>
+
+                    <!-- Poster Side (The Picture) -->
+                    <div class="promo-pricelist-poster-side">
+                        <div class="pricelist-poster-frame lightbox-trigger" data-lightbox-src="assets/images/price-list-banner.jpg" title="Click to view full Price List poster">
+                            <img src="assets/images/price-list-banner.jpg" alt="Amour et Grace Price List 料金表" class="pricelist-poster-img" loading="lazy">
+                            <div class="poster-shine-overlay"></div>
+                            <span class="poster-click-badge">🔍 Zoom</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
             <!-- Banner 1: Drink All You Can -->
             <div class="promo-banner banner-drink glass-card reveal">
                 <div class="promo-drink-content">
@@ -461,13 +530,6 @@
     </div>
 
 </section>
-
-<!-- Gallery Lightbox Modal -->
-<div id="gallery-lightbox" class="gallery-lightbox" role="dialog" aria-modal="true" aria-label="Media viewer">
-    <button class="lightbox-close" aria-label="Close media viewer">&times;</button>
-    <img class="lightbox-img" src="" alt="Gallery preview" style="display: none;">
-    <video class="lightbox-video" src="" controls playsinline style="display: none;"></video>
-</div>
 
 <!-- Home Reservation Section -->
 <section id="home-reservation" class="home-reservation-section">

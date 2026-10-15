@@ -2730,6 +2730,356 @@
     z-index: 10;
 }
 
+/* ══════════════════════════════════════════════════════════════════════════
+   ── Banner: Lounge System & Price List 料金表 ──
+   ══════════════════════════════════════════════════════════════════════════ */
+.banner-pricelist {
+    position: relative;
+    height: auto !important;
+    min-height: 420px;
+    padding: 35px 40px;
+    background: linear-gradient(135deg, rgba(20, 5, 8, 0.96) 0%, rgba(32, 10, 12, 0.94) 50%, rgba(14, 4, 8, 0.98) 100%);
+    border: 1px solid rgba(255, 60, 50, 0.35);
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.75), 0 0 40px rgba(209, 18, 50, 0.15);
+    border-radius: 24px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+}
+
+.banner-pricelist:hover {
+    transform: translateY(-6px);
+    border-color: rgba(255, 100, 70, 0.65);
+    box-shadow: 0 30px 65px rgba(0, 0, 0, 0.85), 0 0 55px rgba(209, 18, 50, 0.3);
+}
+
+.banner-pricelist-ambient {
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at 85% 50%, rgba(255, 60, 20, 0.18) 0%, transparent 65%),
+                radial-gradient(circle at 15% 30%, rgba(209, 18, 50, 0.22) 0%, transparent 60%);
+    pointer-events: none;
+    z-index: 1;
+}
+
+.banner-pricelist-glow {
+    position: absolute;
+    width: 350px;
+    height: 350px;
+    border-radius: 50%;
+    right: 5%;
+    top: 50%;
+    transform: translateY(-50%);
+    background: radial-gradient(circle, rgba(255, 80, 40, 0.12) 0%, transparent 70%);
+    filter: blur(50px);
+    pointer-events: none;
+    z-index: 1;
+}
+
+.banner-pricelist-container {
+    position: relative;
+    z-index: 5;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    gap: 35px;
+}
+
+.promo-pricelist-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+    max-width: 550px;
+}
+
+.pricelist-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 6px 14px;
+    background: linear-gradient(90deg, rgba(209, 18, 50, 0.45) 0%, rgba(255, 75, 40, 0.4) 100%);
+    border: 1px solid rgba(255, 120, 80, 0.55);
+    border-radius: 50px;
+    font-size: 0.76rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    color: #ffd899;
+    text-transform: uppercase;
+    box-shadow: 0 0 15px rgba(209, 18, 50, 0.2);
+}
+
+.pricelist-title {
+    display: flex;
+    flex-direction: column;
+    margin: 4px 0 0 0;
+    line-height: 1.15;
+}
+
+.pricelist-title-sub {
+    font-family: 'Cinzel Decorative', 'Amanojaku', serif;
+    font-size: clamp(1rem, 2vw, 1.25rem);
+    letter-spacing: 3px;
+    color: #ff9e80;
+    text-transform: uppercase;
+}
+
+.pricelist-title-main {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: clamp(1.8rem, 3.2vw, 2.6rem);
+    font-weight: 800;
+    color: #fff5e6;
+    text-shadow: 0 3px 18px rgba(209, 18, 50, 0.5), 0 2px 4px rgba(0, 0, 0, 0.85);
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+.jp-title-tag {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #ffb347;
+    background: rgba(255, 140, 0, 0.15);
+    border: 1px solid rgba(255, 140, 0, 0.35);
+    padding: 2px 10px;
+    border-radius: 6px;
+    letter-spacing: 1px;
+}
+
+.pricelist-hours-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 7px 15px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 100, 70, 0.3);
+    border-radius: 30px;
+    color: #ffd8b3;
+    font-size: 0.88rem;
+    font-weight: 600;
+}
+
+.pricelist-clock-icon {
+    width: 17px;
+    height: 17px;
+    stroke: #ff6b4a;
+    flex-shrink: 0;
+}
+
+.pricelist-items-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+    width: 100%;
+    margin-top: 4px;
+}
+
+.pricelist-item-card {
+    background: rgba(20, 6, 8, 0.7);
+    border: 1px solid rgba(209, 18, 50, 0.4);
+    padding: 12px 14px;
+    border-radius: 12px;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.5);
+    transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.pricelist-item-card:hover {
+    transform: translateY(-2px);
+    border-color: rgba(255, 100, 70, 0.7);
+}
+
+.item-header {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 6px;
+}
+
+.item-icon {
+    font-size: 1.15rem;
+}
+
+.item-name {
+    color: #ffffff;
+    font-size: 0.82rem;
+    font-weight: 600;
+    letter-spacing: 0.3px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.item-price-wrap {
+    display: flex;
+    align-items: baseline;
+    gap: 6px;
+}
+
+.item-price {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.55rem;
+    font-weight: 800;
+    color: #ff3b30;
+    background: linear-gradient(135deg, #ff6b35 0%, #ff3b30 50%, #ff9500 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    filter: drop-shadow(0 2px 8px rgba(209, 18, 50, 0.4));
+    line-height: 1;
+}
+
+.item-duration {
+    color: #ffccd5;
+    font-size: 0.78rem;
+    font-weight: 500;
+}
+
+.pricelist-extras-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-top: 2px;
+}
+
+.extra-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 180, 80, 0.3);
+    padding: 5px 12px;
+    border-radius: 6px;
+    color: #ffddb3;
+    font-size: 0.8rem;
+    font-weight: 600;
+}
+
+.pricelist-actions {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    flex-wrap: wrap;
+    margin-top: 6px;
+}
+
+.btn-pricelist-reserve {
+    background: linear-gradient(135deg, #d11232 0%, #ff5238 100%);
+    color: #fff !important;
+    padding: 10px 24px;
+    border-radius: 50px;
+    font-weight: 700;
+    font-size: 0.88rem;
+    letter-spacing: 1px;
+    text-decoration: none;
+    box-shadow: 0 6px 20px rgba(209, 18, 50, 0.5);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+}
+
+.btn-pricelist-reserve:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 28px rgba(255, 82, 56, 0.65);
+}
+
+.btn-pricelist-view {
+    background: rgba(255, 255, 255, 0.08);
+    color: #ffddb3;
+    border: 1px solid rgba(255, 140, 80, 0.35);
+    padding: 10px 18px;
+    border-radius: 50px;
+    font-weight: 600;
+    font-size: 0.85rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.btn-pricelist-view:hover {
+    background: rgba(255, 100, 70, 0.2);
+    color: #fff;
+    border-color: rgba(255, 140, 80, 0.7);
+    transform: translateY(-2px);
+}
+
+/* Poster Side */
+.promo-pricelist-poster-side {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    flex-shrink: 0;
+}
+
+.pricelist-poster-frame {
+    position: relative;
+    width: 230px;
+    height: 332px;
+    border-radius: 16px;
+    overflow: hidden;
+    cursor: pointer;
+    box-shadow: 0 18px 45px rgba(0, 0, 0, 0.85), 0 0 35px rgba(209, 18, 50, 0.3);
+    border: 1px solid rgba(255, 100, 80, 0.5);
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s ease, border-color 0.4s ease;
+}
+
+.pricelist-poster-frame:hover {
+    transform: scale(1.03) translateY(-6px);
+    box-shadow: 0 28px 60px rgba(0, 0, 0, 0.95), 0 0 45px rgba(255, 80, 50, 0.5);
+    border-color: rgba(255, 140, 90, 0.85);
+}
+
+.pricelist-poster-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center top;
+    display: block;
+    transition: transform 0.5s ease;
+}
+
+.pricelist-poster-frame:hover .pricelist-poster-img {
+    transform: scale(1.04);
+}
+
+.poster-shine-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.15) 0%, transparent 60%);
+    pointer-events: none;
+    z-index: 2;
+}
+
+.poster-click-badge {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    background: rgba(0, 0, 0, 0.75);
+    backdrop-filter: blur(8px);
+    color: #fff;
+    font-size: 0.75rem;
+    font-weight: 600;
+    padding: 4px 10px;
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    opacity: 0.85;
+    transition: opacity 0.3s ease, background 0.3s ease;
+    z-index: 3;
+    pointer-events: none;
+}
+
+.pricelist-poster-frame:hover .poster-click-badge {
+    opacity: 1;
+    background: rgba(209, 18, 50, 0.9);
+    border-color: #ff5238;
+}
+
 /* ── Banner 1: Drink All You Can ── */
 .banner-drink {
     background: linear-gradient(135deg, rgba(15, 15, 15, 0.95) 0%, rgba(30, 30, 30, 0.8) 100%), url('../assets/images/form background.webp') center/cover;
@@ -3257,6 +3607,49 @@
         border-radius: 16px;
     }
 
+    .banner-pricelist {
+        height: auto !important;
+        padding: 30px 20px;
+    }
+
+    .banner-pricelist-container {
+        flex-direction: column-reverse;
+        text-align: center;
+        gap: 25px;
+    }
+
+    .promo-pricelist-content {
+        align-items: center;
+        max-width: 100%;
+        text-align: center;
+    }
+
+    .pricelist-title {
+        align-items: center;
+    }
+
+    .pricelist-title-main {
+        justify-content: center;
+    }
+
+    .pricelist-items-grid {
+        max-width: 460px;
+        margin: 0 auto;
+    }
+
+    .pricelist-extras-row {
+        justify-content: center;
+    }
+
+    .pricelist-actions {
+        justify-content: center;
+    }
+
+    .pricelist-poster-frame {
+        width: 200px;
+        height: 288px;
+    }
+
     .banner-karaoke {
         height: 220px;
     }
@@ -3375,6 +3768,31 @@
 
     .promo-banner {
         height: 160px;
+    }
+
+    .banner-pricelist {
+        height: auto !important;
+        padding: 24px 14px;
+        border-radius: 18px;
+    }
+
+    .pricelist-title-main {
+        font-size: 1.5rem;
+    }
+
+    .pricelist-items-grid {
+        grid-template-columns: 1fr;
+        width: 100%;
+    }
+
+    .pricelist-poster-frame {
+        width: 175px;
+        height: 252px;
+    }
+
+    .pricelist-hours-pill {
+        font-size: 0.78rem;
+        padding: 6px 10px;
     }
 
     .banner-karaoke {

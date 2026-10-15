@@ -39,6 +39,417 @@
     }
 }
 
+/* ══════════════════════════════════════════════════════════════════════════
+   ── Special Seasonal Event: October Fest Halloween Promo ──
+   ══════════════════════════════════════════════════════════════════════════ */
+.halloween-event-section {
+    position: relative;
+    padding: 80px 0 60px 0;
+    background-color: #060203;
+    overflow: hidden;
+}
+
+.halloween-event-glow {
+    position: absolute;
+    width: 600px;
+    height: 600px;
+    border-radius: 50%;
+    top: 50%;
+    right: 10%;
+    transform: translateY(-50%);
+    background: radial-gradient(circle, rgba(255, 120, 20, 0.12) 0%, rgba(209, 18, 50, 0.08) 50%, transparent 70%);
+    filter: blur(80px);
+    pointer-events: none;
+    z-index: 0;
+}
+
+.halloween-event-card {
+    position: relative;
+    z-index: 1;
+    background: linear-gradient(135deg, rgba(24, 7, 10, 0.95) 0%, rgba(36, 12, 8, 0.92) 50%, rgba(18, 5, 10, 0.97) 100%);
+    border: 1px solid rgba(255, 140, 0, 0.35);
+    box-shadow: 0 25px 60px rgba(0, 0, 0, 0.8), 0 0 45px rgba(230, 80, 0, 0.15);
+    border-radius: 28px;
+    padding: 45px 50px;
+    transition: transform 0.4s ease, box-shadow 0.4s ease, border-color 0.4s ease;
+}
+
+.halloween-event-card:hover {
+    transform: translateY(-4px);
+    border-color: rgba(255, 160, 40, 0.65);
+    box-shadow: 0 35px 75px rgba(0, 0, 0, 0.9), 0 0 55px rgba(255, 100, 0, 0.25);
+}
+
+.halloween-event-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 6px 16px;
+    background: linear-gradient(90deg, rgba(209, 18, 50, 0.5) 0%, rgba(255, 120, 0, 0.45) 100%);
+    border: 1px solid rgba(255, 180, 60, 0.6);
+    border-radius: 50px;
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    color: #ffde59;
+    text-transform: uppercase;
+    box-shadow: 0 0 15px rgba(255, 120, 0, 0.25);
+    margin-bottom: 25px;
+}
+
+.halloween-event-grid {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 50px;
+}
+
+.halloween-event-info {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 14px;
+    max-width: 580px;
+}
+
+.halloween-event-eyebrow {
+    font-family: 'Cinzel Decorative', 'Amanojaku', serif;
+    font-size: 0.95rem;
+    letter-spacing: 3px;
+    color: #ffab40;
+    text-transform: uppercase;
+}
+
+.halloween-event-title {
+    margin: 0;
+    line-height: 1.15;
+}
+
+.halloween-event-title .title-sub {
+    font-family: 'Cinzel Decorative', serif;
+    font-size: clamp(1.3rem, 2.5vw, 1.7rem);
+    letter-spacing: 3px;
+    color: #ffb347;
+    text-transform: uppercase;
+}
+
+.halloween-event-title .title-main {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: clamp(2rem, 3.8vw, 3rem);
+    font-weight: 800;
+    color: #fff5e6;
+    text-shadow: 0 4px 20px rgba(255, 100, 0, 0.4), 0 2px 6px rgba(0, 0, 0, 0.85);
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: nowrap;
+    white-space: nowrap;
+}
+
+.halloween-event-schedule {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    padding: 10px 18px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 160, 50, 0.3);
+    border-radius: 12px;
+}
+
+.halloween-event-schedule .sched-icon {
+    width: 24px;
+    height: 24px;
+    stroke: #ff9800;
+    flex-shrink: 0;
+}
+
+.halloween-event-schedule .sched-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.halloween-event-schedule .sched-days {
+    color: #ffffff;
+    font-weight: 700;
+    font-size: 1rem;
+    letter-spacing: 0.5px;
+}
+
+.halloween-event-schedule .sched-time {
+    color: #ffd8b3;
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+.halloween-event-perks {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+.halloween-event-perks .perk-item {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(209, 18, 50, 0.25);
+    border: 1px solid rgba(209, 18, 50, 0.5);
+    padding: 8px 16px;
+    border-radius: 8px;
+    color: #fff;
+    font-size: 0.95rem;
+    font-weight: 600;
+}
+
+.halloween-event-perks .perk-separator {
+    color: #ffab40;
+    font-weight: 800;
+    font-size: 1.2rem;
+}
+
+.halloween-event-pricing {
+    display: flex;
+    align-items: baseline;
+    gap: 15px;
+    flex-wrap: wrap;
+    margin-top: 5px;
+}
+
+.pricing-headline {
+    display: flex;
+    align-items: baseline;
+    gap: 8px;
+}
+
+.event-price {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2.5rem, 4.5vw, 3.4rem);
+    font-weight: 800;
+    color: #ff4500;
+    background: linear-gradient(135deg, #ff6b35 0%, #ff3b30 50%, #ff9500 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    filter: drop-shadow(0 2px 12px rgba(255, 69, 0, 0.45));
+    line-height: 1;
+}
+
+.event-duration {
+    font-size: 1.15rem;
+    color: #ffffff;
+    font-weight: 600;
+}
+
+.event-tax-badge {
+    display: inline-block;
+    background: rgba(255, 140, 0, 0.18);
+    border: 1px solid rgba(255, 140, 0, 0.4);
+    padding: 4px 12px;
+    border-radius: 6px;
+    color: #ffd180;
+    font-size: 0.88rem;
+    font-weight: 600;
+}
+
+.halloween-event-invite {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.05rem;
+    font-weight: 600;
+    color: #ffccd5;
+    margin: 4px 0 0 0;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.7);
+}
+
+.halloween-event-actions {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    flex-wrap: wrap;
+    margin-top: 10px;
+}
+
+.btn-event-reserve {
+    background: linear-gradient(135deg, #d11232 0%, #ff6b35 100%);
+    color: #fff !important;
+    padding: 12px 28px;
+    border-radius: 50px;
+    font-weight: 700;
+    font-size: 0.95rem;
+    letter-spacing: 1px;
+    text-decoration: none;
+    box-shadow: 0 8px 24px rgba(209, 18, 50, 0.45);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+}
+
+.btn-event-reserve:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 14px 32px rgba(255, 107, 53, 0.6);
+}
+
+.btn-event-zoom {
+    background: rgba(255, 255, 255, 0.08);
+    color: #ffddaa;
+    border: 1px solid rgba(255, 180, 50, 0.35);
+    padding: 12px 20px;
+    border-radius: 50px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.btn-event-zoom:hover {
+    background: rgba(255, 180, 50, 0.2);
+    color: #fff;
+    border-color: rgba(255, 180, 50, 0.75);
+    transform: translateY(-2px);
+}
+
+/* Poster Showcase */
+.halloween-event-posters {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    perspective: 1000px;
+    flex-shrink: 0;
+}
+
+.event-poster-wrapper {
+    position: relative;
+    width: 250px;
+    height: 362px;
+    border-radius: 18px;
+    overflow: hidden;
+    cursor: pointer;
+    box-shadow: 0 20px 45px rgba(0, 0, 0, 0.85), 0 0 35px rgba(255, 120, 0, 0.25);
+    border: 1px solid rgba(255, 160, 40, 0.45);
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s ease, border-color 0.4s ease;
+}
+
+.poster-promo-card {
+    transform: none;
+    z-index: 3;
+}
+
+.event-poster-wrapper:hover {
+    transform: translateY(-8px) scale(1.02);
+    z-index: 10;
+    box-shadow: 0 30px 65px rgba(0, 0, 0, 0.95), 0 0 45px rgba(255, 140, 0, 0.5);
+    border-color: rgba(255, 180, 50, 0.9);
+}
+
+.event-poster-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center top;
+    display: block;
+    transition: transform 0.5s ease;
+}
+
+.event-poster-wrapper:hover .event-poster-img {
+    transform: scale(1.05);
+}
+
+.poster-overlay-shine {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.15) 0%, transparent 60%);
+    pointer-events: none;
+    z-index: 2;
+}
+
+.poster-label-badge {
+    position: absolute;
+    bottom: 12px;
+    right: 12px;
+    background: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(8px);
+    color: #fff;
+    font-size: 0.78rem;
+    font-weight: 600;
+    padding: 5px 12px;
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    opacity: 0.9;
+    transition: opacity 0.3s ease, background 0.3s ease;
+    z-index: 3;
+    pointer-events: none;
+}
+
+.event-poster-wrapper:hover .poster-label-badge {
+    opacity: 1;
+    background: rgba(209, 18, 50, 0.92);
+    border-color: #ff7b00;
+}
+
+/* Responsive for Events Halloween Section */
+@media (max-width: 992px) {
+    .halloween-event-card {
+        padding: 35px 25px;
+    }
+    .halloween-event-grid {
+        flex-direction: column-reverse;
+        text-align: center;
+        gap: 30px;
+    }
+    .halloween-event-info {
+        align-items: center;
+        max-width: 100%;
+    }
+    .halloween-event-title {
+        align-items: center;
+    }
+    .halloween-event-perks {
+        justify-content: center;
+    }
+    .halloween-event-pricing {
+        justify-content: center;
+    }
+    .halloween-event-actions {
+        justify-content: center;
+    }
+    .event-poster-wrapper {
+        width: 220px;
+        height: 318px;
+        transform: none !important;
+    }
+}
+
+@media (max-width: 480px) {
+    .halloween-event-section {
+        padding: 50px 0 40px 0;
+    }
+    .halloween-event-card {
+        padding: 25px 15px;
+        border-radius: 20px;
+    }
+    .event-poster-wrapper {
+        width: 190px;
+        height: 275px;
+    }
+    .halloween-event-title .title-main {
+        font-size: 1.8rem;
+    }
+    .event-price {
+        font-size: 2.4rem;
+    }
+    .halloween-event-schedule {
+        padding: 8px 12px;
+    }
+    .halloween-event-schedule .sched-days {
+        font-size: 0.88rem;
+    }
+    .halloween-event-schedule .sched-time {
+        font-size: 0.8rem;
+    }
+}
+
 .events-occasion-section {
     position: relative;
     padding: 120px 0 60px 0;

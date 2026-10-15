@@ -719,3 +719,15 @@ h6 {
         padding: 8px 16px;
     }
 }
+
+/* Color Emoji Rendering Support */
+.halloween-emoji, .pill-emoji, .feat-icon, .badge-icon, .tag-icon, .perk-icon, .sched-icon {
+    font-family: 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji', sans-serif !important;
+    font-weight: normal !important;
+    font-style: normal !important;
+    display: inline-block;
+    vertical-align: middle;
+    line-height: 1;
+    -webkit-text-fill-color: initial !important;
+    -webkit-background-clip: border-box !important;
+}
